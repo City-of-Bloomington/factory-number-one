@@ -1,0 +1,4 @@
+/assets
+/doc
+node_modules
+.sass-cache
