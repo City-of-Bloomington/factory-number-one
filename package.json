@@ -1,12 +1,9 @@
 {
-  "name": "slui",
+  "name": "factory-number-one",
   "version": "1.0.0",
-  "description": "",
-  "main": "n/a",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Dan Hiester",
+  "description": "An in-development pattern library, to help speed development of websites and applications. It includes theme-ability, allowing websites and applications built on it to be deployed by other agencies with their branding.",
+  "author": "Dan Hiester <hiesterd@bloomington.in.gov>",
+  "repository": "https://github.com/City-of-Bloomington/factory-number-one.git",
   "license": "AGPL-3.0",
   "devDependencies": {
     "browser-sync": "^2.9.6",
