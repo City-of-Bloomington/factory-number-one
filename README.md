@@ -1,4 +1,4 @@
-# ![Factory Number One](src/logo.svg)
+# Factory Number One
 
 An in-development pattern library, to help speed development of websites and applications. It includes theme-ability, allowing websites and applications built on it to be deployed by other agencies with their branding.
 
