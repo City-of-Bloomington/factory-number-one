@@ -1,0 +1,9 @@
+.fn1-output-field {
+    display: block;
+    > dt {
+        font-size: .8em;
+    }
+    > dd {
+        margin: 0 0 0 20em;
+    }
+}

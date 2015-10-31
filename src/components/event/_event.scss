@@ -1,0 +1,125 @@
+/*
+    Events, dates, and times.
+*/
+
+.fn1-dateHeader {
+    font-size: (14rem/16);
+    font-weight: normal;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $viewport-small) {
+        text-transform: none;
+        &-weekday {
+            display: block;
+            font-size: (18rem/16);
+            font-style: italic;
+            line-height: 1em;
+            margin: 0 0 -.25em 0;
+        }
+        &-month {
+            font-size: (20rem/16);
+            line-height: 1em;
+        }
+        &-monthDate {
+            display: inline-block;
+            font-size: (36rem/16);
+            font-style: italic;
+            line-height: (16rem/16);
+            position: relative;
+                top: .125em;
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+    }
+}
+
+.fn1-event {
+    display: block;
+
+    > h1 {
+        display: block;
+        font-size: 1.25em;
+        line-height: 1.25em;
+        margin: 0 0 .25em 0;
+    }
+
+    &-list {
+        display: block;
+        list-style: none;
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &-dateTime, &-location {
+        display: inline-block;
+    }
+    &-location {
+        &:before {
+            background: url('../img/fa-svg/map-marker-gray.svg') no-repeat 50% 50% / 100% 100%;
+            content: '';
+            display: inline-block;
+            height: 1em;
+            position: relative;
+                top: .1em;
+            width: 1em;
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+    }
+}
+
+.fn1-fsCal {
+    border-top: 1px solid;
+    > .fn1-event {
+        position: relative;
+        > h1 {
+            font-size: (18rem/16);
+            font-weight: normal;
+            margin-right: 2.25rem;
+        }
+        > .fn1-icon-calendar {
+            height: (23rem/16);
+            position: absolute;
+                top: .5rem;
+                right: .5rem;
+            width: (23rem/16);
+        }
+    }
+
+    @media screen and (min-width: $viewport-medium) {
+        > .fn1-event {
+            box-sizing: border-box;
+            padding-left: (100%*2/12);
+            &:not(:first-of-type) {
+                border-top: 1px solid;
+            }
+            > h1 {
+                line-height: 1.25em;
+                margin-bottom: 0;
+                padding-top: .5rem;
+            }
+            > time {
+                font-size: (18rem/16);
+                line-height: 1.25em;
+                position: absolute;
+                    top: .6rem;
+                    left: 0;
+            }
+            > .fn1-event-description {
+                > p {
+                    margin: (8rem/16) 0;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $viewport-large) {
+        > .fn1-dateHeader {
+            float: left;
+        }
+        > .fn1-event {
+            margin-left: (100%*2/12);
+            padding-left: (100%*1/12);
+        }
+    }
+}

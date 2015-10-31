@@ -1,0 +1,30 @@
+.fn1-dateHeader {
+    @media screen and (min-width: $viewport-small) {
+        font-family: $font-body-copy;
+        &-weekday {
+            color: $cob-gray-dark;
+        }
+        &-month {
+            font-size: (24rem/16);
+        }
+        &-monthDate {
+            color: $cob-gray;
+            font-size: (48rem/16);
+            font-family: Georgia, serif;
+        }
+    }
+}
+
+.fn1-fsCal {
+    border-top-color: $cob-gray;
+    > .fn1-event {
+        > h1 {
+            color: $cob-cornflower-darkest;
+        }
+        @media screen and (min-width: $viewport-medium) {
+            &:not(:first-of-type) {
+                border-top-color: $cob-gray;
+            }
+        }
+    }
+}

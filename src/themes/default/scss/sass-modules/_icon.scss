@@ -1,0 +1,12 @@
+%fn1-icon {
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -1000em;
+}
+.fn1-icon {
+    &-calendar {
+        @extend %fn1-icon;
+        background: url('../img/fa-svg/calendar-gray.svg') no-repeat 50% 50% / 100% 100%;
+    }
+}

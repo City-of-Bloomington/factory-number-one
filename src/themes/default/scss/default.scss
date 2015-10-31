@@ -1,0 +1,33 @@
+@import 'sass-modules/_vars-mixins';
+@import 'sass-modules/_layout';
+@import 'sass-modules/_html-elements';
+@import 'sass-modules/_header';
+@import 'sass-modules/_icon';
+@import 'sass-modules/_menu';
+@import 'sass-modules/_nav1';
+@import 'sass-modules/_normalize';
+@import 'sass-modules/_content-section';
+@import 'sass-modules/_main';
+@import 'sass-modules/_buttons';
+@import 'sass-modules/_tables';
+@import '../../../components/input/_field';
+@import '../../../components/event/_event';
+
+/**
+ * Side Panel
+ */
+#panel-one nav {
+    border: 2px solid $color-border-table;
+    margin-bottom: 0.5em;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#panel-one h2 {
+    background-color: $color-text-default;
+    border-bottom: 2px solid $color-border-table;
+    color: $color-content-background;
+    margin: 0;
+    padding: .25em;
+}
+#panel-one ul { margin:.25em; padding:0; }
+#panel-one a { font-weight:$font-weight-heading; color:$color-text-default; }

@@ -1,0 +1,23 @@
+{% extends '../../layouts/generic.html' %}
+
+{% block pageTitle %}Kirkwood Theme demo page{% endblock %}
+
+{% block extraHead %}
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700,600' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/kirkwood.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block pageHeader %}
+    {% include './includes/_header.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include '../../components/testContent.html' %}
+    {% include '../../components/event/_event.html' %}
+{% endblock %}
+
+{% block pageFooter %}
+    <footer>
+    </footer>
+{% endblock %}

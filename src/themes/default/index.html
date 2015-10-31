@@ -1,0 +1,18 @@
+{% extends '../../layouts/generic.html' %}
+
+{% block pageTitle %}Default/generic demo page{% endblock %}
+
+
+{% block pageHeader %}
+    {% include './includes/header.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include '../../components/testContent.html' %}
+    {% include '../../components/event/_event.html' %}
+{% endblock %}
+
+{% block pageFooter %}
+    <footer>
+    </footer>
+{% endblock %}
