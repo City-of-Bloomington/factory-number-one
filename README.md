@@ -11,21 +11,22 @@ The following prerequisites must be installed on your system before you can begi
 
 ## Installation
 
-Clone the repository:
+Clone the repository, and CD into it:
 
-    git clone https://github.com/City-of-Bloomington/factory-number-one.git
+    $ git clone https://github.com/City-of-Bloomington/factory-number-one.git
+    $ cd factory-number-one
 
 Next, install the NPM modules.
 
-    npm install
+    $ npm install
 
 The first time you run Factory Number One, you'll need to do an initial build of the HTML, CSS, documentation and assets folders.
 
-    gulp init
+    $ gulp init
 
 Finally, run Gulp
 
-    gulp
+    $ gulp
 
 This starts Factory Number One on an HTTP server at `localhost:3000`
 
