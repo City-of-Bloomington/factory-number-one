@@ -6,8 +6,8 @@ An in-development pattern library, to help speed development of websites and app
 
 The following prerequisites must be installed on your system before you can begin:
 
-* Node.js
-* Gulp
+* [Node.js](https://nodejs.org/)
+* [Gulp](http://gulpjs.com/)
 
 ## Installation
 
