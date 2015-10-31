@@ -1,4 +1,4 @@
-# Factory Number One
+# ![Factory Number One](//raw.githubusercontent.com/City-of-Bloomington/factory-number-one/master/src/logo.svg)
 
 An in-development pattern library, to help speed development of websites and applications. It includes theme-ability, allowing websites and applications built on it to be deployed by other agencies with their branding.
 
