@@ -1,0 +1,147 @@
+.fn1-pageHeader {
+    background: url('../../assets/info/img/photo-header-showers.jpg') no-repeat 50% 50% $fn1-blue;
+    background-size: cover;
+    box-shadow: none;
+    margin: 0;
+
+    &-container {
+        @include container();
+        margin-top: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+            &:before {
+                background: url('../../assets/info/img/photo-header-showers-circle@1x.jpg') no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                content: ' ';
+                display: block;
+                height: 75px;
+                margin: 1.25rem auto .5rem;
+                width: 75px;
+            }
+        > .fn1-ext-wrap {
+            > h1 {
+                color: #fff;
+                font-weight: 400;
+                font-size: (22rem/16);
+                line-height: 1.2em;
+                margin: .5rem 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &-breadcrumbs {
+        text-align: center;
+
+        > a {
+            color: #fff;
+            display: inline-block;
+            font-family: $font-headings;
+            font-size: (12rem/16);
+            letter-spacing: .2em;
+            margin: 0 2em 0 0;
+            position: relative;
+            text-transform: uppercase;
+
+            &:after {
+                content: ' >';
+                position: absolute;
+                    right: -1.5em;
+            }
+        }
+    }
+    &-navigation {
+        background: rgba(0,0,0,.4);
+
+        &-container  {
+            @include container();
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 1em;
+            padding-right: 1em;
+            text-align: center;
+
+            > a {
+                color: #fff;
+                display: inline-block;
+                font-family: $font-headings;
+                font-weight: 300;
+                font-size: (1em);
+                line-height: 1.3em;
+                margin: 0 .5em 0 0;
+                padding: 1em .555em .777em;
+                text-transform: uppercase;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                &.fn1-ext-current {
+                    border-bottom: .333em solid $fn1-cornflower-lightest;
+                    color: $fn1-cornflower-lightest;
+                    padding-bottom: .444em;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $viewport-medium) {
+        &-container {
+            min-height: 12rem;
+            padding-left: 210px;
+            position: relative;
+                z-index: 0;
+
+            &:before {
+                height: 152px;
+                margin: (14rem/16) (27rem/16) (14rem/16) 0;
+                    position: absolute;
+                    top: .5em;
+                    left: 2em;
+                    z-index: 1;
+                width: 152px;
+            }
+            > .fn1-ext-wrap {
+                display: table-cell;
+                height: 12rem;
+                vertical-align: middle;
+
+                > h1 {
+                    font-size: (42rem/16);
+                    font-weight: 300;
+                    line-height: 1.2em;
+                    margin: 0 0 0 (-2rem/16);
+                    text-align: left;
+                }
+            }
+        }
+        &-breadcrumbs {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+
+            > a {
+                font-size: 1rem;
+            }
+        }
+        &-navigation {
+            &-container {
+                text-align: left;
+
+                > a {
+
+                    &:first-child {
+                        margin-left: -.555em;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-resolution: 2dppx) {
+        &-container:before {
+            background: url('../../assets/info/img/photo-header-showers-circle@2x.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
