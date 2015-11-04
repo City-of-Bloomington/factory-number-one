@@ -1,0 +1,32 @@
+.fn1-siteMenu {
+    display:inline-block;
+
+    .menuLauncher {
+        background: url('../img/arrowdown.png') 6px 10px no-repeat;
+        border: 1px solid $cob-blue;
+        border-radius: .25em;
+        color: $cob-blue;
+        font-weight: normal;
+        font-size: (14rem/16);
+        padding: .25em 1em .25em 1.5em;
+    }
+    .menuLinks {
+        background: #fff;
+        border: 1px solid $cob-gray;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, .5);
+        padding: .5em 0;
+        min-width: 9em;
+        transition: opacity .25s;
+
+        a {
+            padding: .15em 1em;
+            transition: background .25s, color .25s;
+
+            &:hover {
+                background: $cob-blue;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
