@@ -1,0 +1,17 @@
+.fn1-siteHeader {
+    background-color: #fff;
+    border-top: 8px solid $cob-blue;
+    box-shadow: none;
+    margin: 0;
+
+    &-container {
+        @include container();
+        margin: 0 auto;
+        max-width: $layoutMaxWidth;
+        min-height: 57px;
+        @media screen and (min-width: $viewport-medium) {
+            padding-left: $grid-gutter;
+            padding-right: $grid-gutter;
+        }
+    }
+}

@@ -76,12 +76,6 @@ gulp.task('default', ['start'], function() {
     gulp.src('./gulpfile.js').pipe(notify({message:"Factory Number One dev environment started. Point your browser to http://localhost:3000" }));
 });
 
-// Prepare a distribution
-gulp.task('dist', function() {
-    gulp.src('./src/static/**/*.*')
-        .pipe(gulp.dest('./assets/'))
-});
-
 // Run the first build, or re-build assets after cleaning files
 gulp.task('init', ['build-default-sass', 'build-info-sass', 'build-kirkwood-sass', 'build-html'], function() {
     gulp.src('./src/static/**/*.*')
@@ -91,6 +85,10 @@ gulp.task('init', ['build-default-sass', 'build-info-sass', 'build-kirkwood-sass
     gulp.src('./src/themes/kirkwood/img/*.*')
         .pipe(gulp.dest('./assets/kirkwood/img/'))
         .pipe(gulp.dest('./doc/assets/kirkwood/img/'));
+
+    gulp.src('./src/themes/info/img/*.*')
+        .pipe(gulp.dest('./assets/info/img/'))
+        .pipe(gulp.dest('./doc/assets/info/img/'));
 
     gulp.src('./src/logo.svg')
         .pipe(gulp.dest('./doc/'));
