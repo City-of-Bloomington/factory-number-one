@@ -1,5 +1,5 @@
-body > main {
-    > .fn1-container {
+.fn1-main {
+    &-container {
         box-sizing: border-box;
         padding: 2em;
     }
@@ -23,7 +23,7 @@ body > main {
             z-index: 1;
 
         }
-        > .fn1-container {
+        &-container {
             background: $color-content-background;
             border-top: .4em solid $color-accent;
             margin: 0 auto;
@@ -35,7 +35,7 @@ body > main {
         }
     }
     @media screen and (min-width: $viewport-lg) {
-        > .fn1-container {
+        &-container {
             width: 60em;
         }
     }

@@ -9,6 +9,7 @@
         margin: 0 auto;
         max-width: $layoutMaxWidth;
         min-height: 57px;
+        width: auto;
         @media screen and (min-width: $viewport-medium) {
             padding-left: $grid-gutter;
             padding-right: $grid-gutter;

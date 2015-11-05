@@ -3,7 +3,7 @@ body {
     font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
     > main {
         @media screen and (min-width: $viewport-large) {
-            > .fn1-container {
+            > .fn1-main-container {
                 max-width: $layoutMaxWidth;
             }
         }
