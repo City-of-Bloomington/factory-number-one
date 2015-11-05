@@ -1,0 +1,28 @@
+{% extends '../../layouts/generic.html' %}
+
+{% block pageTitle %}Geospatial theme demo page{% endblock %}
+
+{% block extraHead %}
+    <link href="/assets/css/geospatial.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+{% endblock %}
+
+{% block pageHeader %}
+    {% include './includes/_siteHeader.html' %}
+{% endblock %}
+
+{% block preContainer %}
+    <div class="fn1-panelOne">
+
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- div to use as map -->
+    <div class="fn1-content-panel-map" id="map"></div>
+{% endblock %}
+
+{% block pageFooter %}
+    <footer>
+    </footer>
+{% endblock %}

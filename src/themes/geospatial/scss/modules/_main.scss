@@ -1,0 +1,15 @@
+.fn1-main {
+    &-container {
+        height: 100%;
+        margin: 0 auto;
+        max-width: none;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+            z-index: 1;
+        width: auto;
+    }
+    @media screen and (min-width: $viewport-large) {
+
+    }
+}

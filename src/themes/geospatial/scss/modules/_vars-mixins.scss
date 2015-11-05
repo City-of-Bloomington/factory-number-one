@@ -1,0 +1,69 @@
+// Geospatial variables and mixins
+
+$fn1-geospatial-headerHeight: (65rem/16);
+
+$fn1-blue: #315da6;
+$fn1-blue-light: #4975ba;
+$fn1-blue-dark: #143a7a;
+$fn1-blue-darkest: #06204b;
+
+// Cornflower
+$fn1-cornflower-lightest: #acf2ff;
+$fn1-cornflower-light: #5991c2;
+$fn1-cornflower-darkest: #12314c;
+
+// Action Green
+$fn1-green: #20ac59;
+$fn1-green-light: #70bf88;
+$fn1-green-lightest: #aaffac;
+
+// Blue-ish gray
+$fn1-gray: #bcc9d8;
+$fn1-gray-dark: #8d98a5;
+$fn1-gray-darkest: #585f68;
+$fn1-nightshade: #2a2e32; // Darker than darkest
+
+// Font families
+$font-body-copy: 'PT Sans', Verdana, sans-serif;
+$font-headings: Lato, 'Helvetica Neue', Arial, sans-serif;
+
+
+// Viewport size variables
+$viewport-large: (990rem/16);
+$viewport-medium: (600rem/16);
+$viewport-small: (350rem/16);
+
+
+
+// Grid
+$grid-gutter: 2rem;
+
+@mixin container {
+    margin: 1rem;
+
+    @media screen and (min-width: $viewport-medium) {
+        @include clearfix();
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+}
+
+
+@mixin visuallyHidden() {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin clearfix() {
+    &:before, &:after {
+        clear: both;
+        content: ' ';
+        display: table;
+    }
+}

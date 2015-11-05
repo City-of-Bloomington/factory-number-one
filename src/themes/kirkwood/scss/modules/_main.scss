@@ -34,7 +34,7 @@
             z-index: 3;
         }
     }
-    @media screen and (min-width: $viewport-lg) {
+    @media screen and (min-width: $viewport-large) {
         &-container {
             width: 60em;
         }
