@@ -1,14 +1,26 @@
 .fn1-siteMenu {
     display:inline-block;
+    position: relative;
+        bottom: (4rem/16);
 
     .menuLauncher {
-        background: url('../img/arrowdown.png') 6px 10px no-repeat;
         border: 1px solid $fn1-blue;
         border-radius: .25em;
         color: $fn1-blue;
         font-weight: normal;
         font-size: (14rem/16);
         padding: .25em 1em .25em 1.5em;
+        position: relative;
+        &:before {
+            border: (4rem/16) solid transparent;
+            border-top: (6rem/16) solid $fn1-blue;
+            content: '';
+            height: 0;
+            position: absolute;
+                top: (10rem/16);
+                left: (10rem/16);
+            width: 0;
+        }
     }
     .menuLinks {
         background: #fff;
