@@ -1,7 +1,8 @@
-@import 'sass-modules/_vars-mixins';
+@import 'modules/_vars-mixins';
 
-@import 'sass-modules/_overrides';
-@import 'sass-modules/_pageOverview';
+@import 'modules/_fonts';
+@import 'modules/_overrides';
+@import 'modules/_pageOverview';
 @import '../includes/_pageHeader';
 @import '../includes/_siteHeader';
 @import '../../../components/event/_event--info';
