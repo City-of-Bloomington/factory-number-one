@@ -1,0 +1,44 @@
+.fn1-siteMenu {
+    display:inline-block;
+    position: relative;
+        bottom: (4rem/16);
+
+    .menuLauncher {
+        border: 1px solid $fn1-blue;
+        border-radius: .25em;
+        color: $fn1-blue;
+        font-weight: normal;
+        font-size: (14rem/16);
+        padding: .25em 1em .25em 1.5em;
+        position: relative;
+        &:before {
+            border: (4rem/16) solid transparent;
+            border-top: (6rem/16) solid $fn1-blue;
+            content: '';
+            height: 0;
+            position: absolute;
+                top: (10rem/16);
+                left: (10rem/16);
+            width: 0;
+        }
+    }
+    .menuLinks {
+        background: #fff;
+        border: 1px solid $fn1-gray;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, .5);
+        padding: .5em 0;
+        min-width: 9em;
+        transition: opacity .25s;
+
+        a {
+            padding: .15em 1em;
+            transition: background .25s, color .25s;
+
+            &:hover {
+                background: $fn1-blue;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}

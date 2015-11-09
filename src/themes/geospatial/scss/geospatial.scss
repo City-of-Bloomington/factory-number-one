@@ -1,10 +1,10 @@
 @import 'modules/_vars-mixins';
-
 @import 'modules/_fonts';
+
 @import 'modules/_html-elements';
-@import 'modules/_pageOverview';
-@import '../includes/_pageHeader';
+
 @import '../includes/_siteHeader';
-@import '../../../components/event/_event--info';
 @import '../../../components/siteHeader/_siteLogo';
 @import '../../../components/siteHeader/_siteMenu';
+@import 'modules/_layout';
+@import 'modules/_main';

@@ -2,7 +2,7 @@
     @media screen and (min-width: $viewport-medium) {
         position: relative;
 
-        > .fn1-container {
+        &-container {
             box-sizing: border-box;
             margin: 0 auto;
             position: relative;
@@ -40,7 +40,7 @@
     }
 
     @media screen and (min-width: $viewport-large) {
-        > .fn1-container {
+        &-container {
             width: 60em;
         }
         &-link {

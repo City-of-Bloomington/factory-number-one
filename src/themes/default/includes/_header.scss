@@ -1,10 +1,10 @@
-body > header {
+.fn1-siteHeader {
 
     background-color: #f1f3f8;
     box-shadow: 0 5px 5px 0 #c0c0c0;
     margin: 0 0 20px 0;
 
-    > .fn1-container {
+    &-container {
         margin: 0 auto 0;
         color: $color-header;
         position: relative;
@@ -36,7 +36,7 @@ body > header {
     @media screen and (min-width: $viewport-medium) {
         position: relative;
 
-        > .fn1-container {
+        &-container {
             box-sizing: border-box;
             margin: 0 auto;
             padding-top: .5em;
@@ -45,7 +45,7 @@ body > header {
     }
 
     @media screen and (min-width: $viewport-large) {
-        > .fn1-container {
+        &-container {
             width: 60em;
         }
     }

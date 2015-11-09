@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+}
+
+.fn1{
+    &-body {
+        box-sizing: border-box;
+        padding: $fn1-geospatial-headerHeight 0 0 0;
+    }
+    &-main, &-container {
+        height: 100%;
+    }
+    &-panelOne {
+        background: #fafafa;
+        float: left;
+        height: 100%;
+        position: relative;
+        width: 25rem;
+    }
+    &-content-panel {
+        height: 100%;
+        overflow: hidden;
+        &-map {
+            height: 100%;
+        }
+    }
+}

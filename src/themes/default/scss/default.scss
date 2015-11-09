@@ -1,16 +1,17 @@
-@import 'sass-modules/_vars-mixins';
-@import 'sass-modules/_layout';
-@import 'sass-modules/_html-elements';
-@import 'sass-modules/_header';
-@import 'sass-modules/_icon';
-@import 'sass-modules/_menu';
-@import 'sass-modules/_nav1';
-@import 'sass-modules/_normalize';
-@import 'sass-modules/_content-section';
-@import 'sass-modules/_main';
-@import 'sass-modules/_buttons';
-@import 'sass-modules/_tables';
-@import '../../../components/input/_field';
+@import 'modules/_vars-mixins';
+@import 'modules/_layout';
+@import 'modules/_html-elements';
+@import '../includes/_header';
+@import 'modules/_icon';
+@import 'modules/_menu';
+@import 'modules/_nav1';
+@import 'modules/_normalize';
+@import 'modules/_content-section';
+@import 'modules/_main';
+@import 'modules/_buttons';
+@import 'modules/_tables';
+@import '../../../components/input/_input-field';
+@import '../../../components/output/_output-field';
 @import '../../../components/event/_event';
 
 /**
