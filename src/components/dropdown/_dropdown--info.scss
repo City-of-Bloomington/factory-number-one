@@ -1,0 +1,8 @@
+.fn1-dropdown {
+    &-link {
+        &:hover {
+            background-color: $fn1-blue;
+            color: #fff;
+        }
+    }
+}
