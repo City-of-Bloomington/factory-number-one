@@ -17,13 +17,15 @@
     launcherClick = function(e) {
         var launcher = e.target,
             menu     = launcher.parentElement.querySelector('.fn1-dropdown-links');
+        launcher.blur();
         closeMenus();
         menu.style.display = 'block';
-        launcher.setAttribute("aria-expanded", "true");
+        setTimeout(function() {
+            launcher.setAttribute("aria-expanded", "true");
+        }, 50)
         document.addEventListener('click', closeMenus);
         e.stopPropagation();
         e.preventDefault();
-        launcher.blur();
         menu.focus();
     },
     launchers = document.querySelectorAll('.fn1-dropdown-launcher'),
