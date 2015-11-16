@@ -1,5 +1,5 @@
-"use strict";
 (function () {
+    "use strict";
     var closeMenus = function () {
         var openLaunchers = document.querySelectorAll('.fn1-dropdown-launcher[aria-expanded="true"]'),
             len = openLaunchers.length,
@@ -22,7 +22,7 @@
         menu.style.display = 'block';
         setTimeout(function() {
             launcher.setAttribute("aria-expanded", "true");
-        }, 50)
+        }, 50);
         document.addEventListener('click', closeMenus);
         e.stopPropagation();
         e.preventDefault();
