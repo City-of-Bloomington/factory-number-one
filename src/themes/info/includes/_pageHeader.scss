@@ -1,5 +1,5 @@
 .fn1-pageHeader {
-    background: url('../../assets/info/img/photo-header-showers.jpg') no-repeat 50% 50% $fn1-blue;
+    background: url('../info/img/photo-header-showers.jpg') no-repeat 50% 50% $fn1-blue;
     background-size: cover;
     box-shadow: none;
     margin: 0;
@@ -10,7 +10,7 @@
         margin-bottom: 0;
         overflow: hidden;
             &:before {
-                background: url('../../assets/info/img/photo-header-showers-circle@1x.jpg') no-repeat;
+                background: url('../info/img/photo-header-showers-circle@1x.jpg') no-repeat;
                 background-size: cover;
                 border-radius: 50%;
                 content: ' ';
