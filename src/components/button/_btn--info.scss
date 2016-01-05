@@ -1,0 +1,18 @@
+.fn1-btn {
+  &-action {
+    @extend .fn1-btn;
+    background-color: $fn1-green;
+    background-image: none;
+    border-bottom: .25em solid $fn1-green-light;
+    color: #fff;
+    font-weight: normal;
+      &:hover {
+        background-color: $fn1-green;
+        background-image: none;
+        color: #fff;
+      }
+  }
+  &-featuredAction {
+    @extend .fn1-btn-action;
+  }
+}

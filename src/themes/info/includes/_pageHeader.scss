@@ -35,17 +35,25 @@
         text-align: center;
 
         > a {
+            border-bottom: (1rem/16) solid rgba(255,255,255,0);
             color: #fff;
             display: inline-block;
             font-family: $font-headings;
             font-size: (12rem/16);
             letter-spacing: .2em;
             margin: 0 2em 0 0;
+            padding: 0 0 .125em 0;
             position: relative;
             text-transform: uppercase;
+            transition: border-bottom-color .25s ease-in-out;
 
+            &:hover {
+                border-bottom-color: rgba(255,255,255,1);
+                text-decoration: none;
+            }
             &:after {
                 content: ' >';
+                pointer-events: none;
                 position: absolute;
                     right: -1.5em;
             }

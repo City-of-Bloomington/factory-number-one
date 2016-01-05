@@ -2,24 +2,3 @@
 .input-buttons {
     margin: 1em 0;
 }
-
-/**
- * Base styles for buttons and button links
- */
-.fn1-btn {
-    border:1px solid $color-border-input;
-    border-radius:.4em;
-    color: $color-heading-2;
-    display:inline-block;
-    padding: .25em 1em;
-    font-size: (14em/16);
-    font-weight:normal;
-    background: linear-gradient(to bottom, #f2f2f9 21%,#CDD1D9 80%);
-    vertical-align: middle;
-
-    &:hover {
-        background: linear-gradient(to bottom, #f8f8fd 21%, #d5dfe4 80%);
-        cursor: pointer;
-        text-decoration: none;
-    }
-}
