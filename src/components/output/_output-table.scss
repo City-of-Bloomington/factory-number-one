@@ -1,5 +1,5 @@
 .fn1-table {
-    overflow: hidden;
+    width: 100%;
 
     th, td {
         padding: .75em 1.5em .75em .5em;
@@ -60,5 +60,26 @@
                 }
             }
         }
+    }
+    &-actions.fn1-dropdown {
+      > .fn1-dropdown-launcher {
+        float: right;
+        border: 1px solid $color-border-input;
+        &:before {
+          border: (6rem/16) solid transparent;
+          border-top: (8rem/16) solid #444;
+          content: '';
+          color: $color-border-input;
+          display: block;
+          height: 0;
+          position: relative;
+            top: .25em;
+          width: 0;
+        }
+      }
+      > .fn1-dropdown-links {
+        left: inherit;
+        right: 0;
+      }
     }
 }
