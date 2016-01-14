@@ -30,6 +30,8 @@
             th, td {
                 background: $color-table-background;
                 border-top: 1px solid $color-border-table;
+                font-size: 1rem;
+                line-height: 1.2em;
                 transition: background-color .2s linear;
                 vertical-align: top;
 
@@ -62,24 +64,35 @@
         }
     }
     &-actions.fn1-dropdown {
-      > .fn1-dropdown-launcher {
-        float: right;
-        border: 1px solid $color-border-input;
-        &:before {
-          border: (6rem/16) solid transparent;
-          border-top: (8rem/16) solid #444;
-          content: '';
-          color: $color-border-input;
-          display: block;
-          height: 0;
-          position: relative;
-            top: .25em;
-          width: 0;
+
+        > .fn1-dropdown-launcher {
+            background-color: rgba(0, 0, 0, .075);
+            border: 1px solid $color-border-input;
+            font-size: (13rem/16);
+            margin: 0 -1.5rem 0 -.5rem;
+            transition: background-color .25s ease-in-out;
+            white-space: nowrap;
+
+            &:hover {
+                background-color: rgba(172, 242, 255, .1);
+            }
+
+            &:before {
+                border: (4em/16) solid transparent;
+                border-top: (6em/16) solid #444;
+                content: '';
+                color: $color-border-input;
+                display: inline-block;
+                height: 0;
+                margin: 0 .25em 0 .25em;
+                position: relative;
+                top: .125em;
+                width: 0;
+            }
         }
-      }
-      > .fn1-dropdown-links {
-        left: inherit;
-        right: 0;
-      }
+        > .fn1-dropdown-links {
+            left: inherit;
+            right: -.5em;
+        }
     }
 }
