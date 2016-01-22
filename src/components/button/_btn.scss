@@ -20,7 +20,7 @@
     @extend .fn1-btn;
   }
   &-featuredAction {
-    @extend .fn1-btn-action;
+    @extend .fn1-btn--action;
     font-size: (24rem/16);
   }
   &-container {
