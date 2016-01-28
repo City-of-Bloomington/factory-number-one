@@ -1,4 +1,6 @@
 .fn1-dropdown {
+    display: inline-block;
+    margin: 0 .5em;
     position: relative;
     &-launcher {
         background: none;
@@ -20,6 +22,7 @@
         position: absolute;
             top: 100%;
             left: 0;
+        text-align: left; // In case a menu gets embedded in a parent that is right-aligned
         transition: opacity .125s ease-in-out;
         }
     &-link {
