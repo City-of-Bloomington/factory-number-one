@@ -29,8 +29,6 @@
                 top: .125em;
         }
     }
-    @media screen and (min-width: $viewport-medium) {
-    }
 }
 
 .fn1-event {
@@ -65,7 +63,13 @@
             width: 1em;
         }
     }
+    &-meta {
+        margin: 0 0 1rem 0;
+    }
     @media screen and (min-width: $viewport-medium) {
+        &-meta {
+            margin: 0 0 .5rem 0;
+        }
     }
 }
 
