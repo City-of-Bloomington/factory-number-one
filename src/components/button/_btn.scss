@@ -26,9 +26,11 @@
   &-container {
     @include clearfix();
     margin: 1em 0;
+    &--centered {
+        @extend .fn1-btn-container;
+        text-align: center;
+    }
     > [class^=fn1-btn] {
-      display: block;
-      float: left;
       margin: 0 1em 0 0;
     }
   }
