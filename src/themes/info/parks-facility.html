@@ -1,0 +1,41 @@
+{% extends '../../layouts/generic.html' %}
+
+{% block pageTitle %}"Info" theme demo page{% endblock %}
+
+{% block extraHead %}
+    <link href="/assets/css/info.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageHeader %}
+    {% include './includes/_siteHeader.html' %}
+    {% include './includes/_pageHeader.html' %}
+{% endblock %}
+
+{% block preContainer %}
+    <div class="fn1-pageOverview">
+        <div class="fn1-pageOverview-container">
+            <div class="fn1-pageOverview-mainInfo">
+                <p>These initiatives are intertwined and interdependent components of Community. And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live. Our 100 police officers, 99 firefighters, free recycling services and more than 1,000 recreational opportunities are all a result of you expressing your community priorities.</p>
+            </div>
+        </div>
+        <aside>
+        </aside>
+    </div>
+{% endblock %}
+
+{% block blocks %}
+    <section class="fn1-uiBlock">
+        <header class="fn1-uiBlock-header">
+            <h1 class="fn1-uiBlock-title--centered fn1-mod-xl">Features &amp; Amenities</h1>
+        </header>
+        <div class="fn1-uiBlock-content">
+            {% include '../../components/miniGallery/_miniGallery-3pic.html' %}
+            {% include '../../components/text/_text-description.html' %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block pageFooter %}
+    <footer>
+    </footer>
+{% endblock %}

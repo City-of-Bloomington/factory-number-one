@@ -16,9 +16,10 @@
     <main class="fn1-main">
         {% block preContainer %}{% endblock %}
         <div class="fn1-main-container fn1-full-width">
-            <div class="fn1-content-panel">
+            <section class="fn1-content-panel">
                 {% block content %}{% endblock %}
-            </div>
+            </section>
+            {% block blocks %}{% endblock %}
         </div>
     </main>
 
