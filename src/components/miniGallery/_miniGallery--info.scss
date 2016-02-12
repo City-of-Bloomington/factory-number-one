@@ -22,7 +22,9 @@
 .fn1-miniGallery--3pic {
     @extend %fn1-miniGallery;
     > .fn1-miniGallery-col {
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
+        @media screen and (min-width: $viewport-medium) {
+            padding-left: $grid-gutter;
+            padding-right: $grid-gutter;
+        }
     }
 }

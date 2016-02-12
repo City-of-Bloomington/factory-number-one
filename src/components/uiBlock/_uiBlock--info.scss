@@ -1,16 +1,49 @@
 .fn1-uiBlock {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    &-portraitSidebar {
+        padding-right: $grid-gutter;
+        padding-left: $grid-gutter;
+        & + .fn1-uiBlock-content {
+            padding-left: $grid-gutter;
+            padding-right: $grid-gutter;
+        }
+        img {
+            width: 100%;
+        }
+    }
     &-title {
         color: $fn1-blue-darkest;
-        font-size: (36rem/16);
+        font-size: (20rem/16);
+        font-weight: 400;
         margin-top: 2em;
-        &.fn1-mod-xl {
-            font-size: (48rem/16);
-        }
         &--centered {
             // Make sure we apply this theme's styles to centered headings, as well.
             @extend .fn1-uiBlock-title;
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &-portraitSidebar {
+            width: (100%*4.5/12); // <- 5 columns in a 12 column parent
+            & + .fn1-uiBlock-content {
+                margin-left: (100%*4.5/12);
+                padding-left: $grid-gutter*3;
+                .fn1-description {
+                    font-size: (20rem/16);
+                }
+            }
+        }
+        &-title {
+            font-size: (28rem/16);
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &-title {
+            font-size: (36rem/16);
+            font-weight: 300;
+            &.fn1-mod-xl {
+                font-size: (48rem/16);
+            }
         }
     }
 }

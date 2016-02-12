@@ -12,4 +12,10 @@
     &-headerTools {
         display: inline-block;
     }
+    @media screen and (min-width: $viewport-medium) {
+        &-portraitSidebar {
+            float: left;
+            width: 33%;
+        }
+    }
 }
