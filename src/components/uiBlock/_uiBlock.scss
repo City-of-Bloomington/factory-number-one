@@ -1,15 +1,15 @@
 .fn1-uiBlock {
-  &-title {
-    display: inline-block;
-    font-size: 1.5rem;
-    margin-right: 1em;
-    &--centered {
-        @extend fn1-uiBlock-title;
-        display: block;
-        text-align: center;
+    &-title {
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-right: 1em;
+        &--centered {
+            @extend fn1-uiBlock-title;
+            display: block;
+            text-align: center;
+        }
     }
-  }
-  &-headerTools {
-    display: inline-block;
-  }
+    &-headerTools {
+        display: inline-block;
+    }
 }
