@@ -1,0 +1,22 @@
+.fn1-main {
+    &-container {
+        > section {
+            padding-right: $grid-gutter;
+            padding-left: $grid-gutter;
+            &:not(:first-of-type):before {
+                background-image: url('../info/img/bloomington-section-divider-mobile.svg');
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                content: ' ';
+                display: block;
+                margin: 4rem 0;
+                width: 100%;
+                height: 2.5rem;
+                @media screen and (min-width: $viewport-medium) {
+                    background-image: url('../info/img/bloomington-section-divider.svg');
+                }
+            }
+        }
+    }
+}
