@@ -12,10 +12,20 @@
     &-headerTools {
         display: inline-block;
     }
+    &-portraitSidebar {
+        img {
+            width: 100%;
+        }
+    }
     @media screen and (min-width: $viewport-medium) {
         &-portraitSidebar {
+            $sidebarWidth: 33%;
             float: left;
-            width: 33%;
+            width: $sidebarWidth;
+            & + .fn1-uiBlock-content {
+                margin-left: $sidebarWidth;
+                padding-left: 1rem;
+            }
         }
     }
 }

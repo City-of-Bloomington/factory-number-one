@@ -8,9 +8,6 @@
             padding-left: $grid-gutter;
             padding-right: $grid-gutter;
         }
-        img {
-            width: 100%;
-        }
     }
     &-title {
         color: $fn1-blue-darkest;
@@ -24,9 +21,10 @@
     }
     @media screen and (min-width: $viewport-medium) {
         &-portraitSidebar {
-            width: (100%*4.5/12); // <- 5 columns in a 12 column parent
+            $sidebarWidth: (100%*4.5/12); // <- 5 columns in a 12 column parent
+            width: $sidebarWidth;
             & + .fn1-uiBlock-content {
-                margin-left: (100%*4.5/12);
+                margin-left: $sidebarWidth;
                 padding-left: $grid-gutter*3;
                 .fn1-description {
                     font-size: (20rem/16);
