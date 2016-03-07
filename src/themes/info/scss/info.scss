@@ -5,7 +5,8 @@
 @import 'modules/_main';
 @import 'modules/_pageOverview';
 @import '../includes/_pageHeader';
-@import '../includes/_siteHeader';
+@import '../../../components/siteHeader/_siteHeader--info';
+@import '../../../components/siteHeader/_siteLogo--info';
 @import '../../../components/event/_event--info';
 @import '../../../components/siteHeader/_siteLogo';
 @import '../../../components/siteHeader/_siteMenu';
