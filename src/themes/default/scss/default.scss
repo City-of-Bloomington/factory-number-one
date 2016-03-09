@@ -3,17 +3,21 @@
 @import 'modules/_html-elements';
 @import '../includes/_header';
 @import 'modules/_icon';
+@import 'modules/_markdownContent';
 @import 'modules/_menu';
 @import 'modules/_nav1';
 @import 'modules/_normalize';
 @import 'modules/_content-section';
 @import 'modules/_main';
-@import '../../../components/output/_output-table';
-@import '../../../components/input/_input-field';
-@import '../../../components/output/_output-field';
-@import '../../../components/event/_event';
-@import '../../../components/dropdown/_dropdown';
 @import '../../../components/button/_btn';
+@import '../../../components/dropdown/_dropdown';
+@import '../../../components/event/_event';
+@import '../../../components/input/_input-field';
+@import '../../../components/miniGallery/_miniGallery';
+@import '../../../components/output/_output-field';
+@import '../../../components/output/_output-table';
+@import '../../../components/personListing/_personListing';
+@import '../../../components/pricingTable/_pricingTable';
 @import '../../../components/uiBlock/_uiBlock';
 
 /**

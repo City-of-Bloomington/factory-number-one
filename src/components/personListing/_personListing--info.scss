@@ -1,0 +1,10 @@
+.fn1-personListing {
+    > dt {
+        color: $fn1-blue-dark;
+        font-family: $font-headings;
+    }
+    @media screen and (min-width: $viewport-medium) {
+        padding-right: $grid-gutter;
+        padding-left: $grid-gutter;
+    }
+}

@@ -2,12 +2,18 @@
 
 @import 'modules/_fonts';
 @import 'modules/_html-elements';
+@import 'modules/_main';
 @import 'modules/_pageOverview';
 @import '../includes/_pageHeader';
-@import '../includes/_siteHeader';
+@import '../../../components/siteHeader/_siteHeader--info';
+@import '../../../components/siteHeader/_siteLogo--info';
 @import '../../../components/event/_event--info';
 @import '../../../components/siteHeader/_siteLogo';
 @import '../../../components/siteHeader/_siteMenu';
-@import '../../../components/dropdown/_dropdown--info';
-@import '../../../components/output/_output-field--info';
 @import '../../../components/button/_btn--info';
+@import '../../../components/dropdown/_dropdown--info';
+@import '../../../components/miniGallery/_miniGallery--info';
+@import '../../../components/output/_output-field--info';
+@import '../../../components/personListing/_personListing--info';
+@import '../../../components/pricingTable/_pricingTable--info';
+@import '../../../components/uiBlock/_uiBlock--info';
