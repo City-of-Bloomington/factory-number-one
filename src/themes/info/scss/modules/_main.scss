@@ -11,11 +11,16 @@
                 background-size: contain;
                 content: ' ';
                 display: block;
-                margin: 4rem 0;
-                width: 100%;
+                margin: 2rem -1rem;
+                width: auto;
                 height: 2.5rem;
                 @media screen and (min-width: $viewport-medium) {
                     background-image: url('../info/img/bloomington-section-divider.svg');
+                    margin: 4rem -1rem;
+                }
+                @media screen and (min-width: ($layoutMaxWidth + 2rem)) {
+                    margin-left: -2rem;
+                    margin-right: -2rem;
                 }
             }
         }
