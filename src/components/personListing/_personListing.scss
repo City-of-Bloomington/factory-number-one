@@ -1,0 +1,38 @@
+.fn1-personList {
+    @include clearfix();
+}
+.fn1-personListing {
+    box-sizing: border-box;
+
+    > dt {
+        font-size: (24rem/16);
+        line-height: (30rem/16);
+        margin: (10rem/16) 0 0 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+        > span:last-child {
+            font-weight: 600;
+        }
+    }
+    > dd {
+        font-size: (14rem/16);
+        margin: 0;
+    }
+    @media screen and (min-width: $viewport-medium) {
+        float: left;
+    }
+    @media screen and (min-width: $viewport-medium) and (max-width: $viewport-large) {
+        width: 33%;
+        &:nth-of-type(3n+1) {
+            clear: both;
+        }
+    }
+    @media screen and (min-width: $viewport-large) {
+        width: 25%;
+        &:nth-of-type(4n+1) {
+            clear: both;
+        }
+    }
+}
