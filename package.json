@@ -6,11 +6,11 @@
   "repository": "https://github.com/City-of-Bloomington/factory-number-one.git",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "browser-sync": "^2.11.0",
-    "gulp": "^3.9.0",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
     "gulp-notify": "^2.2.0",
     "gulp-prettify": "^0.3.0",
-    "gulp-sass": "^2.1.1",
+    "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-swig": "^0.7.4"
   }
