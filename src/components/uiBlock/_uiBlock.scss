@@ -1,9 +1,32 @@
 .fn1-uiBlock {
-  &-title {
-    display: inline-block;
-    margin-right: 1em;
-  }
-  &-headerTools {
-    display: inline-block;
-  }
+    margin: 2rem 0;
+    &-title {
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-right: 1em;
+        &--centered {
+            @extend fn1-uiBlock-title;
+            display: block;
+            text-align: center;
+        }
+    }
+    &-headerTools {
+        display: inline-block;
+    }
+    &-portraitSidebar {
+        img {
+            width: 100%;
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &-portraitSidebar {
+            $sidebarWidth: 33%;
+            float: left;
+            width: $sidebarWidth;
+            & + .fn1-uiBlock-content {
+                margin-left: $sidebarWidth;
+                padding-left: 1rem;
+            }
+        }
+    }
 }

@@ -23,9 +23,11 @@
     </div>
 {% endblock %}
 
-{% block content %}
-    {% include '../../components/testContent.html' %}
-    {% include '../../components/event/_event.html' %}
+{% block blocks %}
+    <section>
+        {% include '../../components/testContent.html' %}
+        {% include '../../components/event/_event.html' %}
+    </section>
 {% endblock %}
 
 {% block pageFooter %}
