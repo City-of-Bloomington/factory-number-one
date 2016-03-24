@@ -19,6 +19,10 @@
             margin: 0 .5em .4em 0;
             padding: .5em .75em;
             transition: background-color .25s ease-in-out;
+            &.fn1-is-current {
+                @extend .fn1-nav1-link;
+                border-bottom: .25em solid $color-nav1;
+            }
 
             &:hover {
                 background: rgba(255,255,255, .8);
