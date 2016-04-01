@@ -1,7 +1,11 @@
 // Declare base placeholder
-%fn1-miniGallery {
+.fn1-miniGallery {
     @media screen and (min-width: $viewport-medium) {
         margin: 2rem 0 0 0;
+        &-col {
+            padding-left: $grid-gutter;
+            padding-right: $grid-gutter;
+        }
         + .fn1-text-description {
             margin: 3rem (100%*1/12);
             padding: 0 $grid-gutter;
@@ -14,17 +18,6 @@
                 margin-top: 3rem;
                 margin-bottom: 3rem;
             }
-        }
-    }
-}
-
-// Declare classes that extend base placeholder
-.fn1-miniGallery--3pic {
-    @extend %fn1-miniGallery;
-    > .fn1-miniGallery-col {
-        @media screen and (min-width: $viewport-medium) {
-            padding-left: $grid-gutter;
-            padding-right: $grid-gutter;
         }
     }
 }
