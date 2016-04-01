@@ -1,4 +1,4 @@
-.fn1-siteHeader {
+.siteHeader {
 
     background-color: #f1f3f8;
     box-shadow: 0 5px 5px 0 #c0c0c0;
@@ -10,7 +10,7 @@
         position: relative;
         @include clearfix();
 
-        .fn1-site {
+        .site {
             &-title {
                 float: left;
 

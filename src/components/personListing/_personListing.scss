@@ -1,7 +1,7 @@
-.fn1-personList {
+.personList {
     @include clearfix();
 }
-.fn1-personListing {
+.personListing {
     box-sizing: border-box;
 
     > dt {

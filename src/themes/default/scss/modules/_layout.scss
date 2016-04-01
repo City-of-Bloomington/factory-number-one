@@ -1,7 +1,7 @@
-.fn1-main-container.full-width { }
+.main-container.full-width { }
 .full-width #content-panel { }
 
-.fn1-main-container.two-column {
+.main-container.two-column {
     padding: 0;
     position: relative;
 
@@ -20,7 +20,7 @@
     }
 }
 
-.fn1-main-container.three-column { overflow:auto; }
+.main-container.three-column { overflow:auto; }
 .three-column #panel-one { float:left; width:180px; }
 .three-column #panel-two { float:right; width:180px; }
 .three-column #content-panel { margin-left: 190px; margin-right: 190px; }

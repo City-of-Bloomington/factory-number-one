@@ -2,7 +2,7 @@
     Events, dates, and times.
 */
 
-.fn1-dateHeader {
+.dateHeader {
     font-size: (14rem/16);
     font-weight: normal;
     text-transform: uppercase;
@@ -31,7 +31,7 @@
     }
 }
 
-.fn1-event {
+.event {
     display: block;
 
     > h1 {
@@ -73,16 +73,16 @@
     }
 }
 
-.fn1-fsCal {
+.fsCal {
     border-top: 1px solid;
-    > .fn1-event {
+    > .event {
         position: relative;
         > h1 {
             font-size: (18rem/16);
             font-weight: normal;
             margin-right: 2.25rem;
         }
-        > .fn1-icon-calendar {
+        > .icon-calendar {
             height: (23rem/16);
             position: absolute;
                 top: .5rem;
@@ -92,7 +92,7 @@
     }
 
     @media screen and (min-width: $viewport-medium) {
-        > .fn1-event {
+        > .event {
             box-sizing: border-box;
             padding-left: (100%*2/12);
             &:not(:first-of-type) {
@@ -110,7 +110,7 @@
                     top: .6rem;
                     left: 0;
             }
-            > .fn1-event-description {
+            > .event-description {
                 > p {
                     margin: (8rem/16) 0;
                 }
@@ -118,10 +118,10 @@
         }
     }
     @media screen and (min-width: $viewport-large) {
-        > .fn1-dateHeader {
+        > .dateHeader {
             float: left;
         }
-        > .fn1-event {
+        > .event {
             margin-left: (100%*2/12);
             padding-left: (100%*1/12);
         }

@@ -1,4 +1,4 @@
-.fn1-nav1 {
+.nav1 {
     @media screen and (min-width: $viewport-med) {
         position: relative;
 
@@ -33,8 +33,8 @@
             margin: 0 .5em .4em 0;
             padding: .5em .75em;
             transition: background-color .25s ease-in-out;
-            &.fn1-is-current {
-                @extend .fn1-nav1-link;
+            &.is-current {
+                @extend .nav1-link;
                 background-color: rgba(255,255,255, .7);
                 border-bottom: none; // Override "default" theme
                 padding-bottom: 1.3em;

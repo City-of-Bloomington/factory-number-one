@@ -1,4 +1,4 @@
-.fn1-siteHeader {
+.siteHeader {
     background-color: #fff;
     border-top: .4em solid $color-accent;
     box-shadow: none;
@@ -23,7 +23,7 @@
             }
         }
 
-        .fn1-site {
+        .site {
             &-title {
                 float: left;
                 padding: 0;

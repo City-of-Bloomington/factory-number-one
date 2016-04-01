@@ -1,6 +1,6 @@
-.fn1-personListing {
+.personListing {
     > dt {
-        color: $fn1-blue-dark;
+        color: $blue-dark;
         font-family: $font-headings;
     }
     @media screen and (min-width: $viewport-medium) {

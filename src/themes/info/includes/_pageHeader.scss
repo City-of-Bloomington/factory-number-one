@@ -1,5 +1,5 @@
-.fn1-pageHeader {
-    background: url('../info/img/photo-header-showers.jpg') no-repeat 50% 50% $fn1-blue;
+.pageHeader {
+    background: url('../info/img/photo-header-showers.jpg') no-repeat 50% 50% $blue;
     background-size: cover;
     box-shadow: none;
     margin: 0;
@@ -85,9 +85,9 @@
                     text-decoration: none;
                 }
 
-                &.fn1-ext-current {
-                    border-bottom: .333em solid $fn1-cornflower-lightest;
-                    color: $fn1-cornflower-lightest;
+                &.ext-current {
+                    border-bottom: .333em solid $cornflower-lightest;
+                    color: $cornflower-lightest;
                     padding-bottom: .444em;
                 }
             }

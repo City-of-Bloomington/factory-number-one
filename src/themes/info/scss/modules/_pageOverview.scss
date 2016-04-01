@@ -1,6 +1,6 @@
-.fn1-pageOverview {
+.pageOverview {
     @include clearfix();
-    background: $fn1-blue;
+    background: $blue;
     color: #fff;
 
     &-container {
@@ -44,7 +44,7 @@
         > dd {
             margin: 0 0 .33em 0;
             > a {
-                color: $fn1-cornflower-lightest;
+                color: $cornflower-lightest;
                 line-height: 1.1em;
             }
         }

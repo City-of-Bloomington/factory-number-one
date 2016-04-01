@@ -1,9 +1,7 @@
-body {
-    color: $fn1-gray-darkest;
-    font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
+.fn1 {
     > main {
         @media screen and (min-width: $viewport-large) {
-            > .fn1-main-container {
+            > .main-container {
 //                max-width: $layoutMaxWidth;
             }
         }

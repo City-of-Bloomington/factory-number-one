@@ -1,4 +1,4 @@
-.fn1-dropdown {
+.dropdown {
     display: inline-block;
     margin: 0 .5em;
     position: relative;
@@ -6,10 +6,10 @@
         background: none;
         border: none;
 
-        &[aria-expanded="true"] + .fn1-dropdown-links {
+        &[aria-expanded="true"] + .dropdown-links {
             opacity: 1;
         }
-        &[aria-expanded="false"] + .fn1-dropdown-links {
+        &[aria-expanded="false"] + .dropdown-links {
             opacity: 0;
         }
 

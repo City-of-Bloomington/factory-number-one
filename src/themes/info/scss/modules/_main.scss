@@ -1,6 +1,8 @@
-.fn1-main {
+.main {
     &-container {
-        max-width: none;
+        @media screen and (min-width: $viewport-large) {
+            max-width: $layoutMaxWidth;
+        }
         > section {
             padding-right: $grid-gutter;
             padding-left: $grid-gutter;

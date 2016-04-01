@@ -27,7 +27,7 @@
             float: left;
             width: 50%;
             &:nth-last-of-type(3):first-child,
-            &:nth-last-of-type(3):first-child ~ .fn1-pricingOffer {
+            &:nth-last-of-type(3):first-child ~ .pricingOffer {
                 width: 33%;
             }
             &-title {
@@ -36,7 +36,7 @@
         }
         @media screen and (min-width: $viewport-large) {
             &:nth-last-of-type(4):first-child,
-            &:nth-last-of-type(4):first-child ~ .fn1-pricingOffer {
+            &:nth-last-of-type(4):first-child ~ .pricingOffer {
                 width: 25%;
             }
         }
