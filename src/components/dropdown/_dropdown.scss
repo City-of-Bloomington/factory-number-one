@@ -2,7 +2,7 @@
     display: inline-block;
     margin: 0 .5em;
     position: relative;
-    &-launcher {
+    button:first-child {
         background: none;
         border: none;
 
@@ -13,33 +13,33 @@
             opacity: 0;
         }
 
+        + div {
+            background: #fff;
+            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
+            min-width: 12rem;
+            padding: .5rem 0;
+            position: absolute;
+                top: 100%;
+                left: 0;
+            text-align: left; // In case a menu gets embedded in a parent that is right-aligned
+            transition: opacity .125s ease-in-out;
+            div { // Sub-groups
+                &:not(:first-of-type):before {
+                    background-color: $color-table-background;
+                    content: '';
+                    display: block;
+                    height: 1px;
+                    margin: .5rem;
+                }
+            }
+        }
     }
-    &-links {
-        background: #fff;
-        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
-        min-width: 12rem;
-        padding: .5rem 0;
-        position: absolute;
-            top: 100%;
-            left: 0;
-        text-align: left; // In case a menu gets embedded in a parent that is right-aligned
-        transition: opacity .125s ease-in-out;
-    }
-    &-link {
+    a {
         display: block;
         padding: .25em .5em;
         transition: background-color .25s ease-in-out, color .25s ease-in-out;
         &:hover {
             background-color: $color-table-background;
-        }
-    }
-    &-subgroup {
-        &:not(:first-of-type):before {
-            background-color: $color-table-background;
-            content: '';
-            display: block;
-            height: 1px;
-            margin: .5rem;
         }
     }
 }
