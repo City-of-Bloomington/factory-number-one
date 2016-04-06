@@ -1,0 +1,47 @@
+.fn1 {
+    &-alertHeader {
+        background-color: $fn1-red;
+        border-top: (8rem/16) solid $fn1-red-dark;
+        &-container {
+            @include container();
+            color: #fff;
+            > h1 {
+                @include grid-12col();
+                color: #fff;
+                font-weight: bold;
+                font-size: (18rem/16);
+                text-transform: uppercase;
+            }
+            > article {
+                @include grid-8col();
+                font-size: (18rem/14);
+            }
+            .fn1-btn {
+                &-container {
+                    @include grid-4col();
+                }
+                &-featuredAction {
+                    background-color: $fn1-red-dark;
+                    background-image: none;
+                    border: none;
+                    color: #fff;
+                    display: block;
+                    text-align: center;
+                    &:hover {
+                        background-color: $fn1-red-darkest;
+                    }
+                }
+            }
+            @media screen and (min-width: $viewport-medium) {
+                > h1 {
+                    margin-bottom: 0;
+                }
+                .fn1-btn {
+                    &-container {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
