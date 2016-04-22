@@ -1,3 +1,5 @@
+@import 'modules/_vars-mixins';
+
 .fn1 {
     color: $gray-darkest;
     font-family: $font-body-copy;
@@ -11,6 +13,7 @@
     @import '../../../components/event/_event--info';
     @import '../../../components/siteHeader/_siteLogo';
     @import '../../../components/siteHeader/_siteMenu';
+    @import '../../../components/alert/_alert--info.scss';
     @import '../../../components/button/_btn--info';
     @import '../../../components/dropdown/_dropdown--info';
     @import '../../../components/miniGallery/_miniGallery--info';
