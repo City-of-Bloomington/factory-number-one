@@ -3,28 +3,5 @@
         @media screen and (min-width: $viewport-large) {
             max-width: $layoutMaxWidth;
         }
-        > section {
-            padding-right: $grid-gutter;
-            padding-left: $grid-gutter;
-            &:not(:first-of-type):before {
-                background-image: url('../info/img/bloomington-section-divider-mobile.svg');
-                background-position: 50% 50%;
-                background-repeat: no-repeat;
-                background-size: contain;
-                content: ' ';
-                display: block;
-                margin: 2rem -1rem;
-                width: auto;
-                height: 2.5rem;
-                @media screen and (min-width: $viewport-medium) {
-                    background-image: url('../info/img/bloomington-section-divider.svg');
-                    margin: 4rem -1rem;
-                }
-                @media screen and (min-width: ($layoutMaxWidth + 2rem)) {
-                    margin-left: -2rem;
-                    margin-right: -2rem;
-                }
-            }
-        }
     }
 }

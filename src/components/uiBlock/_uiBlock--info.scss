@@ -1,6 +1,24 @@
 .uiBlock {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    &:not(:first-of-type):before {
+        background-image: url('../info/img/bloomington-section-divider-mobile.svg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: ' ';
+        display: block;
+        margin: 2rem -1rem;
+        width: auto;
+        height: 2.5rem;
+        @media screen and (min-width: $viewport-medium) {
+            background-image: url('../info/img/bloomington-section-divider.svg');
+            margin: 4rem -1rem;
+        }
+    }
+    &-header {
+        @include container();
+    }
     &-portraitSidebar {
         padding-right: $grid-gutter;
         padding-left: $grid-gutter;
@@ -14,16 +32,13 @@
         font-size: (20rem/16);
         font-weight: 400;
         margin-top: 1em;
+        margin-left: $grid-gutter;
         &--centered {
             // Make sure we apply this theme's styles to centered headings, as well.
             @extend .uiBlock-title;
         }
     }
     @media screen and (min-width: $viewport-medium) {
-        &-header {
-            margin-right: $grid-gutter;
-            margin-left: $grid-gutter;
-        }
         &-title {
             font-size: (28rem/16);
             margin-top: .75em;

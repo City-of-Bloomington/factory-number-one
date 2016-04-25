@@ -16,6 +16,8 @@
 }
 
 .fsCal {
+    margin-right: $grid-gutter;
+    margin-left: $grid-gutter;
     border-top-color: $gray;
     > .event {
         > h1 {

@@ -8,8 +8,10 @@
     }
     &-mainInfo { // <- A container for the main information in the Page Overview
         @include grid-8col();
+        margin: 1rem auto;
         + aside {
             @include grid-4col();
+            margin: 1rem auto;
         }
     }
     &-address {

@@ -1,11 +1,11 @@
 <section class="uiBlock">
   <header class="uiBlock-header">
-    <h1  class="uiBlock-title">Block Title</h1>
+    <h1  class="uiBlock-title">{% block title %}Block Title{% endblock %}</h1>
     <div class="uiBlock-headerTools">
       <a href="#" class="btn">Tool button</a>
     </div>
   </header>
   <div class="uiBlock-content">
-    {% include '../input/_input-field.html' %}
+    {% block content %}{% endblock %}
   </div>
 </section>
