@@ -1,6 +1,8 @@
 .main {
     &-container {
         box-sizing: border-box;
+        max-width: 46em;
+        margin: 0 auto;
         padding: 2em;
     }
     @media screen and (min-width: $viewport-med) {
@@ -36,6 +38,7 @@
     }
     @media screen and (min-width: $viewport-large) {
         &-container {
+            max-width: 60em;
             width: 60em;
         }
     }
