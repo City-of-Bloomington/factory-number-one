@@ -50,10 +50,6 @@
         }
     }
     @media screen and (min-width: $viewport-medium) {
-        &-container {
-            padding-right: $grid-gutter;
-            padding-left: $grid-gutter;
-        }
         &-mainInfo {
             padding-top: 1rem;
             padding-bottom: 1rem;

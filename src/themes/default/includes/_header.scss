@@ -7,6 +7,7 @@
     &-container {
         margin: 0 auto 0;
         color: $color-header;
+        padding-top: .5em;
         position: relative;
         @include clearfix();
 
@@ -39,7 +40,6 @@
         &-container {
             box-sizing: border-box;
             margin: 0 auto;
-            padding-top: .5em;
             width: 46em;
         }
     }

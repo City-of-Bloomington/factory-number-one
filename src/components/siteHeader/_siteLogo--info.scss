@@ -1,6 +1,6 @@
 .siteLogo {
+    margin-left: $grid-gutter;
     margin-bottom: 0;
     @media screen and (min-width: $viewport-medium) {
-        margin-left: $grid-gutter;
     }
 }
