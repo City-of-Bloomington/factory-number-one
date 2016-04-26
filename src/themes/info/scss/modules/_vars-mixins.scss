@@ -71,11 +71,11 @@ $grid-gutter: 2rem;
 }
 
 @mixin grid-3col {
-    @include grid-mixin(100%*1/4);
+    @include grid-mixin(100%*3/12);
 }
 
 @mixin grid-4col {
-    @include grid-mixin(100%*1/3);
+    @include grid-mixin(100%*4/12);
 }
 
 @mixin grid-5col {
@@ -83,19 +83,19 @@ $grid-gutter: 2rem;
 }
 
 @mixin grid-6col {
-    @include grid-mixin(100%*1/2);
+    @include grid-mixin(100%*6/12);
 }
 
 @mixin grid-8col {
-    @include grid-mixin(100%*2/3);
+    @include grid-mixin(100%*8/12);
 }
 
 @mixin grid-9col {
-    @include grid-mixin(100%*3/4);
+    @include grid-mixin(100%*9/12);
 }
 
 @mixin grid-10col {
-    @include grid-mixin(100%*5/6);
+    @include grid-mixin(100%*10/12);
 }
 
 @mixin grid-12col {
