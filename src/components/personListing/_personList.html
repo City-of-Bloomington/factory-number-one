@@ -1,9 +1,15 @@
-<div class="personList">
-{% include '_personListing.html' %}
-{% include '_personListing.html' %}
-{% include '_personListing.html' %}
-{% include '_personListing.html' %}
-{% include '_personListing.html' %}
-{% include '_personListing.html' %}
-{% include '_personListing.html' %}
-</div>
+{% extends '../uiBlock/_uiBlock.html' %}
+
+{% block title %}Staff Listing{% endblock %}
+
+{% block content %}
+    <div class="personList">
+        {% include '_personListing.html' %}
+        {% include '_personListing.html' %}
+        {% include '_personListing.html' %}
+        {% include '_personListing.html' %}
+        {% include '_personListing.html' %}
+        {% include '_personListing.html' %}
+        {% include '_personListing.html' %}
+    </div>
+{% endblock %}
