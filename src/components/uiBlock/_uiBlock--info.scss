@@ -38,6 +38,17 @@
             @extend .uiBlock-title;
         }
     }
+    &-content {
+        // Treat uiBlock-content as a Grid Row element.
+        // We can't use the clearfix mixin, because the :before
+        // pseudo-element is already in use for section dividers,
+        // so use :after to clear floats instead.
+        &:after {
+            content: '';
+            display: table;
+            width: 100%;
+        }
+    }
     @media screen and (min-width: $viewport-medium) {
         &-title {
             font-size: (28rem/16);
