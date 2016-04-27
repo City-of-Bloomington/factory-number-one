@@ -2,36 +2,38 @@
     display: inline-block;
     margin: 0 .5em;
     position: relative;
-    button:first-child {
+    .launcher {
         background: none;
         border: none;
 
-        &[aria-expanded="true"] + .dropdown-links {
+        &[aria-expanded="true"] + .links {
             opacity: 1;
         }
-        &[aria-expanded="false"] + .dropdown-links {
+        &[aria-expanded="false"] + .links {
             opacity: 0;
         }
+    }
 
-        + div {
-            background: #fff;
-            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
-            min-width: 12rem;
-            padding: .5rem 0;
-            position: absolute;
-                top: 100%;
-                left: 0;
-            text-align: left; // In case a menu gets embedded in a parent that is right-aligned
-            transition: opacity .125s ease-in-out;
-            div { // Sub-groups
-                &:not(:first-of-type):before {
-                    background-color: $color-table-background;
-                    content: '';
-                    display: block;
-                    height: 1px;
-                    margin: .5rem;
-                }
-            }
+    .links {
+        background: #fff;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
+        display: none;
+        min-width: 12rem;
+        padding: .5rem 0;
+        position: absolute;
+            top: 100%;
+            left: 0;
+        text-align: left; // In case a menu gets embedded in a parent that is right-aligned
+        transition: opacity .125s ease-in-out;
+        z-index: 20;
+    }
+    .subgroup {
+        &:not(:first-of-type):before {
+            background-color: $color-table-background;
+            content: '';
+            display: block;
+            height: 1px;
+            margin: .5rem;
         }
     }
     a {
