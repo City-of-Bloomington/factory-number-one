@@ -34,7 +34,6 @@
             padding: .5em .75em;
             transition: background-color .25s ease-in-out;
             &.is-current {
-                @extend .nav1-link;
                 background-color: rgba(255,255,255, .7);
                 border-bottom: none; // Override "default" theme
                 padding-bottom: 1.3em;

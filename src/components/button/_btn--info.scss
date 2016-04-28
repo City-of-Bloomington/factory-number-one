@@ -1,6 +1,5 @@
 .btn {
   &-action {
-    @extend .btn;
     background-color: $green;
     background-image: none;
     border: none;
@@ -14,6 +13,6 @@
     }
   }
   &-featuredAction {
-    @extend .btn-action;
+      @extend .btn-action;
   }
 }

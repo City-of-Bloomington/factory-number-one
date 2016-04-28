@@ -20,7 +20,6 @@
             padding: .5em .75em;
             transition: background-color .25s ease-in-out;
             &.is-current {
-                @extend .nav1-link;
                 border-bottom: .25em solid $color-nav1;
             }
 
