@@ -16,9 +16,6 @@
             margin: 4rem -1rem;
         }
     }
-    &-header {
-        @include container();
-    }
     &-portraitSidebar {
         padding-right: $grid-gutter;
         padding-left: $grid-gutter;
@@ -27,12 +24,23 @@
             padding-right: $grid-gutter;
         }
     }
+    &-header {
+        @include container();
+        margin: 1em 0 .5em 0;
+        padding-left: ($grid-gutter/2);
+        &-tools {
+            display: inline;
+            margin: 0 0 0 2em;
+            vertical-align: middle;
+        }
+    }
     &-title {
         color: $blue-darkest;
         font-size: (20rem/16);
-        font-weight: 400;
-        margin-top: 1em;
-        margin-left: $grid-gutter;
+        font-weight: 300;
+        margin: 0 1em 0 0;
+        vertical-align: middle;
+
         &--centered {
             // Make sure we apply this theme's styles to centered headings, as well.
             @extend .uiBlock-title;
@@ -50,9 +58,16 @@
         }
     }
     @media screen and (min-width: $viewport-medium) {
+        &-header {
+            padding-left: $grid-gutter;
+            margin-bottom: 2em;
+        }
         &-title {
             font-size: (28rem/16);
-            margin-top: .75em;
+        }
+        &-content {
+            margin-right: 0;
+            margin-left: 0;
         }
         &-portraitSidebar {
             $sidebarWidth: (100%*4.5/12); // <- 5 columns in a 12 column parent
@@ -70,7 +85,6 @@
         &-title {
             font-size: (36rem/16);
             font-weight: 300;
-            margin-top: .75em;
             &.mod-xl {
                 font-size: (48rem/16);
                 margin-top: 1.25em;
