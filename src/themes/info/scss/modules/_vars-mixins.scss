@@ -69,7 +69,16 @@ $grid-gutter: 2rem;
     }
 }
 @mixin grid-2col {
-    @include grid-mixin(100%*2/12);
+    box-sizing: border-box;
+    padding-left: ($grid-gutter/2);
+    padding-right: ($grid-gutter/2);
+    width: 50%;
+    @media screen and (min-width: $viewport-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        width: (100%*2/12);
+    }
 }
 
 @mixin grid-3col {
