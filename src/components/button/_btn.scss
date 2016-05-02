@@ -1,5 +1,5 @@
 .btn {
-    background: linear-gradient(to bottom, #f2f2f9 21%,#CDD1D9 80%);
+    background: $color-table-background;
     border:1px solid $color-border-input;
     border-radius:.4em;
     box-sizing: content-box;
@@ -12,7 +12,7 @@
     vertical-align: middle;
 
     &:hover {
-    background: linear-gradient(to bottom, #f8f8fd 21%, #d5dfe4 80%);
+    background: lighten($color-table-background, 1);
     cursor: pointer;
     text-decoration: none;
     }
