@@ -65,10 +65,6 @@
         &-title {
             font-size: (28rem/16);
         }
-        &-content {
-            margin-right: 0;
-            margin-left: 0;
-        }
         &-portraitSidebar {
             $sidebarWidth: (100%*4.5/12); // <- 5 columns in a 12 column parent
             width: $sidebarWidth;
