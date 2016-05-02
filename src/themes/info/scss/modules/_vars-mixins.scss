@@ -59,6 +59,8 @@ $grid-gutter: 2rem;
 }
 @mixin grid-mixin($width) {
     box-sizing: border-box;
+    padding-left: ($grid-gutter/2);
+    padding-right: ($grid-gutter/2);
     @media screen and (min-width: $viewport-medium) {
         float: left;
         padding-left: $grid-gutter;
@@ -100,8 +102,12 @@ $grid-gutter: 2rem;
 
 @mixin grid-12col {
     width: auto;
-    margin-right: $grid-gutter;
-    margin-left: $grid-gutter;
+    margin-right: ($grid-gutter/2);
+    margin-left: ($grid-gutter/2);
+    @media screen and (min-width: $viewport-medium) {
+        margin-right: $grid-gutter;
+        margin-left: $grid-gutter;
+    }
 }
 
 
