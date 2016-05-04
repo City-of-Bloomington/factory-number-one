@@ -1,5 +1,5 @@
 .uiBlock-content {
-    > .table {
+    > table {
         @include grid-12col();
     }
 }
