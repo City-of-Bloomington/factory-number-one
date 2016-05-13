@@ -2,6 +2,7 @@
     "use strict";
     var closeMenus = function () {
         var openLaunchers = document.querySelectorAll('.dropdown [aria-expanded="true"]'),
+            openMenus = document.querySelectorAll('.dropdown [aria-expanded="true"] + .links'),
             len = openLaunchers.length,
             i   = 0;
         for (i=0; i<len; i++) {
@@ -9,7 +10,7 @@
             openLaunchers[i].parentElement.focus();
             openLaunchers[i].setAttribute("aria-expanded", "false");
             (function (i) {
-                setTimeout(function() { openLaunchers[i].parentElement.querySelector('.dropdown .links').style.display = 'none'; }, 300);
+                setTimeout(function() { openMenus[i].setAttribute("hidden", "hidden") }, 300);
             })(i);
         }
         document.removeEventListener('click', closeMenus);
@@ -20,7 +21,7 @@
             menu      = launcher.parentElement.querySelector('.dropdown .links');
         launcher.blur();
         closeMenus();
-        menu.style.display = 'block';
+        menu.removeAttribute("hidden");
         setTimeout(function() {
             launcher.setAttribute("aria-expanded", "true");
         }, 50);
