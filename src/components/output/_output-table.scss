@@ -1,4 +1,4 @@
-table {
+.table {
     $cell-padding: .75em 1.5em .75em .5em;
     $first-cell-padding-left: 1.5em;
     > thead {
@@ -57,7 +57,7 @@ table {
     }
     &-actions.dropdown {
 
-        > .dropdown-launcher {
+        > .launcher {
             background-color: rgba(200, 200, 200, 1);
             border: 1px solid $color-border-input;
             font-size: (13rem/16);
@@ -83,15 +83,15 @@ table {
                 width: 0;
             }
         }
-        > .dropdown-links {
+        > .links {
             left: inherit;
-            right: -.5em;
+            right: -1.5em;
         }
     }
     > tbody {
         > tr:hover {
             > th, > td {
-                .dropdown-launcher {
+                .launcher {
                     opacity: 1;
                 }
             }
