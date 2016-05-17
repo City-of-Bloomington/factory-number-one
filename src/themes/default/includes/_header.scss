@@ -33,20 +33,4 @@
             }
         }
     }
-
-    @media screen and (min-width: $viewport-medium) {
-        position: relative;
-
-        &-container {
-            box-sizing: border-box;
-            margin: 0 auto;
-            width: 46em;
-        }
-    }
-
-    @media screen and (min-width: $viewport-large) {
-        &-container {
-            width: 60em;
-        }
-    }
 }

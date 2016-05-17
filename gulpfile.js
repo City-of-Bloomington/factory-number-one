@@ -20,8 +20,11 @@ var browserSync     = require('browser-sync'),
     swigOpts        = {
         defaults: {
             cache: false
+        },
+        data: {
+            'page': {}
         }
-    }
+    };
 
 gulp.task('build-html', function() {
     gulp.src('./src/**/*.html')

@@ -1,13 +1,14 @@
-{% extends '../../layouts/generic.html' %}
-
-{% block pageTitle %}"Info" theme demo page{% endblock %}
+{%- set page.layout = 'widthConstrained' -%}
+{%- set page.title = '"Info" theme demo page' -%}
+{%- extends '../../layouts/generic.html' -%}
 
 {% block extraHead %}
     <link href="../../assets/css/info.css" rel="stylesheet" type="text/css" />
 {% endblock %}
 
-{% block pageHeader %}
+{% block headers %}
     {% include './includes/_siteHeader.html' %}
+    {% include '../../components/alert/_alert.html' %}
     {% include './includes/_pageHeader.html' %}
 {% endblock %}
 
@@ -17,9 +18,9 @@
             <div class="pageOverview-mainInfo">
                 <p>These initiatives are intertwined and interdependent components of Community. And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live. Our 100 police officers, 99 firefighters, free recycling services and more than 1,000 recreational opportunities are all a result of you expressing your community priorities.</p>
             </div>
+            <aside>
+            </aside>
         </div>
-        <aside>
-        </aside>
     </div>
 {% endblock %}
 

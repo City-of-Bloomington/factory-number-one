@@ -1,9 +1,8 @@
-{% extends '../../layouts/generic.html' %}
+{%- set page.layout = 'widthConstrained' -%}
+{%- set page.title = 'Default/generic demo page' -%}
+{%- extends '../../layouts/generic.html' -%}
 
-{% block pageTitle %}Default/generic demo page{% endblock %}
-
-
-{% block pageHeader %}
+{% block headers %}
     {% include './includes/header.html' %}
 {% endblock %}
 
