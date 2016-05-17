@@ -2,3 +2,5 @@
 /doc
 node_modules
 .sass-cache
+screen.css
+screen.css.map

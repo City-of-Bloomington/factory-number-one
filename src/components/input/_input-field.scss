@@ -1,4 +1,4 @@
-/*dl*/.fn1-input-field {
+/*dl*/.input-field {
     padding: .5em 0;
 
     > dt {
@@ -30,7 +30,7 @@
     }
 
     &--checkbox, &--radio {
-        @extend .fn1-input-field;
+        @extend .input-field;
         > dd {
             margin-bottom: .25em;
             padding: 0 0 0 1.6em;
@@ -58,7 +58,7 @@
         }
     }
     &--select {
-        @extend .fn1-input-field;
+        @extend .input-field;
     }
 
 

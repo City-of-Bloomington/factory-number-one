@@ -1,29 +1,34 @@
+{% extends '../uiBlock/_uiBlock.html' %}
 
-<!-- Instance of components/input/text-input.html -->
-<dl class="fn1-input-field">
-    <dt><label for="text1">Title</label></dt>
-    <dd><input type="text" value="Value" id="text1" /></dd>
-</dl>
+{% block title %}Input Fields{% endblock %}
 
-<dl class="fn1-input-field">
-    <dt><label for="text2">Title</label></dt>
-    <dd><input type="text" value="Value" id="text2" /></dd>
-</dl>
+{% block content %}
+    <!-- Instance of components/input/text-input.html -->
+    <dl class="input-field">
+        <dt><label for="text1">Title</label></dt>
+        <dd><input type="text" value="Value" id="text1" /></dd>
+    </dl>
 
-<dl class="fn1-input-field--select">
-    <dt><label for="select1">Dropdown</label></dt>
-    <dd>
-        <select id="select1">
-            <option>First option</option>
-            <option>Second choice</option>
-            <option>Third vector of decision</option>
-        </select>
-    </dd>
-</dl>
+    <dl class="input-field">
+        <dt><label for="text2">Title</label></dt>
+        <dd><input type="text" value="Value" id="text2" /></dd>
+    </dl>
 
-<dl class="fn1-input-field--checkbox">
-    <dt>Checkbox Group</dt>
-    <dd><label><input type="checkbox"><span>First option</span></label></dd>
-    <dd><label><input type="checkbox"><span>Second choice And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live.</span></label></dd>
-    <dd><label><input type="checkbox"><span>Third vector of decision</span></label></dd>
-</dl>
+    <dl class="input-field--select">
+        <dt><label for="select1">Dropdown</label></dt>
+        <dd>
+            <select id="select1">
+                <option>First option</option>
+                <option>Second choice</option>
+                <option>Third vector of decision</option>
+            </select>
+        </dd>
+    </dl>
+
+    <dl class="input-field--checkbox">
+        <dt>Checkbox Group</dt>
+        <dd><label><input type="checkbox"><span>First option</span></label></dd>
+        <dd><label><input type="checkbox"><span>Second choice And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live.</span></label></dd>
+        <dd><label><input type="checkbox"><span>Third vector of decision</span></label></dd>
+    </dl>
+{% endblock %}

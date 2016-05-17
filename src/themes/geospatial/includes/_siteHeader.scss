@@ -1,15 +1,15 @@
-.fn1-siteHeader {
+.siteHeader {
     background-color: #fff;
     box-sizing: border-box;
     box-shadow: none;
-    height: $fn1-geospatial-headerHeight;
+    height: $geospatial-headerHeight;
     margin: 0;
     position: absolute;
         top: 0;
         left: 0;
         right: 0;
     &:before {
-        background-color: $fn1-blue;
+        background-color: $blue;
         content: '';
         display: block;
         height: (8rem/16);

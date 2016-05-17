@@ -1,6 +1,6 @@
-.fn1-pageOverview {
+.pageOverview {
     @include clearfix();
-    background: $fn1-blue;
+    background: $blue;
     color: #fff;
 
     &-container {
@@ -8,8 +8,10 @@
     }
     &-mainInfo { // <- A container for the main information in the Page Overview
         @include grid-8col();
+        margin: 1rem auto;
         + aside {
             @include grid-4col();
+            margin: 1rem auto;
         }
     }
     &-address {
@@ -44,16 +46,12 @@
         > dd {
             margin: 0 0 .33em 0;
             > a {
-                color: $fn1-cornflower-lightest;
+                color: $cornflower-lightest;
                 line-height: 1.1em;
             }
         }
     }
     @media screen and (min-width: $viewport-medium) {
-        &-container {
-            padding-right: $grid-gutter;
-            padding-left: $grid-gutter;
-        }
         &-mainInfo {
             padding-top: 1rem;
             padding-bottom: 1rem;

@@ -1,4 +1,4 @@
-.fn1-siteHeader {
+.siteHeader {
 
     background-color: #f1f3f8;
     box-shadow: 0 5px 5px 0 #c0c0c0;
@@ -7,10 +7,11 @@
     &-container {
         margin: 0 auto 0;
         color: $color-header;
+        padding-top: .5em;
         position: relative;
         @include clearfix();
 
-        .fn1-site {
+        .site {
             &-title {
                 float: left;
 
@@ -30,23 +31,6 @@
                     margin: 0 0 0 1em;
                 }
             }
-        }
-    }
-
-    @media screen and (min-width: $viewport-medium) {
-        position: relative;
-
-        &-container {
-            box-sizing: border-box;
-            margin: 0 auto;
-            padding-top: .5em;
-            width: 46em;
-        }
-    }
-
-    @media screen and (min-width: $viewport-large) {
-        &-container {
-            width: 60em;
         }
     }
 }

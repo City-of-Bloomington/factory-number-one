@@ -1,44 +1,42 @@
-.fn1 {
-    &-pricingTable {
-        @include clearfix();
-        margin-right: auto;
-        margin-left: auto;
+.pricingTable {
+    @include clearfix();
+    margin-right: auto;
+    margin-left: auto;
+}
+.pricingOffer {
+    box-sizing: border-box;
+    margin-bottom: 2em;
+    &-title {
+        font-size: (18rem/16);
+        margin-bottom: 0;
     }
-    &-pricingOffer {
-        box-sizing: border-box;
-        margin-bottom: 2em;
+    &-meta {
+        margin: 0 0 .25em 0;
+    }
+    &-details {
+        > p {
+            line-height: 1.25em;
+            margin: .33em 0;
+        }
+    }
+    &-value {
+        font-size: 2em;
+    }
+    @media screen and (min-width: $viewport-medium) {
+        float: left;
+        width: 50%;
+        &:nth-last-of-type(3):first-child,
+        &:nth-last-of-type(3):first-child ~ .pricingOffer {
+            width: 33%;
+        }
         &-title {
-            font-size: (18rem/16);
-            margin-bottom: 0;
+            font-size: (24rem/16);
         }
-        &-meta {
-            margin: 0 0 .25em 0;
-        }
-        &-details {
-            > p {
-                line-height: 1.25em;
-                margin: .33em 0;
-            }
-        }
-        &-value {
-            font-size: 2em;
-        }
-        @media screen and (min-width: $viewport-medium) {
-            float: left;
-            width: 50%;
-            &:nth-last-of-type(3):first-child,
-            &:nth-last-of-type(3):first-child ~ .fn1-pricingOffer {
-                width: 33%;
-            }
-            &-title {
-                font-size: (24rem/16);
-            }
-        }
-        @media screen and (min-width: $viewport-large) {
-            &:nth-last-of-type(4):first-child,
-            &:nth-last-of-type(4):first-child ~ .fn1-pricingOffer {
-                width: 25%;
-            }
+    }
+    @media screen and (min-width: $viewport-large) {
+        &:nth-last-of-type(4):first-child,
+        &:nth-last-of-type(4):first-child ~ .pricingOffer {
+            width: 25%;
         }
     }
 }

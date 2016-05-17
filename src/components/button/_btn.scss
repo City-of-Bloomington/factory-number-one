@@ -1,5 +1,5 @@
-.fn1-btn {
-    background: linear-gradient(to bottom, #f2f2f9 21%,#CDD1D9 80%);
+.btn {
+    background: $color-table-background;
     border:1px solid $color-border-input;
     border-radius:.4em;
     box-sizing: content-box;
@@ -12,25 +12,25 @@
     vertical-align: middle;
 
     &:hover {
-    background: linear-gradient(to bottom, #f8f8fd 21%, #d5dfe4 80%);
+    background: lighten($color-table-background, 1);
     cursor: pointer;
     text-decoration: none;
     }
     &-action {
-        @extend .fn1-btn;
+        @extend .btn;
     }
     &-featuredAction {
-        @extend .fn1-btn-action;
+        @extend .btn-action;
         font-size: (24rem/16);
     }
     &-container {
             @include clearfix();
             margin: 1em 0;
         &--centered {
-            @extend .fn1-btn-container;
+            @extend .btn-container;
             text-align: center;
         }
-        > [class^=fn1-btn] {
+        > [class^=btn] {
             margin: 0 1em 0 0;
         }
     }

@@ -1,4 +1,4 @@
-.fn1-nav1 {
+.nav1 {
     @media screen and (min-width: $viewport-medium) {
         position: relative;
 
@@ -19,8 +19,7 @@
             margin: 0 .5em .4em 0;
             padding: .5em .75em;
             transition: background-color .25s ease-in-out;
-            &.fn1-is-current {
-                @extend .fn1-nav1-link;
+            &[aria-label] {
                 border-bottom: .25em solid $color-nav1;
             }
 
@@ -46,10 +45,10 @@
     @media screen and (min-width: $viewport-large) {
         &-container {
             width: 60em;
-        }
-        &-link {
-            padding-left: 1.5em;
-            padding-right: 1.5em;
+            a {
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+            }
         }
     }
 }
