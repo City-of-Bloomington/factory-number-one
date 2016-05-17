@@ -1,0 +1,8 @@
+.uiBlock-content {
+    > .input-field {
+        @include grid-12col();
+        &--select, &--checkbox {
+            @extend .input-field;
+        }
+    }
+}

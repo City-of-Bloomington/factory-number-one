@@ -1,20 +1,21 @@
-.fn1-dropdown {
+.dropdown {
     display: inline-block;
     margin: 0 .5em;
     position: relative;
-    &-launcher {
+    .launcher {
         background: none;
         border: none;
+        outline: none;
 
-        &[aria-expanded="true"] + .fn1-dropdown-links {
+        &[aria-expanded="true"] + .links {
             opacity: 1;
         }
-        &[aria-expanded="false"] + .fn1-dropdown-links {
+        &[aria-expanded="false"] + .links {
             opacity: 0;
         }
-
     }
-    &-links {
+
+    .links {
         background: #fff;
         box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
         min-width: 12rem;
@@ -24,22 +25,23 @@
             left: 0;
         text-align: left; // In case a menu gets embedded in a parent that is right-aligned
         transition: opacity .125s ease-in-out;
+        z-index: 20;
     }
-    &-link {
-        display: block;
-        padding: .25em .5em;
-        transition: background-color .25s ease-in-out, color .25s ease-in-out;
-        &:hover {
-            background-color: $color-table-background;
-        }
-    }
-    &-subgroup {
+    .subgroup {
         &:not(:first-of-type):before {
             background-color: $color-table-background;
             content: '';
             display: block;
             height: 1px;
             margin: .5rem;
+        }
+    }
+    a {
+        display: block;
+        padding: .25em .5em;
+        transition: background-color .25s ease-in-out, color .25s ease-in-out;
+        &:hover {
+            background-color: $color-table-background;
         }
     }
 }

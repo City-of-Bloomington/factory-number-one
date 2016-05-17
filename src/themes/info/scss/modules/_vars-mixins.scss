@@ -1,30 +1,30 @@
-$fn1-blue: #315da6;
-$fn1-blue-light: #4975ba;
-$fn1-blue-dark: #143a7a;
-$fn1-blue-darkest: #06204b;
+$blue: #315da6;
+$blue-light: #4975ba;
+$blue-dark: #143a7a;
+$blue-darkest: #06204b;
 
 // Cornflower
-$fn1-cornflower-lightest: #acf2ff;
-$fn1-cornflower-light: #5991c2;
-$fn1-cornflower-darkest: #12314c;
+$cornflower-lightest: #acf2ff;
+$cornflower-light: #5991c2;
+$cornflower-darkest: #12314c;
 
 // Action Green
-$fn1-green: #20ac59;
-$fn1-green-light: #83b685;
-$fn1-green-lightest: #aaffac;
+$green: #20ac59;
+$green-light: #83b685;
+$green-lightest: #aaffac;
 
 // Blue-ish gray
-$fn1-gray: #bcc9d8;
-$fn1-gray-dark: #8d98a5;
-$fn1-gray-darkest: #585f68;
-$fn1-nightshade: #2a2e32; // Darker than darkest
+$gray: #bcc9d8;
+$gray-dark: #8d98a5;
+$gray-darkest: #585f68;
+$nightshade: #2a2e32; // Darker than darkest
 
 // Red
-$fn1-red: #872528;
-$fn1-red-light: #9f383b;
-$fn1-red-lightest: #e47377;
-$fn1-red-dark: #5f0a0c;
-$fn1-red-darkest: #390001;
+$red: #872528;
+$red-light: #9f383b;
+$red-lightest: #e47377;
+$red-dark: #5f0a0c;
+$red-darkest: #390001;
 
 // Font families
 $font-body-copy: 'PT Sans', Verdana, sans-serif;
@@ -57,129 +57,65 @@ $grid-gutter: 2rem;
         margin: 0 auto;
     }
 }
-
-@mixin grid-2col {
+@mixin grid-mixin($width) {
     box-sizing: border-box;
-    margin: 1rem;
-
+    padding-left: ($grid-gutter/2);
+    padding-right: ($grid-gutter/2);
     @media screen and (min-width: $viewport-medium) {
         float: left;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
+        width: $width;
+    }
+}
+@mixin grid-2col {
+    box-sizing: border-box;
+    padding-left: ($grid-gutter/2);
+    padding-right: ($grid-gutter/2);
+    width: 50%;
+    @media screen and (min-width: $viewport-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
         width: (100%*2/12);
     }
 }
 
 @mixin grid-3col {
-    box-sizing: border-box;
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*1/4);
-    }
+    @include grid-mixin(100%*3/12);
 }
 
 @mixin grid-4col {
-    box-sizing: border-box;
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*1/3);
-    }
+    @include grid-mixin(100%*4/12);
 }
 
 @mixin grid-5col {
-    box-sizing: border-box;
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*5/12);
-    }
+    @include grid-mixin(100%*5/12);
 }
 
 @mixin grid-6col {
-    box-sizing: border-box;
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*1/2);
-    }
+    @include grid-mixin(100%*6/12);
 }
 
 @mixin grid-8col {
-    box-sizing: border-box;
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*2/3);
-    }
+    @include grid-mixin(100%*8/12);
 }
 
 @mixin grid-9col {
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        box-sizing: border-box;
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*3/4);
-    }
+    @include grid-mixin(100%*9/12);
 }
 
 @mixin grid-10col {
-    margin: 1rem;
-
-    @media screen and (min-width: $viewport-medium) {
-        box-sizing: border-box;
-        float: left;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%*5/6);
-    }
+    @include grid-mixin(100%*10/12);
 }
 
 @mixin grid-12col {
-    margin: 1rem;
-
+    width: auto;
+    margin-right: ($grid-gutter/2);
+    margin-left: ($grid-gutter/2);
     @media screen and (min-width: $viewport-medium) {
-        box-sizing: border-box;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-        margin-left: 0;
-        margin-right: 0;
-        width: (100%);
+        margin-right: $grid-gutter;
+        margin-left: $grid-gutter;
     }
 }
 

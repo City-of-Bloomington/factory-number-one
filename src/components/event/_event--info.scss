@@ -1,29 +1,31 @@
-.fn1-dateHeader {
+.dateHeader {
     @media screen and (min-width: $viewport-small) {
         font-family: $font-body-copy;
         &-weekday {
-            color: $fn1-gray-dark;
+            color: $gray-dark;
         }
         &-month {
             font-size: (24rem/16);
         }
         &-monthDate {
-            color: $fn1-gray;
+            color: $gray;
             font-size: (48rem/16);
             font-family: Georgia, serif;
         }
     }
 }
 
-.fn1-fsCal {
-    border-top-color: $fn1-gray;
-    > .fn1-event {
+.fsCal {
+    margin-right: $grid-gutter;
+    margin-left: $grid-gutter;
+    border-top-color: $gray;
+    > .event {
         > h1 {
-            color: $fn1-cornflower-darkest;
+            color: $cornflower-darkest;
         }
         @media screen and (min-width: $viewport-medium) {
             &:not(:first-of-type) {
-                border-top-color: $fn1-gray;
+                border-top-color: $gray;
             }
         }
     }

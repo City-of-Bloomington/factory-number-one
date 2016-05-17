@@ -1,5 +1,5 @@
-.fn1-dropdown {
-    &-link {
+.dropdown {
+    a {
         &:hover {
             background-color: $color-accent;
             color: #fff;

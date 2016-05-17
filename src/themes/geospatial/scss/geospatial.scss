@@ -1,11 +1,16 @@
-@import 'modules/_vars-mixins';
-@import 'modules/_fonts';
+.fn1 {
+    @import 'modules/_vars-mixins';
+    @import 'modules/_fonts';
 
-@import 'modules/_html-elements';
+    color: $gray-darkest;
+    font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
 
-@import '../includes/_siteHeader';
-@import '../../../components/siteHeader/_siteLogo';
-@import '../../../components/siteHeader/_siteMenu';
-@import '../../../components/dropdown/_dropdown--geospatial';
-@import 'modules/_layout';
-@import 'modules/_main';
+    @import 'modules/_html-elements';
+
+    @import '../includes/_siteHeader';
+    @import '../../../components/siteHeader/_siteLogo';
+    @import '../../../components/siteHeader/_siteMenu';
+    @import '../../../components/dropdown/_dropdown--geospatial';
+    @import 'modules/_layout';
+    @import 'modules/_main';
+}

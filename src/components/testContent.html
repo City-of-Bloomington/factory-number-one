@@ -1,22 +1,20 @@
-<h1>Heading Level One</h1>
-<p>These initiatives are intertwined and interdependent components of Community. And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live. Our 100 police officers, 99 firefighters, free recycling services and more than 1,000 recreational opportunities are all a result of you expressing your community priorities.</p>
+{% include 'mainText/_mainText.html' %}
 
-<p>Achieving a better Bloomington is a team effort. Contacting me with any questions or concerns is the only way to keep our city thriving. So please feel free to let me know about anything I can do to help you enjoy our city to the fullest.</p>
+{% include 'input/_input-field.html' %}
+
+
+{% include 'output/_output-field.html' %}
+
+{% include 'output/_output-table.html' %}
+
+{% include 'personListing/_personList.html' %}
+
+{% include 'event/_fsCal.html' %}
+
+<h1>Sub-components</h1>
 
 <h2>Buttons</h2>
 {% include 'button/_btn.html' %}
 
-<h2>Form Input</h2>
-{% include 'input/_input-field.html' %}
-
-<h2>Text Output</h2>
-{% include 'output/_output-field.html' %}
-
-<h2>Tabular Output</h2>
-{% include 'output/_output-table.html' %}
-
-<h2>Person Listings</h2>
-{% include 'personListing/_personList.html' %}
-
-<h2>UI Block</h2>
-{% include 'uiBlock/_uiBlock.html' %}
+<h2>Event objects</h2>
+{% include 'event/_event.html' %}

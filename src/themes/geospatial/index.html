@@ -1,6 +1,6 @@
 {% extends '../../layouts/generic.html' %}
 
-{% block pageTitle %}Geospatial theme demo page{% endblock %}
+{% block page.title %}Geospatial theme demo page{% endblock %}
 
 {% block extraHead %}
     <link href="../../assets/css/geospatial.css" rel="stylesheet" type="text/css" />
@@ -11,14 +11,14 @@
 {% endblock %}
 
 {% block preContainer %}
-    <div class="fn1-panelOne">
+    <div class="panelOne">
 
     </div>
 {% endblock %}
 
 {% block blocks %}
     <!-- div to use as map -->
-    <div class="fn1-content-panel-map" id="map"></div>
+    <div class="content-panel-map" id="map"></div>
 {% endblock %}
 
 {% block pageFooter %}

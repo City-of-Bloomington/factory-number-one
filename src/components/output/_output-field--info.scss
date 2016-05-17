@@ -1,3 +1,8 @@
-.fn1-output-field {
-    border-top-color: $fn1-gray;
+.output-field {
+    border-top-color: $gray;
+}
+.uiBlock-content {
+    > .output-field {
+        @include grid-12col();
+    }
 }

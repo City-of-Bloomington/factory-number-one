@@ -3,19 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{% block pageTitle %}{% endblock %}</title>
+    <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
     {% block extraHead %}{% endblock %}
 </head>
 
-<body class="fn1-body">
-
-    {% block pageHeader %}{% endblock %}
-
-    <main class="fn1-main">
+<body class="fn1 {{ page.layout }}">
+    {% block headers %}{% endblock %}
+    <main class="main">
         {% block preContainer %}{% endblock %}
-        <div class="fn1-main-container fn1-full-width">
+        <div class="main-container">
             {% block blocks %}{% endblock %}
         </div>
     </main>

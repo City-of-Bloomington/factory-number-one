@@ -4,7 +4,13 @@ var browserSync     = require('browser-sync'),
     reload          = browserSync.reload,
     gulp            = require('gulp'),
     swig            = require('gulp-swig'),
-    notify          = require('gulp-notify'),
+    gulp_notify     = require('gulp-notify'),
+    notify          = function(msgString) {
+                        return gulp_notify({
+                            onLast: true,
+                            message: msgString
+                        });
+    },
     prettify        = require('gulp-prettify'),
     sass            = require('gulp-sass'),
     sourcemaps      = require('gulp-sourcemaps'),
@@ -14,18 +20,21 @@ var browserSync     = require('browser-sync'),
     swigOpts        = {
         defaults: {
             cache: false
+        },
+        data: {
+            'page': {}
         }
-    }
+    };
 
 gulp.task('build-html', function() {
     gulp.src('./src/**/*.html')
+        .pipe(notify('HTML built'))
         .pipe(swig(swigOpts))
         .pipe(prettify({
             indent_size: 4
         }))
         .pipe(gulp.dest('./doc/'))
-        .on("end", reload)
-        .pipe(notify('HTML built'));
+        .on("end", reload);
 });
 
 gulp.task('build-default-sass', function() {
@@ -78,14 +87,15 @@ gulp.task('start', function() {
         open: false
     });
     gulp.watch('./src/**/*.html', ['build-html']);
-    gulp.watch(['./src/themes/default/scss/**/*.scss', '.src/components/**/*.scss'], ['build-default-sass']);
-    gulp.watch(['./src/themes/kirkwood/**/*.scss', './src/components/**/*.scss'], ['build-default-sass', 'build-kirkwood-sass']);
-    gulp.watch(['./src/themes/info/**/*.scss', './src/components/**/*.scss'], ['build-default-sass', 'build-info-sass']);
-    gulp.watch(['./src/themes/geospatial/**/*.scss', './src/components/**/*.scss'], ['build-default-sass', 'build-geospatial-sass']);
+    gulp.watch('./src/components/**/*.scss', ['build-default-sass', 'build-kirkwood-sass', 'build-info-sass', 'build-geospatial-sass']);
+    gulp.watch('./src/themes/default/**/*.scss', ['build-default-sass']);
+    gulp.watch('./src/themes/kirkwood/**/*.scss', ['build-default-sass', 'build-kirkwood-sass']);
+    gulp.watch('./src/themes/info/**/*.scss', ['build-default-sass', 'build-info-sass']);
+    gulp.watch('./src/themes/geospatial/**/*.scss', ['build-default-sass', 'build-geospatial-sass']);
 });
 
 gulp.task('default', ['start'], function() {
-    gulp.src('./gulpfile.js').pipe(notify({message:"Factory Number One dev environment started. Point your browser to http://localhost:3000" }));
+    gulp.src('./gulpfile.js').pipe(notify('Factory Number One dev environment started. Point your browser to http://localhost:3000'));
 });
 
 // Run the first build, or re-build assets after cleaning files

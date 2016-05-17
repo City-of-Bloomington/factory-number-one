@@ -1,45 +1,60 @@
-.fn1 {
-    &-alertHeader {
-        background-color: $fn1-red;
-        border-top: (8rem/16) solid $fn1-red-dark;
-        &-container {
-            @include container();
-            color: #fff;
-            > h1 {
-                @include grid-12col();
+.alertHeader {
+    background-color: $red;
+    border-top: (8rem/16) solid $red-dark;
+    overflow: hidden;
+    &-content {
+        @include grid-8col();
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: (18rem/16);
+
+        p {
+            margin-top: 0;
+            &:only-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-title {
+        @include grid-12col();
+        color: #fff;
+        font-weight: bold;
+        font-size: (18rem/16);
+        text-transform: uppercase;
+    }
+    &-container {
+        @include container();
+        color: #fff;
+        .btn {
+            &-container {
+                @include grid-4col();
+                margin: 1em auto;
+            }
+            &-featuredAction {
+                background-color: $red-dark;
+                background-image: none;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                border: none;
                 color: #fff;
-                font-weight: bold;
+                display: block;
                 font-size: (18rem/16);
-                text-transform: uppercase;
+                text-align: center;
+                transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+                &:hover {
+                    background-color: lighten($red-dark, 2%);
+                    box-shadow: 0 .25em .5em 0 rgba(0, 0, 0, .3);
+                }
             }
-            > article {
-                @include grid-8col();
-                font-size: (18rem/14);
-            }
-            .fn1-btn {
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &-title {
+            margin-bottom: 0;
+        }
+        &-container {
+            .btn {
                 &-container {
-                    @include grid-4col();
-                }
-                &-featuredAction {
-                    background-color: $fn1-red-dark;
-                    background-image: none;
-                    border: none;
-                    color: #fff;
-                    display: block;
-                    text-align: center;
-                    &:hover {
-                        background-color: $fn1-red-darkest;
-                    }
-                }
-            }
-            @media screen and (min-width: $viewport-medium) {
-                > h1 {
-                    margin-bottom: 0;
-                }
-                .fn1-btn {
-                    &-container {
-                        margin-top: 0;
-                    }
+                    margin-top: 0;
                 }
             }
         }

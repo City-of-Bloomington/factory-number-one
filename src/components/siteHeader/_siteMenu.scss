@@ -1,19 +1,19 @@
-.fn1-siteMenu {
+.siteMenu {
     display:inline-block;
     position: relative;
         bottom: (4rem/16);
-    .fn1-dropdown {
+    .dropdown {
         &-launcher {
-            border: 1px solid $fn1-blue;
+            border: 1px solid $blue;
             border-radius: .25em;
-            color: $fn1-blue;
+            color: $blue;
             font-weight: normal;
             font-size: (14rem/16);
             padding: .25em 1em .25em 1.5em;
             position: relative;
             &:before {
                 border: (4rem/16) solid transparent;
-                border-top: (6rem/16) solid $fn1-blue;
+                border-top: (6rem/16) solid $blue;
                 content: '';
                 height: 0;
                 position: absolute;
@@ -24,7 +24,7 @@
         }
         &-links {
             background: #fff;
-            border: 1px solid $fn1-gray;
+            border: 1px solid $gray;
             box-shadow: 0 0 1em 0 rgba(0, 0, 0, .5);
             padding: .5em 0;
             min-width: 9em;
@@ -35,7 +35,7 @@
                 transition: background .25s, color .25s;
 
                 &:hover {
-                    background: $fn1-blue;
+                    background: $blue;
                     color: #fff;
                     text-decoration: none;
                 }

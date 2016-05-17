@@ -1,20 +1,19 @@
-{% extends '../../layouts/generic.html' %}
+{%- set layoutType = 'widthConstrained' -%}
+{%- extends '../../layouts/generic.html' -%}
 
-{% block pageTitle %}Kirkwood Theme demo page{% endblock %}
+{% block page.title %}Kirkwood Theme demo page{% endblock %}
 
 {% block extraHead %}
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700,600' rel='stylesheet' type='text/css'>
     <link href="../../assets/css/kirkwood.css" rel="stylesheet" type="text/css" />
 {% endblock %}
 
-
-{% block pageHeader %}
+{% block headers %}
     {% include './includes/_header.html' %}
 {% endblock %}
 
 {% block blocks %}
     {% include '../../components/testContent.html' %}
-    {% include '../../components/event/_event.html' %}
 {% endblock %}
 
 {% block pageFooter %}

@@ -1,12 +1,12 @@
 // Declare base placeholder
-.fn1-miniGallery {
+.miniGallery {
     @media screen and (min-width: $viewport-medium) {
         margin: 2rem 0 0 0;
         &-col {
             padding-left: $grid-gutter;
             padding-right: $grid-gutter;
         }
-        + .fn1-text-description {
+        + .text-description {
             margin: 3rem (100%*1/12);
             padding: 0 $grid-gutter;
             p {

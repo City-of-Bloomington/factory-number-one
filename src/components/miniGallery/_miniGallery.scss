@@ -1,19 +1,19 @@
 // Declare base placeholder
-.fn1-miniGallery {
+.miniGallery {
     @include clearfix();
     @media screen and (min-width: $viewport-medium) {
         &-col {
             box-sizing: border-box;
             float: left;
             &:nth-last-of-type(3):first-child,
-            &:nth-last-of-type(3):first-child ~ .fn1-miniGallery-col {
+            &:nth-last-of-type(3):first-child ~ .miniGallery-col {
                 width: 33%;
             }
             img {
                 width: 100%;
             }
         }
-        + .fn1-text-description {
+        + .text-description {
             ul {
                 -webkit-column-count: 2;
                    -moz-column-count: 2;

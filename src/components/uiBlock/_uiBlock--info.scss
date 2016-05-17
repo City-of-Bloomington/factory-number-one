@@ -1,40 +1,77 @@
-.fn1-uiBlock {
+.uiBlock {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    &:not(:first-of-type):before {
+        background-image: url('../info/img/bloomington-section-divider-mobile.svg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: ' ';
+        display: block;
+        margin: 2rem -1rem;
+        width: auto;
+        height: 2.5rem;
+        @media screen and (min-width: $viewport-medium) {
+            background-image: url('../info/img/bloomington-section-divider.svg');
+            margin: 4rem -1rem;
+        }
+    }
     &-portraitSidebar {
         padding-right: $grid-gutter;
         padding-left: $grid-gutter;
-        & + .fn1-uiBlock-content {
+        & + .uiBlock-content {
             padding-left: $grid-gutter;
             padding-right: $grid-gutter;
         }
     }
+    &-header {
+        @include container();
+        margin: 1em 0 .5em 0;
+        padding-left: ($grid-gutter/2);
+        &-tools {
+            display: inline;
+            margin: 0 0 0 2em;
+            vertical-align: middle;
+        }
+    }
     &-title {
-        color: $fn1-blue-darkest;
+        color: $blue-darkest;
         font-size: (20rem/16);
-        font-weight: 400;
-        margin-top: 1em;
+        font-weight: 300;
+        margin: 0 1em 0 0;
+        vertical-align: middle;
+
         &--centered {
             // Make sure we apply this theme's styles to centered headings, as well.
-            @extend .fn1-uiBlock-title;
+            @extend .uiBlock-title;
+        }
+    }
+    &-content {
+        // Treat uiBlock-content as a Grid Row element.
+        // We can't use the clearfix mixin, because the :before
+        // pseudo-element is already in use for section dividers,
+        // so use :after to clear floats instead.
+        &:after {
+            content: '';
+            display: table;
+            width: 100%;
         }
     }
     @media screen and (min-width: $viewport-medium) {
         &-header {
-            margin-right: $grid-gutter;
-            margin-left: $grid-gutter;
+            padding-left: $grid-gutter;
+            margin-bottom: 2em;
         }
         &-title {
             font-size: (28rem/16);
-            margin-top: .75em;
         }
         &-portraitSidebar {
             $sidebarWidth: (100%*4.5/12); // <- 5 columns in a 12 column parent
             width: $sidebarWidth;
-            & + .fn1-uiBlock-content {
+            & + .uiBlock-content {
                 margin-left: $sidebarWidth;
                 padding-left: $grid-gutter*3;
-                .fn1-description {
+                .description {
                     font-size: (20rem/16);
                 }
             }
@@ -44,8 +81,7 @@
         &-title {
             font-size: (36rem/16);
             font-weight: 300;
-            margin-top: .75em;
-            &.fn1-mod-xl {
+            &.mod-xl {
                 font-size: (48rem/16);
                 margin-top: 1.25em;
             }

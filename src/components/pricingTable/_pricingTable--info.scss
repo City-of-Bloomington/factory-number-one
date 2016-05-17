@@ -1,29 +1,27 @@
-.fn1 {
-    &-pricingOffer {
-        text-align: center;
-        &-title {
-            color: $fn1-blue-darkest;
-            font-weight: 400;
+.pricingOffer {
+    text-align: center;
+    &-title {
+        color: $blue-darkest;
+        font-weight: 400;
+    }
+    &-price {
+        color: $cornflower-darkest;
+        font-family: $font-headings;
+        font-size: (24rem/16);
+    }
+    &-value {
+        font-weight: 300;
+        font-size: (48rem/16);
+    }
+    @media screen and (min-width: $viewport-medium) {
+        padding-right: ($grid-gutter / 2);
+        padding-left: ($grid-gutter / 2);
+        &-meta {
+            min-height: 2.5em;
         }
-        &-price {
-            color: $fn1-cornflower-darkest;
-            font-family: $font-headings;
-            font-size: (24rem/16);
-        }
-        &-value {
-            font-weight: 300;
-            font-size: (48rem/16);
-        }
-        @media screen and (min-width: $viewport-medium) {
-            padding-right: ($grid-gutter / 2);
-            padding-left: ($grid-gutter / 2);
-            &-meta {
-                min-height: 2.5em;
-            }
-        }
-        @media screen and (min-width: $viewport-small) {
-            padding-right: $grid-gutter;
-            padding-left: $grid-gutter;
-        }
+    }
+    @media screen and (min-width: $viewport-small) {
+        padding-right: $grid-gutter;
+        padding-left: $grid-gutter;
     }
 }
