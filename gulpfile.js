@@ -87,10 +87,11 @@ gulp.task('start', function() {
         open: false
     });
     gulp.watch('./src/**/*.html', ['build-html']);
-    gulp.watch(['./src/themes/default/scss/**/*.scss', '.src/components/**/*.scss'], ['build-default-sass']);
-    gulp.watch(['./src/themes/kirkwood/**/*.scss', './src/components/**/*.scss'], ['build-default-sass', 'build-kirkwood-sass']);
-    gulp.watch(['./src/themes/info/**/*.scss', './src/components/**/*.scss'], ['build-default-sass', 'build-info-sass']);
-    gulp.watch(['./src/themes/geospatial/**/*.scss', './src/components/**/*.scss'], ['build-default-sass', 'build-geospatial-sass']);
+    gulp.watch('./src/components/**/*.scss', ['build-default-sass', 'build-kirkwood-sass', 'build-info-sass', 'build-geospatial-sass']);
+    gulp.watch('./src/themes/default/**/*.scss', ['build-default-sass']);
+    gulp.watch('./src/themes/kirkwood/**/*.scss', ['build-default-sass', 'build-kirkwood-sass']);
+    gulp.watch('./src/themes/info/**/*.scss', ['build-default-sass', 'build-info-sass']);
+    gulp.watch('./src/themes/geospatial/**/*.scss', ['build-default-sass', 'build-geospatial-sass']);
 });
 
 gulp.task('default', ['start'], function() {
