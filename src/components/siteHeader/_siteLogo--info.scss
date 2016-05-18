@@ -1,6 +1,11 @@
 .siteLogo {
-    margin-left: $grid-gutter;
     margin-bottom: 0;
+    margin-left: .5em;
+}
+&.widthConstrained {
     @media screen and (min-width: $viewport-medium) {
+        .siteLogo {
+            margin-left: $grid-gutter;
+        }
     }
 }
