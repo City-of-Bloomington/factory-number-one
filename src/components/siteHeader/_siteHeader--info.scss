@@ -1,14 +1,9 @@
 .siteHeader {
     background-color: #fff;
     border-top: 8px solid $blue;
-    box-shadow: none;
-    margin-bottom: 0;
-
-    &-container {
-        @include container();
-        margin: 0 auto;
-        width: auto;
-        @media screen and (min-width: $viewport-medium) {
-        }
+}
+&.widthConstrained {
+    .siteHeader-container {
+        @extend %docWidthContainer;
     }
 }

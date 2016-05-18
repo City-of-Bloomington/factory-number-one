@@ -3,9 +3,6 @@
     background: $blue;
     color: #fff;
 
-    &-container {
-        @include container();
-    }
     &-mainInfo { // <- A container for the main information in the Page Overview
         @include grid-8col();
         margin: 1rem auto;
@@ -108,5 +105,11 @@
                 }
             }
         }
+    }
+}
+
+&.widthConstrained {
+    .pageOverview-container {
+        @extend %docWidthContainer;
     }
 }

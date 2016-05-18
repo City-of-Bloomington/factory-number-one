@@ -47,6 +47,7 @@ $grid-gutter: 2rem;
         margin: 0 ($grid-gutter*-1);
     }
 }
+// Currently refactoring this into a placeholder
 @mixin container {
     margin: 1rem;
 
@@ -138,5 +139,16 @@ $grid-gutter: 2rem;
         clear: both;
         content: ' ';
         display: table;
+    }
+}
+
+%docWidthContainer {
+    margin: 1rem;
+
+    @media screen and (min-width: $viewport-medium) {
+        @include clearfix();
+        box-sizing: border-box;
+        max-width: $layoutMaxWidth;
+        margin: 0 auto;
     }
 }
