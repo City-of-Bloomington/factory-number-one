@@ -143,8 +143,6 @@ $grid-gutter: 2rem;
 }
 
 %docWidthContainer {
-    margin: 1rem;
-
     @media screen and (min-width: $viewport-medium) {
         @include clearfix();
         box-sizing: border-box;
