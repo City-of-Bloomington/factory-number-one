@@ -60,7 +60,7 @@ gulp.task('build-kirkwood-sass', function() {
 });
 
 gulp.task('build-info-sass', function() {
-    gulp.src('./src/themes/info/scss/info.scss')
+    gulp.src('./src/themes/info/scss/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass(sassOpts))
         .pipe(sourcemaps.write('./'))
