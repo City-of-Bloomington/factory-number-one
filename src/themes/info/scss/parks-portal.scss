@@ -1,0 +1,152 @@
+@import './modules/_vars-mixins';
+.fn1 {
+    .portal {
+        &-pageHeader {
+            background: url('../info/img/parks-home-header-photo.jpg') no-repeat 50% 50%;
+            background-size: cover;
+            &-container {
+                @extend %docWidthContainer;
+                padding-top: 2em;
+                position: relative;
+                overflow: hidden;
+            }
+            &-title {
+                color: #fff;
+                font-weight: normal;
+                margin: 0 auto;
+                text-align: center;
+                text-shadow: 0 0 3px #000000;
+                > i {
+                    font-weight: bold;
+                    font-size: (24em/36);
+                }
+            }
+            &-medal {
+                position: absolute;
+                    top: .5em;
+                    right: $grid-gutter;
+            }
+            &-nav {
+                background-color: rgba(255, 255, 255, .75);
+                @include grid-12col();
+                > a {
+                    background-color: rgba(255, 255, 255, 0);
+                    box-sizing: border-box;
+                    color: $cornflower-dark;
+                    display: block;
+                    font-family: $font-headings;
+                    padding: .25em;
+                    position: relative;
+                    text-align: center;
+                    &:hover {
+                        background-color: rgba(255, 255, 255, .6);
+                    }
+                    &:before {
+                        border-right: (2rem/16) solid $blue;
+                        border-bottom: (2rem/16) solid $blue;
+                        color: $blue;
+                        content: '';
+                        display: inline-block;
+                        height: .6em;
+                        margin-right: 1em;
+                        transform: rotate(-45deg);
+                        width: .6em;
+                    }
+                }
+            }
+            @media screen and (min-width: $viewport-medium) {
+                &-nav {
+                    overflow: hidden;
+                    > a {
+                        float: left;
+                        width: 33.30%;
+                        transition: background-color .25s ease-in-out;
+                    }
+                }
+            }
+            @media screen and (min-width: $viewport-large) {
+                &-container {
+                    padding-top: (100rem/16);
+                }
+                &-title {
+                    font-size: (36rem/16);
+                    margin-bottom: 1em;
+                }
+                &-nav {
+                    > a {
+                        font-size: (18rem/16);
+                        padding: .75em;
+                    }
+                }
+            }
+        }
+
+
+        &Nav {
+            text-align: center;
+            &-row {
+                background: #4273b2;
+                padding: $grid-gutter 0;
+                @include grid-12col();
+                > a {
+                    color: #fff;
+                    display: inline-block;
+                    font-family: $font-headings;
+                    font-weight: lighter;
+                    font-size: (36rem/16);
+                    margin: 0 .5em;
+                    position: relative;
+                    vertical-align: top;
+                    width: 3em;
+                    &:before {
+                        border-right: (3rem/16) solid $cornflower-lightest;
+                        border-bottom: (3rem/16) solid $cornflower-lightest;
+                        color: $blue;
+                        content: '';
+                        display: block;
+                        height: .4em;
+                        margin-right: .5em;
+                        position: absolute;
+                            top: .3em;
+                            left: .15em;
+                        transform: rotate(-45deg);
+                        width: .4em;
+                    }
+                    > small {
+                        display: block;
+                        font-size: (14em/36);
+                        font-weight: normal;
+                        line-height: 1.1em;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+
+        &-events {
+            background: url('../info/img/parks-home-schedule-bg.jpg') no-repeat 50% 0;
+            background-size: contain;
+            min-height: (600rem/16);
+            &-container {
+                background: #fff;
+                box-sizing: border-box;
+                min-height: 3em;
+                > h1 {
+                    color: $blue-dark;
+                }
+            }
+            @media screen and (min-width: $viewport-medium) {
+                padding-top: (100rem/16);
+                &-container {
+                    padding: $grid-gutter;
+                    margin: 0 auto;
+                    max-width: $layoutMaxWidth - $grid-gutter*2;
+                    > h1 {
+                        margin-left: $grid-gutter;
+                    }
+                }
+            }
+        }
+    }
+}
