@@ -88,7 +88,7 @@
             color: $cornflower-lightest;
             font-family: $font-headings;
             font-size: (18rem/16);
-            padding: .5em 0 .75em;
+            padding: .5em 0;
             text-align: center;
             > .facebook, > .twitter {
                 display: inline-block;
@@ -109,7 +109,7 @@
         }
         &-mailingList {
             @include grid-6col;
-            padding: .5em 0 .75em;
+            padding: .5em 0;
             text-align: center;
             > a {
                 color: $cornflower-lightest;
