@@ -28,15 +28,17 @@
                     right: $grid-gutter*1.25;
             }
             &-nav {
-                background-color: rgba(255, 255, 255, .75);
                 @include grid-12col();
+                background-color: rgba(255, 255, 255, .75);
+                padding-top: .25em;
+                padding-bottom: .25em;
                 > a {
                     background-color: rgba(255, 255, 255, 0);
                     box-sizing: border-box;
                     color: $cornflower-dark;
                     display: block;
                     font-family: $font-headings;
-                    padding: .25em;
+                    padding: .5em;
                     position: relative;
                     text-align: center;
                     &:hover {
@@ -59,6 +61,8 @@
             }
             @media screen and (min-width: $viewport-medium) {
                 &-nav {
+                    padding-top: 0;
+                    padding-bottom: 0;
                     overflow: hidden;
                     > a {
                         float: left;
@@ -83,11 +87,77 @@
                 }
             }
         }
+
+
+        &Nav {
+            @include grid-12col();
+            background: #4273b2;
+            text-align: center;
+            &-row {
+                padding: $grid-gutter 0;
+                > a {
+                    color: #fff;
+                    display: inline-block;
+                    font-family: $font-headings;
+                    font-size: (26rem/16);
+                    margin: 0 $grid-gutter;
+                    position: relative;
+                    vertical-align: top;
+                    width: 2em;
+                    &:before {
+                        border-right: (3rem/16) solid $cornflower-lightest;
+                        border-bottom: (3rem/16) solid $cornflower-lightest;
+                        color: $blue;
+                        content: '';
+                        display: block;
+                        height: .2em;
+                        margin-right: .5em;
+                        position: absolute;
+                            top: .4em;
+                            left: -.25em;
+                        transform: rotate(-45deg);
+                        width: .2em;
+                    }
+                    > small {
+                        display: block;
+                        font-size: (14em/20);
+                        line-height: 1.1em;
+                        padding: 0;
+                    }
+                }
+            }
+            > .btn-featuredAction {
+                margin-bottom: (28rem/16);
+                width: 10em;
+            }
+            @media screen and (min-width: $viewport-medium) {
+                &-row {
+                    > a {
+                        font-size: (36rem/16);
+                        font-weight: lighter;
+                        > small {
+                            font-size: (14em/36);
+                            font-weight: normal;
+                        }
+                        &:before {
+                            height: .4em;
+                            width: .4em;
+                            top: .3em;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        &-social,
+        &-mailingList > a {
+            font-family: $font-headings;
+            font-size: (14rem/16);
+        }
         &-social {
             @include grid-6col;
             color: $cornflower-lightest;
-            font-family: $font-headings;
-            font-size: (18rem/16);
             padding: .5em 0;
             text-align: center;
             > .facebook, > .twitter {
@@ -113,8 +183,6 @@
             text-align: center;
             > a {
                 color: $cornflower-lightest;
-                font-family: $font-headings;
-                font-size: (18rem/16);
                 &:after {
                     background: url('../img/fa-svg/envelope-white.svg') no-repeat 50% 30% / auto 75%;
                     content: '';
@@ -126,52 +194,13 @@
                 }
             }
         }
-
-
-        &Nav {
-            @include grid-12col();
-            background: #4273b2;
-            text-align: center;
-            &-row {
-                padding: $grid-gutter 0;
-                > a {
-                    color: #fff;
-                    display: inline-block;
-                    font-family: $font-headings;
-                    font-weight: lighter;
-                    font-size: (36rem/16);
-                    margin: 0 $grid-gutter;
-                    position: relative;
-                    vertical-align: top;
-                    width: 2em;
-                    &:before {
-                        border-right: (3rem/16) solid $cornflower-lightest;
-                        border-bottom: (3rem/16) solid $cornflower-lightest;
-                        color: $blue;
-                        content: '';
-                        display: block;
-                        height: .4em;
-                        margin-right: .5em;
-                        position: absolute;
-                            top: .3em;
-                            left: -.25em;
-                        transform: rotate(-45deg);
-                        width: .4em;
-                    }
-                    > small {
-                        display: block;
-                        font-size: (14em/36);
-                        font-weight: normal;
-                        line-height: 1.1em;
-                        padding: 0;
-                    }
-                }
-            }
-            > .btn-featuredAction {
-                margin-bottom: (28rem/16);
-                width: 10em;
+        @media screen and (max-width: $viewport-medium) {
+            &-social,
+            &-mailingList > a {
+                font-size: (18rem/16);
             }
         }
+
 
 
         &-events {
