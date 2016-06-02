@@ -194,7 +194,7 @@
                 }
             }
         }
-        @media screen and (max-width: $viewport-medium) {
+        @media screen and (min-width: $viewport-medium) {
             &-social,
             &-mailingList > a {
                 font-size: (18rem/16);
