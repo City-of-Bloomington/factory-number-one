@@ -1,6 +1,11 @@
 // Declare base placeholder
 .miniGallery {
     @include clearfix();
+    &-col {
+        img {
+            width: 100%;
+        }
+    }
     @media screen and (min-width: $viewport-medium) {
         &-col {
             box-sizing: border-box;
@@ -8,9 +13,6 @@
             &:nth-last-of-type(3):first-child,
             &:nth-last-of-type(3):first-child ~ .miniGallery-col {
                 width: 33%;
-            }
-            img {
-                width: 100%;
             }
         }
         + .text-description {
