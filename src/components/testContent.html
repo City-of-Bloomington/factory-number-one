@@ -1,9 +1,10 @@
 {% include 'mainText/_mainText.html' %}
 
-{% include 'input/_input-field.html' %}
+{% set tools = ['First Action', 'Second Action'] %}
+{% include 'input/_input-field.html' with tools %}
 
-
-{% include 'output/_output-field.html' %}
+{% include 'output/_output-field.html' with tools %}
+{% set tools = null %}
 
 {% include 'output/_output-table.html' %}
 
