@@ -60,6 +60,9 @@
                 }
             }
             @media screen and (min-width: $viewport-medium) {
+                &-title {
+                    margin-bottom: .5em;
+                }
                 &-nav {
                     padding-top: 0;
                     padding-bottom: 0;
@@ -128,7 +131,7 @@
             }
             > .btn-featuredAction {
                 margin-bottom: (28rem/16);
-                width: 10em;
+                width: 8em;
             }
             @media screen and (min-width: $viewport-medium) {
                 &-row {
@@ -145,6 +148,9 @@
                             top: .3em;
                         }
                     }
+                }
+                > .btn-featuredAction {
+                    width: 10em;
                 }
             }
         }
