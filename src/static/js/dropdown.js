@@ -3,17 +3,17 @@
     var closeMenus = function () {
         var openLaunchers = document.querySelectorAll('.dropdown [aria-expanded="true"]'),
             openMenus = document.querySelectorAll('.dropdown [aria-expanded="true"] + .links'),
-            len = openLaunchers.length,
-            i   = 0;
+            len = openLaunchers.length;
         for (i=0; i<len; i++) {
             openLaunchers[i].setAttribute("aria-expanded", "");
             openLaunchers[i].parentElement.focus();
             openLaunchers[i].setAttribute("aria-expanded", "false");
-            (function (i) {
-                setTimeout(function() { openMenus[i].setAttribute("hidden", "hidden") }, 300);
-            })(i);
+            hideMenu(openMenus[i]);
         }
         document.removeEventListener('click', closeMenus);
+    },
+    hideMenu = function(thisMenu) {
+        setTimeout(function(){thisMenu.setAttribute("hidden", "hidden");}, 300);
     },
     launcherClick = function(e) {
         var launcher  = e.target,
