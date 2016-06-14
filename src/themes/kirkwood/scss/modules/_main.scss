@@ -36,7 +36,7 @@
             z-index: 3;
         }
     }
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         &-container {
             max-width: 60em;
             width: 60em;

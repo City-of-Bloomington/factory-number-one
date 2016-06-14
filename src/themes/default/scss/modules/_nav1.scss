@@ -1,5 +1,5 @@
 .nav1 {
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         position: relative;
 
         &-container {
@@ -42,7 +42,7 @@
         }
     }
 
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         &-container {
             width: 60em;
             a {

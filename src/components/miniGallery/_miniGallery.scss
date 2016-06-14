@@ -6,7 +6,7 @@
             width: 100%;
         }
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-col {
             box-sizing: border-box;
             float: left;

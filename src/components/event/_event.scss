@@ -7,7 +7,7 @@
     font-weight: normal;
     text-transform: uppercase;
 
-    @media screen and (min-width: $viewport-small) {
+    @include smallViewport {
         text-transform: none;
         &-weekday {
             display: block;
@@ -66,7 +66,7 @@
     &-meta {
         margin: 0 0 1rem 0;
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-meta {
             margin: 0 0 .5rem 0;
         }
@@ -91,7 +91,7 @@
         }
     }
 
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         > .event {
             box-sizing: border-box;
             padding-left: (100%*2/12);
@@ -117,7 +117,7 @@
             }
         }
     }
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         > .dateHeader {
             float: left;
         }

@@ -3,7 +3,7 @@
     margin-left: .5em;
 }
 &.widthConstrained {
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         .siteLogo {
             margin-left: $grid-gutter;
         }

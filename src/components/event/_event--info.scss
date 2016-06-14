@@ -1,5 +1,5 @@
 .dateHeader {
-    @media screen and (min-width: $viewport-small) {
+    @include smallViewport {
         font-family: $font-body-copy;
         &-weekday {
             color: $gray-dark;
@@ -22,7 +22,7 @@
         > h1 {
             color: $cornflower-darkest;
         }
-        @media screen and (min-width: $viewport-medium) {
+        @include mediumViewport {
             &:not(:first-of-type) {
                 border-top-color: $gray;
             }

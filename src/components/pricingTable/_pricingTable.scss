@@ -22,7 +22,7 @@
     &-value {
         font-size: 2em;
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         float: left;
         width: 50%;
         &:nth-last-of-type(3):first-child,
@@ -33,7 +33,7 @@
             font-size: (24rem/16);
         }
     }
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         &:nth-last-of-type(4):first-child,
         &:nth-last-of-type(4):first-child ~ .pricingOffer {
             width: 25%;

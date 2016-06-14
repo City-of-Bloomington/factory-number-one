@@ -59,7 +59,7 @@
         }
     }
 
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         &-container {
             width: 60em;
             a {

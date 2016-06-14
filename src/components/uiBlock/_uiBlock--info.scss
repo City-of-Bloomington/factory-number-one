@@ -11,7 +11,7 @@
         margin: 2rem 1rem;
         width: auto;
         height: 2.5rem;
-        @media screen and (min-width: $viewport-medium) {
+        @include mediumViewport {
             background-image: url('../info/img/bloomington-section-divider.svg');
             margin: 4rem 1rem;
         }
@@ -59,7 +59,7 @@
             width: 100%;
         }
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-header {
             padding-left: $grid-gutter;
             margin-bottom: 2em;
@@ -79,7 +79,7 @@
             }
         }
     }
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         &-title {
             font-size: (36rem/16);
             font-weight: 300;

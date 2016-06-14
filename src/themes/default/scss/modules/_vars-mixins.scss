@@ -37,6 +37,23 @@ $viewport-small: (350rem/16);
 $viewport-medium: (600rem/16);
 $viewport-large: (990rem/16);
 
+// Breakpoint mixins
+@mixin smallViewport {
+    @media screen and (min-width: #{$viewport-small}) {
+        @content;
+    }
+}
+@mixin mediumViewport {
+    @media screen and (min-width: $viewport-medium) {
+        @content;
+    }
+}
+@mixin largeViewport {
+    @media screen and (min-width: $viewport-large) {
+        @content;
+    }
+}
+
 @mixin clearfix {
     &:after {
         clear: both;

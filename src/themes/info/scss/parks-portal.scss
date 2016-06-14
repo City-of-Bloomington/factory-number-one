@@ -59,7 +59,7 @@
                     }
                 }
             }
-            @media screen and (min-width: $viewport-medium) {
+            @include mediumViewport {
                 &-title {
                     margin-bottom: .5em;
                 }
@@ -74,7 +74,7 @@
                     }
                 }
             }
-            @media screen and (min-width: $viewport-large) {
+            @include largeViewport {
                 &-container {
                     padding-top: (100rem/16);
                 }
@@ -133,7 +133,7 @@
                 margin-bottom: (28rem/16);
                 width: 8em;
             }
-            @media screen and (min-width: $viewport-medium) {
+            @include mediumViewport {
                 &-row {
                     > a {
                         font-size: (36rem/16);
@@ -200,7 +200,7 @@
                 }
             }
         }
-        @media screen and (min-width: $viewport-medium) {
+        @include mediumViewport {
             &-social,
             &-mailingList > a {
                 font-size: (18rem/16);
@@ -228,7 +228,7 @@
                 display: block;
                 height: 20em;
             }
-            @media screen and (min-width: $viewport-medium) {
+            @include mediumViewport {
                 padding-top: (100rem/16);
                 &-container {
                     padding: $grid-gutter;

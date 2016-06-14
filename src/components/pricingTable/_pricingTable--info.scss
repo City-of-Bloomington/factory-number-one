@@ -13,14 +13,14 @@
         font-weight: 300;
         font-size: (48rem/16);
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         padding-right: ($grid-gutter / 2);
         padding-left: ($grid-gutter / 2);
         &-meta {
             min-height: 2.5em;
         }
     }
-    @media screen and (min-width: $viewport-small) {
+    @include smallViewport {
         padding-right: $grid-gutter;
         padding-left: $grid-gutter;
     }

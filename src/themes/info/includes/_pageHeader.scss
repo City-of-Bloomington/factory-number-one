@@ -57,7 +57,7 @@
         }
     }
 
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-container {
             min-height: 12rem;
             padding-left: (210rem/16);

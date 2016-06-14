@@ -40,12 +40,28 @@ $viewport-small: (350rem / 16);
 
 $layoutMaxWidth: (1160rem / 16);
 
+// Breakpoint mixins
+@mixin smallViewport {
+    @media screen and (min-width: #{$viewport-small}) {
+        @content;
+    }
+}
+@mixin mediumViewport {
+    @media screen and (min-width: $viewport-medium) {
+        @content;
+    }
+}
+@mixin largeViewport {
+    @media screen and (min-width: $viewport-large) {
+        @content;
+    }
+}
 
 // Grid
 $grid-gutter: 2rem;
 
 @mixin nestedGridContainer() {
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         margin: 0 ($grid-gutter*-1);
     }
 }
@@ -53,7 +69,7 @@ $grid-gutter: 2rem;
 @mixin container {
     margin: 1rem;
 
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         @include clearfix();
         box-sizing: border-box;
         max-width: $layoutMaxWidth;
@@ -64,7 +80,7 @@ $grid-gutter: 2rem;
     box-sizing: border-box;
     padding-left: ($grid-gutter/2);
     padding-right: ($grid-gutter/2);
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         float: left;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
@@ -76,7 +92,7 @@ $grid-gutter: 2rem;
     padding-left: ($grid-gutter/2);
     padding-right: ($grid-gutter/2);
     width: 50%;
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         float: left;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
@@ -116,7 +132,7 @@ $grid-gutter: 2rem;
     width: auto;
     margin-right: ($grid-gutter/2);
     margin-left: ($grid-gutter/2);
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         margin-right: $grid-gutter;
         margin-left: $grid-gutter;
     }
@@ -145,7 +161,7 @@ $grid-gutter: 2rem;
 }
 
 %docWidthContainer {
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         @include clearfix();
         box-sizing: border-box;
         max-width: $layoutMaxWidth;

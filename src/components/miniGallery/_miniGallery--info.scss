@@ -1,6 +1,6 @@
 // Declare base placeholder
 .miniGallery {
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         margin: 2rem 0 0 0;
         &-col {
             padding-left: $grid-gutter;

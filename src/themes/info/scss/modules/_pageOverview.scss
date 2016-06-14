@@ -48,7 +48,7 @@
             }
         }
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-mainInfo {
             padding-top: 1rem;
             padding-bottom: 1rem;
@@ -82,7 +82,7 @@
             width: 50%;
         }
     }
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         &-address {
 
         }

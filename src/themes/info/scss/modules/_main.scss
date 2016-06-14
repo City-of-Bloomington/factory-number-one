@@ -63,7 +63,7 @@
 }
 
 &.widthConstrained {
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         .main-container {
             max-width: $layoutMaxWidth;
         }

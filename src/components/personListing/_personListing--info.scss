@@ -10,7 +10,7 @@
         color: $blue-dark;
         font-family: $font-headings;
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         padding-right: $grid-gutter;
         padding-left: $grid-gutter;
     }

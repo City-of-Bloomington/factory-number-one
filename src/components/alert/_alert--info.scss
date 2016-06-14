@@ -46,7 +46,7 @@
             }
         }
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-title {
             margin-bottom: 0;
         }

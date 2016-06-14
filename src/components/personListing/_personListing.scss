@@ -20,7 +20,7 @@
         font-size: (14rem/16);
         margin: 0;
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         float: left;
     }
     @media screen and (min-width: $viewport-medium) and (max-width: $viewport-large) {
@@ -29,7 +29,7 @@
             clear: both;
         }
     }
-    @media screen and (min-width: $viewport-large) {
+    @include largeViewport {
         width: 25%;
         &:nth-of-type(4n+1) {
             clear: both;

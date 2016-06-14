@@ -18,7 +18,7 @@
             width: 100%;
         }
     }
-    @media screen and (min-width: $viewport-medium) {
+    @include mediumViewport {
         &-portraitSidebar {
             $sidebarWidth: 33%;
             float: left;
