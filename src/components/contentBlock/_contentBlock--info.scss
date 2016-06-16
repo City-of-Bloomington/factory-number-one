@@ -15,12 +15,14 @@
     .userContent {
         $font-size: (18rem/16);
         h1 {
+            color: $blue-dark;
             font-weight: normal;
             font-size: (24rem/16);
             line-height: 1.2em;
             margin: 0 0 (24rem/16) 0;
         }
         h2 {
+            color: $blue-dark;
             font-weight: 300;
             font-size: (36rem/16);
             line-height: 1.2em;
@@ -30,12 +32,14 @@
             }
         }
         h3 {
+            color: $blue-dark;
             font-weight: 300;
             font-size: (28rem/16);
             line-height: 1.2em;
             margin: 1em 0 .666em 0;
         }
         h4 {
+            color: $blue-dark;
             font-weight: normal;
             font-size: (20rem/16);
             line-height: 1.2em;
