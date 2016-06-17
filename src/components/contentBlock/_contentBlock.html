@@ -1,7 +1,9 @@
 <article class="contentBlock">
     <aside class="highlights">
         <div class="highlights-group">
-            Insert an atom here
+            {% set link = {'label': 'Link Label', 'name': 'Link Name'} %}
+            {% include '../button/_labeledLink.html' with link %}
+            {% set link = null %}
         </div>
         <div class="highlights-group">
             Insert an atom here

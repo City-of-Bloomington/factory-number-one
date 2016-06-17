@@ -1,0 +1,40 @@
+.labeledLink {
+    > dd {
+        margin-left: 0;
+    }
+}
+
+.highlights {
+    .labeledLink {
+        margin: (4rem/16) ($grid-gutter/2);
+        > dt {
+            font-size: (14rem/16);
+            margin: 0;
+        }
+        &-primary {
+            font-family: $font-headings;
+            font-size: (18rem/16);
+            &:after {
+                border-right: (4rem/16) solid $blue;
+                border-bottom: (4rem/16) solid $blue;
+                border-radius: (.1rem/16);
+                color: $blue;
+                content: '';
+                display: inline-block;
+                height: .6em;
+                margin-right: 1em;
+                position: relative;
+                    top: .08em;
+                transform: rotate(-45deg);
+                width: .6em;
+            }
+        }
+    }
+    @include mediumViewport() {
+        .labeledLink {
+            &-primary {
+                font-size: (24rem/16);
+            }
+        }
+    }
+}
