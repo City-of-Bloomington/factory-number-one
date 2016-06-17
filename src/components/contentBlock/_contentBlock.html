@@ -6,10 +6,19 @@
             {% set link = null %}
         </div>
         <div class="highlights-group">
-            Insert an atom here
-        </div>
-        <div class="highlights-group">
-            Insert an atom here
+            {%- set field = {'key': 'Label', 'value': 'Example field'} -%}
+            {% include '../output/_output-field-implicit.html' with field %}
+
+            {%- set field = {'key': 'Label', 'value': 'Second example'} -%}
+            {% include '../output/_output-field-implicit.html' with field %}
+
+            {%- set field = {'key': 'Label', 'value': 'Urgent value', 'class': 'text-urgent' } -%}
+            {% include '../output/_output-field-implicit.html' with field %}
+
+            {%- set field = {'key': 'Label', 'value': 'Example field'} -%}
+            {% include '../output/_output-field-implicit.html' with field %}
+
+            {% set field = null %}
         </div>
     </aside>
     <!--

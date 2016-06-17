@@ -1,0 +1,10 @@
+.output-field-implicit {
+    margin: .2em 0;
+    > dd {
+        margin: 0;
+    }
+}
+
+.highlights .output-field-implicit {
+    padding: 0 ($grid-gutter/2);
+}

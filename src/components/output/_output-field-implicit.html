@@ -1,0 +1,8 @@
+{%- if field.class !== null -%}
+    {%- set field.class = ' class="'+ field.class +'"' -%}
+{%- endif -%}
+
+<dl class="output-field-implicit">
+    <dt>{{field.key}}</dt>
+    <dd{{field.class | raw}}>{{field.value}}</dd>
+</dl>

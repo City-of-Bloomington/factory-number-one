@@ -1,0 +1,8 @@
+.output-field-implicit {
+    > dt {
+        @include visuallyHidden();
+    }
+    > dd {
+        margin: 0;
+    }
+}
