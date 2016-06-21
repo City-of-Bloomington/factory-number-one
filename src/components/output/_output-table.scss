@@ -50,42 +50,49 @@
             > tr {
                 > th, > td {
                     background: none;
-                    border: none;
+                    font-size: 11pt;
+                    &:first-child {
+                        padding-left: 0;
+                    }
                 }
             }
         }
     }
-    &-actions.dropdown {
-
-        > .launcher {
-            background-color: rgba(200, 200, 200, 1);
-            border: 1px solid $color-border-input;
-            font-size: (13rem/16);
-            margin: (-5rem/16) -1.5rem (-5rem/16) -.5rem;
-            opacity: .35;
-            transition: background-color .25s ease-in-out, opacity .25s ease-in-out;
-            white-space: nowrap;
-
-            &:hover {
-                background-color: rgba(172, 242, 255, .1);
-            }
-
-            &:before {
-                border: (4em/16) solid transparent;
-                border-top: (6em/16) solid #444;
-                content: '';
-                color: $color-border-input;
-                display: inline-block;
-                height: 0;
-                margin: 0 .25em 0 .25em;
-                position: relative;
-                top: .125em;
-                width: 0;
-            }
+    &-actions {
+        @media print {
+            display: none;
         }
-        > .links {
-            left: inherit;
-            right: -1.5em;
+        &.dropdown {
+            > .launcher {
+                background-color: rgba(200, 200, 200, 1);
+                border: 1px solid $color-border-input;
+                font-size: (13rem/16);
+                margin: (-5rem/16) -1.5rem (-5rem/16) -.5rem;
+                opacity: .35;
+                transition: background-color .25s ease-in-out, opacity .25s ease-in-out;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: rgba(172, 242, 255, .1);
+                }
+
+                &:before {
+                    border: (4em/16) solid transparent;
+                    border-top: (6em/16) solid #444;
+                    content: '';
+                    color: $color-border-input;
+                    display: inline-block;
+                    height: 0;
+                    margin: 0 .25em 0 .25em;
+                    position: relative;
+                    top: .125em;
+                    width: 0;
+                }
+            }
+            > .links {
+                left: inherit;
+                right: -1.5em;
+            }
         }
     }
     > tbody {
