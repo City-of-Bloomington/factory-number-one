@@ -1,0 +1,118 @@
+.alphaHeader {
+    @include clearfix();
+    background: $gray;
+    background: #ef7803; // <- Deep orange
+    background: #ee9135; // <- Shallow orange
+    background: #fffc16; // <- Saturated bright yellow
+    background: #fffd35; // <- Slightly desaturated bright yellow
+    background: #fff7bf; // <- Slightly paler Manilla
+    background: #fff3a0; // <- Manilla (very desaturated yellow with a little red)
+    color: #000;
+
+    &-container {
+        padding: 1px 1rem;
+    }
+    &-content {
+        box-sizing: border-box;
+
+        > h1 {
+            color: #000;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            margin: 0;
+        }
+        > p {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: (14rem/16);
+            margin: 0 0;
+        }
+    }
+    &-sidebar {
+        > a {
+            display: block;
+            margin: .25rem 0;
+
+            &:before {
+                border-top: .31rem solid transparent;
+                border-bottom: .31rem solid transparent;
+                border-left: .35rem solid;
+                content: ' ';
+                display: inline-block;
+                height: 0;
+                position: relative;
+                    bottom: .04em;
+                margin: 0 .5em 0 0;
+                width: 0;
+            }
+        }
+    }
+    &-subjectToChange {
+        display: none;
+    }
+    &-btn {
+        background: #b6ad72;
+        background: rgba(0, 0, 0, .3);
+        border: 1px solid;
+        border-radius: (10rem/16);
+        box-sizing: border-box;
+        color: #353321;
+        color: rgba(0, 0, 0, .7);
+        display: inline-block; // The button shouldn't force itself to be alone on a line, we should depend on containers for this
+        font-size: (13rem/16);
+        line-height: (17em/14);
+        padding: .5em .5em;
+        text-align: center;
+        &-cta {
+            @extend .alphaHeader-btn;
+            background: $green;
+            border: none;
+            border-bottom: .25rem solid $green-light;
+            border-radius: (10rem/16);
+            color: #fff;
+        }
+    }
+    @media screen and (min-width: $viewport-small) {
+        &-container {
+            background: url('../info/img/beta-badge.svg') no-repeat 2rem .5rem / 2.25rem 2.25rem;
+            padding-left: 5rem;
+        }
+
+        &-content {
+            margin-left: 0;
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &-container {
+            box-sizing: border-box;
+            max-width: (1130em/16);
+            margin: 0 auto;
+            &:after {
+                clear: both;
+                content: ' ';
+                display: table;
+            }
+        }
+        &-content {
+            box-sizing: border-box;
+            float: left;
+            padding-right: 2rem;
+            width: 66.6666%;
+
+            > h1 {
+                font-size: 1.2rem;
+                line-height: 1.2em;
+                margin: (5rem/16) 0 0 0;
+            }
+        }
+        &-sidebar {
+            box-sizing: border-box;
+            float: left;
+            padding-left: 2rem;
+            width: 33.3333%;
+        }
+        &-subjectToChange {
+            display: inline;
+        }
+    }
+}
