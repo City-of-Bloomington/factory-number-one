@@ -87,6 +87,17 @@
 
         }
         &-mainInfo {
+            position: relative;
+            &:after {
+                background: #fff;
+                content: ' ';
+                display: block;
+                position: absolute;
+                    top: 2em;
+                    right: -33px;
+                    bottom: 2em;
+                width: 1px;
+            }
             + aside {
                 margin-top: 0;
                 margin-bottom: 0;
