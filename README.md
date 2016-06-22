@@ -28,7 +28,7 @@ Finally, run Gulp
 
     $ gulp
 
-This starts Factory Number One on an HTTP server at `localhost:3000`
+This starts Factory Number One on an HTTP server at `localhost:3000`. The development environment listens for changes to HTML and SCSS files, and rebuilds files on the fly.
 
 ##About the name
 
