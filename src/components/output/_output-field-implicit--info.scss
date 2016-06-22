@@ -7,4 +7,7 @@
 
 .highlights .output-field-implicit {
     padding: 0 ($grid-gutter/2);
+    @include mediumViewport() {
+        font-size: (18rem/16);
+    }
 }

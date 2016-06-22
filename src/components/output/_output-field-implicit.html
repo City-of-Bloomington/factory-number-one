@@ -1,8 +1,8 @@
-{%- if field.class !== null -%}
-    {%- set field.class = ' class="'+ field.class +'"' -%}
+{%- if field.valueClass !== null -%}
+    {%- set field.valueClass = ' class="'+ field.valueClass +'"' -%}
 {%- endif -%}
 
 <dl class="output-field-implicit">
     <dt>{{field.key}}</dt>
-    <dd{{field.class | raw}}>{{field.value}}</dd>
+    <dd{{field.valueClass | raw}}>{{field.value}}</dd>
 </dl>

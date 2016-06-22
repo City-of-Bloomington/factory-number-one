@@ -6,19 +6,35 @@
             {% set link = null %}
         </div>
         <div class="highlights-group">
-            {%- set field = {'key': 'Label', 'value': 'Example field'} -%}
-            {% include '../output/_output-field-implicit.html' with field %}
+            <div class="highlights-subgroup">
+                {%- set field = {'key': 'Label for first', 'value': 'Example field'} -%}
+                {% include '../output/_output-field-implicit.html' with field %}
 
-            {%- set field = {'key': 'Label', 'value': 'Second example'} -%}
-            {% include '../output/_output-field-implicit.html' with field %}
+                {%- set field = {'key': 'Label for second', 'value': 'Second example'} -%}
+                {% include '../output/_output-field-implicit.html' with field %}
 
-            {%- set field = {'key': 'Label', 'value': 'Urgent value', 'class': 'text-urgent' } -%}
-            {% include '../output/_output-field-implicit.html' with field %}
-
-            {%- set field = {'key': 'Label', 'value': 'Example field'} -%}
-            {% include '../output/_output-field-implicit.html' with field %}
-
-            {% set field = null %}
+                {%- set field = {'key': 'Label for third', 'value': 'Urgent value', 'valueClass': 'text-urgent' } -%}
+                {% include '../output/_output-field-implicit.html' with field %}
+            </div>
+            <div class="highlights-subgroup">
+                {%- set field = {'key': 'Label', 'value': 'Example field'} -%}
+                {% include '../output/_output-field-implicit.html' with field %}
+                {%- set field = null -%}
+            </div>
+        </div>
+        <div class="highlights-group">
+            <dl class="output-field">
+                <dt>For ages</dt>
+                <dd>19+ <span><abbr title="with parent">w/ parent</abbr></span></dd>
+            </dl>
+            <dl class="output-field">
+                <dt>Min/max enrollment</dt>
+                <dd>5-30</dd>
+            </dl>
+            <dl class="output-field">
+                <dt>Waitlist</dt>
+                <dd>5</dd>
+            </dl>
         </div>
     </aside>
     <!--

@@ -89,5 +89,18 @@
             padding-left: $grid-gutter;
             width: (100%*6/10); // <- Six child columns inside a ten column parent
         }
+        .highlights-group {
+            @include clearfix();
+        }
+        .highlights-subgroup:nth-last-of-type(2):first-child,
+        .highlights-subgroup:nth-last-of-type(2):first-child ~ .highlights-subgroup {
+            float: left;
+            width: 50%;
+        }
+        .highlights-subgroup:nth-last-of-type(3):first-child,
+        .highlights-subgroup:nth-last-of-type(3):first-child ~ .highlights-subgroup {
+            float: left;
+            width: 33%;
+        }
     }
 }
