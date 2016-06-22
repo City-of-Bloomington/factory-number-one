@@ -1,0 +1,21 @@
+.byTheNumbers {
+    .output-field {
+        > dt {
+            font-size: (14rem/16);
+            line-height: (18em/14);
+        }
+        > dd {
+            font-size: (18rem/16);
+            > span {
+                font-size: (14em/18);
+            }
+        }
+    }
+}
+
+
+.highlights-group {
+    .byTheNumbers {
+        margin-left: ($grid-gutter/2);
+    }
+}

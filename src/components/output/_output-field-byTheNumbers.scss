@@ -1,0 +1,18 @@
+.byTheNumbers {
+    .output-field {
+        border-top: none;
+        display: inline-block;
+        margin: 0 1em 0 0;
+        vertical-align: bottom;
+        > dt {
+            float: none;
+        }
+        > dd {
+            font-size: 1.25em;
+            margin: 0;
+            > span {
+                font-size: .75em;
+            }
+        }
+    }
+}
