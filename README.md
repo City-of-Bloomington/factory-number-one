@@ -69,6 +69,19 @@ Now that the font-size is 24px, we could specify line-height relative to the fon
 
     line-height: (28em/24);
 
+### Grid system
+
+The Default theme does not implement a grid system. To optimize flexibility, grids are delegated to themes that need them (as of 0.3, only the Info theme uses the grid system).
+
+The Info theme features a 12-column grid. Some key points about the grid system include:
+* Liquid column widths up to a maximum width of 1160px.
+* 64px (4rem) gutters between each column.
+* A minimum of two columns is required to display text.
+* Width of individual columns is dependent on width of the viewport.
+* Instead of creating CSS classes for grid elements, this grid uses SASS mixins, so grid properties can be assigned to CSS classes that are more semantic to the design.
+* Grid elements must be nested inside a grid container (usually with the `container` mixin).
+* Width of grid elements are declared as percentages, and calculated arithmetically with SASS. For example, *two* columns inside a *twelve column* parent container would be declared: `(100%*2/12)`
+
 ## About the name
 
 Factory Number One is named after the Showers Brothers Furniture Company Factory Number 1. In the 1920s, the facility was arguably the largest furniture factory in the world, leveraging convenient access to the railroads to ship its dressers to retailers in large quantities. After World War II, the industry saw a shift from shipping by train, to shipping by truck, but the company didn't adapt to these changes in the market. The company closed its doors in 1958. Most of the facility was lost to a fire in 1969. One of the few buildings to survive was Factory Number 1. As of 2016, the building houses Bloomington, Indiana's City Hall, Monroe County offices, and office space for private companies.
