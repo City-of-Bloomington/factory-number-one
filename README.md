@@ -36,18 +36,18 @@ Factory Number One provides style guides for multiple themes, from within one un
 
 As of 0.3, there are three themes:
 
-* *Default:* A lightweight foundation from which other themes inherit their base. Page layout is delegated to other themes.
-* *Info:* For information and content-centric websites. This theme was created after the City's website redesign started, and a desire arose to create other public-facing web applications that share the same look and feel as the Drupal site. Because this theme is specialized, many design patterns are implemented exclusively for this theme first, and implemented for other themes as the need arises.
-* *Kirkwood:* Theme for internal web applications, named for its use of a photo of Kirkwood Ave in the page background. It focuses on patterns relevant to business application UI.
+* **Default:** A lightweight foundation from which other themes inherit their base. Page layout is delegated to other themes.
+* **Info:** For information and content-centric websites. This theme was created after the City's website redesign started, and a desire arose to create other public-facing web applications that share the same look and feel as the Drupal site. Because this theme is specialized, many design patterns are implemented exclusively for this theme first, and implemented for other themes as the need arises.
+* **Kirkwood:** Theme for internal web applications, named for its use of a photo of Kirkwood Ave in the page background. It focuses on patterns relevant to business application UI.
 
 ## File organization
 
 The build system compiles HTML and CSS from sources spread across the entire project. By breaking the HTML and SASS files into small pieces, we can place HTML snippets in the same folder as their corresponding SASS modules.
 
-* *components* This folder contains HTML snippets (and, in some cases, Swig-based helpers) for reusable design patterns. All patterns are included in the Default theme, but the Default theme only provides the minimum amount styling to each pattern that is common across the other themes. Some components are only supported by the Info theme.
-* *layouts* This folder contains an HTML file to use as a base Swig template for all HTML files compiles by the build system.
-* *static* This folder contains static files available to all themes, including Javascript for common patterns, webfont files, and image files.
-* *themes* HTML and CSS for each theme.
+* **components** This folder contains HTML snippets (and, in some cases, Swig-based helpers) for reusable design patterns. All patterns are included in the Default theme, but the Default theme only provides the minimum amount styling to each pattern that is common across the other themes. Some components are only supported by the Info theme.
+* **layouts** This folder contains an HTML file to use as a base Swig template for all HTML files compiles by the build system.
+* **static** This folder contains static files available to all themes, including Javascript for common patterns, webfont files, and image files.
+* **themes** HTML and CSS for each theme.
 
 ## SASS conventions
 
