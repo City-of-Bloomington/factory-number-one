@@ -76,10 +76,13 @@ The Default theme does not implement a grid system. To optimize flexibility, gri
 The Info theme features a 12-column grid. Some key points about the grid system include:
 * Liquid column widths up to a maximum width of 1160px.
 * 64px (4rem) gutters between each column.
+    * To implement 4rem gutters, each grid element has left and right padding of 2rem. When two grid elements are placed next to each other, their padding combines to 4rem.
 * A minimum of two columns is required to display text.
-* Width of individual columns is dependent on width of the viewport.
+* Width of individual columns is dependent on the width of the viewport.
 * Instead of creating CSS classes for grid elements, this grid uses SASS mixins, so grid properties can be assigned to CSS classes that are more semantic to the design.
 * Grid elements must be nested inside a grid container (usually with the `container` mixin).
+    * The `container` mixin provides margins to wrap around a grouping of grid elements that ensures a desirable amount of margin away from the edge of the viewport at different viewport sizes.
+    * Containers also serve as a wrapper for a row of grid elements, ensuring that each new row clears the previous row.
 * Width of grid elements are declared as percentages, and calculated arithmetically with SASS. For example, *two* columns inside a *twelve column* parent container would be declared: `(100%*2/12)`
 
 ## About the name
