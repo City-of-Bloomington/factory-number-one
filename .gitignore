@@ -1,6 +1,7 @@
-/assets
-/doc
+assets
+doc
+build
 node_modules
 .sass-cache
-screen.css
-screen.css.map
+*.css
+*.css.map
