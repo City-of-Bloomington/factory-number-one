@@ -73,3 +73,5 @@ gulp.task('build', ['build-default-sass', 'build-info-sass', 'build-kirkwood-sas
     gulp.src('./src/logo.svg')
         .pipe(gulp.dest('./build/'));
 });
+
+gulp.task('default', ['build'], function () { gulp.src('./gulfile.js'); });
