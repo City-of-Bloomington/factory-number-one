@@ -1,4 +1,4 @@
-.btn {
+button, .btn {
     background: $color-table-background;
     border:1px solid $color-border-input;
     border-radius:.4em;
@@ -12,9 +12,9 @@
     vertical-align: middle;
 
     &:hover {
-    background: lighten($color-table-background, 1);
-    cursor: pointer;
-    text-decoration: none;
+        background: lighten($color-table-background, 1);
+        cursor: pointer;
+        text-decoration: none;
     }
     &-action {
         @extend .btn;
@@ -35,3 +35,12 @@
         }
     }
 }
+
+.icon {
+    cursor: pointer;
+    display: inline-block;
+    width:1em; height:1em;
+    overflow: hidden;
+    text-indent: -1000em;
+}
+.icon.calendar { background: url('../img/fa-svg/gray/svg/calendar.svg') no-repeat 50% 50% / 100% 100%; }
