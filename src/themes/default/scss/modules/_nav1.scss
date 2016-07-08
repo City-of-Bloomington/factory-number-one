@@ -1,15 +1,6 @@
-.nav1 {
+#nav1 {
     @include mediumViewport {
-        position: relative;
-
-        &-container {
-            box-sizing: border-box;
-            margin: 0 auto;
-            position: relative;
-            width: 46em;
-            z-index: 3;
-            @include clearfix();
-        }
+        overflow:auto;
 
         a {
             background: rgba(255, 255, 255, .5);
@@ -28,27 +19,12 @@
                 text-decoration: none;
             }
         }
-        &-searchForm {
-            float: right;
 
-            > fieldset {
-                margin: 0;
-
-                > input {
-                    font-size: 1em;
-                    padding: .25em;
-                }
-            }
-        }
+        form     { float: right; }
+        fieldset { margin: 0; }
+        input    { font-size: 1em; padding: .25em; }
     }
 
     @include largeViewport {
-        &-container {
-            width: 60em;
-            a {
-                padding-left: 1.5em;
-                padding-right: 1.5em;
-            }
-        }
     }
 }

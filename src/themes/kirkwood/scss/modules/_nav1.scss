@@ -1,6 +1,7 @@
-.nav1 {
+#nav1 {
     @media screen and (min-width: $viewport-med) {
         position: relative;
+        overflow: visible;
 
         &:after {
             background: url($url-header-background);
@@ -15,7 +16,7 @@
             z-index: 2;
         }
 
-        &-container {
+        .container {
             box-sizing: border-box;
             margin: 0 auto;
             padding: 2.7em 0 0 0;
@@ -45,22 +46,14 @@
                 text-decoration: none;
             }
         }
-        &-searchForm {
-            float: right;
 
-            > fieldset {
-                margin: 0;
-
-                > input {
-                    font-size: 1em;
-                    padding: .25em;
-                }
-            }
-        }
+        form     { float: right; }
+        fieldset { margin: 0; }
+        input    { font-size: 1em; padding: .25em; }
     }
 
     @include largeViewport {
-        &-container {
+        .container {
             width: 60em;
             a {
                 padding-left: 1.5em;
@@ -69,7 +62,7 @@
         }
     }
     @media screen and (max-height: $viewport-notTall) {
-        &-container {
+        .container {
             padding-top: .5rem;
         }
     }

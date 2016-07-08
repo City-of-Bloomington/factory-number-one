@@ -9,11 +9,11 @@
     {% block extraHead %}{% endblock %}
 </head>
 
-<body class="fn1 {{ page.layout }}">
+<body class="{{ page.layout }}">
     {% block headers %}{% endblock %}
-    <main class="main">
+    <main>
         {% block preContainer %}{% endblock %}
-        <div class="main-container">
+        <div class="container">
             {% block blocks %}{% endblock %}
         </div>
     </main>

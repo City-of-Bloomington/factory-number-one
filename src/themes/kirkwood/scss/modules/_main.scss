@@ -1,5 +1,5 @@
-.main {
-    &-container {
+main {
+    > .container {
         box-sizing: border-box;
         max-width: 46em;
         margin: 0 auto;
@@ -24,7 +24,7 @@
             left: 0;
             z-index: 1;
         }
-        &-container {
+        > .container {
             background: $color-content-background;
             border-top: .4em solid $color-accent;
             margin: 0 auto;
@@ -36,14 +36,14 @@
         }
     }
     @include largeViewport {
-        &-container {
+        > .container {
             max-width: 60em;
             width: 60em;
         }
     }
 
     @media print {
-        &-container {
+        > .container {
             max-width: none;
             padding: 0;
         }

@@ -1,34 +1,23 @@
-.siteHeader {
+body > header {
 
     background-color: #f1f3f8;
+    color: $color-header;
+    padding-top:.5em; padding-left:.5em;
 
-    &-container {
-        margin: 0 auto 0;
-        color: $color-header;
-        padding-top: .5em;
-        position: relative;
-        @include clearfix();
+    a { color: $color-header; }
 
-        .site {
-            &-title {
-                float: left;
+    h1 {
+        font-size:1.5em;
+        font-weight: normal;
+        margin: .5em 0 .25em 0;
+    }
 
-                a { color: $color-header; }
+    .utilityBar {
+        position:absolute; right:10px; top:10px;
 
-                h1 {
-                    font-size:1.5em;
-                    font-weight: normal;
-                    margin: .5em 0 .25em 0;
-                }
-            }
-            &-utilityBar {
-                position: relative;
-
-                nav {
-                    float: right;
-                    margin: 0 0 0 1em;
-                }
-            }
+        nav {
+            float: right;
+            margin: 0 0 0 1em;
         }
     }
 }
