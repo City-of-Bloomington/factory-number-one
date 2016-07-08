@@ -18,10 +18,16 @@ var gulp            = require('gulp'),
     };
 
 gulp.task('build-html', function() {
-    gulp.src('./src/**/*.html')
+    gulp.src('./src/index.html')
         .pipe(swig(swigOpts))
         .pipe(prettify({indent_size: 4}))
         .pipe(gulp.dest('./build/'));
+
+
+    gulp.src('./src/themes/*/*.html')
+        .pipe(swig(swigOpts))
+        .pipe(prettify({indent_size: 4}))
+        .pipe(gulp.dest('./build/themes/'));
 });
 
 gulp.task('build-default-sass', function() {
