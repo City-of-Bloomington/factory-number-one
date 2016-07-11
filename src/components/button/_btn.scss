@@ -10,9 +10,12 @@ button, .btn {
     font-size: (14rem/16);
     font-weight:normal;
     vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: .5em center;
+    background-size: 1em 1em;
 
     &:hover {
-        background: lighten($color-table-background, 1);
+        background-color: lighten($color-table-background, 1);
         cursor: pointer;
         text-decoration: none;
     }
@@ -39,8 +42,28 @@ button, .btn {
 .icon {
     cursor: pointer;
     display: inline-block;
-    width:1em; height:1em;
+    width:0; height:1em;
     overflow: hidden;
     text-indent: -1000em;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size:1em 1em;
 }
-.icon.calendar { background: url('../img/fa-svg/gray/svg/calendar.svg') no-repeat 50% 50% / 100% 100%; }
+
+button, .btn, .icon {
+    $imageSpace: 1.7em;
+    &.add      { background-image:url('../img/fa-svg/gray/svg/plus.svg'      ); padding-left:$imageSpace; }
+    &.edit     { background-image:url('../img/fa-svg/gray/svg/pencil.svg'    ); padding-left:$imageSpace; }
+    &.delete   { background-image:url('../img/fa-svg/gray/svg/times.svg'     ); padding-left:$imageSpace; }
+    &.submit   { background-image:url('../img/fa-svg/gray/svg/check.svg'     ); padding-left:$imageSpace; }
+    &.save     { background-image:url('../img/fa-svg/gray/svg/floppy-o.svg'  ); padding-left:$imageSpace; }
+    &.search   { background-image:url('../img/fa-svg/gray/svg/search.svg'    ); padding-left:$imageSpace; }
+    &.calendar { background-image:url('../img/fa-svg/gray/svg/calendar.svg'  ); padding-left:$imageSpace; }
+    &.location { background-image:url('../img/fa-svg/gray/svg/map-marker.svg'); padding-left:$imageSpace; }
+    &.map      { background-image:url('../img/fa-svg/gray/svg/globe.svg'     ); padding-left:$imageSpace; }
+    &.list     { background-image:url('../img/fa-svg/gray/svg/list-ul.svg'   ); padding-left:$imageSpace; }
+    &.print    { background-image:url('../img/fa-svg/gray/svg/print.svg'     ); padding-left:$imageSpace; }
+    &.reorder  { background-image:url('../img/fa-svg/gray/svg/reorder.svg'   ); padding-left:$imageSpace; }
+    &.user     { background-image:url('../img/fa-svg/gray/svg/user.svg'      ); padding-left:$imageSpace; }
+    &.upload   { background-image:url('../img/fa-svg/gray/svg/upload.svg'    ); padding-left:$imageSpace; }
+}
