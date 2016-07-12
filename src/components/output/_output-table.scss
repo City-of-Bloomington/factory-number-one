@@ -1,106 +1,94 @@
-table {
-    $cell-padding: .75em 1.5em .75em .5em;
-    $first-cell-padding-left: 1.5em;
-    > thead {
-        > tr {
-            > th {
-                background: $color-table-header-background;
-                color: $color-table-background;
-                font-size: .85em;
-                font-weight: normal;
-                height: 2em;
-                padding: $cell-padding;
-                vertical-align: bottom;
+$cell-padding: .75em 1.5em .75em .5em;
+$first-cell-padding-left: 1.5em;
 
-                &:first-child {
-                    padding-left: $first-cell-padding-left;
-                }
-                > a {
-                    color: $color-content-background;
-                }
-            }
+thead th {
+    background: $color-table-header-background;
+    color: $color-table-background;
+    font-size: .85em;
+    font-weight: normal;
+    height: 2em;
+    padding: $cell-padding;
+    vertical-align: bottom;
+
+    &:first-child {
+        padding-left: $first-cell-padding-left;
+    }
+    a {
+        color: $color-content-background;
+    }
+}
+tbody {
+    th, td {
+        background: $color-table-background;
+        border-top: 1px solid $color-border-table;
+        font-size: 1rem;
+        line-height: 1.2em;
+        padding: $cell-padding;
+        transition: background-color .2s linear;
+        vertical-align: top;
+
+        &:first-child {
+            padding-left: $first-cell-padding-left;
         }
     }
-    > tbody {
-        > tr {
-            > th, > td {
-                background: $color-table-background;
-                border-top: 1px solid $color-border-table;
-                font-size: 1rem;
-                line-height: 1.2em;
-                padding: $cell-padding;
-                transition: background-color .2s linear;
-                vertical-align: top;
+    tr:hover {
+        th, td {
+            background: $color-content-background;
+        }
+    }
+}
 
-                &:first-child {
-                    padding-left: $first-cell-padding-left;
-                }
+table {
+    .dropdown {
+        .launcher {
+            background-color: rgba(200, 200, 200, 1);
+            border: 1px solid $color-border-input;
+            font-size: (13rem/16);
+            margin: (-5rem/16) -1.5rem (-5rem/16) -.5rem;
+            opacity: .35;
+            transition: background-color .25s ease-in-out, opacity .25s ease-in-out;
+            white-space: nowrap;
+
+            &:hover {
+                background-color: rgba(172, 242, 255, .1);
+            }
+
+            &:before {
+                border: (4em/16) solid transparent;
+                border-top: (6em/16) solid #444;
+                content: '';
+                color: $color-border-input;
+                display: inline-block;
+                height: 0;
+                margin: 0 .25em 0 .25em;
+                position: relative;
+                top: .125em;
+                width: 0;
             }
         }
-        > tr:hover {
-            > th, > td {
-                background: $color-content-background;
-            }
+        .links {
+            left: inherit;
+            right: -1.5em;
+        }
+    }
+    tr:hover {
+        th, td {
+            .launcher { opacity: 1; }
         }
     }
 
     @media print {
-        > thead,
-        > tbody {
-            > tr {
-                > th, > td {
-                    background: none;
-                    font-size: 11pt;
-                    &:first-child {
-                        padding-left: 0;
-                    }
-                }
-            }
-        }
+        .dropdown { display:none; }
     }
-    &-actions {
-        @media print {
-            display: none;
-        }
-        &.dropdown {
-            > .launcher {
-                background-color: rgba(200, 200, 200, 1);
-                border: 1px solid $color-border-input;
-                font-size: (13rem/16);
-                margin: (-5rem/16) -1.5rem (-5rem/16) -.5rem;
-                opacity: .35;
-                transition: background-color .25s ease-in-out, opacity .25s ease-in-out;
-                white-space: nowrap;
+}
 
-                &:hover {
-                    background-color: rgba(172, 242, 255, .1);
-                }
-
-                &:before {
-                    border: (4em/16) solid transparent;
-                    border-top: (6em/16) solid #444;
-                    content: '';
-                    color: $color-border-input;
-                    display: inline-block;
-                    height: 0;
-                    margin: 0 .25em 0 .25em;
-                    position: relative;
-                    top: .125em;
-                    width: 0;
-                }
-            }
-            > .links {
-                left: inherit;
-                right: -1.5em;
-            }
-        }
-    }
-    > tbody {
-        > tr:hover {
-            > th, > td {
-                .launcher {
-                    opacity: 1;
-                }
+@media print {
+    thead, tbody {
+        th, td {
+            background: none;
+            font-size: 11pt;
+            &:first-child {
+                padding-left: 0;
             }
         }
     }
