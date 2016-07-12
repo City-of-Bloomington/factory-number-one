@@ -3,17 +3,18 @@
 
 {% block content %}
     <!-- Instance of components/input/text-input.html -->
-    <dl class="input-field">
+<form>
+    <dl>
         <dt><label for="text1">Title</label></dt>
         <dd><input type="text" value="Value" id="text1" /></dd>
     </dl>
 
-    <dl class="input-field">
+    <dl>
         <dt><label for="text2">Title</label></dt>
         <dd><input type="text" value="Value" id="text2" /></dd>
     </dl>
 
-    <dl class="input-field--select">
+    <dl class="select">
         <dt><label for="select1">Dropdown</label></dt>
         <dd>
             <select id="select1">
@@ -24,10 +25,17 @@
         </dd>
     </dl>
 
-    <dl class="input-field--checkbox">
+    <dl class="checkbox">
         <dt>Checkbox Group</dt>
-        <dd><label><input type="checkbox"><span>First option</span></label></dd>
-        <dd><label><input type="checkbox"><span>Second choice And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live.</span></label></dd>
-        <dd><label><input type="checkbox"><span>Third vector of decision</span></label></dd>
+        <dd><label><input type="checkbox" />First option</label>
+            <label><input type="checkbox" />Second choice And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live.</label>
+            <label><input type="checkbox" />Third vector of decision</label>
+        </dd>
     </dl>
+
+    <dl class="textarea">
+        <dt>Textarea</dt>
+        <dd><textarea></textarea></dd>
+    </dl>
+</form>
 {% endblock %}

@@ -1,65 +1,61 @@
-/*dl*/.input-field {
-    padding: .5em 0;
+input[type="tel"] { padding-left: 44px; }
+input[type="checkbox"], input[type="radio"] {
+    font-size: 1em;
+    margin: 0 .45em 0 -1.4em;
+    padding: 0;
+    vertical-align: middle;
+    width: inherit;
+}
 
-    > dt {
-        font-size: (12em/16);
-        font-weight: normal;
-        margin: 0 0 .25em 0;
+dl {
+    border-top: 1px solid;
+    display: block;
+    margin: 0;
+    padding: .5em 0;
+    dt {
+        font-size: .8em;
+        float: left;
+        margin: 0;
+        padding: .2em 0 0 0;
+        width: 8em;
     }
-    > dd {
+    dd {
         margin: 0;
         padding: 0;
+    }
+}
 
-        > input {
-            box-sizing: border-box;
-            border: 1px solid $color-border-input;
-            font-family: $font-family-default;
-            font-size: 1em;
-            padding: .5em;
-            transition: border-color .35s ease-in-out, background-color .5s ease-in-out;
-            width: 100%;
+form dl {
+    border-top: none;
 
-            &:focus {
-                background-color: $color-content-background;
-                border-color: $color-border-input-highlight;
-            }
-        }
-        > .intl-tel-input > input[type="tel"] {
-            padding-left: 44px;
+    input {
+        box-sizing: border-box;
+        border: 1px solid $color-border-input;
+        font-family: $font-family-default;
+        font-size: 1em;
+        padding: .5em;
+        transition: border-color .35s ease-in-out, background-color .5s ease-in-out;
+        width: 100%;
+
+        &:focus {
+            background-color: $color-content-background;
+            border-color: $color-border-input-highlight;
         }
     }
 
-    &--checkbox, &--radio {
-        @extend .input-field;
-        > dd {
+    &.checkbox, &.radio {
+        label {
+            display:block;
+            margin: 0;
+            vertical-align: middle;
             margin-bottom: .25em;
             padding: 0 0 0 1.6em;
             vertical-align: middle;
-
-            > label {
-                margin: 0;
-                vertical-align: middle;
-
-                > input[type="checkbox"], > input[type="radio"] {
-                    font-size: 1em;
-                    margin: 0 .45em 0 -1.4em;
-                    padding: 0;
-                    vertical-align: middle;
-                    width: inherit;
-
-                    + span {
-                        line-height: 1.2em;
-                        margin: 0;
-                        padding: 0;
-                        vertical-align: middle;
-                    }
-                }
-            }
+            line-height: 1.2em;
         }
     }
-    &--select {
-        @extend .input-field;
-    }
+    &.select   { }
+    &.textarea { }
 
 
     @media all and (min-width: $viewport-medium) {
@@ -75,7 +71,7 @@
         &:hover {
             background: $color-background-field-highlight;
         }
-        > dt {
+        dt {
             color: $color-heading-3;
             float: left;
             font-size: (13em/16);
@@ -83,24 +79,19 @@
             padding: .75em 0 0 1em;
             width: 8em;
         }
-        > dd {
+        dd {
             margin-left: 8em;
 
-            > input {
-                font-size: (14em/16);
-                width: 20em;
+        }
+        input {
+            font-size: (14em/16);
+            width: 20em;
 
-                &.datePicker { width:inherit; }
-                &.timePicker { width:inherit; }
-            }
+            &.datePicker { width:inherit; }
+            &.timePicker { width:inherit; }
         }
-        &--radio, &--checkbox {
-            > dt {
-                padding-top: .4em;
-            }
-        }
-        &--select {
-            > dt {
+        &.radio, &.checkbox, &.select {
+            dt {
                 padding-top: .4em;
             }
         }
