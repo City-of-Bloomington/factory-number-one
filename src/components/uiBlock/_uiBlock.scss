@@ -1,18 +1,19 @@
-.uiBlock {
+section, article {
     margin: 2rem 0;
-    &-title {
-        display: inline-block;
-        font-size: 1.5rem;
-        margin-right: 1em;
-        &--centered {
-            @extend .uiBlock-title;
-            display: block;
-            text-align: center;
+
+    > header {
+        h1 {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin-right: 1em;
+        }
+
+        .tools {
+            display: inline-block;
         }
     }
-    &-headerTools {
-        display: inline-block;
-    }
+
+    /*
     &-portraitSidebar {
         img {
             width: 100%;
@@ -29,4 +30,5 @@
             }
         }
     }
+    */
 }

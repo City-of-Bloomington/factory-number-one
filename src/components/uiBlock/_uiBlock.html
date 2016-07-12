@@ -1,8 +1,8 @@
-<section class="uiBlock">
-  <header class="uiBlock-header">
-    <h1  class="uiBlock-title">{% block title %}Block Title{% endblock %}</h1>
+<section>
+  <header>
+    <h1>{% block title %}Block Title{% endblock %}</h1>
     {% if tools %}
-        <div class="uiBlock-headerTools">
+        <div class="tools">
             {% for tool in tools %}
                 <a href="#" class="btn">{{ tool }}</a>
             {% endfor %}
