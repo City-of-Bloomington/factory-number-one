@@ -3,7 +3,6 @@
         overflow:auto;
 
         a {
-            background: rgba(255, 255, 255, .5);
             color: $color-nav1;
             display: block;
             float: left;
@@ -12,11 +11,6 @@
             transition: background-color .25s ease-in-out;
             &[aria-label] {
                 border-bottom: .25em solid $color-nav1;
-            }
-
-            &:hover {
-                background: rgba(255,255,255, .8);
-                text-decoration: none;
             }
         }
 
