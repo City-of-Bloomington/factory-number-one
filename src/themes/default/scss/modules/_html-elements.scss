@@ -30,6 +30,7 @@ p {
     margin: 1em 0;
 }
 address { white-space: pre-line; }
+ol, ul { margin:0; }
 
 table { margin: 1em 0 1em 0; }
 th { font-weight: $font-weight-heading; }
