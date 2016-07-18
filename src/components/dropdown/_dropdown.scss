@@ -2,10 +2,14 @@
     display: inline-block;
     margin: 0 .5em;
     position: relative;
+
     .launcher {
-        background: none;
         border: none;
         outline: none;
+        background-repeat: no-repeat;
+        background-position: .5em center;
+        background-size: 1em 1em;
+        background-image:url('../img/fa-svg/gray/svg/chevron-down.svg'); padding-left:1.7em;
 
         &[aria-expanded="true"] + .links {
             opacity: 1;
