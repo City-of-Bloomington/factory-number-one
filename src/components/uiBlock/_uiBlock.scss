@@ -1,19 +1,19 @@
+main header {
+    h1 {
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-right: 1em;
+    }
+
+    .tools {
+        display: inline-block;
+    }
+}
+
 section, article {
     margin: 2rem 0;
 
     section, article { margin:0 0 1rem 0; }
-
-    > header {
-        h1 {
-            display: inline-block;
-            font-size: 1.5rem;
-            margin-right: 1em;
-        }
-
-        .tools {
-            display: inline-block;
-        }
-    }
 
     /*
     &-portraitSidebar {
