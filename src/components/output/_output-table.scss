@@ -31,11 +31,6 @@ tbody {
             padding-left: $first-cell-padding-left;
         }
     }
-    tr:hover {
-        th, td {
-            background: $color-content-background;
-        }
-    }
 }
 
 table {
