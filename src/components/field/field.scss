@@ -12,6 +12,7 @@ dl {
     border-top: 1px solid;
     display: block;
     margin: 0;
+    padding: .5em 0;
     dt {
         font-size: .8em;
         float: left;
@@ -27,7 +28,6 @@ dl {
 
 form dl {
     border-top: none;
-    padding: .5em 0;
 
     input {
         box-sizing: border-box;
