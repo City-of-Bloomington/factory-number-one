@@ -6,7 +6,8 @@
     font-size: (14rem/16);
     font-weight: normal;
     text-transform: uppercase;
-
+    margin: 0.67em 0;
+    
     @include smallViewport {
         text-transform: none;
         &-weekday {

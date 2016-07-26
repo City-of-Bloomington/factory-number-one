@@ -7,20 +7,15 @@ body > header {
     a { color: $color-header; }
 
     > .container {
-        h1, h2 {
+        h1, h2, h1 a {
             display:inline-block;
             height:2.5rem; line-height:2.5rem;
-            vertical-align:middle;
-        }
-        h1 a, h2 a {
-            display:inline-block;
-            height:2.5rem; line-height:2.5rem;
-            vertical-align:middle;
+            //vertical-align:middle;
         }
         h1 a {
-            font-size:1rem; font-weight:normal; margin:0;
+            font-size:1.5rem; font-weight:normal;
+            //margin:0;
         }
-
         h2 {
             font-size:.8rem;
             margin: 0 0 0 2em;
