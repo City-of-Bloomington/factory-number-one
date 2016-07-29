@@ -43,7 +43,7 @@ fieldset {
     padding:0;
 }
 form {
-    margin: 2rem 0;
+    margin: .2rem 0;
 }
 legend {
     color: $color-heading-1;
@@ -54,7 +54,6 @@ legend {
     padding: 0 0 0 0;
 }
 label { font-weight:normal; }
-
 @media (max-width:400px) {
     textarea { width:80%; height:6em; }
 }
