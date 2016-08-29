@@ -4,7 +4,7 @@ body {
 }
 h1 {
     color: $color-heading-1;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 300;
     margin: 0 0 .5em;
 }
@@ -12,13 +12,13 @@ h2 {
   color: $color-heading-2;
   font-size: 1.3rem;
   font-weight: normal;
-  margin: .4em 0;
+  margin: $size-gutter 0;
 }
 h3 {
     color: $color-heading-3;
     font-size: 1.5rem;
     font-weight: normal;
-    margin:.5em 0 .25em 0;
+    margin:$size-gutter 0 ($size-gutter/2) 0;
 }
 h4 { font-size:100%; font-weight: $font-weight-heading; }
 a {
@@ -27,14 +27,14 @@ a {
 }
 p {
     line-height: (20em/16);
-    margin: .5em 0;
+    margin: $size-gutter 0;
 }
 address { white-space: pre-line; }
 ol, ul { margin:0; list-style-type:none; }
 
 table { margin: 1em 0 1em 0; }
 th { font-weight: $font-weight-heading; }
-td { padding:.25em; }
+td { padding: ($size-gutter/2); }
 thead th { text-align:left; }
 tbody th { text-align:right; }
 
@@ -64,10 +64,10 @@ label { font-weight:normal; }
 @media print {
     h1 {
         font-size: 1.5rem;
-        margin: .5em 0 0 0;
+        margin: $size-gutter 0 0 0;
     }
     h2 {
         font-size: 1.35rem;
-        margin: .5em 0 0 0;
+        margin: $size-gutter 0 0 0;
     }
 }

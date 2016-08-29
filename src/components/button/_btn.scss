@@ -6,13 +6,14 @@ button, .btn {
     color: $color-heading-2;
     display:inline-block;
     line-height: 1em;
-    padding: .5em 1em;
+    margin-right: $size-gutter;
+    padding: $size-gutter 1em;
     font-size: (14rem/16);
     font-weight:normal;
     vertical-align: middle;
     background-repeat: no-repeat;
-    background-position: .5em center;
-    background-size: 1em 1em;
+    background-position: $size-gutter center;
+    background-size: ($size-gutter*2) ($size-gutter*2);
 
     &:hover {
         background-color: lighten($color-table-background, 1);
@@ -47,7 +48,7 @@ button, .btn {
     text-indent: -1000em;
     background-repeat:no-repeat;
     background-position: center center;
-    background-size:1em 1em;
+    background-size:($size-gutter*2) ($size-gutter*2);
 }
 
 button, .btn, .icon {

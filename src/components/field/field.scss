@@ -2,7 +2,7 @@ input[type="tel"] { padding-left: 44px; }
 input[type="date"] { width:10em; }
 input[type="checkbox"], input[type="radio"] {
     font-size: 1em;
-    margin: 0 .45em 0 -1.4em;
+    margin: 0 $size-gutter 0 -1.4em;
     padding: 0;
     vertical-align: middle;
     width: inherit;
@@ -12,7 +12,7 @@ dl {
     border-top: 1px solid;
     display: block;
     margin: 0;
-    padding: .5em 0;
+    padding: $size-gutter 0;
     overflow:auto;
 
     dt {
@@ -25,6 +25,8 @@ dl {
     dd {
         margin: 0;
         padding: 0;
+
+        .help { display:inline-block; margin-left:($size-gutter*2); }
     }
 }
 
@@ -36,7 +38,7 @@ form dl {
         border: 1px solid $color-border-input;
         font-family: $font-family-default;
         font-size: 1em;
-        padding: .5em;
+        padding: $size-gutter;
         transition: border-color .35s ease-in-out, background-color .5s ease-in-out;
         width: 100%;
 
@@ -51,7 +53,7 @@ form dl {
             display:block;
             margin: 0;
             vertical-align: middle;
-            margin-bottom: .25em;
+            margin-bottom: ($size-gutter/2);
             padding: 0 0 0 1.6em;
             vertical-align: middle;
             line-height: 1.2em;
@@ -95,7 +97,7 @@ form dl {
         }
         &.radio, &.checkbox, &.select {
             dt {
-                padding-top: .4em;
+                padding-top: $size-gutter;
             }
         }
     }
