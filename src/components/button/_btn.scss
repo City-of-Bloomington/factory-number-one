@@ -7,7 +7,7 @@ button, .btn {
     display:inline-block;
     line-height: 1em;
     margin-right: $size-gutter;
-    padding: $size-gutter 1em;
+    padding: $size-gutter ($size-gutter*2);
     font-size: (14rem/16);
     font-weight:normal;
     vertical-align: middle;
