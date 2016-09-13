@@ -2,10 +2,9 @@ input[type="tel"] { padding-left: 44px; }
 input[type="date"] { width:10em; }
 input[type="checkbox"], input[type="radio"] {
     font-size: 1em;
-    margin: 0 $size-gutter 0 -1.4em;
     padding: 0;
     vertical-align: middle;
-    width: inherit;
+    width:2em;
 }
 
 dl {
