@@ -1,26 +1,27 @@
 body {
     color: $color-text-default;
     font-family: $font-family-default;
+    font-size:100%;
 }
 h1 {
     color: $color-heading-1;
-    font-size: 1rem;
+    font-size: $font-size-normal;
     font-weight: 300;
     margin: 0 0 .5em;
 }
 h2 {
   color: $color-heading-2;
-  font-size: 1.3rem;
+  font-size: $font-size-big;
   font-weight: normal;
   margin: $size-gutter 0;
 }
 h3 {
     color: $color-heading-3;
-    font-size: 1.5rem;
+    font-size: $font-size-bigger;
     font-weight: normal;
     margin:$size-gutter 0 ($size-gutter/2) 0;
 }
-h4 { font-size:100%; font-weight: $font-weight-heading; }
+h4 { font-size: $font-size-normal; font-weight: $font-weight-heading; }
 a {
     color: $color-link;
     text-decoration:none;
@@ -48,7 +49,7 @@ form {
 legend {
     color: $color-heading-1;
     display: block;
-    font-size: 1.15em;
+    font-size: $font-size-normal;
     font-weight: normal;
     margin: 0;
     padding: 0 0 0 0;
@@ -62,12 +63,14 @@ label { font-weight:normal; }
 }
 
 @media print {
+    :root { font-size:10pt; }
+
     h1 {
-        font-size: 1.5rem;
+        font-size: $font-size-bigger;
         margin: $size-gutter 0 0 0;
     }
     h2 {
-        font-size: 1.35rem;
+        font-size: $font-size-big;
         margin: $size-gutter 0 0 0;
     }
 }
