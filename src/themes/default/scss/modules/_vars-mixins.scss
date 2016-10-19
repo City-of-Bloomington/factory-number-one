@@ -5,8 +5,8 @@ $url-logo:              "";
 $url-header-background: "";
 
 
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i';
-$font-family-default: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+$font-family-default: Roboto, sans-serif;
 $font-weight-heading: 600;
 
 $font-size-bigger: 1.5rem;
@@ -14,7 +14,6 @@ $font-size-big:    1.3rem;
 $font-size-normal:   1rem;
 $font-size-small:   .8rem;
 $font-size-smaller: .6rem;
-
 
 $color-text-default: #303030;
 $color-content-background: #fff;
