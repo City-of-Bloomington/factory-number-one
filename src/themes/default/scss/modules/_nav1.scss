@@ -6,7 +6,7 @@
             color: $color-nav1;
             display: block;
             float: left;
-            margin: 0 $size-gutter $size-gutter 0;
+            margin-right: $size-gutter;
             padding: $size-gutter .75em;
             transition: background-color .25s ease-in-out;
             &[aria-label] {
