@@ -1,4 +1,4 @@
-button, .btn {
+button, .button {
     background: $color-table-background;
     border:1px solid $color-border-input;
     border-radius:.4em;
@@ -20,24 +20,6 @@ button, .btn {
         cursor: pointer;
         text-decoration: none;
     }
-    &-action {
-        @extend .btn;
-    }
-    &-featuredAction {
-        @extend .btn-action;
-        font-size: (24rem/16);
-    }
-    &-container {
-            @include clearfix();
-            margin: 1em 0;
-        &--centered {
-            @extend .btn-container;
-            text-align: center;
-        }
-        > [class^=btn] {
-            margin: 0 1em 0 0;
-        }
-    }
 }
 
 .icon {
@@ -51,7 +33,7 @@ button, .btn {
     background-size:($size-gutter*2) ($size-gutter*2);
 }
 
-button, .btn, .icon {
+button, .button, .icon {
     $imageSpace: 1.7em;
     &.add      { background-image:url('../img/fa-svg/gray/svg/plus.svg'      ); padding-left:$imageSpace; }
     &.edit     { background-image:url('../img/fa-svg/gray/svg/pencil.svg'    ); padding-left:$imageSpace; }
