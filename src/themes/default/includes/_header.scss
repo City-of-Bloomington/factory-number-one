@@ -1,8 +1,8 @@
 body > header {
 
-    background-color: #f1f3f8;
+    background-color: $color-border-modal;
     color: $color-header;
-    padding-top:.5em; padding-left:.5em;
+    padding-top:$size-gutter; padding-left:$size-gutter;
 
     a { color: $color-header; }
 
@@ -10,14 +10,22 @@ body > header {
         h1, h2 {
             display:inline-block;
             margin: .2em 0 .3em 0;
-            height:1.5rem; line-height:1.5rem;
             vertical-align:middle;
         }
         h1 a {
-            font-size:1.5rem; font-weight:normal;
+            margin-left: $size-gutter;
+            font-size:$font-size-bigger; font-weight:normal;
+
+            @if $url-logo {
+                display:inline-block;
+                background:url($url-logo) no-repeat left center;
+                background-size:2.5rem;
+                padding-left:3rem;
+                line-height:2.5rem;
+            }
         }
         h2 {
-            font-size:.8rem;
+            font-size:$font-size-small;
             margin: 0 0 0 2em;
             padding:0 0 0 2em;
             border-left:1px solid $color-border-table;

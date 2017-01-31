@@ -1,72 +1,18 @@
 body > header {
-    background-color: #fff;
-    border-top: .4em solid $color-accent;
-    box-shadow: none;
-    margin-bottom: 0;
-    padding:0;
+    background-color: $color-content-background;
+    border-top: 0.4em solid $color-accent;
+    padding-left:0;
 
-    > .container {
-        margin: 0 auto 0;
-        color: $color-header;
-        position: relative;
-        @include clearfix();
-
-        @if($url-logo != '') {
-            &:before {
-                background: url($url-logo);
-                background-size: 100% 100%;
-                content: '';
-                display: block;
-                float: left;
-                height: 2.25rem;
-                margin: 0 .5rem .25rem .5rem;
-                width: 2.25rem;
-            }
-        }
-    }
-
-    .title {
-        float: left;
-        padding: 0;
-
-        a { color: $color-header; }
-
-        h1 {
-            font-size:1rem;
-            font-weight: normal;
-            margin: 0 0 0 0;
-        }
-        h2 {
-            font-size: (11rem/16);
-            margin: 0 0 .25rem 0;
-        }
-    }
-    .utilityBar {
-        position: relative;
-
-        nav {
-            float: right;
-            margin: 0 0 0 1em;
-        }
-    }
-
-    @media screen and (min-width: $viewport-med) {
-        position: relative;
-
+    @media all and (min-width: $viewport-medium) {
         > .container {
             box-sizing: border-box;
             margin: 0 auto;
-            padding-top: .5em;
             width: 46em;
         }
     }
-
-    @include largeViewport {
+    @media all and (min-width: $viewport-large) {
         > .container {
             width: 60em;
         }
-    }
-    @media screen and (max-height: $viewport-notTall) {
-        border-top: 0;
     }
 }

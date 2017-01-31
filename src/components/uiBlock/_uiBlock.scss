@@ -1,7 +1,7 @@
 main header {
     h1 {
         display: inline-block;
-        font-size: 1.5rem;
+        font-size: $font-size-bigger;
         margin-right: 1em;
     }
 
@@ -14,23 +14,4 @@ section, article {
     margin: 0 0 2em 0;
 
     section, article { margin:0 0 1rem 0; }
-
-    /*
-    &-portraitSidebar {
-        img {
-            width: 100%;
-        }
-    }
-    @include mediumViewport {
-        &-portraitSidebar {
-            $sidebarWidth: 33%;
-            float: left;
-            width: $sidebarWidth;
-            & + .uiBlock-content {
-                margin-left: $sidebarWidth;
-                padding-left: 1rem;
-            }
-        }
-    }
-    */
 }

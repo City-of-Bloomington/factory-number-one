@@ -1,5 +1,5 @@
 #nav1 {
-    @media all and (min-width: $viewport-med) {
+    @media all and (min-width: $viewport-medium) {
         position: relative;
         overflow: visible;
 
@@ -59,11 +59,6 @@
                 padding-left: 1.5em;
                 padding-right: 1.5em;
             }
-        }
-    }
-    @media all and (max-height: $viewport-notTall) {
-        .container {
-            padding-top: .5rem;
         }
     }
 }

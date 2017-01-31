@@ -5,7 +5,7 @@ main {
         margin: 0 auto;
         padding: 2em;
     }
-    @media screen and (min-width: $viewport-med) {
+    @media screen and (min-width: $viewport-medium) {
         position: relative;
 
         &:before {

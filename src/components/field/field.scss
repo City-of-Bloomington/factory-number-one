@@ -8,7 +8,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 dl {
-    border-top: 1px solid;
+    border-top: 1px solid $color-border-table;
     display: block;
     margin: 0;
     padding: $size-gutter 0;
@@ -19,7 +19,7 @@ dl {
         float: left;
         margin: 0;
         padding: .2em 0 0 0;
-        width: 8em;
+        width: 10em;
     }
     dd {
         margin: 0;
@@ -36,7 +36,7 @@ form dl {
         box-sizing: border-box;
         border: 1px solid $color-border-input;
         font-family: $font-family-default;
-        font-size: 1em;
+        font-size: $font-size-normal;
         padding: $size-gutter;
         transition: border-color .35s ease-in-out, background-color .5s ease-in-out;
         width: 100%;
