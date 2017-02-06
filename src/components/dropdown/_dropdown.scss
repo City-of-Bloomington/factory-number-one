@@ -20,10 +20,10 @@
     }
 
     .links {
-        background: #fff;
+        background: $color-content-background;
         box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
         min-width: 12rem;
-        padding: .5rem 0;
+        padding: $size-gutter 0;
         position: absolute;
             top: 100%;
             left: 0;
@@ -37,7 +37,7 @@
             content: '';
             display: block;
             height: 1px;
-            margin: .5rem;
+            margin: $size-gutter;
         }
     }
     a {
