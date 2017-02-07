@@ -45,7 +45,7 @@ gulp.task('build-kirkwood-sass', function() {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./build/assets/css'));
 });
-
+/*
 gulp.task('build-info-sass', function() {
     gulp.src('./src/themes/info/scss/*.scss')
         .pipe(sourcemaps.init())
@@ -61,20 +61,23 @@ gulp.task('build-geospatial-sass', function() {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./build/assets/css'));
 });
+*/
 
 // Run the first build, or re-build assets after cleaning files
-gulp.task('build', ['build-default-sass', 'build-info-sass', 'build-kirkwood-sass', 'build-html'], function() {
+gulp.task('build', ['build-default-sass', 'build-kirkwood-sass', 'build-html'], function() {
     gulp.src('./src/static/**/*.*')
         .pipe(gulp.dest('./build/assets/'));
 
     gulp.src('./src/themes/kirkwood/img/*.*')
         .pipe(gulp.dest('./build/assets/kirkwood/img/'));
 
+    /*
     gulp.src('./src/themes/info/img/*.*')
         .pipe(gulp.dest('./build/assets/info/img/'));
 
     gulp.src('./src/themes/geospatial/img/*.*')
         .pipe(gulp.dest('./build/assets/geospatial/img/'));
+    */
 
     gulp.src('./src/logo.svg')
         .pipe(gulp.dest('./build/'));
