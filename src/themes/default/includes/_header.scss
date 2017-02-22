@@ -4,7 +4,10 @@ body > header {
     color: $color-header;
     padding-top:$size-gutter; padding-left:$size-gutter;
 
-    a { color: $color-header; }
+    a {
+        color: $color-header;
+        font-family: $font-family-heading;
+    }
 
     > .container {
         h1, h2 {

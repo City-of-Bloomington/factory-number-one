@@ -3,20 +3,21 @@ body {
     font-family: $font-family-default;
     font-size:100%;
 }
-h1 {
+h1, h2, h3, h4 {
     color: $color-heading;
+    font-family: $font-family-heading;
+}
+h1 {
     font-size: $font-size-normal;
     font-weight: 300;
     margin: 0 0 .5em;
 }
 h2 {
-  color: $color-heading;
   font-size: $font-size-big;
   font-weight: normal;
   margin: $size-gutter 0;
 }
 h3 {
-    color: $color-heading;
     font-size: $font-size-bigger;
     font-weight: normal;
     margin:$size-gutter 0 ($size-gutter/2) 0;

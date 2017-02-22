@@ -1,14 +1,15 @@
 button, .button {
+    font-family: $font-family-heading;
     background: $color-table-background;
     border:1px solid $color-border-input;
-    border-radius:.4em;
+    border-radius: $size-gutter;
     box-sizing: content-box;
     color: $color-text-default;
     display:inline-block;
     line-height: 1em;
     margin-right: $size-gutter;
     padding: $size-gutter ($size-gutter*2);
-    font-size: (14rem/16);
+    font-size: $font-size-small;
     font-weight:normal;
     vertical-align: middle;
     background-repeat: no-repeat;
@@ -34,7 +35,7 @@ button, .button {
 }
 
 button, .button, .icon {
-    $imageSpace: 1.7em;
+    $imageSpace: $font-size-small * 2;
     &.add      { background-image:url('../img/fa-svg/gray/svg/plus.svg'      ); padding-left:$imageSpace; }
     &.edit     { background-image:url('../img/fa-svg/gray/svg/pencil.svg'    ); padding-left:$imageSpace; }
     &.delete   { background-image:url('../img/fa-svg/gray/svg/times.svg'     ); padding-left:$imageSpace; }

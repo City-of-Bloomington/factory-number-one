@@ -4,7 +4,8 @@
     position: relative;
 
     .launcher {
-        border: none;
+        border:1px solid $color-border-input;
+        border-radius: $size-gutter;
         outline: none;
         background-repeat: no-repeat;
         background-position: $size-gutter center;
@@ -41,6 +42,7 @@
         }
     }
     a {
+        font-family: $font-family-heading;
         display: block;
         padding: ($size-gutter/2) $size-gutter;
         transition: background-color .25s ease-in-out, color .25s ease-in-out;

@@ -6,6 +6,7 @@ thead th {
     color: $color-table-background;
     font-size: .85em;
     font-weight: normal;
+    font-family: $font-family-heading;
     height: 2em;
     padding: $cell-padding;
     vertical-align: bottom;
@@ -21,7 +22,8 @@ tbody {
     th, td {
         background: $color-table-background;
         border-top: 1px solid $color-border-table;
-        font-size: 1rem;
+        font-size: $font-size-normal;
+        font-family: $font-family-heading;
         line-height: 1.2em;
         padding: $cell-padding;
         transition: background-color .2s linear;
@@ -35,45 +37,6 @@ tbody {
 
 table {
     width: 100%;
-
-    .dropdown {
-        .launcher {
-            background-color: rgba(200, 200, 200, 1);
-            border: 1px solid $color-border-input;
-            font-size: (13rem/16);
-            margin: (-5rem/16) -1.5rem (-5rem/16) -.5rem;
-            opacity: .35;
-            transition: background-color .25s ease-in-out, opacity .25s ease-in-out;
-            white-space: nowrap;
-
-            &:hover {
-                background-color: rgba(172, 242, 255, .1);
-            }
-
-            &:before {
-                border: (4em/16) solid transparent;
-                border-top: (6em/16) solid #444;
-                content: '';
-                color: $color-border-input;
-                display: inline-block;
-                height: 0;
-                margin: 0 .25em 0 .25em;
-                position: relative;
-                top: .125em;
-                width: 0;
-            }
-        }
-        .links {
-            left: inherit;
-            right: -1.5em;
-        }
-    }
-    tr:hover {
-        th, td {
-            .launcher { opacity: 1; }
-        }
-    }
-
     @media print {
         .dropdown { display:none; }
     }

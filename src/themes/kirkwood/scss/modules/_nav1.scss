@@ -17,9 +17,9 @@
         }
 
         .container {
+            background: rgba(255, 255, 255, .5);
             box-sizing: border-box;
             margin: 0 auto;
-            padding: 2.7em 0 0 0;
             position: relative;
             width: 46em;
             z-index: 4;
@@ -27,22 +27,19 @@
         }
 
         a {
-            background: rgba(255, 255, 255, .5);
             color: $color-nav1;
             display: block;
             float: left;
-            margin: 0 .5em .4em 0;
+            margin-right: $size-gutter;
             padding: .5em .75em;
             transition: background-color .25s ease-in-out;
             &[aria-label] {
-                background-color: rgba(255,255,255, .7);
                 border-bottom: none; // Override "default" theme
                 padding-bottom: 1.3em;
                 margin-bottom: -1.3em;
             }
 
             &:hover {
-                background: rgba(255,255,255, .8);
                 text-decoration: none;
             }
         }
