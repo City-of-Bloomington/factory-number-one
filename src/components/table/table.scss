@@ -33,6 +33,7 @@ tbody {
             padding-left: $first-cell-padding-left;
         }
     }
+    tr:nth-child(even) td { background: $color-table-background-alt; }
 }
 
 table {
