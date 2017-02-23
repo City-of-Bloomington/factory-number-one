@@ -1,12 +1,12 @@
 button, .button {
     font-family: $font-family-heading;
-    background: $color-table-background;
+    background: $color-action;
     border:1px solid $color-border-input;
     border-radius: $size-gutter;
     box-sizing: content-box;
     color: $color-text-default;
     display:inline-block;
-    line-height: 1em;
+    line-height: 1.2em;
     margin-right: $size-gutter;
     padding: $size-gutter ($size-gutter*2);
     font-size: $font-size-small;

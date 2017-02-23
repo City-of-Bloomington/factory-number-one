@@ -4,7 +4,7 @@ $first-cell-padding-left: 1.5em;
 thead th {
     background: $color-table-header-background;
     color: $color-table-background;
-    font-size: .85em;
+    font-size: $font-size-small;
     font-weight: normal;
     font-family: $font-family-heading;
     height: 2em;
