@@ -23,6 +23,7 @@ $color-content-background: $white;
 $color-link:               $biscay;
 $color-nav1:               $biscay;
 $color-header:             $biscay;
+$color-footer:             $roman-coffee;
 $color-accent:             $azure;
 
 $color-heading:            $mine-shaft;
@@ -30,22 +31,22 @@ $color-error:              $brink-pink;
 $color-alert:              $golden-tainoi;
 $color-action:             $fern;
 
-$color-background-field:           $wafer;
+$color-background-field:           $sail;
 $color-background-field-highlight: $gin-fizz;
 $color-border-input:               $silver-chalice;
 $color-border-input-highlight:     $mine-shaft;
 $color-border-table:               $wafer;
 
 $color-table-background:           $white;
-$color-table-background-alt:       $sail;
+$color-table-background-alt:       $golden-tainoi;
 $color-table-header-background:    $biscay;
 
 $color-shadow: rgba(0, 0, 0, 0.5);
 
 
-$viewport-small:  (350rem/16);
-$viewport-medium: (600rem/16);
-$viewport-large:  (990rem/16);
+$viewport-small:  (350px);
+$viewport-medium: (600px);
+$viewport-large:  (990px);
 
 $size-gutter: .5em;
 
