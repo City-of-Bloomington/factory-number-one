@@ -17,20 +17,22 @@ $font-size-small:   .8rem;
 $font-size-smaller: .6rem;
 
 @import 'color-palette';
+// Foreground colors
 $color-text-default:       $mine-shaft;
-$color-content-background: $white;
-
 $color-link:               $biscay;
+$color-heading:            $mine-shaft;
+
+// Background colors
+$color-content-background: $white;
 $color-nav1:               $biscay;
 $color-header:             $biscay;
 $color-footer:             $roman-coffee;
-$color-accent:             $azure;
-
-$color-heading:            $mine-shaft;
 $color-error:              $brink-pink;
 $color-alert:              $golden-tainoi;
 $color-action:             $fern;
+$color-accent:             $azure;
 
+// Special widget colors
 $color-background-field:           $sail;
 $color-background-field-highlight: $gin-fizz;
 $color-border-input:               $silver-chalice;
@@ -44,9 +46,9 @@ $color-table-header-background:    $biscay;
 $color-shadow: rgba(0, 0, 0, 0.5);
 
 
-$viewport-small:  (350px);
-$viewport-medium: (600px);
-$viewport-large:  (990px);
+$viewport-small:   (350px);
+$viewport-medium:  (640px);
+$viewport-large:  (1080px);
 
 $size-gutter: .5em;
 
