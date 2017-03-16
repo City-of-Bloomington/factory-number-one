@@ -4,27 +4,26 @@
 $url-logo:              "";
 $url-header-background: "";
 
+//Typefaces
 @import 'https://fonts.googleapis.com/css?family=Lora';
 @import 'https://fonts.googleapis.com/css?family=Roboto Condensed';
+$serif: "Lora", serif;
+$sans: "Roboto Condensed", sans-serif;
 
-
-//Typefaces
-$font-family-default: Lora, serif;
-$font-family-heading: Roboto Condensed, sans-serif;
+$font-family-default: $serif;
+$font-family-heading: $sans;
 $font-weight-heading: 600;
 
 //Font Sizes
-$font-size-huge:   2.8125rem
-$font-size-biggest: 1.6667rem
-$font-size-bigger: 1.4rem;
-$font-size-big:    1.25rem;
-$font-size-normal: 1.125rem;
-$font-size-small:   1.0rem;
-$font-size-smaller: 0.875rem;
+$font-size-huge:    2.8125rem;
+$font-size-biggest: 1.6667rem;
+$font-size-bigger:  1.4000rem;
+$font-size-big:     1.2500rem;
+$font-size-normal:  1.1250rem;
+$font-size-small:   1.0000rem;
+$font-size-smaller: 0.8750rem;
 
 // Families
-$serif = "Lora", serif
-$sans = "Roboto Condensed", sans-serif
 
 @import 'color-palette';
 // Foreground colors
