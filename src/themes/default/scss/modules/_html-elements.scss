@@ -8,27 +8,31 @@ h1, h2, h3, h4 {
     font-family: $font-family-heading;
 }
 h1 {
-    font-size: $font-size-normal;
-    font-weight: 300;
+    font-size: $font-size-biggest;
+    font-weight: 700;
     margin: 0 0 .5em;
 }
 h2 {
-  font-size: $font-size-normal;
-  font-weight: normal;
+  font-size: $font-size-bigger;
+  font-weight: 700;
   margin: $size-gutter 0;
 }
 h3 {
     font-size: $font-size-normal;
-    font-weight: normal;
+    font-weight: 400;
     margin:$size-gutter 0 ($size-gutter/2) 0;
 }
-h4 { font-size: $font-size-normal; font-weight: $font-weight-heading; }
+h4 { font-size: $font-size-big; 
+font-weight: 400; 
+
+}
 a {
     color: $color-link;
     text-decoration:none;
 }
 p {
     line-height: (20em/16);
+    font-size: $font-size-normal;
     margin: $size-gutter 0;
 }
 address { white-space: pre-line; }
@@ -50,8 +54,8 @@ form {
 legend {
     color: $color-heading;
     display: block;
-    font-size: $font-size-normal;
-    font-weight: normal;
+    font-size: $font-size-small;
+    font-weight: 300;
     margin: 0;
     padding: 0 0 0 0;
 }
@@ -67,11 +71,11 @@ label { font-weight:normal; }
     :root { font-size:10pt; }
 
     h1 {
-        font-size: $font-size-bigger;
+        font-size: $font-size-biggest;
         margin: $size-gutter 0 0 0;
     }
     h2 {
-        font-size: $font-size-big;
+        font-size: $font-size-bigger;
         margin: $size-gutter 0 0 0;
     }
 }
