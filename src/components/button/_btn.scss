@@ -4,7 +4,7 @@ button, .button {
     border:1px solid $color-border-input;
     border-radius: $size-gutter;
     box-sizing: content-box;
-    color: $color-text-default;
+    color: $color-content-background;
     display:inline-block;
     line-height: 1.2em;
     margin-right: $size-gutter;
@@ -17,7 +17,7 @@ button, .button {
     background-size: ($size-gutter*2) ($size-gutter*2);
 
     &:hover {
-        background-color: lighten($color-table-background, 1);
+        background-color: $color-action-hover;
         cursor: pointer;
         text-decoration: none;
     }

@@ -28,18 +28,24 @@ $font-size-smaller: 0.8750rem;
 @import 'color-palette';
 // Foreground colors
 $color-text-default:       $mine-shaft;
+$color-text-secondary:     $silver-chalice;
 $color-link:               $biscay;
 $color-heading:            $mine-shaft;
+$color-divider:            $silver;
 
 // Background colors
-$color-content-background: $white;
-$color-nav1:               $biscay;
-$color-header:             $biscay;
-$color-footer:             $dodger-blue;
-$color-error:              $accentred;
-$color-alert:              $golden-tainoi;
-$color-action:             $fern;
-$color-accent:             $accentred;
+$color-content-background:  $white;
+$color-selected-background: $havelock-blue;
+
+$color-nav1:                $biscay;
+$color-header:              $biscay;
+$color-header-border:       $azure;
+$color-footer:              $dodger-blue;
+$color-error:               $sunglo;
+$color-alert:               $golden-tainoi;
+$color-action:              $fern;
+$color-action-hover:        $deyork;
+$color-accent:              $red;
 
 // Special widget colors
 $color-background-field:           $sail;
@@ -48,8 +54,8 @@ $color-border-input:               $silver-chalice;
 $color-border-input-highlight:     $mine-shaft;
 $color-border-table:               $wafer;
 
-$color-table-background:           $white;
-$color-table-background-alt:       $golden-tainoi;
+$color-table-background:           $gainsboro;
+$color-table-background-alt:       $silver;
 $color-table-header-background:    $biscay;
 
 $color-shadow: rgba(0, 0, 0, 0.5);

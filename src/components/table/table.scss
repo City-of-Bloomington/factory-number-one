@@ -26,7 +26,6 @@ tbody {
         font-family: $font-family-heading;
         line-height: 1.2em;
         padding: $cell-padding;
-        transition: background-color .2s linear;
         vertical-align: top;
 
         &:first-child {

@@ -4,7 +4,7 @@ input[type="checkbox"], input[type="radio"] {
     font-size: 1em;
     padding: 0;
     vertical-align: middle;
-    width:2em;
+    width:1em;
 }
 
 dl {
@@ -39,7 +39,6 @@ form dl {
         font-family: $font-family-default;
         font-size: $font-size-normal;
         padding: $size-gutter;
-        transition: border-color .35s ease-in-out, background-color .5s ease-in-out;
         width: 100%;
 
         &:focus {
@@ -66,15 +65,11 @@ form dl {
     @media all and (min-width: $viewport-medium) {
         background: $color-background-field;
         margin: 2px 0;
-        transition: background .25s linear;
 
         &:after {
             clear: both;
             content: '';
             display: table;
-        }
-        &:hover {
-            background: $color-background-field-highlight;
         }
         dt {
             color: $color-heading;

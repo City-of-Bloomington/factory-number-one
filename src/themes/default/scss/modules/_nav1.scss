@@ -1,5 +1,5 @@
 #nav1 {
-    @include mediumViewport {
+    @media all and (min-width: $viewport-medium) {
         overflow:auto;
 
         a {
@@ -8,17 +8,10 @@
             float: left;
             margin-right: $size-gutter;
             padding: $size-gutter .75em;
-            transition: background-color .25s ease-in-out;
-            &[aria-label] {
-                border-bottom: ($size-gutter/2) solid $color-nav1;
-            }
         }
 
         form     { float: right; }
         fieldset { margin: 0; }
         input    { font-size: 1em; padding: ($size-gutter/2); }
-    }
-
-    @include largeViewport {
     }
 }

@@ -34,7 +34,8 @@
     }
     .subgroup {
         &:not(:first-of-type):before {
-            background-color: $color-table-background;
+            background-color: $color-link;
+            color: $color-content-background;
             content: '';
             display: block;
             height: 1px;
@@ -45,9 +46,9 @@
         font-family: $font-family-heading;
         display: block;
         padding: ($size-gutter/2) $size-gutter;
-        transition: background-color .25s ease-in-out, color .25s ease-in-out;
         &:hover {
-            background-color: $color-table-background;
+            background-color: $color-link;
+            color: $color-content-background;
         }
     }
 }

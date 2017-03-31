@@ -1,6 +1,6 @@
 body > header {
     background-color: $color-content-background;
-    border-top: 0.4em solid $color-accent;
+    border-top: 0.4em solid $color-header-border;
     padding-left:0;
 
     @media all and (min-width: $viewport-medium) {

@@ -6,29 +6,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: $color-heading;
     font-family: $font-family-heading;
-    font-weight: 300;
     font-size: 1rem;
-    margin: 0;
 }
-h1 {
-    font-size: $font-size-biggest;
-    font-weight: 700;
-    margin: 0 0 .5em;
-}
-h2 {
-  font-size: $font-size-bigger;
-  font-weight: 700;
-  margin: $size-gutter 0;
-}
-h3 {
-    font-size: $font-size-big;
-    font-weight: 400;
-    margin:$size-gutter 0 ($size-gutter/2) 0;
-}
-h4 { font-size: $font-size-big; 
-font-weight: 400; 
-
-}
+h1 { font-size: $font-size-biggest; font-weight:700; margin:0 0 .5em; }
+h2 { font-size: $font-size-bigger;  font-weight:700; margin:$size-gutter 0; }
+h3 { font-size: $font-size-big;     font-weight:400; margin:$size-gutter 0 ($size-gutter/2) 0; }
+h4 { font-size: $font-size-big;     font-weight:400; }
 a {
     color: $color-link;
     text-decoration:none;
@@ -63,11 +46,8 @@ legend {
     padding: 0 0 0 0;
 }
 label { font-weight:normal; }
-@media (max-width:400px) {
-    textarea { width:80%; height:6em; }
-}
-@media (min-width:401px) {
-    textarea { width:60ex; height:12em; }
+@media all and (min-width:$viewport-medium) {
+    textarea { width:55ex; height:12em; }
 }
 
 @media print {
