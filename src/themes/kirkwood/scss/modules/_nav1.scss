@@ -21,7 +21,6 @@
             box-sizing: border-box;
             margin: 0 auto;
             position: relative;
-            width: 46em;
             z-index: 4;
             @include clearfix();
         }
@@ -32,12 +31,6 @@
             float: left;
             margin-right: $size-gutter;
             padding: .5em .75em;
-            transition: background-color .25s ease-in-out;
-            &[aria-label] {
-                border-bottom: none; // Override "default" theme
-                padding-bottom: 1.3em;
-                margin-bottom: -1.3em;
-            }
 
             &:hover {
                 text-decoration: none;
@@ -49,9 +42,9 @@
         input    { font-size: 1em; padding: .25em; }
     }
 
-    @include largeViewport {
+    @media all and (min-width:$viewport-large) {
         .container {
-            width: 60em;
+            width: $viewport-large;
             a {
                 padding-left: 1.5em;
                 padding-right: 1.5em;

@@ -24,12 +24,15 @@ main {
         > .container {
             background: $color-content-background;
             border-top: $size-gutter solid $color-header-border;
-            margin: 0 auto;
             min-height: 40em;
-            padding: 2em;
             position: relative;
-            width: $viewport-medium;
             z-index: 3;
+        }
+    }
+
+    @media all and (min-width:$viewport-large) {
+        > .container {
+            width:$viewport-large;
         }
     }
 }
