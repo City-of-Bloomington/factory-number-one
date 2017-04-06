@@ -1,40 +1,19 @@
 #nav1 {
     @media all and (min-width: $viewport-medium) {
-        position: relative;
-        overflow: visible;
-
-        &:after {
-            background: url($url-header-background);
-            background-size: 100% auto;
-            content: '';
-            display: block;
-            height: 18.75em;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 2;
-        }
+        background: url($url-header-background);
+        background-size: 100% auto;
 
         .container {
             background: rgba(255, 255, 255, .5);
             box-sizing: border-box;
             margin: 0 auto;
-            position: relative;
-            z-index: 4;
-            @include clearfix();
         }
 
         a {
             color: $color-nav1;
-            display: block;
-            float: left;
+            display: inline-block;
             margin-right: $size-gutter;
             padding: .5em .75em;
-
-            &:hover {
-                text-decoration: none;
-            }
         }
 
         form     { float: right; }
