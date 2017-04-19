@@ -6,9 +6,9 @@ $url-header-background: "";
 
 //Typefaces
 @import 'https://fonts.googleapis.com/css?family=Lora';
-@import 'https://fonts.googleapis.com/css?family=Roboto Condensed';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
 $serif: "Lora", serif;
-$sans: "Roboto Condensed", sans-serif;
+$sans: "Roboto", sans-serif;
 
 $font-family-default: $sans;
 $font-family-heading: $serif;

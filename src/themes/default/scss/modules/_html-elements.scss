@@ -1,12 +1,12 @@
 body {
     color: $color-text-default;
     font-family: $font-family-default;
-    font-size:100%;
+    font-size:$font-size-normal;
 }
 h1, h2, h3, h4, h5, h6 {
     color: $color-heading;
     font-family: $font-family-heading;
-    font-size: 1rem;
+    font-size: $font-size-normal;
 }
 h1 { font-size: $font-size-biggest; font-weight:700; margin:0 0 .5em; }
 h2 { font-size: $font-size-bigger;  font-weight:700; margin:$size-gutter 0; }
