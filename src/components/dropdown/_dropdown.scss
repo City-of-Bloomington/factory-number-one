@@ -13,10 +13,10 @@
         background-image:url('../img/fa-svg/gray/svg/chevron-down.svg'); padding-left:1.7em;
 
         &[aria-expanded="true"] + .links {
-            opacity: 1;
+            display:block;
         }
         &[aria-expanded="false"] + .links {
-            opacity: 0;
+            display:none;
         }
     }
 
