@@ -5,14 +5,14 @@ $url-logo:              "";
 $url-header-background: "";
 
 //Typefaces
-@import 'https://fonts.googleapis.com/css?family=Montserrat:700';
-@import 'https://fonts.googleapis.com/css?family=Esteban';
-$serif: "Montserrat", serif;
-$sans: "Esteban", sans-serif;
+@import 'https://fonts.googleapis.com/css?family=Lora';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+$serif: "Lora", serif;
+$sans:  "Roboto", sans-serif;
 
-$font-family-default: $serif;
-$font-family-heading: $sans;
-$font-family-nav:     $serif;
+$font-family-default: $sans;
+$font-family-heading: $serif;
+$font-family-nav:     $sans;
 $font-weight-heading: 700;
 
 //Font Sizes
