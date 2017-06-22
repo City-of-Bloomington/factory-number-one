@@ -33,7 +33,7 @@ dl {
 form dl {
     border-top: none;
 
-    input {
+    input:not([type="checkbox"][type="radio"]) {
         box-sizing: border-box;
         border: 1px solid $color-border-input;
         font-family: $font-family-default;
