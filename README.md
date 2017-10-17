@@ -1,90 +1,251 @@
 # Factory Number One
 
-An in-development pattern library, to help speed development of websites and applications. It includes theme-ability, allowing websites and applications built on it to be deployed by other agencies with their branding.
+[![CircleCI Build Status](https://circleci.com/gh/18F/web-design-standards/tree/develop.svg?style=shield)](https://circleci.com/gh/18F/web-design-standards/tree/develop) [![Test Coverage](https://codeclimate.com/github/18F/web-design-standards/badges/coverage.svg)](https://codeclimate.com/github/18F/web-design-standards/coverage)
 
-## Prerequisites
+This is the (eventual) successor to Factory Number One, an open-source design system for City of Bloomington websites & applications. It's heavily influenced by the the [U.S. Web Design Standards](https://standards.usa.gov) 
 
-The following prerequisites must be installed on your system before you can begin:
-
-* [Node.js](https://nodejs.org/)
-* [Gulp CLI](https://www.npmjs.com/package/gulp-cli)
-
-## Installation
-
-Clone the repository, and CD into it:
-
-    $ git clone https://github.com/City-of-Bloomington/factory-number-one.git
-    $ cd factory-number-one
-
-Next, install the NPM modules.
-
-    $ npm install
-
-The first time you run Factory Number One, you'll need to do an initial build of the HTML, CSS, documentation and assets folders.
-
-    $ gulp init
-
-Finally, run Gulp.
-
-    $ gulp
-
-This starts Factory Number One on an HTTP server at `localhost:3000`. The development environment listens for changes to HTML and SCSS files, and rebuilds files on the fly.
-
-## Themes
-
-Factory Number One provides style guides for multiple themes, from within one unified codebase. Websites and applications that follow the HTML conventions in the style guides should use the corresponding stylesheets.
-
-As of 0.3, there are three themes:
-
-* **Default:** A lightweight foundation from which other themes inherit their base. Page layout is delegated to other themes.
-* **Info:** For information and content-centric websites. This theme was created after the City's website redesign started, and a desire arose to create other public-facing web applications that share the same look and feel as the Drupal site. Because this theme is specialized, many design patterns are implemented exclusively for this theme first, and implemented for other themes as the need arises.
-* **Kirkwood:** Theme for internal web applications, named for its use of a photo of Kirkwood Ave in the page background. It focuses on patterns relevant to business application UI.
-
-## File organization
-
-The build system compiles HTML and CSS from sources spread across the entire project. By breaking the HTML and SASS files into small pieces, we can place HTML snippets in the same folder as their corresponding SASS modules.
-
-* **components** This folder contains HTML snippets (and, in some cases, Swig-based helpers) for reusable design patterns. All patterns are included in the Default theme, but the Default theme only provides the minimum amount styling to each pattern that is common across the other themes. Some components are only supported by the Info theme.
-* **layouts** This folder contains an HTML file to use as a base Swig template for all HTML files compiles by the build system.
-* **static** This folder contains static files available to all themes, including Javascript for common patterns, webfont files, and image files.
-* **themes** HTML and CSS for each theme.
-
-## SASS conventions
-
-### Framework scoping
-
-All Factory Number One classes are nested inside a `.fn1` selector, in order to limit the scope of HTML elements selected by the framework's stylesheets. For most internal projects, like the City website, or a local application, it's normal apply the `fn1` class to the `<body>` element, putting the entire HTML document into scope. For projects with a considerable amount of third party code, we would apply the `fn1` class to a `<div>` that contains the component we want to insert into the document. This limits the scope of elements selected by the framework stylesheet, so the framework stylesheet won't interfere with third-party HTML.
-
-Prior to the 0.3 release, all CSS class names were prefixed with `.fn1-`, to namespace the class names. This conflicted with a need for class names to be framework-neutral, to maximize the theme-ability of the HTML. Moving the `fn1` class to a container, as a means of scoping the framework stylesheet's selectors, was chosen as a compromise.
-
-### Units of measurement
-
-To ensure legibility, almost all layout widths should be declared either in `em` or `rem` units. This helps text remain readable even if users change the level of zoom, or change the base font-size at the OS level. By using arithmetic features in SASS, we can calculate traditional pixel values, and denote to our colleagues what the intended outcome is. When declaring a width or font-size as a fraction of an `em` or `rem`, the denominator (bottom number) denotes the inherited font-size, and the numerator (top number) denotes the intended output.
-
-In the following example, the element inherits the base font-size of 16px (because the unit of measurement is `rem`), and updates it to 24px:
-
-    font-size: (24rem/16);
-
-Now that the font-size is 24px, we could specify line-height relative to the font-size. The following specifies a line-height of 28px, and denotes an inherited a font-size of 24px:
-
-    line-height: (28em/24);
-
-### Grid system
-
-The Default theme does not implement a grid system. To optimize flexibility, grids are delegated to themes that need them (as of 0.3, only the Info theme uses the grid system).
-
-The Info theme features a 12-column grid. Some key points about the grid system include:
-* Liquid column widths up to a maximum width of 1160px.
-* 64px (4rem) gutters between each column.
-    * To implement 4rem gutters, each grid element has left and right padding of 2rem. When two grid elements are placed next to each other, their padding combines to 4rem.
-* A minimum of two columns is required to display text.
-* Width of individual columns is dependent on the width of the viewport.
-* Instead of creating CSS classes for grid elements, this grid uses SASS mixins, so grid properties can be assigned to CSS classes that are more semantic to the design.
-* Grid elements must be nested inside a grid container (usually with the `container` mixin).
-    * The `container` mixin provides margins to wrap around a grouping of grid elements that ensures a desirable amount of margin away from the edge of the viewport at different viewport sizes.
-    * Containers also serve as a wrapper for a row of grid elements, ensuring that each new row clears the previous row.
-* Width of grid elements are declared as percentages, and calculated arithmetically with SASS. For example, *two* columns inside a *twelve column* parent container would be declared: `(100%*2/12)`
+This repository will house both the components and documentation (for now.) 
 
 ## About the name
 
 Factory Number One is named after the Showers Brothers Furniture Company Factory Number 1. In the 1920s, the facility was arguably the largest furniture factory in the world, leveraging convenient access to the railroads to ship its dressers to retailers in large quantities. After World War II, the industry saw a shift from shipping by train, to shipping by truck, but the company didn't adapt to these changes in the market. The company closed its doors in 1958. Most of the facility was lost to a fire in 1969. One of the few buildings to survive was Factory Number 1. As of 2016, the building houses Bloomington, Indiana's City Hall, Monroe County offices, and office space for private companies.
+
+
+## Contents
+
+* [Background](#background)
+* [Recent updates](#recent-updates)
+* [Getting started](#getting-started)
+* [Using the Standards](#using-the-standards)
+  * [Download](#download)
+  * [Install using `npm`](#install-using-npm)
+    * [Importing assets](#importing-assets)
+    * [Sass](#sass)
+    * [JavaScript](#javascript)
+  * [Use another framework or package manager](#use-another-framework-or-package-manager)
+* [Fractal](#fractal)
+  * [Template compatibility](#template-compatibility)
+* [Need installation help?](#need-installation-help)
+* [Contributing to the code base](#contributing-to-the-code-base)
+* [Reuse of open-source style guides](#reuse-of-open-source-style-guides)
+* [Licenses and attribution](#licenses-and-attribution)
+
+## Background
+
+The components and style guide of the U.S. Web Design Standards follow industry-standard web accessibility guidelines and use the best practices of existing style libraries and modern web design. The [U.S. Digital Service](https://www.whitehouse.gov/digital/united-states-digital-service) and [18F](https://18f.gsa.gov/) created and maintain the U.S. Web Design Standards for designers and developers. They are designed for use by government product teams who want to create beautiful, easy-to-use online experiences for the public. To learn more about the project, check out this [blog post](https://18f.gsa.gov/2015/09/28/web-design-standards/) and to view websites and applications check out our list [here](WHO_IS_USING_USWDS.md).
+
+
+## Recent updates
+
+Information about the most recent release of the Standards can always be found in the [release history](https://github.com/18F/web-design-standards/releases). We include details about significant updates and any backwards incompatible changes along with a list of all changes.
+
+
+## Getting started
+
+We’re glad you’d like to use the Standards — here’s how you can get started:
+
+* Designers: [Check out our Getting Started for Designers information](https://standards.usa.gov/getting-started/designers/).
+  * [Design files of all the assets included in the Standards are available for download](https://github.com/18F/web-design-standards-assets/archive/master.zip).
+* Developers: [Follow the instructions in this README to get started.](#using-the-standards)
+  * [CSS, JavaScript, image, and font files of all the assets on this site are available for download](https://github.com/18F/web-design-standards/releases/download/v1.0.0/uswds-1.0.0.zip).
+
+
+## Using the Standards
+
+There are a few different ways to use the Standards within your project. Which one you choose depends on the needs of your project and how you are most comfortable working. Here are a few notes on what to consider when deciding which installation method to use:
+
+*Download the Standards if:*
+- You are not familiar with `npm` and package management.
+
+*Use the Standards `npm` package if:*
+- You are familiar with using `npm` and package management.
+- You would like to leverage Standards [Sass](#sass) files.
+
+### Download
+
+1. Download the [Standards zip file](https://github.com/18F/web-design-standards/releases/download/v1.0.0/uswds-1.0.0.zip) and open that file.
+
+  After extracting the zip file you should see the following file and folder structure:
+
+  ```
+  uswds-1.0.0/
+  ├── css/
+  │   ├── uswds.min.css.map
+  │   ├── uswds.min.css
+  │   └── uswds.css
+  ├── fonts/
+  ├── html/
+  └── js/
+      ├── uswds.min.js.map
+      ├── uswds.min.js
+      └── uswds.js
+
+  ```
+
+2. Copy these files and folders into a relevant place in your project's code base. Here is an example structure for how this might look:
+
+  ```
+  example-project/
+  ├── assets/
+  │   ├── uswds-1.0.0/
+  │   ├── stylesheets/
+  │   ├── images/
+  │   └── javascript/
+  └── index.html
+  ```
+
+  You'll notice in our example above that we also outline a `stylesheets`, `images` and `javascript` folder in your `assets` folder. These folders are to help organize any assets that are unique to your project.
+
+3. To use the Standards on your project, you’ll need to reference the [CSS (*C*ascading *S*tyle *S*heets)](https://developer.mozilla.org/en-US/docs/Web/CSS) and JavaScript files in each HTML page or dynamic templates in your project.
+
+  Here is an example of how to reference these assets in your `index.html` file:
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Example Project</title>
+    <link rel="stylesheet" href="assets/uswds-1.0.0/css/uswds.min.css">
+  </head>
+  <body>
+
+    <script src="assets/uswds-1.0.0/js/uswds.min.js"></script>
+  </body>
+  </html>
+  ```
+
+We offer both files, the CSS and the JavaScript, in two versions — a minified version, and an un-minified one. (In the examples above, we are using the minified files.) Use the minified files in a production environment or to reduce the file size of your downloaded assets. And the un-minified files are better if you are in a development environment or would like to debug the CSS or JavaScript assets in the browser.
+
+And that’s it — you should now be able to copy our code samples into our `index.html` and start using the Standards.
+
+### Install using npm
+
+`npm` is a package manager for Node based projects. The U.S. Web Design Standards maintains a [`uswds` package](https://www.npmjs.com/package/uswds) for you to utilize both the pre-compiled and compiled files on your project.
+
+1. Install `Node/npm`. Below is a link to find the install method that coincides with your operating system:
+
+  - Node v4.2.3+, [Installation guides](https://nodejs.org/en/download/)
+
+  **Note for Windows users:** If you are using Windows and are unfamiliar with `Node` or `npm`, we recommend following [Team Treehouse's tutorial](http://blog.teamtreehouse.com/install-node-js-npm-windows) for more information.
+
+2. Make sure you have installed it correctly:
+
+  ```shell
+  npm -v
+  3.10.8 # This line may vary depending on what version of Node you've installed.
+  ```
+
+3. Create a `package.json` file. You can do this manually, but an easier method is to use the `npm init` command. This command will prompt you with a few questions to create your `package.json` file.
+
+4. Add `uswds` to your project’s `package.json`:
+
+  ```shell
+  npm install --save uswds
+  ```
+
+The `uswds` module is now installed as a dependency. You can use the un-compiled files found in the `src/` or the compiled files in the `dist/` directory.
+
+```
+node_modules/uswds/
+├── dist/
+│   ├── css/
+│   ├── fonts/
+│   ├── html/
+│   ├── img/
+│   ├── js/
+└── src/
+    ├── fonts/
+    ├── img/
+    ├── js/
+    ├── stylesheets/
+    └── templates/
+```
+
+#### Importing assets
+
+Since you are already using `npm`, the U.S. Web Design Standards team recommends leveraging the ability to write custom scripts. Here are some links to how we do this with our docs website using `npm` + [`gulp`](http://gulpjs.com/):
+
+[Link to `npm` scripts example in `web-design-standards-docs`](https://github.com/18F/web-design-standards-docs/blob/develop/package.json#L4)
+
+[Link to gulpfile.js example in `web-design-standards-docs`](https://github.com/18F/web-design-standards-docs/blob/develop/gulpfile.js)
+
+#### Sass
+
+The Standards are easily customizable using the power of [Sass (Syntactically Awesome Style Sheets)](http://sass-lang.com/). The main Sass (SCSS) source file is located here:
+
+```
+node_modules/uswds/src/stylesheets/uswds.scss
+```
+
+Global variables are defined in the `node_modules/uswds/src/stylesheets/core/_variables.scss` file. Custom theming can be done by copying the `_variables.scss` file into your own project’s Sass folder, changing applicable variable values, and importing it before `uswds.scss`.
+
+Below is an example of how you might setup your main Sass file to achieve this:
+
+```
+@import 'variables.scss' # Custom Sass variables file
+@import 'node_modules/uswds/src/stylesheets/uswds.scss';
+
+```
+
+You can now use your copied version of `_variables.scss` to override any styles to create a more custom look and feel to your application.
+
+#### JavaScript
+`require('uswds')` will load all of the U.S. Web Design Standards’ JavaScript onto the page. Add this line to whatever initializer you use to load JavaScript into your application.
+
+### Use another framework or package manager
+
+If you’re using another framework or package manager that doesn’t support `npm`, you can find the source files in this repository and use them in your project. Otherwise, we recommend that you follow the [download instructions](#download). Please note that the core team [isn’t responsible for all frameworks’ implementations](https://github.com/18F/web-design-standards/issues/877).
+
+If you’re interested in maintaining a package that helps us distribute the U.S. Web Design Standards, the project’s build system can help you create distribution bundles to use in your project. Please read our [contributing guidelines](CONTRIBUTING.md#building-the-project-locally-with--gulp-) to locally build distributions for your framework or package manager.
+
+
+## Fractal
+
+We're using [Fractal](http://fractal.build) to generate an interactive component library for the Standards. You can run it locally after `npm install` with:
+
+```sh
+npm start
+```
+
+Then, visit [http://localhost:3000/](http://localhost:3000/) to see the Standards in action.
+
+_**Optional**: To re-build when code changes are made, run the following command from the project directory in a separate terminal window:_
+```sh
+npm run watch
+```
+
+### Template compatibility
+
+Many of our Fractal view templates are compatible with [Nunjucks](https://mozilla.github.io/nunjucks/) (for JavaScript/Node), [Jinja](http://jinja.pocoo.org/docs/2.9/) (Python), and [Twig](https://twig.sensiolabs.org/) (PHP) out of the box. Components that reference other components use a Fractal-specific `{% render %}` tag that will either need to be implemented in other environments or replaced with the appropriate `{% include %}` tags.
+
+
+## Need installation help?
+
+Do you have questions or need help with setup? Did you run into any weird errors while following these instructions? Feel free to open an issue here:
+
+[https://github.com/18F/web-design-standards/issues](https://github.com/18F/web-design-standards/issues).
+
+You can also email us directly at uswebdesignstandards@gsa.gov.
+
+
+## Contributing to the code base
+
+For complete instructions on how to contribute code, please read [CONTRIBUTING.md](CONTRIBUTING.md). These instructions also include guidance on how to set up your own copy of the Standards style guide website for development.
+
+If you would like to learn more about our workflow process, check out the [Workflow](https://github.com/18F/web-design-standards/wiki/Workflow) and [Label Glossary](https://github.com/18F/web-design-standards/wiki/Label-glossary) pages on the wiki.
+
+If you have questions or concerns about our contributing workflow, please contact us by [filing a GitHub issue](https://github.com/18F/web-design-standards/issues) or [emailing our team](mailto:uswebdesignstandards@gsa.gov).
+
+
+## Reuse of open-source style guides
+
+Much of the guidance in the U.S. Web Design Standards leans on open source designs, code, and patterns from other civic and government organizations, including:
+
+* Consumer Financial Protection Bureau’s [Design Manual](https://cfpb.github.io/design-manual/)
+* U.S. Patent and Trademark Office’s [Design Patterns](http://uspto.github.io/designpatterns/)
+* Healthcare.gov [Style Guide](http://styleguide.healthcare.gov/)
+* UK’s Government Digital Service’s [UI Elements](http://govuk-elements.herokuapp.com/)
+* Code for America’s Chime [Styleguide](https://github.com/chimecms/chime-starter)
+* Pivotal Labs [Component Library](http://styleguide.cfapps.io/)
