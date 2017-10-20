@@ -10,7 +10,7 @@ This repository will house both the core components and documentation (for now.)
 
 ## Using the Standards
 
-There are a few different ways to use the Standards within your project. You'll want to refer to the [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/develop/README.md_ repo for specific details.
+There are a few different ways to use the Standards within your project. You'll want to refer to the [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/develop/README.md_) repo for specific details.
 
 
 
