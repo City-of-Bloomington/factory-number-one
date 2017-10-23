@@ -6,12 +6,13 @@ This is the (eventual) successor to Factory Number One, an open-source design sy
 
 This repository will house both the core components and documentation (for now.) 
 
+## U.S. Web Design Standards
 
+The [U.S. Web Design Standards](https://playbook.cio.gov/designstandards) is a library of open source UI components and a visual style guide for U.S. federal government websites.
 
-## Using the Standards
+These tools follow industry-standard web accessibility guidelines and reuse the best practices of existing style libraries and modern web design. Created and maintained by [U.S. Digital Service](https://www.whitehouse.gov/digital/united-states-digital-service) and [18F](https://18f.gsa.gov) designers and developers, the Web Design Standards are designed to support government product teams in creating beautiful and easy-to-use online experiences for the American people. Learn more about this project in their announcement [blog post](https://18f.gsa.gov/2015/09/28/web-design-standards/).
 
-There are a few different ways to use the Standards within your project. You'll want to refer to the [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/develop/README.md_) repo for specific details.
-
+Design files of all the assets included on this site are available for download here: [https://github.com/18F/web-design-standards-assets](https://github.com/18F/web-design-standards-assets).
 
 
 ## About the name
