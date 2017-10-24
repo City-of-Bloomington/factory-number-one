@@ -1,9 +1,17 @@
 {
+  "name": "Fcatory Number One Successor",
+  "version": "1.5",
+  "description": "Pattern library for City of Bloomington websites. In development. Based on the proposed US Web Design Standards.",
+  "engines": {
+    "node": ">= 4"
+  },
+  
   "private": true,
   "scripts": {
     "build:css": "node-sass --include-path node_modules/uswds/src/stylesheets src/css -o css",
     "watch:css": "npm run build:css -- --watch"
   },
+  
   "dependencies": {
     "node-sass": "^4.5.2",
     "uswds": "^1.4.1",
