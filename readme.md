@@ -65,6 +65,21 @@ node_modules/uswds/
     └── templates/
 ```
 
+### Fractal (Not implemented yet)
+
+We'll using [Fractal](http://fractal.build) to generate an interactive component library for the Standards. You can run it locally after `npm install` with:
+
+```sh
+npm start
+```
+
+Then, visit [http://localhost:3000/](http://localhost:3000/) to see the Standards in action.
+
+_**Optional**: To re-build when code changes are made, run the following command from the project directory in a separate terminal window:_
+```sh
+npm run watch
+```
+
 ## About the name
 
 2018 marks 150 years of existence for Monroe County & the City of Bloomington. Sesqicentennial seemed a bit long to say, so instead, we went with "Centennial" to differentiate this successor branch of Factory Number One.
