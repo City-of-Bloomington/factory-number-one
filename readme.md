@@ -14,6 +14,7 @@ These tools follow industry-standard web accessibility guidelines and reuse the 
 
 Design files of all the assets included on this site are available for download here: [https://standards.usa.gov/](https://standards.usa.gov/).
 
+
 ## About the starter
 The starter folder is comprised of a static HTML template and a copy of the USWDS in CSS form. It's meant for testing purposes. 
 
@@ -22,6 +23,47 @@ The starter folder is comprised of a static HTML template and a copy of the USWD
 - Visual Studio Code (https://code.visualstudio.com/)
    - Live Server Extension
    - Live Sass Compiler
+
+### Install using npm
+
+`npm` is a package manager for Node based projects. The U.S. Web Design Standards maintains a [`uswds` package](https://www.npmjs.com/package/uswds) for you to utilize both the pre-compiled and compiled files on your project.
+
+1. Install `Node/npm`. Below is a link to find the install method that coincides with your operating system:
+
+  - Node v4.2.3+, [Installation guides](https://nodejs.org/en/download/)
+
+2. Make sure you have installed it correctly:
+
+  ```shell
+  npm -v
+  3.10.8 # This line may vary depending on what version of Node you've installed.
+  ```
+
+3. Create a `package.json` file. You can do this manually, but an easier method is to use the `npm init` command. This command will prompt you with a few questions to create your `package.json` file.
+
+4. Add `uswds` to your project’s `package.json`:
+
+  ```shell
+  npm install --save uswds
+  ```
+
+The `uswds` module is now installed as a dependency. You can use the un-compiled files found in the `src/` or the compiled files in the `dist/` directory.
+
+```
+node_modules/uswds/
+├── dist/
+│   ├── css/
+│   ├── fonts/
+│   ├── html/
+│   ├── img/
+│   ├── js/
+└── src/
+    ├── fonts/
+    ├── img/
+    ├── js/
+    ├── stylesheets/
+    └── templates/
+```
 
 ## About the name
 
