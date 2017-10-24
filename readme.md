@@ -6,7 +6,7 @@ This is the (eventual) successor to Factory Number One, an open-source design sy
 
 This repository will house both the core components and documentation (for now.) 
 
-## U.S. Web Design Standards
+## U.S. Web Design Standards (USWDS)
 
 The [U.S. Web Design Standards](https://playbook.cio.gov/designstandards) is a library of open source UI components and a visual style guide for U.S. federal government websites.
 
@@ -14,6 +14,14 @@ These tools follow industry-standard web accessibility guidelines and reuse the 
 
 Design files of all the assets included on this site are available for download here: [https://github.com/18F/web-design-standards-assets](https://github.com/18F/web-design-standards-assets).
 
+## About the starter
+The starter folder is comprised of a static HTML template and a copy of the USWDS in CSS form. It's meant for testing purposes. 
+
+## Setup
+
+- Visual Studio Code (https://code.visualstudio.com/)
+   - Live Server Extension
+   - Live Sass Compiler
 
 ## About the name
 
