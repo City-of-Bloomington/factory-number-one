@@ -5,12 +5,22 @@
   "engines": {
     "node": ">= 4"
   },
-  
+ 
   "private": true,
   "scripts": {
     "build:css": "node-sass --include-path node_modules/uswds/src/stylesheets src/css -o css",
     "watch:css": "npm run build:css -- --watch"
   },
+"contributors": [
+    {
+      "name": "Dan Hiester",
+    },
+    {
+      "name": "Ron Bronson",
+      "email": "bronsonr@bloomington.in.gov"
+    },
+  ],
+  
   
   "dependencies": {
     "node-sass": "^4.5.2",
