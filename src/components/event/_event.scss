@@ -6,7 +6,8 @@
     font-size: (14rem/16);
     font-weight: normal;
     text-transform: uppercase;
-
+    margin: 0.67em 0;
+    
     @include smallViewport {
         text-transform: none;
         &-weekday {
@@ -54,7 +55,7 @@
     }
     &-location {
         &:before {
-            background: url('../img/fa-svg/map-marker-gray.svg') no-repeat 50% 50% / 100% 100%;
+            background: url('../img/fa-svg/gray/svg/map-marker.svg') no-repeat 50% 50% / 100% 100%;
             content: '';
             display: inline-block;
             height: 1em;
@@ -82,7 +83,7 @@
             font-weight: normal;
             margin-right: 2.25rem;
         }
-        > .icon-calendar {
+        > .icon.calendar {
             height: (23rem/16);
             position: absolute;
                 top: .5rem;

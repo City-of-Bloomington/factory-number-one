@@ -1,54 +1,17 @@
-.nav1 {
-    @include mediumViewport {
-        position: relative;
-
-        &-container {
-            box-sizing: border-box;
-            margin: 0 auto;
-            position: relative;
-            width: 46em;
-            z-index: 3;
-            @include clearfix();
-        }
+#nav1 {
+    @media all and (min-width: $viewport-medium) {
+        overflow:auto;
 
         a {
-            background: rgba(255, 255, 255, .5);
             color: $color-nav1;
             display: block;
             float: left;
-            margin: 0 .5em .4em 0;
-            padding: .5em .75em;
-            transition: background-color .25s ease-in-out;
-            &[aria-label] {
-                border-bottom: .25em solid $color-nav1;
-            }
-
-            &:hover {
-                background: rgba(255,255,255, .8);
-                text-decoration: none;
-            }
+            margin-right: $size-gutter;
+            padding: $size-gutter .75em;
         }
-        &-searchForm {
-            float: right;
 
-            > fieldset {
-                margin: 0;
-
-                > input {
-                    font-size: 1em;
-                    padding: .25em;
-                }
-            }
-        }
-    }
-
-    @include largeViewport {
-        &-container {
-            width: 60em;
-            a {
-                padding-left: 1.5em;
-                padding-right: 1.5em;
-            }
-        }
+        form     { float: right; }
+        fieldset { margin: 0; }
+        input    { font-size: 1em; padding: ($size-gutter/2); }
     }
 }

@@ -1,76 +1,33 @@
-.nav1 {
-    @media screen and (min-width: $viewport-med) {
-        position: relative;
+#nav1 {
+    @media all and (min-width: $viewport-medium) {
+        background: url($url-header-background);
+        background-size: 100% auto;
 
-        &:after {
-            background: url($url-header-background);
-            background-size: 100% auto;
-            content: '';
-            display: block;
-            height: 18.75em;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 2;
-        }
-
-        &-container {
+        .container {
+            background: rgba(255, 255, 255, .5);
             box-sizing: border-box;
             margin: 0 auto;
-            padding: 2.7em 0 0 0;
-            position: relative;
-            width: 46em;
-            z-index: 4;
-            @include clearfix();
         }
 
         a {
-            background: rgba(255, 255, 255, .5);
             color: $color-nav1;
-            display: block;
-            float: left;
-            margin: 0 .5em .4em 0;
+            display: inline-block;
+            margin-right: $size-gutter;
             padding: .5em .75em;
-            transition: background-color .25s ease-in-out;
-            &[aria-label] {
-                background-color: rgba(255,255,255, .7);
-                border-bottom: none; // Override "default" theme
-                padding-bottom: 1.3em;
-                margin-bottom: -1.3em;
-            }
-
-            &:hover {
-                background: rgba(255,255,255, .8);
-                text-decoration: none;
-            }
         }
-        &-searchForm {
-            float: right;
 
-            > fieldset {
-                margin: 0;
-
-                > input {
-                    font-size: 1em;
-                    padding: .25em;
-                }
-            }
-        }
+        form     { float: right; }
+        fieldset { margin: 0; }
+        input    { font-size: 1em; padding: .25em; }
     }
 
-    @include largeViewport {
-        &-container {
-            width: 60em;
+    @media all and (min-width:$viewport-large) {
+        .container {
+            width: $viewport-large;
             a {
                 padding-left: 1.5em;
                 padding-right: 1.5em;
             }
-        }
-    }
-    @media screen and (max-height: $viewport-notTall) {
-        &-container {
-            padding-top: .5rem;
         }
     }
 }

@@ -1,32 +1,17 @@
-.uiBlock {
-    margin: 2rem 0;
-    &-title {
+main header {
+    h1 {
         display: inline-block;
-        font-size: 1.5rem;
+        font-size: $font-size-bigger;
         margin-right: 1em;
-        &--centered {
-            @extend .uiBlock-title;
-            display: block;
-            text-align: center;
-        }
     }
-    &-headerTools {
+
+    .tools {
         display: inline-block;
     }
-    &-portraitSidebar {
-        img {
-            width: 100%;
-        }
-    }
-    @include mediumViewport {
-        &-portraitSidebar {
-            $sidebarWidth: 33%;
-            float: left;
-            width: $sidebarWidth;
-            & + .uiBlock-content {
-                margin-left: $sidebarWidth;
-                padding-left: 1rem;
-            }
-        }
-    }
+}
+
+section, article {
+    margin: 0 0 2em 0;
+
+    section, article { margin:0 0 1rem 0; }
 }

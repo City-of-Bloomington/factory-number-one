@@ -1,17 +1,17 @@
 {
-  "name": "factory-number-one",
-  "version": "1.0.0",
+  "name":        "@City-of-Bloomington/factory-number-one",
+  "version":     "0.3.0",
   "description": "An in-development pattern library, to help speed development of websites and applications. It includes theme-ability, allowing websites and applications built on it to be deployed by other agencies with their branding.",
-  "author": "Dan Hiester <hiesterd@bloomington.in.gov>",
-  "repository": "https://github.com/City-of-Bloomington/factory-number-one.git",
-  "license": "AGPL-3.0",
+  "homepage":    "https://github.com/City-of-Bloomington/factory-number-one",
+  "repository":  "City-of-Bloomington/factory-number-one",
+  "bugs":        "https://github.com/City-of-Bloomington/factory-number-one/issues",
+  "license":     "AGPL-3.0",
   "devDependencies": {
-    "browser-sync": "^2.12.8",
-    "gulp": "^3.9.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-prettify": "^0.3.0",
-    "gulp-sass": "^2.3.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-swig": "^0.7.4"
+    "gulp":            "latest",
+    "gulp-prettify":   "latest",
+    "gulp-sass":       "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-swig":       "latest",
+    "gulp-cli":        "latest"
   }
 }

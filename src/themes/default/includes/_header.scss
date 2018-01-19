@@ -1,34 +1,46 @@
-.siteHeader {
+body > header {
 
-    background-color: #f1f3f8;
+    background-color: $color-content-background;
+    color: $color-header;
+    padding-top:$size-gutter; padding-left:$size-gutter;
 
-    &-container {
-        margin: 0 auto 0;
+    a {
         color: $color-header;
-        padding-top: .5em;
-        position: relative;
-        @include clearfix();
+        font-family: $font-family-nav;
+    }
 
-        .site {
-            &-title {
-                float: left;
+    > .container {
+        h1, h2 {
+            display:inline-block;
+            margin: .2em 0;
+            vertical-align:middle;
+        }
+        h1 a {
+            margin-left: $size-gutter;
+            font-size:$font-size-bigger; font-weight:normal;
 
-                a { color: $color-header; }
-
-                h1 {
-                    font-size:1.5em;
-                    font-weight: normal;
-                    margin: .5em 0 .25em 0;
-                }
+            @if $url-logo {
+                display:inline-block;
+                background:url($url-logo) no-repeat left center;
+                background-size:2.5rem;
+                padding-left:3rem;
+                line-height:2.5rem;
             }
-            &-utilityBar {
-                position: relative;
+        }
+        h2 {
+            font-size:$font-size-small;
+            margin: 0 0 0 2em;
+            padding:0 0 0 2em;
+            border-left:1px solid $color-border-table;
+        }
+    }
 
-                nav {
-                    float: right;
-                    margin: 0 0 0 1em;
-                }
-            }
+    .utilityBar {
+        position:absolute; right:10px; top:10px;
+
+        nav {
+            float: right;
+            margin: 0 0 0 1em;
         }
     }
 }

@@ -1,6 +1,8 @@
-/assets
-/doc
+build
 node_modules
 .sass-cache
-screen.css
-screen.css.map
+instances.txt
+journal.txt
+todo.txt
+launch.sh
+*~

@@ -1,42 +1,15 @@
+@import 'modules/_normalize';
 @import 'modules/_vars-mixins';
-
-@import 'modules/_layout';
 @import 'modules/_html-elements';
 @import '../includes/_header';
-@import 'modules/_icon';
-@import 'modules/_menu';
 @import 'modules/_nav1';
-@import 'modules/_normalize';
-@import 'modules/_content-section';
 @import 'modules/_main';
 @import '../../../components/button/_btn';
 @import '../../../components/dropdown/_dropdown';
 @import '../../../components/event/_event';
-@import '../../../components/input/_input-field';
+@import '../../../components/field/field';
 @import '../../../components/miniGallery/_miniGallery';
-@import '../../../components/output/_output-field';
-@import '../../../components/output/_output-field-implicit';
-@import '../../../components/output/_output-field-byTheNumbers';
-@import '../../../components/output/_output-table';
+@import '../../../components/table/table';
 @import '../../../components/personListing/_personListing';
 @import '../../../components/pricingTable/_pricingTable';
 @import '../../../components/uiBlock/_uiBlock';
-
-/**
- * Side Panel
- */
-#panel-one nav {
-    border: 2px solid $color-border-table;
-    margin-bottom: 0.5em;
-    border-radius: 10px;
-    overflow: hidden;
-}
-#panel-one h2 {
-    background-color: $color-text-default;
-    border-bottom: 2px solid $color-border-table;
-    color: $color-content-background;
-    margin: 0;
-    padding: .25em;
-}
-#panel-one ul { margin:.25em; padding:0; }
-#panel-one a { font-weight:$font-weight-heading; color:$color-text-default; }

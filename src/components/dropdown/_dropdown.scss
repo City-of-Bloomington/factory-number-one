@@ -1,25 +1,30 @@
 .dropdown {
     display: inline-block;
-    margin: 0 .5em;
+    margin: 0 $size-gutter;
     position: relative;
+
     .launcher {
-        background: none;
-        border: none;
+        border:1px solid $color-border-input;
+        border-radius: $size-gutter;
         outline: none;
+        background-repeat: no-repeat;
+        background-position: $size-gutter center;
+        background-size: ($size-gutter*2) ($size-gutter*2);
+        background-image:url('../img/fa-svg/gray/svg/chevron-down.svg'); padding-left:1.7em;
 
         &[aria-expanded="true"] + .links {
-            opacity: 1;
+            display:block;
         }
         &[aria-expanded="false"] + .links {
-            opacity: 0;
+            display:none;
         }
     }
 
     .links {
-        background: #fff;
+        background: $color-content-background;
         box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
         min-width: 12rem;
-        padding: .5rem 0;
+        padding: $size-gutter 0;
         position: absolute;
             top: 100%;
             left: 0;
@@ -29,19 +34,21 @@
     }
     .subgroup {
         &:not(:first-of-type):before {
-            background-color: $color-table-background;
+            background-color: $color-link;
+            color: $color-content-background;
             content: '';
             display: block;
             height: 1px;
-            margin: .5rem;
+            margin: $size-gutter;
         }
     }
     a {
+        font-family: $font-family-heading;
         display: block;
-        padding: .25em .5em;
-        transition: background-color .25s ease-in-out, color .25s ease-in-out;
+        padding: ($size-gutter/2) $size-gutter;
         &:hover {
-            background-color: $color-table-background;
+            background-color: $color-link;
+            color: $color-content-background;
         }
     }
 }

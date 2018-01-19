@@ -1,12 +1,11 @@
 {% include 'contentBlock/_contentBlock.html' %}
 
 {% set tools = ['First Action', 'Second Action'] %}
-{% include 'input/_input-field.html' with tools %}
+{% include 'field/field.html' with tools %}
 
-{% include 'output/_output-field.html' with tools %}
 {% set tools = null %}
 
-{% include 'output/_output-table.html' %}
+{% include 'table/table.html' %}
 
 {% include 'personListing/_personList.html' %}
 

@@ -1,0 +1,55 @@
+$cell-padding: $size-gutter;
+$first-cell-padding-left: 1.5em;
+
+thead th {
+    background: $color-table-header-background;
+    color: $color-table-background;
+    font-size: $font-size-small;
+    font-weight: normal;
+    font-family: $font-family-heading;
+    height: 2em;
+    padding: $cell-padding;
+    vertical-align: bottom;
+
+    &:first-child {
+        padding-left: $first-cell-padding-left;
+    }
+    a {
+        color: $color-content-background;
+    }
+}
+tbody {
+    th, td {
+        background: $color-table-background;
+        border-top: 1px solid $color-border-table;
+        font-size: $font-size-normal;
+        font-family: $font-family-default;
+        line-height: 1.2em;
+        padding: $cell-padding;
+        vertical-align: top;
+
+        &:first-child {
+            padding-left: $first-cell-padding-left;
+        }
+    }
+    tr:nth-child(even) td { background: $color-table-background-alt; }
+}
+
+table {
+    width: 100%;
+    @media print {
+        .dropdown { display:none; }
+    }
+}
+
+@media print {
+    thead, tbody {
+        th, td {
+            background: none;
+            font-size: 11pt;
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+}

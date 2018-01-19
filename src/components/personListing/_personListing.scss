@@ -5,9 +5,10 @@
     box-sizing: border-box;
 
     > dt {
-        font-size: (24rem/16);
+        float:none;
+        font-size:   (24rem/16);
         line-height: (30rem/16);
-        margin: (10rem/16) 0 0 0;
+        margin:      (10rem/16) 0 0 0;
 
         &:first-child {
             margin-top: 0;
