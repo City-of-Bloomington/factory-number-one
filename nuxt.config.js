@@ -22,8 +22,8 @@ module.exports = {
     // CSS file in the project
     //'@/assets/css/main.css',
     // SCSS file in the project
-    '@/assets/sass/static.scss',
-    '@/assets/sass/main.scss'
+    '@/assets/static.scss',
+    '@/assets/main.scss'
   ],  
   
   /*

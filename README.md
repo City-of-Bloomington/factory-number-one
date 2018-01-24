@@ -49,6 +49,13 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 ## File organization
 
+The current structure follows the pattern that nuxt uses. This closely resembles the way the original fn1 structure was modeled. As of version 0.4.0, use of the deeply nested src/ directory is deprecated. 
+
+"pages/" holds the different pages that are available for static rendering. By default, these will be based on the layout/default.vue layout. 
+
+
+
+
 The build system compiles HTML and CSS from sources spread across the entire project. By breaking the HTML and SASS files into small pieces, we can place HTML snippets in the same folder as their corresponding SASS modules.
 
 * **components** This folder contains HTML snippets (and, in some cases, Swig-based helpers) for reusable design patterns. All patterns are included in the Default theme, but the Default theme only provides the minimum amount styling to each pattern that is common across the other themes. Some components are only supported by the Info theme.

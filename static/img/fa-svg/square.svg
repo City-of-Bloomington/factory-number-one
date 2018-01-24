@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1792"
+   height="1792"
+   viewBox="0 0 1792 1792"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="square.svg">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#00ff00"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="985"
+     id="namedview6"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="0.37249375"
+     inkscape:cx="438.2742"
+     inkscape:cy="896"
+     inkscape:window-x="1680"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2">
+    <sodipodi:guide
+       position="0,0"
+       orientation="0,1792"
+       id="guide3338" />
+    <sodipodi:guide
+       position="1792,0"
+       orientation="-1792,0"
+       id="guide3340" />
+    <sodipodi:guide
+       position="1792,1792"
+       orientation="0,-1792"
+       id="guide3342" />
+    <sodipodi:guide
+       position="0,1792"
+       orientation="1792,0"
+       id="guide3344" />
+    <sodipodi:guide
+       position="0.25261956,895.74738"
+       orientation="895.49469,0"
+       id="guide3348" />
+    <sodipodi:guide
+       position="0.25261956,0.25268555"
+       orientation="0,895.49476"
+       id="guide3350" />
+    <sodipodi:guide
+       position="895.74738,0.25268555"
+       orientation="-895.49469,0"
+       id="guide3352" />
+    <sodipodi:guide
+       position="895.74738,895.74738"
+       orientation="0,-895.49476"
+       id="guide3354" />
+  </sodipodi:namedview>
+  <path
+     d="M1664 416v960q0 119-84.5 203.5t-203.5 84.5h-960q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z"
+     fill="#fff"
+     id="path4" />
+</svg>
