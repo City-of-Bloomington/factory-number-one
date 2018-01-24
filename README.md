@@ -1,13 +1,13 @@
 # Factory Number One
 
-An in-development pattern library, to help speed development of websites and applications. It includes theme-ability, allowing websites and applications built on it to be deployed by other agencies with their branding.
+A component library for front-end development at the City of Bloomington. This version leverages [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org) to develop and build the front-end. 
 
 ## Prerequisites
 
-The following prerequisites must be installed on your system before you can begin:
+Install the following tools to get going:
 
 * [Node.js](https://nodejs.org/)
-* [Gulp CLI](https://www.npmjs.com/package/gulp-cli)
+
 
 ## Installation
 
@@ -16,29 +16,36 @@ Clone the repository, and CD into it:
     $ git clone https://github.com/City-of-Bloomington/factory-number-one.git
     $ cd factory-number-one
 
-Next, install the NPM modules.
 
-    $ npm install
+``` bash
+# install dependencies
+$ npm install # Or yarn install
 
-The first time you run Factory Number One, you'll need to do an initial build of the HTML, CSS, documentation and assets folders.
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-    $ gulp init
+# build for production and launch server
+$ npm run build
+$ npm start
 
-Finally, run Gulp.
+# generate static project
+$ npm run generate
+```
 
-    $ gulp
+For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-This starts Factory Number One on an HTTP server at `localhost:3000`. The development environment listens for changes to HTML and SCSS files, and rebuilds files on the fly.
 
-## Themes
 
-Factory Number One provides style guides for multiple themes, from within one unified codebase. Websites and applications that follow the HTML conventions in the style guides should use the corresponding stylesheets.
 
-As of 0.3, there are three themes:
 
-* **Default:** A lightweight foundation from which other themes inherit their base. Page layout is delegated to other themes.
-* **Info:** For information and content-centric websites. This theme was created after the City's website redesign started, and a desire arose to create other public-facing web applications that share the same look and feel as the Drupal site. Because this theme is specialized, many design patterns are implemented exclusively for this theme first, and implemented for other themes as the need arises.
-* **Kirkwood:** Theme for internal web applications, named for its use of a photo of Kirkwood Ave in the page background. It focuses on patterns relevant to business application UI.
+
+
+
+
+
+
+
+
 
 ## File organization
 
