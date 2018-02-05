@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  layout: 'default' // choose the correct layout
+  layout: 'drupal' // choose the correct layout
 }
 </script>
 
