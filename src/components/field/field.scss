@@ -17,11 +17,10 @@ dl {
 
     dt {
         font-family: $font-family-heading;
-        font-size: .8em;
-        float: left;
-        margin: 0;
+        font-size: $font-size-normal;
+        font-weight:bold;
+        margin: $size-gutter*2 0 0 0;
         padding: .2em 0 0 0;
-        width: 10em;
     }
     dd {
         margin: 0;
