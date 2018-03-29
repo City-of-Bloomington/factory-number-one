@@ -7,11 +7,12 @@ h1, h2, h3, h4, h5, h6 {
     color: $color-heading;
     font-family: $font-family-heading;
     font-size: $font-size-normal;
+    font-weight:700;
 }
-h1 { font-size: $font-size-biggest; font-weight:700; margin:0 0 .5em; }
-h2 { font-size: $font-size-bigger;  font-weight:700; margin:$size-gutter 0; }
-h3 { font-size: $font-size-big;     font-weight:400; margin:$size-gutter 0 ($size-gutter/2) 0; }
-h4 { font-size: $font-size-big;     font-weight:400; }
+h1 { font-size: $font-size-biggest; margin:0 0 .5em; }
+h2 { font-size: $font-size-bigger;  margin:$size-gutter 0; }
+h3 { font-size: $font-size-big;     margin:$size-gutter 0 ($size-gutter/2) 0; }
+h4 { font-size: $font-size-big;     }
 a {
     color: $color-link;
     text-decoration:none;
