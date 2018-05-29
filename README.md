@@ -6,8 +6,9 @@ A component library for front-end development at the City of Bloomington. This v
 
 Install the following tools to get going:
 
-* [Node.js](https://nodejs.org/)
+* [Node.js](https://nodejs.org/) [note: requires v9.2]
 
+It's helpful to control which version of Node we should run. For this, we can use [NVM](https://github.com/creationix/nvm).
 
 ## Installation
 
@@ -15,7 +16,6 @@ Clone the repository, and CD into it:
 
     $ git clone https://github.com/City-of-Bloomington/factory-number-one.git
     $ cd factory-number-one
-
 
 ``` bash
 # install dependencies
@@ -34,27 +34,11 @@ $ npm run generate
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## File organization
 
 The current structure follows the pattern that nuxt uses. This closely resembles the way the original fn1 structure was modeled. As of version 0.4.0, use of the deeply nested src/ directory is deprecated. 
 
 "pages/" holds the different pages that are available for static rendering. By default, these will be based on the layout/default.vue layout. 
-
-
-
 
 The build system compiles HTML and CSS from sources spread across the entire project. By breaking the HTML and SASS files into small pieces, we can place HTML snippets in the same folder as their corresponding SASS modules.
 
