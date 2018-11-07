@@ -1,9 +1,9 @@
-@import 'modules/_normalize';
-@import 'modules/_vars-mixins';
-@import 'modules/_html-elements';
-@import '../includes/_header';
-@import 'modules/_nav1';
-@import '../../../components/button/_btn';
-@import '../../../components/dropdown/_dropdown';
+@import 'modules/normalize';
+@import 'modules/vars';
+@import 'modules/html-elements';
+@import '../includes/header';
+@import 'modules/nav1';
+@import '../../../components/button/button';
+@import '../../../components/dropdown/dropdown';
 @import '../../../components/field/field';
 @import '../../../components/table/table';
