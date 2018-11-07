@@ -1,8 +1,5 @@
 build
 node_modules
 .sass-cache
-instances.txt
-journal.txt
-todo.txt
-launch.sh
-*~
+*.css
+*.css.map
