@@ -17,6 +17,7 @@ package:
 	rsync -rl ./static/ ./${BUILD}/
 	cp LICENSE ${BUILD}
 	cp README.md ${BUILD}
+	cd build && tar czf fn1.tar.gz fn1
 
 deps:
 ifndef SASS
