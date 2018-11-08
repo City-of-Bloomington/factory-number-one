@@ -1,6 +1,6 @@
 body > header {
-
     background-color: $color-content-background;
+    border-top: $size-gutter solid $color-header;
     color: $color-header;
     padding-top:$size-gutter; padding-left:$size-gutter;
 
@@ -11,17 +11,17 @@ body > header {
 
     > .container {
         h1, h2 {
-            display:inline-block;
+            display: inline-block;
             margin: .2em 0;
-            vertical-align:middle;
+            vertical-align: middle;
         }
         h1 a {
             margin-left: $size-gutter;
-            font-size:$font-size-bigger; font-weight:normal;
+            font-size:$font-size-bigger; font-weight: normal;
 
             @if $url-logo {
-                display:inline-block;
-                background:url($url-logo) no-repeat left center;
+                display: inline-block;
+                background: url($url-logo) no-repeat left center;
                 background-size:2.5rem;
                 padding-left:3rem;
                 line-height:2.5rem;
@@ -36,7 +36,7 @@ body > header {
     }
 
     .utilityBar {
-        position:absolute; right:10px; top:10px;
+        position: absolute; right:10px; top:10px;
 
         nav {
             float: right;

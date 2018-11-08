@@ -1,3 +1,7 @@
+/**
+ * @copyright 2015-2018 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
+ */
 button, .button {
     font-family: $font-family-nav;
     background: $color-action;
@@ -5,12 +9,12 @@ button, .button {
     border-radius: $size-gutter;
     box-sizing: content-box;
     color: $color-content-background;
-    display:inline-block;
+    display: inline-block;
     line-height: 1.2em;
     margin-right: $size-gutter;
     padding: $size-gutter ($size-gutter*2);
     font-size: $font-size-small;
-    font-weight:normal;
+    font-weight: normal;
     vertical-align: middle;
     background-repeat: no-repeat;
     background-position: $size-gutter center;
@@ -29,9 +33,9 @@ button, .button {
     width:0; height:1em;
     overflow: hidden;
     text-indent: -1000em;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
-    background-size:($size-gutter*2) ($size-gutter*2);
+    background-size: ($size-gutter*2) ($size-gutter*2);
 }
 
 button, .button, .icon {

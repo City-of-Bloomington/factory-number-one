@@ -1,3 +1,7 @@
+/**
+ * @copyright 2015-2018 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
+ */
 .dropdown {
     display: inline-block;
     margin: 0 $size-gutter;
@@ -10,13 +14,13 @@
         background-repeat: no-repeat;
         background-position: $size-gutter center;
         background-size: ($size-gutter*2) ($size-gutter*2);
-        background-image:url('../img/fa-svg/gray/svg/chevron-down.svg'); padding-left:1.7em;
+        background-image: url('img/fa-svg/gray/svg/chevron-down.svg'); padding-left:1.7em;
 
         &[aria-expanded="true"] + .links {
-            display:block;
+            display: block;
         }
         &[aria-expanded="false"] + .links {
-            display:none;
+            display: none;
         }
     }
 

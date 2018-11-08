@@ -1,7 +1,7 @@
 /**
  * Urls are relative to screen.css
  */
-$url-logo:              "";
+$url-logo:              "img/logo.svg";
 $url-header-background: "";
 
 //Typefaces
@@ -16,13 +16,14 @@ $font-family-nav:     $sans;
 $font-weight-heading: 700;
 
 //Font Sizes
+$font-size-base: 100%; // 16px in most browser defaults
+
 $font-size-huge:    2.8125rem;
-$font-size-biggest: 1.6667rem;
-$font-size-bigger:  1.4000rem;
-$font-size-big:     1.2500rem;
-$font-size-normal:  1.1250rem;
-$font-size-small:   1.0000rem;
-$font-size-smaller: 0.8750rem;
+$font-size-biggest: 2.2500rem;
+$font-size-bigger:  1.6875rem;
+$font-size-big:     1.5000rem;
+$font-size-normal:  1.0000rem;
+$font-size-small:   0.8750rem;
 
 // Families
 
@@ -61,45 +62,8 @@ $color-table-header-background:    $biscay;
 
 $color-shadow: rgba(0, 0, 0, 0.5);
 
-
 $viewport-small:   (350px);
 $viewport-medium:  (640px);
 $viewport-large:  (1080px);
 
 $size-gutter: .5em;
-
-// Breakpoint mixins
-@mixin smallViewport {
-    @media all and (min-width: #{$viewport-small}) {
-        @content;
-    }
-}
-@mixin mediumViewport {
-    @media all and (min-width: $viewport-medium) {
-        @content;
-    }
-}
-@mixin largeViewport {
-    @media all and (min-width: $viewport-large) {
-        @content;
-    }
-}
-
-@mixin visuallyHidden() {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-@mixin clearfix {
-    &:after {
-        clear: both;
-        content: '';
-        display: table;
-    }
-}
