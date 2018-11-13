@@ -1,6 +1,10 @@
+/**
+ * @copyright 2016-2018 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
+ */
 #nav1 {
     @media all and (min-width: $viewport-medium) {
-        overflow:auto;
+        overflow: auto;
 
         a {
             color: $color-nav1;

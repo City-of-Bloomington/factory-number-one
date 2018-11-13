@@ -1,48 +1,45 @@
-{% extends '../uiBlock/_uiBlock.html' %}
-{% block title %}Input Fields{% endblock %}
-
-{% block content %}
 <form>
-    <dl>
-        <dt><label for="text1">Title</label></dt>
-        <dd><input type="text" value="Value" id="text1" /></dd>
-    </dl>
+    <div>
+        <label for="text1">Title</label>
+        <input type="text" value="Value" id="text1" />
+    </div>
 
-    <dl>
-        <dt><label for="text2">Title</label></dt>
-        <dd><input type="text" value="Value" id="text2" /></dd>
-    </dl>
+    <div>
+        <label for="text2">Title</label>
+        <input type="text" value="Value" id="text2" />
+    </div>
 
-    <dl class="select">
-        <dt><label for="select1">Dropdown</label></dt>
-        <dd>
-            <select id="select1">
-                <option>First option</option>
-                <option>Second choice</option>
-                <option>Third vector of decision</option>
-            </select>
-        </dd>
-    </dl>
+    <div class="select">
+        <label for="select1">Dropdown</label>
 
-    <dl class="checkbox">
-        <dt>Checkbox Group</dt>
-        <dd><label><input type="checkbox" />First option</label>
-            <label><input type="checkbox" />Second choice And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live.</label>
-            <label><input type="checkbox" />Third vector of decision</label>
-        </dd>
-    </dl>
+        <select id="select1">
+            <option>First option</option>
+            <option>Second choice</option>
+            <option>Third vector of decision</option>
+        </select>
+    </div>
 
-    <dl class="textarea">
-        <dt>Textarea</dt>
-        <dd><textarea></textarea></dd>
-    </dl>
+    <div class="checkbox">
+        <label>Checkbox Group</label>
 
-    <dl><dt>Date</dt>
-        <dd><input name="date" id="date" placeholder="mm/dd/yyyy" class="date" /></dd>
-    </dl>
+        <label><input type="checkbox" />First option</label>
+        <label><input type="checkbox" />Second choice And while we're working hard to implement these initiatives, it is you, our citizens, who make Bloomington a terrific place to live.</label>
+        <label><input type="checkbox" />Third vector of decision</label>
 
-    <dl><dt>Time</dt>
-        <dd><input name="time" id="time" placeholder="hh:mm am" class="time" /></dd>
-    </dl>
+    </div>
+
+    <div class="textarea">
+        <label>Textarea</label>
+        <textarea></textarea>
+    </div>
+
+    <div>
+        <label>Date</label>
+        <input name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+    </div>
+
+    <div>
+        <label>Time</label>
+        <input name="time" id="time" placeholder="hh:mm am" type="time" />
+    </div>
 </form>
-{% endblock %}

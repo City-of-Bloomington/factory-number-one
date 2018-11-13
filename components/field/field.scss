@@ -7,31 +7,22 @@ input[type="checkbox"], input[type="radio"] {
     width:1em;
     height:1em;
 }
-
-dl {
-    border-top: 1px solid $color-border-table;
-    display: block;
-    margin: 0;
-    padding: $size-gutter 0;
-    overflow:auto;
-
-    dt {
-        font-family: $font-family-heading;
-        font-size: $font-size-normal;
-        font-weight:bold;
-        margin: $size-gutter*2 0 0 0;
-        padding: .2em 0 0 0;
-    }
-    dd {
-        margin: 0;
-        padding: 0;
-
-        .help { display:inline-block; margin-left:($size-gutter*2); }
-    }
+fieldset {
+    border: none;
 }
 
-form dl {
+fieldset > div {
+    margin: 0;
+    padding: $size-gutter 0;
+    overflow: auto;
     border-top: none;
+    .help { display: inline-block; margin-left: ($size-gutter*2); }
+
+    label {
+        font-family: $font-family-heading;
+        font-size: $font-size-normal;
+        font-weight: bold;
+    }
 
     input:not([type="checkbox"][type="radio"]) {
         box-sizing: border-box;
@@ -49,7 +40,7 @@ form dl {
 
     &.checkbox, &.radio {
         label {
-            display:block;
+            display: block;
             margin: 0;
             vertical-align: middle;
             margin-bottom: ($size-gutter/2);
@@ -64,34 +55,23 @@ form dl {
 
     @media all and (min-width: $viewport-medium) {
         background: $color-background-field;
-        margin: 2px 0;
 
-        &:after {
-            clear: both;
-            content: '';
-            display: table;
-        }
-        dt {
+        label {
             color: $color-heading;
-            float: left;
-            font-size: (13em/16);
-            margin: 0;
-            padding: .75em 0 0 1em;
+            font-size: $font-size-small;
+            padding-left: $size-gutter;
             width: 8em;
         }
-        dd {
+        input:not([type="checkbox"][type="radio"]) {
+            font-size: $font-size-small;
+            width: 20em;
             margin-left: 8em;
 
-        }
-        input:not([type="checkbox"][type="radio"]) {
-            font-size: (14em/16);
-            width: 20em;
-
-            &.datePicker { width:inherit; }
-            &.timePicker { width:inherit; }
+            &.datePicker { width: inherit; }
+            &.timePicker { width: inherit; }
         }
         &.radio, &.checkbox, &.select {
-            dt {
+            label {
                 padding-top: $size-gutter;
             }
         }

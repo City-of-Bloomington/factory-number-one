@@ -1,3 +1,7 @@
+/**
+ * @copyright 2016-2018 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
+ */
 $cell-padding: $size-gutter;
 $first-cell-padding-left: 1.5em;
 
@@ -36,9 +40,8 @@ tbody {
 }
 
 table {
-    width: 100%;
     @media print {
-        .dropdown { display:none; }
+        .dropdown { display: none; }
     }
 }
 
