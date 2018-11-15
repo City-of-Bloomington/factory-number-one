@@ -1,0 +1,8 @@
+.breadcrumbs {
+    font-size: $font-size-small;
+    a {
+        &:not(:last-child):after {
+            content: " >> ";
+        }
+    }
+}
