@@ -1,0 +1,6 @@
+.pageNavigation {
+    a {
+        display: inline-block; margin: $size-gutter;
+        &.current { border: 2px solid $color-action; }
+    }
+}
