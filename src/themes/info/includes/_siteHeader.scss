@@ -1,9 +1,0 @@
-.siteHeader {
-    background-color: #fff;
-    border-top: 8px solid $blue;
-}
-&.widthConstrained {
-    .siteHeader-container {
-        @extend %docWidthContainer;
-    }
-}

@@ -1,8 +1,0 @@
-.output-field {
-    border-top-color: $gray;
-}
-.uiBlock-content {
-    > .output-field {
-        @include grid-12col();
-    }
-}

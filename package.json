@@ -1,33 +1,207 @@
 {
-  "name": "@City-of-Bloomington/factory-number-one",
-  "version": "0.4.0",
-  "description": "Front-end foundation and component library for web-based applications developed at the City of Bloomington",
-  "license": "MIT",
-  "homepage": "https://github.com/City-of-Bloomington/factory-number-one",
-  "repository": "City-of-Bloomington/factory-number-one",
+  "name": "cob-design-system",
+  "version": "1.0.0",
+  "description": "City of Bloomington Design System is an open-source tool for building Design Systems.",
+  "author": "butcherad <butcherad@bloomington.in.gov>",
+  "main": "dist/system/system.js",
+  "files": [
+    "dist/system"
+  ],
+  "homepage": "https://vueds.com",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "dev": "webpack-dev-server --inline --config ./build/webpack.dev.conf.js",
+    "start": "npm-run-all --parallel styleguide theo:onchange theo dev",
+    "unit": "jest --config ./test/unit/jest.conf.js --coverage",
+    "build": "npm-run-all theo node:build",
+    "build:app": "npm run build",
+    "build:system": "npm-run-all theo node:build:system",
+    "build:docs": "npm-run-all theo styleguide:build",
+    "build:testBuild": "vue-cli-service build --target lib --name ./src/App.vue",
+    "lint": "eslint '**/*.{js,vue}' --cache",
+    "node:build": "node ./build/build.js",
+    "node:build:system": "node ./build/build-system.js",
+    "styleguide": "vue-styleguidist server --open --config ./config/docs.config.js",
+    "styleguide:build": "vue-styleguidist build --config ./config/docs.config.js",
+    "theo": "theo ./src/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/assets/tokens",
+    "theo:onchange": "onchange \"./src/tokens/*.yml\" -- npm run theo",
+    "test": "npm-run-all theo unit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/City-of-Bloomington/factory-number-one.git"
+  },
+  "keywords": [
+    "vue design system",
+    "design system",
+    "vue.js",
+    "vue",
+    "design",
+    "system"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-runtime"
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          "@babel/preset-env"
+        ],
+        "plugins": [
+          "@babel/plugin-syntax-dynamic-import",
+          "@babel/plugin-proposal-class-properties",
+          "@babel/plugin-proposal-object-rest-spread"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/essential"
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "vue/no-unused-vars": "error",
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "no-extra-semi": "off",
+      "semi": [
+        "error",
+        "never"
+      ],
+      "semi-style": [
+        "error",
+        "last"
+      ],
+      "no-console": "off"
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc11"
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/vue-fontawesome": "^0.1.3",
+    "@vue/web-component-wrapper": "^1.2.0",
+    "i": "^0.3.6",
+    "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.4.4",
+    "npm": "^6.4.1",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-safe-parser": "^4.0.1",
+    "postcss-url": "^8.0.0",
+    "tinycolor2": "^1.4.1",
+    "vue": "^2.5.17",
+    "vue-lodash": "^2.0.0",
+    "vue-meta": "^1.5.5",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6"
-  }
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "@vue/test-utils": "^1.0.0-beta.25",
+    "autoprefixer": "^9.3.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "chalk": "^2.4.1",
+    "codemirror": "^5.40.2",
+    "compression-webpack-plugin": "^2.0.0",
+    "copy-webpack-plugin": "^4.5.4",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.7.0",
+    "eslint-plugin-compat": "^2.6.2",
+    "eslint-plugin-es5": "^1.3.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "file-loader": "^2.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.19.0",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "jest-serializer-vue": "^2.0.2",
+    "node-notifier": "^5.3.0",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3",
+    "onchange": "^5.0.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "ora": "^3.0.0",
+    "portfinder": "^1.0.19",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0",
+    "rimraf": "^2.6.0",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^1.3.4",
+    "semver": "^5.6.0",
+    "shelljs": "^0.8.2",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.1.0",
+    "theo": "^8.0.0-beta.2",
+    "url-loader": "^1.1.2",
+    "vue-jest": "^3.0.0",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-styleguidist": "^1.8.10",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.23.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4",
+    "webpack-merge-and-include-globally": "^2.0.11"
+  },
+  "engines": {
+    "node": ">= 8.6.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not Explorer > 0",
+    "IE 11",
+    "not ExplorerMobile > 0",
+    "not BlackBerry > 0",
+    "not OperaMini all",
+    "not OperaMobile > 0"
+  ]
 }

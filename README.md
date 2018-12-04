@@ -1,88 +1,66 @@
-# Factory Number One
+[![Build status](https://travis-ci.org/viljamis/vue-design-system.svg?branch=master)](https://travis-ci.org/viljamis/vue-design-system/) ![Dependencies status](https://david-dm.org/viljamis/vue-design-system.svg) ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg) [![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/vueds/Lobby)
 
-A component library for front-end development at the City of Bloomington. This version leverages [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org) to develop and build the front-end. 
+# Vue Design System
 
-## Prerequisites
+**Vue Design System** is an open source tool for building UI Design Systems with [Vue.js](https://vuejs.org). It provides you and your team a set of organized tools, patterns & practices that work as the foundation for your application development.
 
-Install the following tools to get going:
+The tool is built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist), [Webpack](https://webpack.js.org), and [Theo](https://github.com/salesforce-ux/theo) and is aimed for designers and front-end developers who have at least basic knowledge of component based workflows + HTML, SCSS & JavaScript.
 
-* [Node.js](https://nodejs.org/) [note: requires v9.2]
+**Made by [@viljamis](https://twitter.com/viljamis) and other contributors. See also [the official website](https://vueds.com) of Vue Design System and [read my article](https://viljamis.com/2018/vue-design-system/) on the processes and workflow I use to get started with a new design system project.**
 
-It's helpful to control which version of Node we should run. For this, we can use [NVM](https://github.com/creationix/nvm).
+[![Screenshot](./docs/preview.gif)](https://vueds.com/)
 
-## Installation
+## Features
 
-Clone the repository, and CD into it:
+- A set of interconnected patterns & practices for you and your team.
+- A well thought-out terminology, naming conventions, and hierarchy.
+- Get an automated overview of how your design system progresses over time.
+- Global design tokens in YAML format that you can use inside any component.
+- Automatic generation of living, user editable documentation.
+- Easily export and use your Design System as an NPM dependency in another Vue.js or Nuxt.js project.
+- Create a token, an element, or a pattern, and it’s immediately available across all components.
+- Pre-configured Prettier setup for auto-formatting code on both save and before commit.
+- Live Reloading, Autoprefixing, SCSS, and helper functions + simple and sane defaults for SVG and Webfont usage out-of-the-box.
+- Documentation and the app logic are separated, so you can have public docs while the app itself stays private.
+- [And more…](https://vueds.com/)
 
-    $ git clone https://github.com/City-of-Bloomington/factory-number-one.git
-    $ cd factory-number-one
+## Documentation
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+- **[Getting Started](https://github.com/viljamis/vue-design-system/wiki/getting-started): How to install and run Vue Design System.**
+- [Terminology](https://github.com/viljamis/vue-design-system/wiki/terminology): Introduction to the system concepts and its hierarchy.
+- [Naming of Things](https://github.com/viljamis/vue-design-system/wiki/naming-of-Things): Naming is hard, so it’s good to have clear guidelines.
+- [Directory Structure](https://github.com/viljamis/vue-design-system/wiki/directory-structure): What goes where and why.
+- [Working with the System](https://github.com/viljamis/vue-design-system/wiki/working-with-the-system): Concrete examples on how to work with `Tokens`, `Elements` , `Patterns` and `Templates`.
+- [Editing Living Documentation](https://github.com/viljamis/vue-design-system/wiki/editing-living-documentation): How to customize the living system documentation.
+- [Spacing](https://github.com/viljamis/vue-design-system/wiki/spacing): A framework for creating a predictable and harmonious spacing.
+- [Component Status](https://github.com/viljamis/vue-design-system/wiki/Component-Status): Clear labels that reflect the state of completion.
+- [Component QA](https://github.com/viljamis/vue-design-system/wiki/Component-QA): How to review new components and keep the quality high.
+- [Contributing](https://github.com/viljamis/vue-design-system/blob/master/CONTRIBUTING.md): A set of guidelines for contributing to the system.
+- [Code of Conduct](https://github.com/viljamis/vue-design-system/blob/master/CODE_OF_CONDUCT.md): By participating you agree to abide by its terms.
+- [Frequently Asked Questions](<https://github.com/viljamis/vue-design-system/wiki/frequently-asked-questions-(FAQ)>): How to use icons, how to use font-face, etc.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Examples
 
-# build for production and launch server
-$ npm run build
-$ npm start
+- **[Official example](https://vueds.com/example)**
+- [Using Vue Design System as NPM dependency on Vue.js project](https://github.com/viljamis/vue-design-system-example)
+- [Using Vue Design System as NPM Dependency on Nuxt.js project](https://github.com/viljamis/nuxt-design-system)
+- [Using Vue Design System as NPM Dependency on a static website](https://github.com/viljamis/vue-design-system-example-website)
 
-# generate static project
-$ npm run generate
-```
+## Roadmap
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+- See [Roadmap tag](https://github.com/viljamis/vue-design-system/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap) in the issues.
 
-## File organization
+## Changelog
 
-The current structure follows the pattern that nuxt uses. This closely resembles the way the original fn1 structure was modeled. As of version 0.4.0, use of the deeply nested src/ directory is deprecated. 
+- `3.5.6` is the latest release.
+- See [Releases page](https://github.com/viljamis/vue-design-system/releases) for the full changelog.
 
-"pages/" holds the different pages that are available for static rendering. By default, these will be based on the layout/default.vue layout. 
+## Need more help?
 
-The build system compiles HTML and CSS from sources spread across the entire project. By breaking the HTML and SASS files into small pieces, we can place HTML snippets in the same folder as their corresponding SASS modules.
+About to get started with a new design system? I’m an independent designer and developer, specialized in helping companies to build [design systems](https://vueds.com). I also conduct [design system workshops](https://viljamis.com/2018/vue-design-system/) and do consulting. [Let’s talk!](https://twitter.com/viljamis)
 
-* **components** This folder contains HTML snippets (and, in some cases, Swig-based helpers) for reusable design patterns. All patterns are included in the Default theme, but the Default theme only provides the minimum amount styling to each pattern that is common across the other themes. Some components are only supported by the Info theme.
-* **layouts** This folder contains an HTML file to use as a base Swig template for all HTML files compiles by the build system.
-* **static** This folder contains static files available to all themes, including Javascript for common patterns, webfont files, and image files.
-* **themes** HTML and CSS for each theme.
+## Authors and License
 
-## SASS conventions
+[Viljami Salminen](https://viljamis.com), [Artem Sapegin](http://sapegin.me), [Rafael Escala](https://github.com/rafaesc), [react-styleguidist contributors](https://github.com/styleguidist/react-styleguidist/graphs/contributors), [vue-styleguidist contributors](https://github.com/vue-styleguidist/vue-styleguidist/graphs/contributors), [Vue.js contributors](https://github.com/vuejs/vue/graphs/contributors), [vue-webpack-boilerplate contributors](https://github.com/vuejs-templates/webpack/graphs/contributors), [Theo contributors](https://github.com/salesforce-ux/theo/graphs/contributors), and [Polaris contributors](https://github.com/Shopify/polaris).
 
-### Framework scoping
-
-All Factory Number One classes are nested inside a `.fn1` selector, in order to limit the scope of HTML elements selected by the framework's stylesheets. For most internal projects, like the City website, or a local application, it's normal apply the `fn1` class to the `<body>` element, putting the entire HTML document into scope. For projects with a considerable amount of third party code, we would apply the `fn1` class to a `<div>` that contains the component we want to insert into the document. This limits the scope of elements selected by the framework stylesheet, so the framework stylesheet won't interfere with third-party HTML.
-
-Prior to the 0.3 release, all CSS class names were prefixed with `.fn1-`, to namespace the class names. This conflicted with a need for class names to be framework-neutral, to maximize the theme-ability of the HTML. Moving the `fn1` class to a container, as a means of scoping the framework stylesheet's selectors, was chosen as a compromise.
-
-### Units of measurement
-
-To ensure legibility, almost all layout widths should be declared either in `em` or `rem` units. This helps text remain readable even if users change the level of zoom, or change the base font-size at the OS level. By using arithmetic features in SASS, we can calculate traditional pixel values, and denote to our colleagues what the intended outcome is. When declaring a width or font-size as a fraction of an `em` or `rem`, the denominator (bottom number) denotes the inherited font-size, and the numerator (top number) denotes the intended output.
-
-In the following example, the element inherits the base font-size of 16px (because the unit of measurement is `rem`), and updates it to 24px:
-
-    font-size: (24rem/16);
-
-Now that the font-size is 24px, we could specify line-height relative to the font-size. The following specifies a line-height of 28px, and denotes an inherited a font-size of 24px:
-
-    line-height: (28em/24);
-
-### Grid system
-
-The Default theme does not implement a grid system. To optimize flexibility, grids are delegated to themes that need them (as of 0.3, only the Info theme uses the grid system).
-
-The Info theme features a 12-column grid. Some key points about the grid system include:
-* Liquid column widths up to a maximum width of 1160px.
-* 64px (4rem) gutters between each column.
-    * To implement 4rem gutters, each grid element has left and right padding of 2rem. When two grid elements are placed next to each other, their padding combines to 4rem.
-* A minimum of two columns is required to display text.
-* Width of individual columns is dependent on the width of the viewport.
-* Instead of creating CSS classes for grid elements, this grid uses SASS mixins, so grid properties can be assigned to CSS classes that are more semantic to the design.
-* Grid elements must be nested inside a grid container (usually with the `container` mixin).
-    * The `container` mixin provides margins to wrap around a grouping of grid elements that ensures a desirable amount of margin away from the edge of the viewport at different viewport sizes.
-    * Containers also serve as a wrapper for a row of grid elements, ensuring that each new row clears the previous row.
-* Width of grid elements are declared as percentages, and calculated arithmetically with SASS. For example, *two* columns inside a *twelve column* parent container would be declared: `(100%*2/12)`
-
-## About the name
-
-Factory Number One is named after the Showers Brothers Furniture Company Factory Number 1. In the 1920s, the facility was arguably the largest furniture factory in the world, leveraging convenient access to the railroads to ship its dressers to retailers in large quantities. After World War II, the industry saw a shift from shipping by train, to shipping by truck, but the company didn't adapt to these changes in the market. The company closed its doors in 1958. Most of the facility was lost to a fire in 1969. One of the few buildings to survive was Factory Number 1. As of 2016, the building houses Bloomington, Indiana's City Hall, Monroe County offices, and office space for private companies.
+Licensed under the [MIT license](https://github.com/viljamis/vue-design-system/blob/master/LICENSE).

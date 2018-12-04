@@ -1,0 +1,164 @@
+#
+# COLOR TOKENS
+# Use these tokens to set a color.
+# For reference, see http://hslpicker.com/
+#
+# To make things a little simpler for your team,
+# utilize both global & local tokens for colors.
+#
+
+aliases:
+  vermilion:
+    value: "7, 83%"
+  ucla_gold:
+    value: "43, 100%"
+  bleu_de_france:
+    value: "210, 86%"
+  oxford_blue:
+    value: "210, 100%"
+  blue:
+    value: "215, 71%"
+  grey:
+    value: "0, 0%"
+  green:
+    value: "122, 39%"
+  rich_black:
+    value: "#001123"
+  slate:
+    value: "hsla(0, 0%, 13%, 1)"
+  white:
+    value: "#fff"
+  orange:
+    value: "40, 100%"
+
+props:
+  color_grey_darker:
+    value: "hsla({!grey}, 65%, 1)"
+    category: color_group_grey
+  color_grey_dark:
+    value: "hsla({!grey}, 75%, 1)"
+    category: color_group_grey
+  color_grey:
+    value: "hsla({!grey}, 86%, 1)"
+    category: color_group_grey
+  color_grey_light:
+    value: "hsla({!grey}, 90%, 1)"
+    category: color_group_grey
+  color_grey_lighter:
+    value: "hsla({!grey}, 95%, 1)"
+    category: color_group_grey
+
+  color_orange_darker:
+    value: "hsla({!orange}, 48%, 1)"
+    category: color_group_orange
+  color_orange_dark:
+    value: "hsla({!orange}, 58%, 1)"
+    category: color_group_orange
+  color_orange:
+    value: "hsla({!orange}, 68%, 1)"
+    category: color_group_orange
+  color_orange_light:
+    value: "hsla({!orange}, 78%, 1)"
+    category: color_group_orange
+  color_orange_lighter:
+    value: "hsla({!orange}, 88%, 1)"
+    category: color_group_orange
+
+  color_green_darker:
+    value: "hsla({!green}, 33%, 1)"
+    category: color_group_green
+  color_green_dark:
+    value: "hsla({!green}, 43%, 1)"
+    category: color_group_green
+  color_green:
+    value: "hsla({!green}, 49%, 1)"
+    category: color_group_green
+  color_green_light:
+    value: "hsla({!green}, 63%, 1)"
+    category: color_group_green
+  color_green_lighter:
+    value: "hsla({!green}, 75%, 1)"
+    category: color_group_green
+
+  color_vermilion_darker:
+    value: "hsla({!vermilion}, 33%, 1)"
+    category: color_group_1
+  color_vermilion_dark:
+    value: "hsla({!vermilion}, 43%, 1)"
+    category: color_group_1
+  color_vermilion:
+    value: "hsla({!vermilion}, 53%, 1)"
+    category: color_group_1
+  color_vermilion_light:
+    value: "hsla({!vermilion}, 63%, 1)"
+    category: color_group_1
+  color_vermilion_lighter:
+    value: "hsla({!vermilion}, 75%, 1)"
+    category: color_group_1
+
+  color_ucla_gold_darker:
+    value: "hsla({!ucla_gold}, 35%, 1)"
+    category: color_group_2
+  color_ucla_gold_dark:
+    value: "hsla({!ucla_gold}, 45%, 1)"
+    category: color_group_2
+  color_ucla_gold:
+    value: "hsla({!ucla_gold}, 52%, 1)"
+    category: color_group_2
+  color_ucla_gold_light:
+    value: "hsla({!ucla_gold}, 65%, 1)"
+    category: color_group_2
+  color_ucla_gold_lighter:
+    value: "hsla({!ucla_gold}, 75%, 1)"
+    category: color_group_2
+
+  color_bleu_de_france_darker:
+    value: "hsla({!bleu_de_france}, 34%, 1)"
+    category: color_group_3
+  color_bleu_de_france_dark:
+    value: "hsla({!bleu_de_france}, 44%, 1)"
+    category: color_group_3
+  color_bleu_de_france:
+    value: "hsla({!bleu_de_france}, 54%, 1)"
+    category: color_group_3
+  color_bleu_de_france_light:
+    value: "hsla({!bleu_de_france}, 64%, 1)"
+    category: color_group_3
+  color_bleu_de_france_lighter:
+    value: "hsla({!bleu_de_france}, 74%, 1)"
+    category: color_group_3
+
+  color_blue_lighter:
+    value: "hsla({!blue}, 74%, 1)"
+    category: color_group_blue
+  color_blue_light:
+    value: "hsla({!blue}, 64%, 1)"
+    category: color_group_blue
+  color_blue:
+    value: "hsla({!blue}, 40%, 1)"
+    category: color_group_blue
+  color_blue_dark:
+    value: "hsla({!blue}, 36%, 1)"
+    category: color_group_blue
+  color_blue_darker:
+    value: "hsla({!blue}, 32%, 1)"
+    category: color_group_blue
+
+  color_red:
+    value: "#a31621"
+    category: color_group_singles
+  color_brown:
+    value: "#795548"
+    category: color_group_singles
+  color_slate:
+    value: "{!slate}"
+    category: color_group_singles
+  color_silver:
+    value: "#7F8891"
+    category: color_group_singles
+  color_cloud:
+    value: "#E9F3FD"
+    category: color_group_singles
+global:
+  type: color
+  category: color
