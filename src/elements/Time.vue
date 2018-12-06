@@ -10,7 +10,7 @@
       :class="state"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
-    >
+    />
   </component>
 </template>
 
@@ -19,7 +19,7 @@
  * The `<time>` input defines a control for entering a time (no time zone).
  */
 export default {
-  name: "Time",
+  name: "fn1-time",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -169,11 +169,10 @@ $color-placeholder: tint($color-silver, 50%);
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <Time label="Time" name="time" id="time" type="time" placeholder="hh:mm am" />
+    <fn1-time label="Time" name="time" id="time" type="time" placeholder="hh:mm am" />
   </div>
   ```
 </docs>

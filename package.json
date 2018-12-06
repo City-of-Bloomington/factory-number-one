@@ -18,7 +18,6 @@
     "build:app": "npm run build",
     "build:system": "npm-run-all theo node:build:system",
     "build:docs": "npm-run-all theo styleguide:build",
-    "build:testBuild": "vue-cli-service build --target lib --name ./src/App.vue",
     "lint": "eslint '**/*.{js,vue}' --cache",
     "node:build": "node ./build/build.js",
     "node:build:system": "node ./build/build-system.js",

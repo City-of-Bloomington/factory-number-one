@@ -11,7 +11,7 @@
       :class="state"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
-    >
+    />
   </component>
 </template>
 
@@ -22,8 +22,8 @@
  * formats including numbers. For longer input, use the form `Textarea` element.
  */
 export default {
-  name:    "Date",
-  status:  "ready",
+  name: "fn1-date",
+  status: "ready",
   release: "1.0.0",
   props: {
     /**
@@ -179,12 +179,11 @@ $color-placeholder: tint($color-silver, 50%);
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <Date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
-    <Date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" disabled />
+    <fn1-date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+    <fn1-date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" disabled />
   </div>
   ```
 </docs>

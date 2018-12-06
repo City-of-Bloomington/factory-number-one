@@ -1,15 +1,14 @@
 <template>
   <component :is="wrapper" :class="['field-group']">
-   <label :for="id" v-if="label">{{ label }}</label>
+    <label :for="id" v-if="label">{{ label }}</label>
     <select :name="name" :id="id" :type="type">
-       <option
-          v-for="(item, index) in options"
-          :key="index"
-          :value="item.value"
-          v-html="item.text"
-          :disabled="item.disabled"
-        ></option>
-    </select>
+      <option
+        v-for="(item, index) in options"
+        :key="index"
+        :value="item.value"
+        v-html="item.text"
+        :disabled="item.disabled"
+      ></option>
     </select>
   </component>
 </template>
@@ -21,7 +20,7 @@
  * The <code>option</code> tags inside the <code>select</code> element define the available options in the list.
  */
 export default {
-  name: "Select",
+  name: "fn1-select",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -131,11 +130,10 @@ $color-placeholder: tint($color-silver, 50%);
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <Select
+    <fn1-select
       label="Select an option"
       :options="[
         { value: null, text: 'Please select an item' },

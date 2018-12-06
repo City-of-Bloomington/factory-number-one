@@ -18,7 +18,7 @@
  * Used as main page navigation in templates.
  */
 export default {
-  name: "Pagination",
+  name: "fn1-pagination",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -100,7 +100,7 @@ export default {
 
 <docs>
   ```jsx
-  <Pagination
+  <fn1-pagination
     :navItems="[
       {name: 'First',     href: '#',   class: 'first',    aria: 'first'},
       {name: 'Previous',  href: '#',   class: 'previous', aria: 'previous', disabled: 'disabled'},

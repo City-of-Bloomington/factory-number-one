@@ -111,7 +111,9 @@ $spacing-ratio: 1.7;
 // @param  {Number} stack-space to set
 @mixin stack-space($value) {
   margin-bottom: $value;
-  &:last-child {
+
+  &:last-child,
+  &:last-of-type {
     margin-bottom: 0;
   }
 }

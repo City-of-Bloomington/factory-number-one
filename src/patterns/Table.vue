@@ -2,15 +2,15 @@
   <component :is="type">
     <thead>
       <tr>
-        <th v-for="(item, index) in header" :key="index">{{item}}</th>
+        <th v-for="(item, index) in header" :key="index">{{ item }}</th>
       </tr>
     </thead>
 
     <tbody>
       <tr v-for="(item, index) in rows" :key="index">
-        <td>{{item.firstName}}</td>
-        <td>{{item.lastName}}</td>
-        <td>{{item.tools}}</td>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.tools }}</td>
       </tr>
     </tbody>
   </component>
@@ -21,7 +21,7 @@
  * Table
  */
 export default {
-  name: "Table",
+  name: "fn1-table",
   status: "ready",
   release: "1.0.0",
   model: {
@@ -81,7 +81,7 @@ table {
 
 <docs>
   ```jsx
-  <Table
+  <fn1-table
     :header="['First Name', 'Last Name', 'Tools']"
     :rows="[
       { firstName: 'Adam',    lastName: 'Butcher', tools: 'Macbook Pro, Sublime Text' },

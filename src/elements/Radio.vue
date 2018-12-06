@@ -9,7 +9,7 @@
       :class="state"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
-    >
+    />
     <label :for="id" v-if="label">{{ label }}</label>
   </component>
 </template>
@@ -19,7 +19,7 @@
  * Radio buttons are normally presented in groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.
  */
 export default {
-  name: "Radio",
+  name: "fn1-radio",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -126,14 +126,13 @@ export default {
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <Radio label="One" name="radio" id="radio-1" value="radio-1"/>
-    <Radio label="Two [disabled]" name="radio" id="radio-2" value="radio-2" disabled />
-    <Radio label="Three" name="radio" id="radio-3" value="radio-3"/>
-    <Radio label="Four" name="radio" id="radio-4" value="radio-4"/>
+    <fn1-radio label="One" name="radio" id="radio-1" value="radio-1"/>
+    <fn1-radio label="Two [disabled]" name="radio" id="radio-2" value="radio-2" disabled />
+    <fn1-radio label="Three" name="radio" id="radio-3" value="radio-3"/>
+    <fn1-radio label="Four" name="radio" id="radio-4" value="radio-4"/>
   </div>
   ```
 </docs>

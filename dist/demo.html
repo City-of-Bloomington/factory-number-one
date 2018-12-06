@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="@viljamis">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Vue Design System on a static website</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="./system/system.js"></script>
+  <link href="./system/system.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html,
+    body {
+      height: 100%;
+    }
+
+    #app {
+      height: 100%;
+      width: 50%;
+      margin: 0 auto;
+      padding: 20px 0 150px 0;
+    }
+
+    #app > div {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    <div>
+      <h1>Alert</h1>
+      <fn1-alert dismissible>
+        <p><strong>Dismissible!</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis posuere nulla. Curabitur sit amet laoreet ipsum. Vestibulum gravida mi dui, ut tempus quam dignissim nec. Aliquam ac tortor dictum, pretium turpis in, ornare urna. Vestibulum vel massa sit amet augue imperdiet feugiat sit amet id lectus. Suspendisse mauris nibh, pellentesque eget tellus vel, rutrum imperdiet erat. Duis sodales condimentum nunc, at auctor lorem efficitur ac. Donec nec hendrerit libero, eu porttitor mi. Proin pulvinar aliquet eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque mauris nibh, ullamcorper in rhoncus et, auctor vel nulla.</p>
+      </fn1-alert>
+    </div>
+
+    <div>
+      <h1>Buttons</h1>
+      <fn1-button type="a" href="#">
+        a href button
+      </fn1-button>
+      <fn1-button disabled>Disabled</fn1-button>
+    </div>
+
+    <div>
+      <h1>Breadcrumbs</h1>
+      <fn1-breadcrumbs
+        active="Settings"
+        :nav-items="[
+          {name: 'Dashboard', component: 'Dashboard', href: '/example/'},
+          {name: 'Posts',     component: 'Posts',     href: '/example/'},
+          {name: 'Users',     component: 'Users',     href: '/example/'},
+          {name: 'Settings',  component: 'Settings',  href: '/example/'}
+      ]"/>
+    </div>
+
+    <div>
+      <h1>Pagination</h1>
+      <fn1-pagination :nav-items="[
+        {name: 'First',     href: '#',   class: 'first',    aria: 'first'},
+        {name: 'Previous',  href: '#',   class: 'previous', aria: 'previous', disabled: 'disabled'},
+        {name: '1',         href: '/1',  class: 'current',  aria: 'current'},
+        {name: '2',         href: '/2'},
+        {name: '3',         href: '/3'},
+        {name: 'Next',      href: '#',   class: 'next',     aria: 'next'},
+        {name: 'Last',      href: '#',   class: 'last',     aria: 'last'}
+      ]"/>
+    </div>
+
+    <div>
+      <h1>Button Group</h1>
+      <fn1-button-group>
+        <fn1-button>button</fn1-button>
+        <fn1-button type="a" href="#">a href</fn1-button>
+        <fn1-button>button</fn1-button>
+        <fn1-button>button</fn1-button>
+        <fn1-button type="a" href="#">a href</fn1-button>
+      </fn1-button-group>
+    </div>
+
+    <div>
+      <h1>Select</h1>
+      <fn1-select
+        label="Select an option"
+        :options="[
+          { value: null, text: 'Please select an item' },
+          { value: 'a',  text: 'This is First option' },
+          { value: 'b',  text: 'Default Selected Option' },
+          { value: 'c',  text: 'This is another option' },
+          { value: 'd',  text: 'This one is disabled', disabled: true }
+        ]">
+      </fn1-select>
+    </div>
+
+    <div>
+      <h1>Input - Date</h1>
+      <fn1-date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+    </div>
+
+    <div>
+      <h1>Input - Email</h1>
+      <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com"disabled />
+    </div>
+
+    <div>
+      <h1>Input - Time</h1>
+      <fn1-time label="Time" name="time" id="time" type="time" placeholder="hh:mm am" />
+    </div>
+
+    <div>
+      <h1>Input - File</h1>
+      <fn1-file label="Input [file]" type="file" placeholder="Choose file to upload" name="file" id="file" accept="image/*" multiple/>
+    </div>
+
+    <div>
+      <h1>Icon</h1>
+      <div>
+        <fn1-icon name="ready" aria-label="Component is ready" fill="#7cb518" />
+      </div>
+
+      <div>
+        <fn1-icon name="review" fill="rgb(255,186,10)" />
+      </div>
+    </div>
+
+    <div>
+      <h1>Input - Text</h1>
+      <div>
+        <fn1-input label="Input [text]" placeholder="Write your text" name="input-1" id="input-1"/>
+      </div>
+
+      <div>
+        <fn1-input label="[disabled]" placeholder="Write your text" name="input-4" id="input-4" disabled />
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <fn1-checkbox label="Checkbox" name="checkbox-1" id="checkbox-1" value="checkbox-1"/>
+      </div>
+
+      <div>
+        <fn1-checkbox label="Checkbox [disabled]" name="checkbox-2" id="checkbox-2" value="checkbox-2" disabled />
+      </div>
+    </div>
+
+    <div>
+      <h1>Input - Radio</h1>
+      <div>
+        <fn1-radio label="One" name="radio" id="radio-1" value="radio-1"/>
+      </div>
+      <div>
+        <fn1-radio label="Two [disabled]" name="radio" id="radio-2" value="radio-2" disabled />
+      </div>
+      <div>
+        <fn1-radio label="Three" name="radio" id="radio-3" value="radio-3"/>
+      </div>
+      <div>
+        <fn1-radio label="Four" name="radio" id="radio-4" value="radio-4"/>
+      </div>
+    </div>
+
+    <div>
+      <fn1-textarea label="Default textarea" placeholder="Write your text" id="textarea-1" />
+    </div>
+
+    <div>
+      <h1>Collapse</h1>
+      <div>
+        <fn1-collapse summary="Click here">
+          <p><strong>Holy Guacamole!</strong> Better make some more.</p>
+        </fn1-collapse>
+      </div>
+    </div>
+
+    <div>
+      <h1>Table</h1>
+      <fn1-table
+        :header="['First Name', 'Last Name', 'Tools']"
+        :rows="[
+          { firstName: 'Adam',    lastName: 'Butcher', tools: 'Macbook Pro, Sublime Text' },
+          { firstName: 'Cliff',   lastName: 'Ingham',  tools: 'Dell, Linux' },
+          { firstName: 'Charles', lastName: 'Brandt',  tools: 'Macbook Pro, VSCode' },
+          { firstName: 'Seth',    lastName: 'Tierney', tools: 'Every tool' }
+        ]" />
+    </div>
+
+
+
+
+  </div>
+
+  <script>
+    // import DesignSystem from './system/vue-design-system';
+    // import './system/system.css';
+
+    // Vue.use(DesignSystem);
+
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

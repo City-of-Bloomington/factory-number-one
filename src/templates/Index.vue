@@ -3,15 +3,17 @@
     <Breadcrumbs
       active="Index"
       :navItems="[
-        {name: 'Template', component: 'Index', href: '/#/'},
-        {name: 'Documentation', href: 'http://localhost:6060/'}
+        { name: 'Template', component: 'Index', href: '/#/' },
+        { name: 'Documentation', href: 'http://localhost:6060/' },
       ]"
     />
     <Wrapper>
-      <Heading>Vue Design System</Heading>
-      <Paragraph>
-        <a href="https://vueds.com">Vue Design System</a> is an open-source tool for building design systems with Vue.js. It provides you and your team a set of organized tools, patterns &amp; practices. It works as the foundation for your application development.
-      </Paragraph>
+      <Heading>City of Bloomington Design System</Heading>
+      <p>
+        <a href="https://vueds.com">Vue Design System</a> is an open-source tool for building design
+        systems with Vue.js. It provides you and your team a set of organized tools, patterns &amp;
+        practices. It works as the foundation for your application development.
+      </p>
     </Wrapper>
   </component>
 </template>

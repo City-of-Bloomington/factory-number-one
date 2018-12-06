@@ -4,7 +4,7 @@
       v-for="(item, index) in navItems"
       :key="index"
       :href="item.href"
-      :class="{active: localActive === item.component}"
+      :class="{ active: localActive === item.component }"
       v-html="item.name"
     />
   </component>
@@ -15,7 +15,7 @@
  * Used as main page navigation in templates.
  */
 export default {
-  name: "Breadcrumbs",
+  name: "fn1-breadcrumbs",
   status: "ready",
   release: "1.0.0",
   model: {
@@ -68,11 +68,9 @@ export default {
     font-family: $font-text;
     line-height: $line-height-m;
     text-decoration: none;
-
     &:not(:last-child):after {
       content: " / ";
     }
-
     &.active {
       color: $color-slate;
     }
@@ -82,7 +80,7 @@ export default {
 
 <docs>
   ```jsx
-  <Breadcrumbs
+  <fn1-breadcrumbs
     active="Settings"
     :navItems="[
       {name: 'Dashboard', component: 'Dashboard', href: '/example/'},

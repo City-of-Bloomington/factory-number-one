@@ -20,7 +20,7 @@
  * Additional contextual variations (sizes, states, etc) are up to that of the user.
  */
 export default {
-  name: "Button",
+  name: "fn1-button",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -144,24 +144,24 @@ button,
   ```jsx
   <div>
     <div>
-      <Button>Button</Button>
-      <Button disabled>Disabled</Button>
+      <fn1-button>Button</fn1-button>
+      <fn1-button disabled>Disabled</fn1-button>
     </div>
 
     <div>
-      <Button type="a" href="#">
+      <fn1-button type="a" href="#">
         a href button
-      </button>
+      </fn1-button>
 
-      <Button>
+      <fn1-button>
         <Icon name="cob-logo" fill="white" />
         Icon button
-      </Button>
+      </fn1-button>
 
-      <Button type="a" href="#">
+      <fn1-button type="a" href="#">
         <Icon name="cob-logo" fill="white" />
         Icon a href
-      </Button>
+      </fn1-button>
     </div>
   </div>
   ```

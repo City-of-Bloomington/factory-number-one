@@ -1,7 +1,7 @@
 <template>
   <component :is="wrapper" :class="['field-group']">
     <label :for="id" v-if="label">{{ label }}</label>
-    <input :id="id" :type="type" :name="name" :multiple="multiple" :accept="accept">
+    <input :id="id" :type="type" :name="name" :multiple="multiple" :accept="accept" />
   </component>
 </template>
 
@@ -12,7 +12,7 @@
  * formats including numbers. For longer input, use the form `Textarea` element.
  */
 export default {
-  name: "File",
+  name: "fn1-file",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -163,11 +163,10 @@ $color-placeholder: tint($color-silver, 50%);
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <File label="Input [file]" type="file" placeholder="Choose file to upload" name="file" id="file" accept="image/*" multiple/>
+    <fn1-file label="Input [file]" type="file" placeholder="Choose file to upload" name="file" id="file" accept="image/*" multiple/>
   </div>
   ```
 </docs>

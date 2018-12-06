@@ -17,10 +17,10 @@ import Meta from "vue-meta"
 import DesignSystem from "@/system"
 
 // For building Web Components
-// import wrap from '@vue/web-component-wrapper';
-// import BreadcrumbsComponent from '@/patterns/BreadcrumbsComponent';
-// const CustomElement = wrap(Vue, BreadcrumbsComponent);
-// window.customElements.define('breadcrumbs', CustomElement);
+import wrap from "@vue/web-component-wrapper"
+import BreadcrumbsComponent from "@/patterns/Breadcrumbs"
+const CustomElement = wrap(Vue, BreadcrumbsComponent)
+window.customElements.define("fn1-breadcrumbs", CustomElement)
 
 Vue.use(DesignSystem)
 Vue.use(Meta)

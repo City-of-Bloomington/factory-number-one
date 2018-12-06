@@ -1,8 +1,5 @@
 <template>
-  <component :is="type">
-    <summary v-html="summary"></summary>
-    <slot />
-  </component>
+  <component :is="type"> <summary v-html="summary"></summary> <slot /> </component>
 </template>
 
 <script>
@@ -10,7 +7,7 @@
  * Toggle the heading by clicking to view/hide the details.
  */
 export default {
-  name: "Collapse",
+  name: "fn1-collapse",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -30,18 +27,17 @@ export default {
     summary: {
       type: String,
       default: null,
-    }
+    },
   },
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
 
 <docs>
   ```jsx
-  <Collapse summary="Click here">
+  <fn1-collapse summary="Click here">
     <p><strong>Holy Guacamole!</strong> Better make some more.</p>
-  </Collapse>
+  </fn1-collapse>
   ```
 </docs>

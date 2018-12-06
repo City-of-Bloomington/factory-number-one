@@ -11,7 +11,7 @@
       :placeholder="placeholder"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
-    >
+    />
   </component>
 </template>
 
@@ -20,7 +20,7 @@
  * Defines a single-line text field that a user can enter text into.
  */
 export default {
-  name: "Input",
+  name: "fn1-input",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -188,14 +188,14 @@ $color-placeholder: tint($color-silver, 50%);
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <Input label="Input [text]" placeholder="Write your text" name="input-1" id="input-1"/>
-    <Input label=":hover" placeholder="Write your text" name="input-2" id="input-2" state="hover" />
-    <Input label=":focus" placeholder="Write your text" name="input-3" id="input-3" state="focus" />
-    <Input label="[disabled]" placeholder="Write your text" name="input-4" id="input-4" disabled />
+    <fn1-input label="Input [text]" placeholder="Write your text" name="input-1" id="input-1" />
+    <fn1-input label=":hover" placeholder="Write your text" name="input-2" id="input-2" state="hover" />
+    <fn1-input label=":focus" placeholder="Write your text" name="input-3" id="input-3" state="focus" />
+    <!-- <fn1-input label="Input [text]" placeholder="Write your text" name="input-1" id="input-1" error /> -->
+    <fn1-input label="[disabled]" placeholder="Write your text" name="input-4" id="input-4" disabled />
   </div>
   ```
 </docs>

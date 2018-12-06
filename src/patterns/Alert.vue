@@ -1,17 +1,8 @@
 <template>
-  <component
-    :is="type"
-    class="alert"
-    :class="{dismissible: dismissible}"
-    role="alert">
-
+  <component :is="type" class="alert" :class="{ dismissible: dismissible }" role="alert">
     <slot />
 
-    <button
-      v-if="dismissible"
-      type="button"
-      class="close"
-      aria-label="Close alert">
+    <button v-if="dismissible" type="button" class="close" aria-label="Close alert">
       <span>&times;</span>
     </button>
   </component>
@@ -22,7 +13,7 @@
  * Alerts are used to convey message to the user.
  */
 export default {
-  name: "Alert",
+  name: "fn1-alert",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -42,7 +33,7 @@ export default {
     dismissible: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 }
 </script>
@@ -95,13 +86,13 @@ export default {
 <docs>
   ```jsx
   <div>
-    <Alert>
+    <fn1-alert>
       <p><strong>Holy Guacamole!</strong> Better make some more.</p>
-    </Alert>
+    </fn1-alert>
 
-    <Alert dismissible>
+    <fn1-alert dismissible>
       <p><strong>Dismissible!</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis posuere nulla. Curabitur sit amet laoreet ipsum. Vestibulum gravida mi dui, ut tempus quam dignissim nec. Aliquam ac tortor dictum, pretium turpis in, ornare urna. Vestibulum vel massa sit amet augue imperdiet feugiat sit amet id lectus. Suspendisse mauris nibh, pellentesque eget tellus vel, rutrum imperdiet erat. Duis sodales condimentum nunc, at auctor lorem efficitur ac. Donec nec hendrerit libero, eu porttitor mi. Proin pulvinar aliquet eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque mauris nibh, ullamcorper in rhoncus et, auctor vel nulla.</p>
-    </Alert>
+    </fn1-alert>
   </div>
   ```
 </docs>

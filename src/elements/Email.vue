@@ -1,109 +1,88 @@
 <template>
   <component :is="wrapper" :class="['field-group']">
     <label :for="id" v-if="label">{{ label }}</label>
-    <textarea
-      :type="type"
+    <input
       :id="id"
+      :name="name"
+      :type="type"
+      :placeholder="placeholder"
+      :pattern="pattern"
       :disabled="disabled"
       :class="state"
-      :placeholder="placeholder"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
-      v-model="value"
     />
   </component>
 </template>
 
 <script>
 /**
- * Textareas are used to allow users to provide text input when the expected
- * input is long. Textarea has a range of options. For shorter input,
- * use the `Input` element.
+ * Form Inputs are used to allow users to provide text input when the expected
+ * input is short. Form Input has a range of options and supports several text
+ * formats including numbers. For longer input, use the form `Textarea` element.
  */
 export default {
-  name: "fn1-textarea",
+  name: "fn1-email",
   status: "ready",
   release: "1.0.0",
   props: {
     /**
      * The type of input field.
-     * `textarea`
+     * `email`
      */
     type: {
       type: String,
-      default: "textarea",
+      default: "email",
       validator: value => {
-        return value.match(/(textarea)/)
+        return value.match(/(email)/)
       },
     },
     /**
-     * Text value of the form textarea.
-     */
-    value: {
-      type: String,
-      default: null,
-    },
-    /**
-     * The placeholder value for the form textarea.
+     * The placeholder value for the email input.
      */
     placeholder: {
       type: String,
       default: null,
     },
     /**
-     * The label of the form textarea.
+     * The label of the email input.
      */
     label: {
       type: String,
       default: null,
     },
     /**
-     * The html element name used for the wrapper.
-     * `div, section`
+     * The name of the email input.
+     */
+    name: {
+      type: String,
+      default: null,
+    },
+    /**
+     * The html element class name used for the wrapper.
+     * `field-group`
      */
     wrapper: {
       type: String,
       default: "div",
       validator: value => {
-        return value.match(/(div|section)/)
+        return value.match(/(div)/)
       },
     },
     /**
-     * Unique identifier of the form textarea.
+     * Unique identifier of the email input.
      */
     id: {
       type: String,
       default: null,
     },
     /**
-     * The width of the form textarea.
-     * `auto, expand`
-     */
-    width: {
-      type: String,
-      default: "expand",
-      validator: value => {
-        return value.match(/(auto|expand)/)
-      },
-    },
-    /**
-     * Whether the form textarea is disabled or not.
+     * Whether the form input field is disabled or not.
      * `true, false`
      */
     disabled: {
       type: Boolean,
       default: false,
-    },
-    /**
-     * Manually trigger various states of the textarea.
-     * `hover, active, focus`
-     */
-    state: {
-      type: String,
-      default: null,
-      validator: value => {
-        return value.match(/(hover|active|focus)/)
-      },
     },
   },
   methods: {
@@ -137,14 +116,12 @@ $color-placeholder: tint($color-silver, 50%);
     @include stack-space($space-xs);
   }
 
-  textarea {
+  input {
     @include reset;
     @include inset-squish-space($space-s);
     transition: all 0.2s ease;
     -webkit-appearance: none;
     appearance: none;
-    resize: vertical;
-    min-height: $space-xxl;
     font-size: $size-m;
     font-family: $font-text;
     background: white;
@@ -154,30 +131,37 @@ $color-placeholder: tint($color-silver, 50%);
     margin: 0;
     border: 0;
     box-shadow: inset 0 1px 0 0 rgba($color-slate, 0.07), 0 0 0 1px tint($color-slate, 80%);
+
     &::-webkit-input-placeholder {
       -webkit-font-smoothing: antialiased;
       color: $color-placeholder;
     }
+
     &:-ms-input-placeholder {
       color: $color-placeholder;
     }
+
     &::-moz-placeholder {
       color: $color-placeholder;
       -moz-osx-font-smoothing: grayscale;
       opacity: 1;
     }
+
     &:hover,
     &.hover {
       box-shadow: 0 1px 5px 0 rgba($color-slate, 0.07), 0 0 0 1px tint($color-slate, 60%);
     }
+
     &:focus,
     &.focus {
       transition: box-shadow 0.2s ease;
       box-shadow: inset 0 0 0 1px $color-bleu-de-france, 0 0 0 1px $color-bleu-de-france;
       outline: 0;
     }
+
     &[disabled] {
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       box-shadow: 0 0 0 1px tint($color-slate, 80%);
       background: lighten($color-placeholder, 42%);
       color: tint($color-placeholder, 20%);
@@ -191,9 +175,8 @@ $color-placeholder: tint($color-silver, 50%);
 <docs>
   ```jsx
   <div>
-    <fn1-textarea label="Default textarea" placeholder="Write your text" id="textarea-1" />
-    <fn1-textarea label=":focus" state="focus" placeholder="Write your text" id="textarea-2" />
-    <fn1-textarea label="[disabled]" disabled value="Write your text" id="textarea-3" />
+    <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com" />
+    <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com"disabled />
   </div>
   ```
 </docs>

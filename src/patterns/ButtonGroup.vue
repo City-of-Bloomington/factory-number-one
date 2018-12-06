@@ -1,6 +1,12 @@
 <template>
-  <component :is="type" :href="href" :class="['button-group']" role="group" aria-label="button group">
-    <slot/>
+  <component
+    :is="type"
+    :href="href"
+    :class="['button-group']"
+    role="group"
+    aria-label="button group"
+  >
+    <slot />
   </component>
 </template>
 
@@ -9,7 +15,7 @@
  * A group of buttons that appear in a row.
  */
 export default {
-  name: "ButtonGroup",
+  name: "fn1-button-group",
   status: "ready",
   release: "1.0.0",
   model: {
@@ -84,12 +90,12 @@ export default {
 
 <docs>
   ```jsx
-    <ButtonGroup>
-      <Button>button</Button>
-      <Button type="a" href="#">a href</Button>
-      <Button>button</Button>
-      <Button>button</Button>
-      <Button type="a" href="#">a href</Button>
-    </ButtonGroup>
+    <fn1-button-group>
+      <fn1-button>button</fn1-button>
+      <fn1-button type="a" href="#">a href</fn1-button>
+      <fn1-button>button</fn1-button>
+      <fn1-button>button</fn1-button>
+      <fn1-button type="a" href="#">a href</fn1-button>
+    </fn1-button-group>
   ```
 </docs>

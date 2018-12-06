@@ -8,7 +8,7 @@
       :name="name"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
-    >
+    />
     <label :for="id" v-if="label">{{ label }}</label>
   </component>
 </template>
@@ -20,7 +20,7 @@
  * formats including numbers. For longer input, use the form `Textarea` element.
  */
 export default {
-  name: "Checkbox",
+  name: "fn1-checkbox",
   status: "ready",
   release: "1.0.0",
   props: {
@@ -127,12 +127,11 @@ export default {
 }
 </style>
 
-
 <docs>
   ```jsx
   <div>
-    <Checkbox label="Checkbox" name="checkbox-1" id="checkbox-1" value="checkbox-1"/>
-    <Checkbox label="Checkbox [disabled]" name="checkbox-2" id="checkbox-2" value="checkbox-2" disabled />
+    <fn1-checkbox label="Checkbox" name="checkbox-1" id="checkbox-1" value="checkbox-1"/>
+    <fn1-checkbox label="Checkbox [disabled]" name="checkbox-2" id="checkbox-2" value="checkbox-2" disabled />
   </div>
   ```
 </docs>
