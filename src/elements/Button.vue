@@ -154,12 +154,12 @@ button,
       </fn1-button>
 
       <fn1-button>
-        <Icon name="cob-logo" fill="white" />
+        <fn1-icon name="cob-logo" fill="white" />
         Icon button
       </fn1-button>
 
       <fn1-button type="a" href="#">
-        <Icon name="cob-logo" fill="white" />
+        <fn1-icon name="cob-logo" fill="white" />
         Icon a href
       </fn1-button>
     </div>
