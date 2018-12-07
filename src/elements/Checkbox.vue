@@ -1,23 +1,26 @@
 <template>
-  <component :is="wrapper" :class="['field-group']">
-    <input
-      :id="id"
-      :disabled="disabled"
-      :type="type"
-      :value="value"
-      :name="name"
-      @input="onInput($event.target.value)"
-      @focus="onFocus($event.target.value)"
-    />
-    <label :for="id" v-if="label">{{ label }}</label>
+  <component :is="wrapper">
+    <legend v-if="legend">{{ legend }}</legend>
+    <div v-for="(item, index) in options">
+      <input
+        :key="index"
+        :id="item.value"
+        :type="type"
+        :value="item.value"
+        :name="name"
+        :class="state"
+        :disabled="item.disabled"
+        @input="onInput($event.target.value)"
+        @focus="onFocus($event.target.value)"
+      />
+      <label :for="item.value" v-if="item.text">{{ item.text }}</label>
+    </div>
   </component>
 </template>
 
 <script>
 /**
- * Form Inputs are used to allow users to provide text input when the expected
- * input is short. Form Input has a range of options and supports several text
- * formats including numbers. For longer input, use the form `Textarea` element.
+ * Radio buttons are normally presented in groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.
  */
 export default {
   name: "fn1-checkbox",
@@ -25,7 +28,7 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * The type of the input checkbox.
+     * The type of input field.
      * `checkbox`
      */
     type: {
@@ -36,21 +39,28 @@ export default {
       },
     },
     /**
-     * Text value of the input checkbox.
+     * Value of the checkbox input.
      */
     value: {
       type: String,
       default: null,
     },
     /**
-     * The label of the input checkbox.
+     * The label of the checkbox input.
      */
     label: {
       type: String,
       default: null,
     },
     /**
-     * The name of the input checkbox.
+     * The legend of the radios.
+     */
+    legend: {
+      type: String,
+      default: null,
+    },
+    /**
+     * The name of the checkbox input.
      */
     name: {
       type: String,
@@ -62,25 +72,32 @@ export default {
      */
     wrapper: {
       type: String,
-      default: "div",
+      default: "fieldset",
       validator: value => {
-        return value.match(/(div)/)
+        return value.match(/(fieldset)/)
       },
     },
     /**
-     * Unique identifier of the input checkbox.
+     * Unique identifier of the checkbox input.
      */
     id: {
       type: String,
       default: null,
     },
     /**
-     * Whether the form input field is disabled or not.
+     * Whether the checkbox input is disabled or not.
      * `true, false`
      */
     disabled: {
       type: Boolean,
       default: false,
+    },
+    /**
+     * Menu items to be displayed on the nav bar.
+     */
+    options: {
+      required: true,
+      type: Array,
     },
   },
   methods: {
@@ -95,7 +112,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.field-group {
+fieldset {
   @include stack-space($space-s);
   font-weight: $weight-normal;
   font-family: $font-text;
@@ -114,6 +131,8 @@ export default {
 
   input {
     &[type="checkbox"] {
+      color: red;
+
       &[disabled="disabled"] {
         cursor: not-allowed;
 
@@ -130,8 +149,15 @@ export default {
 <docs>
   ```jsx
   <div>
-    <fn1-checkbox label="Checkbox" name="checkbox" id="checkbox-1" value="checkbox-1"/>
-    <fn1-checkbox label="Checkbox [disabled]" name="checkbox" id="checkbox-2" value="checkbox-2" disabled />
+    <fn1-checkbox
+      legend="Choose your favorites"
+      name="checkbox"
+      :options="[
+        { text: 'Toggle this custom radio', value: 'first' },
+        { text: 'Or toggle this one',       value: 'second' },
+        { text: 'This one is Disabled',     value: 'third', disabled: true },
+        { text: 'This is the 4th radio',    value: 4 }
+      ]" />
   </div>
   ```
 </docs>
