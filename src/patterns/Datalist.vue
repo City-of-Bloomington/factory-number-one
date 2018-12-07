@@ -1,6 +1,6 @@
 <template>
-  <component :is="wrapper">
-    <legend v-if="legend">{{ legend }}</legend>
+  <component :is="wrapper" class="field-group">
+    <!-- <legend v-if="legend">{{ legend }}</legend>
     <div v-for="(item, index) in options">
       <input
         :key="index"
@@ -14,55 +14,50 @@
         @focus="onFocus($event.target.value)"
       />
       <label :for="item.value" v-if="item.text">{{ item.text }}</label>
-    </div>
+    </div> -->
+
+    <label :for="name" v-if="label">{{ label }}</label>
+    <input :list="list" :id="name" :name="name" />
+    <datalist :id="list">
+      <option v-for="(item, index) in options" :value="item.value"></option>
+    </datalist>
   </component>
 </template>
 
 <script>
 /**
- * Radio buttons are normally presented in groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.
+ * The HTML `<datalist>` element contains a set of `<option>` elements that represent the values available for other controls.
  */
 export default {
-  name: "fn1-checkbox",
+  name: "fn1-datalist",
   status: "ready",
   release: "1.0.0",
   props: {
     /**
-     * The type of input field.
-     * `checkbox`
-     */
-    type: {
-      type: String,
-      default: "checkbox",
-      validator: value => {
-        return value.match(/(checkbox)/)
-      },
-    },
-    /**
-     * Value of the checkbox input.
+     * Value of the datalist input.
      */
     value: {
       type: String,
       default: null,
     },
     /**
-     * The label of the checkbox input.
+     * The label of the datalist input.
      */
     label: {
       type: String,
       default: null,
     },
     /**
-     * The legend of the checkboxs.
+     * The name of the datalist input.
      */
-    legend: {
+    name: {
       type: String,
       default: null,
     },
     /**
-     * The name of the checkbox input.
+     * The name of the datalist input.
      */
-    name: {
+    list: {
       type: String,
       default: null,
     },
@@ -72,20 +67,20 @@ export default {
      */
     wrapper: {
       type: String,
-      default: "fieldset",
+      default: "div",
       validator: value => {
-        return value.match(/(fieldset)/)
+        return value.match(/(div)/)
       },
     },
     /**
-     * Unique identifier of the checkbox input.
+     * Unique identifier of the datalist input.
      */
     id: {
       type: String,
       default: null,
     },
     /**
-     * Whether the checkbox input is disabled or not.
+     * Whether the datalist input is disabled or not.
      * `true, false`
      */
     disabled: {
@@ -112,7 +107,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-fieldset {
+.field-group {
   @include stack-space($space-s);
   font-weight: $weight-normal;
   font-family: $font-text;
@@ -130,18 +125,6 @@ fieldset {
   }
 
   input {
-    &[type="checkbox"] {
-      color: red;
-
-      &[disabled="disabled"] {
-        cursor: not-allowed;
-
-        + label {
-          color: tint($color-slate, 40%);
-          cursor: not-allowed;
-        }
-      }
-    }
   }
 }
 </style>
@@ -149,14 +132,15 @@ fieldset {
 <docs>
   ```jsx
   <div>
-    <fn1-checkbox
-      legend="Choose your favorites"
-      name="checkbox"
+    <fn1-datalist
+      label="Choose a flavor:"
+      name="datalist-name"
+      list="datalist-options"
       :options="[
-        { text: 'Toggle this custom radio', value: 'first' },
-        { text: 'Or toggle this one',       value: 'second' },
-        { text: 'This one is Disabled',     value: 'third', disabled: true },
-        { text: 'This is the 4th radio',    value: 4 }
+        { value: 'Chocolate' },
+        { value: 'Coconut' },
+        { value: 'Mint' },
+        { value: 'Strawberry' }
       ]" />
   </div>
   ```
