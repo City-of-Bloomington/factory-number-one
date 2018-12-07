@@ -2,7 +2,7 @@
   <component :is="type" class="alert" :class="{ dismissible: dismissible }" role="alert">
     <slot />
 
-    <button v-if="dismissible" type="button" class="close" aria-label="Close alert">
+    <button v-show="dismissible" type="button" class="close" aria-label="Close alert">
       <span>&times;</span>
     </button>
   </component>

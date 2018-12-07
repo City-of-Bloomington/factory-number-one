@@ -1,5 +1,10 @@
 <template>
   <component :is="type">
+    <caption class="sr-only" v-if="caption">
+      {{
+        caption
+      }}
+    </caption>
     <thead>
       <tr>
         <th v-for="(item, index) in header" :key="index" scope="col">{{ item }}</th>
@@ -8,7 +13,7 @@
 
     <tbody>
       <tr v-for="(item, index) in rows" :key="index">
-        <td>{{ item.firstName }}</td>
+        <th scope="row">{{ item.firstName }}</th>
         <td>{{ item.lastName }}</td>
         <td>{{ item.tools }}</td>
       </tr>
@@ -31,6 +36,10 @@ export default {
     type: {
       type: String,
       default: "table",
+    },
+    caption: {
+      type: String,
+      default: null,
     },
     header: {
       required: true,
@@ -68,7 +77,8 @@ table {
       }
     }
 
-    td {
+    td,
+    th {
       border-top: 1px solid #ddd;
       padding: $space-xs;
 
@@ -82,6 +92,7 @@ table {
 <docs>
   ```jsx
   <fn1-table
+    caption="Table Example"
     :header="['First Name', 'Last Name', 'Tools']"
     :rows="[
       { firstName: 'Adam',    lastName: 'Butcher', tools: 'Macbook Pro, Sublime Text' },

@@ -51,7 +51,7 @@ module.exports = {
     // In general you probably want this to be “umd”,
     // but for SSR/Nuxt.js you might want to use “commonjs2”
     // to avoid usage of window object.
-    libraryTarget: "umd",
+    libraryTarget: "commonjs2",
 
     // Enable or disable performance hints on build
     performanceHints: false,
