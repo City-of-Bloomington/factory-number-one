@@ -1,16 +1,20 @@
 <template>
   <component :is="wrapper" :class="['field-group']">
-    <input
-      :id="id"
-      :disabled="disabled"
-      :type="type"
-      :value="value"
-      :name="name"
-      :class="state"
-      @input="onInput($event.target.value)"
-      @focus="onFocus($event.target.value)"
-    />
-    <label :for="id" v-if="label">{{ label }}</label>
+    <legend>Choose your favorite monster</legend>
+    <div v-for="(item, index) in options">
+      <input
+        :key="index"
+        :id="id"
+        :disabled="item.disabled"
+        :type="type"
+        :value="item.value"
+        :name="name"
+        :class="state"
+        @input="onInput($event.target.value)"
+        @focus="onFocus($event.target.value)"
+      />
+      <label :for="id" v-if="item.text">{{ item.text }}</label>
+    </div>
   </component>
 </template>
 
@@ -61,9 +65,9 @@ export default {
      */
     wrapper: {
       type: String,
-      default: "div",
+      default: "fieldset",
       validator: value => {
-        return value.match(/(div)/)
+        return value.match(/(fieldset)/)
       },
     },
     /**
@@ -80,6 +84,13 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    /**
+     * Menu items to be displayed on the nav bar.
+     */
+    options: {
+      required: true,
+      type: Array,
     },
   },
   methods: {
@@ -129,10 +140,14 @@ export default {
 <docs>
   ```jsx
   <div>
-    <fn1-radio label="One" name="radio" id="radio-1" value="radio-1"/>
-    <fn1-radio label="Two [disabled]" name="radio" id="radio-2" value="radio-2" disabled />
-    <fn1-radio label="Three" name="radio" id="radio-3" value="radio-3"/>
-    <fn1-radio label="Four" name="radio" id="radio-4" value="radio-4"/>
+    <fn1-radio
+      name="radios"
+      :options="[
+        { text: 'Toggle this custom radio', value: 'first' },
+        { text: 'Or toggle this other custom radio', value: 'second' },
+        { text: 'This one is Disabled', value: 'third', disabled: true },
+        { text: 'This is the 4th radio', value: 4 }
+      ]" />
   </div>
   ```
 </docs>

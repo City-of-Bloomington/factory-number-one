@@ -2,7 +2,7 @@
   <component :is="type">
     <thead>
       <tr>
-        <th v-for="(item, index) in header" :key="index">{{ item }}</th>
+        <th v-for="(item, index) in header" :key="index" scope="col">{{ item }}</th>
       </tr>
     </thead>
 

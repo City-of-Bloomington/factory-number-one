@@ -139,9 +139,10 @@ module.exports = {
    * Custom wrapper template for the documentation.
    */
   template: {
-    title: "Example — Vue Design System",
+    title: "City of Bloomington Design System",
     lang: "en",
     trimWhitespace: true,
+    favicon: "https://bloomington.in.gov/sites/default/files/favicon.ico",
     head: {
       meta: [
         {

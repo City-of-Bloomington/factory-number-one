@@ -130,8 +130,8 @@ export default {
 <docs>
   ```jsx
   <div>
-    <fn1-checkbox label="Checkbox" name="checkbox-1" id="checkbox-1" value="checkbox-1"/>
-    <fn1-checkbox label="Checkbox [disabled]" name="checkbox-2" id="checkbox-2" value="checkbox-2" disabled />
+    <fn1-checkbox label="Checkbox" name="checkbox" id="checkbox-1" value="checkbox-1"/>
+    <fn1-checkbox label="Checkbox [disabled]" name="checkbox" id="checkbox-2" value="checkbox-2" disabled />
   </div>
   ```
 </docs>
