@@ -112,7 +112,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.field-group {
+fieldset {
   @include stack-space($space-s);
   font-weight: $weight-normal;
   font-family: $font-text;
@@ -131,6 +131,8 @@ export default {
 
   input {
     &[type="radio"] {
+      color: red;
+
       &[disabled="disabled"] {
         cursor: not-allowed;
 
