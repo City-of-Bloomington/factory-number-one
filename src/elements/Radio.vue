@@ -13,7 +13,7 @@
         @input="onInput($event.target.value)"
         @focus="onFocus($event.target.value)"
       />
-      <label :for="id" v-if="item.text">{{ item.text }}</label>
+      <label :for="item.value" v-if="item.text">{{ item.text }}</label>
     </div>
   </component>
 </template>
