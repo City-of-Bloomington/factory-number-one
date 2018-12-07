@@ -1,15 +1,15 @@
 <template>
-  <component :is="wrapper" :class="['field-group']">
-    <legend>Choose your favorite monster</legend>
+  <component :is="wrapper">
+    <legend v-if="legend">{{ legend }}</legend>
     <div v-for="(item, index) in options">
       <input
         :key="index"
-        :id="id"
-        :disabled="item.disabled"
+        :id="item.value"
         :type="type"
         :value="item.value"
         :name="name"
         :class="state"
+        :disabled="item.disabled"
         @input="onInput($event.target.value)"
         @focus="onFocus($event.target.value)"
       />
@@ -49,6 +49,13 @@ export default {
      * The label of the radio input.
      */
     label: {
+      type: String,
+      default: null,
+    },
+    /**
+     * The legend of the radios.
+     */
+    legend: {
       type: String,
       default: null,
     },
@@ -141,12 +148,13 @@ export default {
   ```jsx
   <div>
     <fn1-radio
+      legend="Choose your favorite radio"
       name="radios"
       :options="[
         { text: 'Toggle this custom radio', value: 'first' },
-        { text: 'Or toggle this other custom radio', value: 'second' },
-        { text: 'This one is Disabled', value: 'third', disabled: true },
-        { text: 'This is the 4th radio', value: 4 }
+        { text: 'Or toggle this one',       value: 'second' },
+        { text: 'This one is Disabled',     value: 'third', disabled: true },
+        { text: 'This is the 4th radio',    value: 4 }
       ]" />
   </div>
   ```
