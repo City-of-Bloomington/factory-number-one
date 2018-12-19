@@ -6,9 +6,7 @@
       :name="name"
       :type="type"
       :placeholder="placeholder"
-      :pattern="pattern"
       :disabled="disabled"
-      :class="state"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
     />
@@ -96,7 +94,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Design Tokens with local scope
 $color-placeholder: tint($color-silver, 50%);
 
@@ -176,7 +174,7 @@ $color-placeholder: tint($color-silver, 50%);
   ```jsx
   <div>
     <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com" />
-    <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com"disabled />
+    <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com" disabled />
   </div>
   ```
 </docs>

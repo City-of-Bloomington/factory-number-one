@@ -15,7 +15,7 @@ export default {
   },
   create() {
     const tabs = document.createElement("div")
-    tabs.className = "vueds-tabs"
+    tabs.className = "vueds-tabs button-group"
     tabs.innerHTML =
       "<button class='vueds-tab vue vueds-tab--active'>VUE</button><button class='vueds-tab html'>HTML</button>"
     return tabs

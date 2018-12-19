@@ -30,8 +30,12 @@ const webpackConfig = merge(baseWebpackConfig, {
     path: config.system.assetsRoot,
     filename: utils.assetsSystemPath("[name].js"),
     library: "[name]",
-    // libraryTarget: config.system.libraryTarget,
-    libraryTarget: "commonjs2",
+
+    // Note ::
+    // Toggle `libraryTarget` to toggle build modes
+    // commonjs vs umd
+    libraryTarget: config.system.libraryTarget,
+    // libraryTarget: "commonjs2",
   },
   performance: {
     hints: config.system.performanceHints,

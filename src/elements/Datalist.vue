@@ -106,7 +106,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .field-group {
   @include stack-space($space-s);
   font-weight: $weight-normal;

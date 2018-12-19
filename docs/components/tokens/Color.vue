@@ -7,16 +7,13 @@
       :class="prop.category"
       v-if="prop.type === 'color'"
     >
-      <div class="swatch" :style="{ backgroundColor: prop.value }"/>
-      <h3>{{prop.name.replace(/_/g, " ").replace(/color/g, "")}}</h3>
-      <span>
-        <em>RGB:</em>
-        {{prop.value}}
-      </span>
-      <span>
-        <em>SCSS:</em>
-        ${{prop.name.replace(/_/g, "-")}}
-      </span>
+      <div class="swatch" :style="{ backgroundColor: prop.value }" />
+
+      <h5>{{ prop.name.replace(/_/g, " ").replace(/color/g, "") }}</h5>
+
+      <span> <em>RGB:</em> {{ prop.value }} </span>
+
+      <span> <em>SCSS:</em> ${{ prop.name.replace(/_/g, "-") }} </span>
     </div>
   </div>
 </template>
@@ -60,18 +57,21 @@ export default {
   margin-top: $space-l;
   display: block;
   width: 100%;
+
   @supports (display: grid) {
     display: grid;
     max-width: 1200px;
     align-content: stretch;
     justify-content: left;
+    grid-column-gap: $space-m;
+
     grid-template-columns:
       calc(20% - #{$space-m})
       calc(20% - #{$space-m})
       calc(20% - #{$space-m})
       calc(20% - #{$space-m})
       calc(20% - #{$space-m});
-    grid-column-gap: $space-m;
+
     @media (max-width: 1300px) {
       grid-template-columns:
         calc(25% - #{$space-m})
@@ -79,22 +79,26 @@ export default {
         calc(25% - #{$space-m})
         calc(25% - #{$space-m});
     }
+
     @media (max-width: 1100px) {
       grid-template-columns:
         calc(33.333% - #{$space-m})
         calc(33.333% - #{$space-m})
         calc(33.333% - #{$space-m});
     }
+
     @media (max-width: 900px) {
       grid-template-columns:
         calc(50% - #{$space-m})
         calc(50% - #{$space-m});
     }
+
     @media (max-width: 400px) {
       grid-template-columns: 100%;
     }
   }
 }
+
 .swatch {
   @include stack-space($space-s);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -104,14 +108,15 @@ export default {
   width: calc(100% + #{$space-l});
   float: left;
 }
-h3 {
+
+h5 {
   @include reset;
-  @include stack-space($space-xs);
+  margin: 10px 0;
   text-transform: capitalize;
-  line-height: 1.2;
   width: 100%;
   float: left;
 }
+
 .color {
   @include reset;
   @include inset-space($space-s);
@@ -125,13 +130,16 @@ h3 {
   border-radius: $radius-default;
   overflow: hidden;
   text-align: left;
+
   @supports (display: grid) {
     width: 100%;
     float: left;
   }
+
   @media (max-width: 400px) {
     margin-bottom: $space-m;
   }
+
   &:hover {
     span {
       color: $color-slate;
@@ -140,6 +148,7 @@ h3 {
       }
     }
   }
+
   span {
     margin-bottom: $space-xs;
     line-height: 1.3;
@@ -147,6 +156,7 @@ h3 {
     font-size: $size-s;
     width: 100%;
     float: left;
+
     em {
       user-select: none;
       font-style: normal;

@@ -48,15 +48,15 @@ export default {
      * The placeholder value for the number input.
      */
     min: {
-      type: Number,
+      type: String,
       default: null,
     },
     max: {
-      type: Number,
+      type: String,
       default: null,
     },
     step: {
-      type: Number,
+      type: String,
       default: 1,
     },
     /**
@@ -122,7 +122,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Design Tokens with local scope
 $color-placeholder: tint($color-silver, 50%);
 

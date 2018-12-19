@@ -8,7 +8,6 @@
       :placeholder="placeholder"
       :pattern="pattern"
       :disabled="disabled"
-      :class="state"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
     />
@@ -103,7 +102,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Design Tokens with local scope
 $color-placeholder: tint($color-silver, 50%);
 

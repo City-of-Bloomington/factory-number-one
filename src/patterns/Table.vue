@@ -42,18 +42,20 @@ export default {
       default: null,
     },
     header: {
-      required: true,
       type: Array,
+      required: true,
+      default: null,
     },
     rows: {
-      required: true,
       type: Array,
+      required: true,
+      default: null,
     },
   },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 table {
   width: 100%;
   border-collapse: collapse;

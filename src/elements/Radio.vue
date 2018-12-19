@@ -1,20 +1,22 @@
 <template>
-  <component :is="wrapper">
-    <legend v-if="legend">{{ legend }}</legend>
-    <div v-for="(item, index) in options">
-      <input
-        :key="index"
-        :id="item.value"
-        :type="type"
-        :value="item.value"
-        :name="name"
-        :class="state"
-        :disabled="item.disabled"
-        @input="onInput($event.target.value)"
-        @focus="onFocus($event.target.value)"
-      />
-      <label :for="item.value" v-if="item.text">{{ item.text }}</label>
-    </div>
+  <component :is="wrapper" :class="['form-group', { inline: inline }]">
+    <fieldset>
+      <legend v-if="legend">{{ legend }}</legend>
+      <div v-for="(item, index) in options">
+        <input
+          :key="index"
+          :id="item.value"
+          :type="type"
+          :value="item.value"
+          :name="name"
+          :class="state"
+          :disabled="item.disabled"
+          @input="onInput($event.target.value)"
+          @focus="onFocus($event.target.value)"
+        />
+        <label :for="item.value" v-if="item.text">{{ item.text }}</label>
+      </div>
+    </fieldset>
   </component>
 </template>
 
@@ -27,6 +29,17 @@ export default {
   status: "ready",
   release: "1.0.0",
   props: {
+    /**
+     * The html element name used for the wrapper.
+     * `div`
+     */
+    wrapper: {
+      type: String,
+      default: "div",
+      validator: value => {
+        return value.match(/(div)/)
+      },
+    },
     /**
      * The type of input field.
      * `radio`
@@ -67,17 +80,6 @@ export default {
       default: null,
     },
     /**
-     * The html element name used for the wrapper.
-     * `div`
-     */
-    wrapper: {
-      type: String,
-      default: "fieldset",
-      validator: value => {
-        return value.match(/(fieldset)/)
-      },
-    },
-    /**
      * Unique identifier of the radio input.
      */
     id: {
@@ -89,6 +91,14 @@ export default {
      * `true, false`
      */
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * Whether to display the radio inputs inline or not.
+     * `true, false`
+     */
+    inline: {
       type: Boolean,
       default: false,
     },
@@ -111,35 +121,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-fieldset {
-  @include stack-space($space-s);
-  font-weight: $weight-normal;
-  font-family: $font-text;
-  font-size: $size-m;
-  line-height: $line-height-xs;
-  width: 100%;
+<style lang="scss">
+input {
+  &[type="radio"] {
+    &[disabled="disabled"] {
+      cursor: not-allowed;
 
-  label {
-    cursor: pointer;
-    display: block;
-    font-family: $font-text;
-    font-size: $size-s;
-    line-height: $size-m + 2;
-    color: tint($color-slate, 20%);
-  }
-
-  input {
-    &[type="radio"] {
-      color: red;
-
-      &[disabled="disabled"] {
+      + label {
+        color: tint($color-slate, 40%);
         cursor: not-allowed;
-
-        + label {
-          color: tint($color-slate, 40%);
-          cursor: not-allowed;
-        }
       }
     }
   }
@@ -150,13 +140,26 @@ fieldset {
   ```jsx
   <div>
     <fn1-radio
-      legend="Choose your favorite radio"
+      legend="Choose your favorite radio:"
       name="radios"
       :options="[
-        { text: 'Toggle this custom radio', value: 'first' },
-        { text: 'Or toggle this one',       value: 'second' },
-        { text: 'This one is Disabled',     value: 'third', disabled: true },
-        { text: 'This is the 4th radio',    value: 4 }
+        { text: 'Toggle this custom radio', value: 'radio-1' },
+        { text: 'Or toggle this one',       value: 'radio-2' },
+        { text: 'This one is Disabled',     value: 'radio-3', disabled: true },
+        { text: 'This is the 4th radio',    value: 'radio-4' }
+      ]" />
+
+    <fn1-radio
+      inline
+      legend="Choose your favorite inline radio:"
+      name="inline-radios"
+      :options="[
+        { text: 'Toggle this custom radio', value: 'inline-radio-1' },
+        { text: 'Or toggle this one',       value: 'inline-radio-2' },
+        { text: 'This one is Disabled',     value: 'inline-radio-3', disabled: true },
+        { text: 'This is the 4th radio',    value: 'inline-radio-4' },
+        { text: 'This is the 5th radio',    value: 'inline-radio-5' },
+        { text: 'This is the 6th radio',    value: 'inline-radio-6' }
       ]" />
   </div>
   ```

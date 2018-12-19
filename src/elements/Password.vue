@@ -9,7 +9,6 @@
       :value="value"
       :name="name"
       :class="state"
-      :placeholder="placeholder"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
     />
@@ -114,7 +113,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Design Tokens with local scope
 $color-placeholder: tint($color-silver, 50%);
 
@@ -149,21 +148,6 @@ $color-placeholder: tint($color-silver, 50%);
     margin: 0;
     border: 0;
     box-shadow: inset 0 1px 0 0 rgba($color-slate, 0.07), 0 0 0 1px tint($color-slate, 80%);
-
-    &::-webkit-input-placeholder {
-      -webkit-font-smoothing: antialiased;
-      color: $color-placeholder;
-    }
-
-    &:-ms-input-placeholder {
-      color: $color-placeholder;
-    }
-
-    &::-moz-placeholder {
-      color: $color-placeholder;
-      -moz-osx-font-smoothing: grayscale;
-      opacity: 1;
-    }
 
     &:hover,
     &.hover {

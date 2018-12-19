@@ -318,22 +318,22 @@
     "size_xxxl": {
       "type": "number",
       "category": "font-size",
-      "value": "64px",
-      "originalValue": "64px",
+      "value": "48px",
+      "originalValue": "48px",
       "name": "size_xxxl"
     },
     "size_xxl": {
       "type": "number",
       "category": "font-size",
-      "value": "48px",
-      "originalValue": "48px",
+      "value": "36px",
+      "originalValue": "36px",
       "name": "size_xxl"
     },
     "size_xl": {
       "type": "number",
       "category": "font-size",
-      "value": "36px",
-      "originalValue": "36px",
+      "value": "30px",
+      "originalValue": "30px",
       "name": "size_xl"
     },
     "size_l": {
@@ -353,15 +353,15 @@
     "size_s": {
       "type": "number",
       "category": "font-size",
-      "value": "13px",
-      "originalValue": "13px",
+      "value": "14px",
+      "originalValue": "14px",
       "name": "size_s"
     },
     "size_xs": {
       "type": "number",
       "category": "font-size",
-      "value": "11px",
-      "originalValue": "11px",
+      "value": "12px",
+      "originalValue": "12px",
       "name": "size_xs"
     },
     "font_heading": {
@@ -493,8 +493,8 @@
     "spacing_m": {
       "type": "number",
       "category": "letter-spacing",
-      "value": "0",
-      "originalValue": "0",
+      "value": "0.5px",
+      "originalValue": "0.5px",
       "name": "spacing_m"
     },
     "spacing_s": {

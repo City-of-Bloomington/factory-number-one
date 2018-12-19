@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Design Tokens with local scope
 $color-placeholder: tint($color-silver, 50%);
 

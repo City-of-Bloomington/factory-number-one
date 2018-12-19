@@ -20,7 +20,6 @@
  * Additional contextual variations (sizes, states, etc) are up to that of the user.
  */
 export default {
-  title: "Button",
   name: "fn1-button",
   status: "ready",
   release: "1.0.0",
@@ -77,7 +76,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 button,
 .button {
   @include reset;

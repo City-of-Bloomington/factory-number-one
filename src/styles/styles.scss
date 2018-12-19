@@ -19,3 +19,12 @@
   position: absolute;
   width: 1px;
 }
+
+hr {
+  display: block;
+  margin: $space-xs 0;
+  border: none;
+  height: 1px;
+  width: 100%;
+  background: red;
+}

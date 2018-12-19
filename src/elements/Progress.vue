@@ -18,14 +18,14 @@ export default {
      * The max for the progress.
      */
     max: {
-      type: Number,
+      type: String,
       default: 100,
     },
     /**
      * The value for the progress.
      */
     value: {
-      type: Number,
+      type: String,
       default: null,
     },
     /**
@@ -65,7 +65,25 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+progress {
+  width: 100%;
+
+  &::-webkit-progress-bar {
+    width: 100%;
+    background: #ccc;
+  }
+
+  &::-webkit-progress-value {
+    width: 100%;
+    background: $color-blue;
+  }
+
+  &::-moz-progress-bar {
+    width: 100%;
+  }
+}
+</style>
 
 <docs>
   ```jsx

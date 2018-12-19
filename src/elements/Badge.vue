@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :class="['badge']" @click.prevent> <slot /> </component>
+  <component :is="type" :class="['badge', variant]"> <slot /> </component>
 </template>
 
 <script>
@@ -22,6 +22,10 @@ export default {
         return value.match(/(span)/)
       },
     },
+    variant: {
+      type: String,
+      default: "primary",
+    },
   },
   computed: {
     button: function() {
@@ -31,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .badge {
   @include reset;
   will-change: transform;
@@ -50,8 +54,26 @@ export default {
   padding: 0 8px;
   border: 0;
   border-radius: 100px;
-  background: $color-blue;
-  color: white;
+
+  &.primary {
+    background: $color-blue;
+    color: white;
+  }
+
+  &.success {
+    background: tint($color-green-lighter, 30%);
+    color: shade($color-green-darker, 40%);
+  }
+
+  &.danger {
+    background: tint($color-vermilion-lighter, 30%);
+    color: shade($color-vermilion, 40%);
+  }
+
+  &.warning {
+    background: tint($color-ucla-gold-lighter, 30%);
+    color: shade($color-ucla-gold-darker, 40%);
+  }
 }
 </style>
 
@@ -60,9 +82,9 @@ export default {
   <div>
     <div>
       <fn1-badge>5,431</fn1-badge>
-      <fn1-badge>New!</fn1-badge>
-      <fn1-badge>Success</fn1-badge>
-      <fn1-badge>Warning</fn1-badge>
+      <fn1-badge variant="success">Success</fn1-badge>
+      <fn1-badge variant="danger">Danger</fn1-badge>
+      <fn1-badge variant="warning">Warning</fn1-badge>
     </div>
   </div>
   ```

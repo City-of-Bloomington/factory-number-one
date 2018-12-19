@@ -1,6 +1,6 @@
 <template>
-  <component :is="type" :cite="citeUrl">
-    <slot /> <cite v-show="citeText">{{ citeText }}</cite>
+  <component :is="type">
+    <slot /> <cite v-show="cite">{{ cite }}</cite>
   </component>
 </template>
 
@@ -27,16 +27,7 @@ export default {
     /**
      * A text representation of the quote source.
      */
-    citeText: {
-      type: String,
-      default: null,
-    },
-    /**
-     * A url attribute representation of the quote source.
-     *
-     * **To-do:** I can't figure out how to get this `cite` attribute to work
-     */
-    citeUrl: {
+    cite: {
       type: String,
       default: null,
     },
@@ -44,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 blockquote {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +62,7 @@ blockquote {
 
 <docs>
   ```jsx
-  <fn1-blockquote citeText="Babe Ruth" citeURL="https://bloomington.in.gov/">
+  <fn1-blockquote cite="Babe Ruth">
     <p>Never let the fear of striking out keep you from playing the game.</p>
   </fn1-blockquote>
   ```
