@@ -1,43 +1,25 @@
 <template>
   <component :is="wrapper">
-    <div class="modal-mask" id="expand">
+    <div class="modal-mask" v-show="showModal">
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
-            <slot name="header"> {{ title }} </slot>
+            <slot name="header">{{ title }}</slot>
           </div>
 
-          <div class="modal-body"><slot name="body"></slot></div>
+          <div class="modal-body"><slot name="body" /></div>
 
-          <div class="modal-footer"><slot name="footer"></slot></div>
+          <div class="modal-footer">
+            <fn1-button v-show="true" @click.stop>Cancel</fn1-button>
+            <fn1-button v-show="true" @click.native="destroyModal">Confirm</fn1-button>
+            <!-- <slot name="footerBtnConfirm"  /> -->
+          </div>
         </div>
       </div>
     </div>
 
-    <fn1-button type="a" class="modal-button" href="#expand">Show Modal</fn1-button>
-
-    <a @click.prevent href="#example1">Open example #1</a>
-    <a v-on:click="greet" href="#example2">Open example #2</a>
-
-    <div class="lightbox" id="example1">
-      <figure>
-        <a href="#" class="close"></a>
-        <figcaption>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis enim, placerat id
-          eleifend eu, semper vel sem.
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="lightbox" id="example2">
-      <figure>
-        <a href="#" class="close"></a>
-        <figcaption>
-          Cras risus odio, pharetra nec ultricies et, mollis ac augue. Nunc et diam quis sapien
-          dignissim auctor. Quisque quis neque arcu, nec gravida magna.
-        </figcaption>
-      </figure>
-    </div>
+    <!-- note: @click.native (native event on component) -->
+    <fn1-button @click.native="displayModal">Show Modal</fn1-button>
   </component>
 </template>
 
@@ -49,9 +31,13 @@ export default {
   name: "fn1-modal",
   status: "ready",
   release: "1.0.0",
+  metaInfo: {
+    title: "Page Not Found | Vue Design System",
+  },
   props: {
     /**
-     * The component used for Alerts.
+     * The element used for Modals.
+     * `div`
      */
     wrapper: {
       type: String,
@@ -64,25 +50,25 @@ export default {
       type: String,
       default: null,
     },
-    showModal: {
-      type: Boolean,
-      default: false,
-    },
+  },
+  data() {
+    return {
+      showModal: false,
+    }
   },
   methods: {
-    greet: function(event) {
-      event.preventDefault()
-
-      if (event) {
-        console.log(event.currentTarget)
-        console.log(event)
-        console.log(event.target.tagName)
-      }
+    displayModal() {
+      this.showModal = true
+    },
+    destroyModal() {
+      this.$emit("close")
+      this.showModal = false
     },
   },
 }
 </script>
 
+<!-- note: remove the `scoped` below for use, it's only for Docs scoping -->
 <style lang="scss" scoped>
 body.showing-modal {
   overflow: hidden;
@@ -100,19 +86,12 @@ body.showing-modal {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
-  display: none;
-  // display: table;
 
-  &:target {
-    display: table;
-  }
-}
-
-.lightbox {
-  display: none;
-
-  &:target {
-    display: table;
+  > div {
+    &:last-of-type {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
   }
 }
 
@@ -122,6 +101,17 @@ body.showing-modal {
   font-weight: $weight-normal;
   font-family: $font-text;
   font-size: $size-m;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+
+  > div {
+    &:last-of-type {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
 
   .modal-container {
     width: 350px;
@@ -179,6 +169,7 @@ body.showing-modal {
       border-bottom-left-radius: 2px;
 
       button {
+        cursor: pointer;
         font-size: 14px;
         background: $color-green;
         color: white;
@@ -201,11 +192,6 @@ body.showing-modal {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
-.modal-button {
-  cursor: pointer;
-  background: pink;
-}
 </style>
 
 <docs>
@@ -213,7 +199,7 @@ body.showing-modal {
   <fn1-modal title="Modal Title Here">
     <p slot="body">This is where the Modal content lives.</p>
     <p slot="body">If this is an emergency, please dial 911.</p>
-    <button slot="footer" type="a" class="modal-button" href="#expand">I Understand</button>
+    <fn1-button slot="footerBtnConfirm">I Understand</fn1-button>
   </fn1-modal>
   ```
 </docs>
