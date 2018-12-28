@@ -49,14 +49,11 @@ module.exports = {
   pagePerSection: true,
   sections: [
     {
-      name: "Getting Started",
-      content: "../docs/getting-started.md",
-      // Needs to be loaded in somewhere as this is also shown in
-      // element, Pattern & Template overviews.
-      components: "../docs/components/status/**/[A-Z]*.vue",
-      sectionDepth: 1,
+      name: "Overview",
+      content: "../docs/Overview.md",
       exampleMode: "hide",
       usageMode: "hide",
+      sectionDepth: 1,
     },
     {
       name: "Design Principless",
@@ -110,11 +107,14 @@ module.exports = {
       sectionDepth: 2,
     },
     {
-      name: "Downloads",
-      content: "../docs/downloads.md",
+      name: "Getting Started",
+      content: "../docs/getting-started.md",
+      // Needs to be loaded in somewhere as this is also shown in
+      // element, Pattern & Template overviews.
+      components: "../docs/components/status/**/[A-Z]*.vue",
+      sectionDepth: 1,
       exampleMode: "hide",
       usageMode: "hide",
-      sectionDepth: 1,
     },
     {
       name: "FAQ",

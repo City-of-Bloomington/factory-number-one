@@ -1,31 +1,32 @@
 <template>
   <component :is="wrapper">
-    <div class="modal-mask" v-show="showModal">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-          <div class="modal-header">
-            <slot name="header">{{ title }}</slot>
-          </div>
+    <transition name="modal">
+      <div class="modal-mask" v-show="showModal" @click.self="outside">
+        <div class="modal-wrapper" v-show="showModal">
+          <div class="modal-container">
+            <div class="modal-header">
+              <slot name="header">{{ title }}</slot>
+            </div>
 
-          <div class="modal-body"><slot name="body" /></div>
+            <div class="modal-body"><slot name="body" /></div>
 
-          <div class="modal-footer">
-            <fn1-button v-show="true" @click.stop>Cancel</fn1-button>
-            <fn1-button v-show="true" @click.native="destroyModal">Confirm</fn1-button>
-            <!-- <slot name="footerBtnConfirm"  /> -->
+            <div class="modal-footer">
+              <fn1-button v-show="true" @click.stop>Cancel</fn1-button>
+              <fn1-button v-show="true" @click.native="destroyModal">Confirm</fn1-button>
+              <!-- <slot name="footerBtnConfirm"  /> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
 
-    <!-- note: @click.native (native event on component) -->
     <fn1-button @click.native="displayModal">Show Modal</fn1-button>
   </component>
 </template>
 
 <script>
 /**
- * Modals are pretty sweet! :]
+ * Modals act as dialogs that overlay the page to provide additional context.
  */
 export default {
   name: "fn1-modal",
@@ -57,11 +58,13 @@ export default {
     }
   },
   methods: {
+    outside() {
+      this.showModal = false
+    },
     displayModal() {
       this.showModal = true
     },
     destroyModal() {
-      this.$emit("close")
       this.showModal = false
     },
   },
@@ -69,7 +72,7 @@ export default {
 </script>
 
 <!-- note: remove the `scoped` below for use, it's only for Docs scoping -->
-<style lang="scss" scoped>
+<style lang="scss">
 body.showing-modal {
   overflow: hidden;
   position: fixed;
@@ -89,27 +92,28 @@ body.showing-modal {
 
   > div {
     &:last-of-type {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin: auto;
     }
   }
 }
 
 .modal-wrapper {
-  display: table-cell;
+  position: absolute;
+  z-index: 10000;
+  display: inline-block;
   vertical-align: middle;
   font-weight: $weight-normal;
   font-family: $font-text;
   font-size: $size-m;
-  margin-top: auto;
-  margin-bottom: auto;
-  top: 0;
-  bottom: 0;
+  margin: auto;
+  top: 25%;
+  left: 50%;
+  transform: translate(-25%, -50%);
+  width: auto;
 
   > div {
     &:last-of-type {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin: auto;
     }
   }
 
@@ -142,17 +146,18 @@ body.showing-modal {
     .modal-body {
       margin: 0;
       padding: 15px;
-      color: black;
       font-size: 16px;
       max-height: 275px;
       overflow: auto;
 
       p {
         margin: 0 0 10px 0;
+        padding: 0;
         line-height: 24px;
 
         &:last-of-type {
           margin: 0;
+          padding: 0;
         }
       }
     }

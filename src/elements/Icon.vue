@@ -3,6 +3,8 @@
 </template>
 
 <script>
+// Note: can't get this to load /icons/**
+// eg. icons/fa/solid
 const req = require.context("@/assets/icons/", true, /^\.\/.*\.svg$/)
 
 /**
@@ -79,6 +81,7 @@ export default {
     <fn1-icon name="deprecated" fill="rgb(235,59,36)" />
     <fn1-icon name="prototype" fill="rgb(37,138,239)" />
     <fn1-icon name="cob-logo" fill="rgb(30, 90, 174)" />
+    <fn1-icon name="bell" fill="rgb(30, 90, 174)" />
   </div>
   ```
 </docs>

@@ -1,18 +1,14 @@
-## What is the Vue Design System?
+## What's with the Factory name?
 
-Vue Design System is an open source tool for building UI Design Systems with [Vue.js](https://vuejs.org). It provides you and your team a set of organized tools, patterns & practices that work as the foundation for your application development. [Read more about it](https://viljamis.com/2018/vue-design-system/).
+Factory Number One is named after the Showers Brothers Furniture Company Factory Number 1. In the 1920s, the facility was arguably the largest furniture factory in the world, leveraging convenient access to the railroads to ship its dressers to retailers in large quantities. After World War II, the industry saw a shift from shipping by train, to shipping by truck, but the company didn't adapt to these changes in the market. The company closed its doors in 1958. Most of the facility was lost to a fire in 1969. One of the few buildings to survive was Factory Number 1. As of 2016, the building houses Bloomington, Indiana's City Hall, Monroe County offices, and office space for private companies.
 
-## What browsers are supported?
+## Why the component namespacing?
 
-The development environment supports the following browsers. To tweak browsers supported in production you will want to edit the [browsers list in package.json](https://github.com/viljamis/vue-design-system/blob/master/package.json#L172-L180). To see what browsers are selected by the browser list, run `npx browserslist --config="package.json"` in the root directory of this project.
+All latest major browsers support a pre-defined list of HTML elements which are considered as "known".
 
-| BROWSER         | VERSION |
-| --------------- | ------- |
-| Google Chrome   | Latest  |
-| Microsoft Edge  | Latest  |
-| Mozilla Firefox | Latest  |
-| Opera           | Latest  |
-| Safari          | Latest  |
+Because of this, we follow the W3C Custom Elements specification [requiring](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name) that custom elements contain a hyphen `(-)` in their name. So rather than eg. `<coffee>`, we would use `<fn1-coffee>`. Therefore `<fn1-coffee>` is a valid custom element name, whilst `<coffee>` is considered an "unknown" HTML element.
+
+The hyphen effectively allows the HTML parser to tell the difference between true custom elements and regular elements.
 
 ## How do I get started?
 
@@ -68,7 +64,7 @@ First, import tokens inside the component you want to use them in:
 
 ```html
 <script>
-  import designTokens from "@/assets/tokens/tokens.raw.json";
+  import designTokens from "@/assets/tokens/tokens.raw.json"
 </script>
 ```
 
@@ -76,13 +72,13 @@ Then, pass the data:
 
 ```html
 <script>
-export default {
-  data() {
-    return {
-      tokens: designTokens.props
-    };
+  export default {
+    data() {
+      return {
+        tokens: designTokens.props,
+      }
+    },
   }
-};
 </script>
 ```
 
@@ -114,10 +110,6 @@ Remove `--open` option from [this line in package.json](https://github.com/vilja
 You can put your assets under `src/assets`. It’s ok to create new directories under that directory as well. Since Webpack is used to include all static assets on the Vue app side, you’ll have to define the path like this in order for it to work on both the app and the styleguide: `<img src="@/assets/img/example.jpg" />`.
 
 For component’s `<docs>` section things work a bit differently. Using `<img src="img/example.jpg" />` without `@/assets/` works there. This is because [Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) handles the assets directory a bit differently.
-
-## Does Vue Design System work with Nuxt.js?
-
-Yes! While we don’t currently have extensive documentation on this, there’s an official example and instructions provided, here: [github.com/viljamis/nuxt-design-system](https://github.com/viljamis/nuxt-design-system).
 
 ## I can’t get Vue Design System working as an NPM dependency?
 
