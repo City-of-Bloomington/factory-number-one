@@ -1,33 +1,26 @@
 <template>
-  <component :is="type" :class="['dropdown']" role="dropdown" aria-label="dropdown group">
-    <fn1-button @click.native="openMenu" v-html="text" aria-expanded="false" />
-
-    <ul v-if="navItems" class="links" hidden>
-      <li v-for="(item, index) in navItems" :key="index">
-        <a
-          :href="item.href"
-          :class="item.class"
-          :disabled="item.disabled"
-          :title="item.name"
-          v-html="item.name"
-          @click.prevent
-        ></a>
-      </li>
-    </ul>
-
-    <!-- <nav class="dropdown">
-      <button
-        @click="openMenu"
-        class="launcher"
-        id="genericMenuLauncher"
-        aria-haspopup="true"
-        aria-expanded="false">Generic Dropdown</button>
-
-      <div class="links" aria-labeledby="genericMenuLauncher" hidden>
-        <a href="#">Manage users</a>
-        <a href="#">Update resources</a>
-      </div>
-    </nav> -->
+  <component
+    :is="type"
+    :class="['navigation-dropdown']"
+    role="dropdown"
+    aria-label="navigation dropdown"
+    ref="navigationDropdown"
+  >
+    <details ref="dropdownDetails">
+      <summary v-html="text"></summary>
+      <ul v-if="navItems" :class="[{ right: align }]">
+        <li v-for="(item, index) in navItems" :key="index">
+          <a
+            :href="item.href"
+            :class="item.class"
+            :disabled="item.disabled"
+            :title="item.name"
+            :target="item.target"
+            v-html="item.name"
+          ></a>
+        </li>
+      </ul>
+    </details>
   </component>
 </template>
 
@@ -42,7 +35,7 @@ export default {
   props: {
     /**
      * The html element used for the button group.
-     * `div`
+     * `nav`
      */
     type: {
       type: String,
@@ -51,6 +44,9 @@ export default {
         return value.match(/(nav)/)
       },
     },
+    /**
+     * The button text to be shown
+     */
     text: {
       type: String,
       default: null,
@@ -62,120 +58,118 @@ export default {
       type: Array,
       default: null,
     },
+    /**
+     * Open link in a new tab.
+     */
+    target: {
+      type: String,
+      default: "_self",
+    },
+    /**
+     * Aligns the dropdown subnavigation element (the `ul`).
+     *
+     * `right` is the only option at the moment.
+     */
+    navAlign: {
+      type: String,
+      default: "left",
+    },
   },
   methods: {
-    // openMenu(e) {
-    //   let launcher  = e.target,
-    //       container = launcher.parentElement,
-    //       menu      = launcher.parentElement.querySelector('.dropdown .links');
-    //   console.log('launcher :: ', launcher);
-    //   console.log('container :: ', container);
-    //   console.log('menu :: ', menu);
-    //   launcher.blur();
-    //   // this.closeMenus();
-    //   menu.removeAttribute("hidden");
-    //   launcher.setAttribute("aria-expanded", "true");
-    //   // document.addEventListener('click', this.closeMenus);
-    //   e.stopPropagation();
-    //   e.preventDefault();
-    //   menu.focus();
-    // },
-    // closeMenus() {},
-    //   hideMenu(thisMenu) {
-    //     setTimeout(function(){thisMenu.setAttribute("hidden", "hidden");}, 300);
-    //   },
-    //   launcherClick(e) {
-    //     alert('clicked');
-    //     let launchers = document.querySelectorAll('.dropdown .launcher');
-    //     let len       = launchers.length;
-    //     let i         = 0;
-    //     for (i=0; i<len; i++) {
-    //       launchers[i].addEventListener('click', launcherClick);
-    //     };
-    //       let launcher  = e.target,
-    //           container = launcher.parentElement,
-    //           menu      = launcher.parentElement.querySelector('.dropdown .links');
-    //       launcher.blur();
-    //       closeMenus();
-    //       menu.removeAttribute("hidden");
-    //       setTimeout(function() {
-    //         launcher.setAttribute("aria-expanded", "true");
-    //       }, 50);
-    //       document.addEventListener('click', closeMenus);
-    //       e.stopPropagation();
-    //       e.preventDefault();
-    //       menu.focus();
-    //   },
+    outside(e) {
+      let navigationDropdown = this.$refs.navigationDropdown
+      let dropdownDetails = this.$refs.dropdownDetails
+
+      if (!navigationDropdown.contains(e.target)) dropdownDetails.removeAttribute("open")
+    },
+  },
+  mounted() {
+    document.addEventListener("click", this.outside)
+  },
+  computed: {
+    align: function() {
+      if (this.navAlign == "right") return true
+    },
   },
 }
 </script>
 
 <style lang="scss">
-// .dropdown {
-//   $size-gutter: $space-m;
+.navigation-dropdown {
+  position: relative;
 
-//     display: inline-block;
-//     margin: 0 $size-gutter;
-//     position: relative;
+  summary {
+    @include reset;
+    z-index: 1;
+    position: relative;
+    will-change: transform;
+    transition: all 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 8px;
+    border: 0;
+    border-radius: $radius-default;
+    background: $color-blue;
+    color: white;
+    font-weight: $weight-semi-bold;
+    font-size: $size-m;
+    font-family: $font-text;
+    line-height: $line-height-m;
+    cursor: pointer;
+  }
 
-//     .launcher {
-//         background-repeat: no-repeat;
-//         background-position: $size-gutter center;
-//         background-size: ($size-gutter*2) ($size-gutter*2);
-//         background-image: url('https://bloomington.in.gov/inroads/css/images/fa-svg/white/chevron-down.svg');
-//         padding-left:1.7em;
+  ul {
+    z-index: 10;
+    background: white;
+    border: 1px solid $color-grey;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    min-width: 100px;
+    list-style: none;
+    border-radius: $radius-default;
 
-//         &[aria-expanded="true"] + .links {
-//             display: block;
-//         }
-//         &[aria-expanded="false"] + .links {
-//             display: none;
-//         }
-//     }
+    &.right {
+      right: 0;
+    }
 
-//     .links {
-//         background: green;
-//         box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
-//         min-width: 12rem;
-//         padding: $size-gutter 0;
-//         position: absolute;
-//             top: 100%;
-//             left: 0;
-//         text-align: left; // In case a menu gets embedded in a parent that is right-aligned
-//         transition: opacity .125s ease-in-out;
-//         z-index: 20;
-//     }
-//     .subgroup {
-//         &:not(:first-of-type):before {
-//             background-color: red;
-//             color: blue;
-//             content: '';
-//             display: block;
-//             height: 1px;
-//             margin: $size-gutter;
-//         }
-//     }
-//     a {
-//         display: block;
-//         padding: ($size-gutter/2) $size-gutter;
-//         &:hover {
-//             background-color: red;
-//             color: black;
-//         }
-//     }
-// }
+    li {
+      padding: 0 10px;
+
+      &:hover {
+        background: $color-grey-lighter;
+      }
+
+      a {
+        display: inline-block;
+        padding: 5px 0;
+        width: 100%;
+        color: tint($color-slate, 10%);
+        text-decoration: none;
+        font-weight: $weight-normal;
+        font-size: $size-s;
+        font-family: $font-text;
+        line-height: $line-height-s;
+      }
+    }
+  }
+}
 </style>
 
 <docs>
   ```jsx
     <fn1-dropdown
-      text="Dropdown Button"
+      text="Dropdown Menu"
+      navAlign="right"
       :navItems="[
-        {name: 'Cases',     href: '#'},
-        {name: 'Locations', href: '#'},
-        {name: 'Datasets',  href: '#'},
-        {name: 'About',     href: '#'},
-        {name: 'Misc.',     href: '#'}
+        {name: 'Case',     href: 'https://google.com/', target: '_blank'},
+        {name: 'Location', href: '#'},
+        {name: 'Datasets', href: '#'},
+        {name: 'About',    href: '#'},
+        {name: 'Misc.',    href: '#'}
       ]"
     />
   ```
