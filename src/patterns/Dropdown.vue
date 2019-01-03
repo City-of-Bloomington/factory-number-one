@@ -2,7 +2,7 @@
   <component
     :is="type"
     :class="['navigation-dropdown']"
-    role="dropdown"
+    role="navigation dropdown"
     aria-label="navigation dropdown"
     ref="navigationDropdown"
   >
