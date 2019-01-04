@@ -104,6 +104,9 @@ export default {
 
 <style lang="scss">
 .field-group {
+  display: flex;
+  flex-wrap: wrap;
+
   input {
     &[type="search"] {
       flex: 1 1 auto;
@@ -122,6 +125,9 @@ export default {
 
   button {
     &[type="submit"] {
+      border-top: 1px solid $color-blue;
+      border-right: 1px solid $color-blue;
+      border-bottom: 1px solid $color-blue;
       margin-left: auto;
       -webkit-border-radius: 0;
       -webkit-border-top-right-radius: 3px;

@@ -1,53 +1,55 @@
 <template>
   <component :is="type">
-    <a v-if="logo" :href="logo.url" :title="logo.imageAlt" @click.prevent>
-      <img v-if="logo" :src="logo.image" :alt="logo.imageAlt" />
+    <div :class="[{ contained: contained }]">
+      <a v-if="logo" :href="logo.url" :title="logo.imageAlt" @click.prevent>
+        <img v-if="logo" :src="logo.image" :alt="logo.imageAlt" />
 
-      <div>
-        <h1 v-if="logoHeadings.heading" v-html="logoHeadings.heading"></h1>
-        <h2 v-if="logoHeadings.subheading" v-html="logoHeadings.subheading"></h2>
-      </div>
-    </a>
+        <div>
+          <h1 v-if="logoHeadings.topHeading" v-html="logoHeadings.topHeading"></h1>
+          <h2 v-if="logoHeadings.subHeading" v-html="logoHeadings.subHeading"></h2>
+        </div>
+      </a>
 
-    <a
-      v-if="application"
-      :href="application.url"
-      v-html="application.name"
-      :title="application.name"
-      @click.prevent
-    ></a>
+      <a
+        v-if="application"
+        :href="application.url"
+        v-html="application.name"
+        :title="application.name"
+        @click.prevent
+      ></a>
 
-    <nav v-if="navItems" role="navigation" aria-labelledby="navigation">
-      <ul>
-        <li v-for="(item, index) in navItems" :key="index">
-          <a
-            :href="item.href"
-            :class="item.class"
-            :disabled="item.disabled"
-            :title="item.name"
-            v-html="item.name"
-            @click.prevent
-          ></a>
-        </li>
-      </ul>
-    </nav>
+      <nav v-if="navItems" role="navigation" aria-labelledby="navigation">
+        <ul>
+          <li v-for="(item, index) in navItems" :key="index">
+            <a
+              :href="item.href"
+              :class="item.class"
+              :disabled="item.disabled"
+              :title="item.name"
+              v-html="item.name"
+              @click.prevent
+            ></a>
+          </li>
+        </ul>
+      </nav>
 
-    <slot name="dropdown"></slot>
+      <slot name="dropdown"></slot>
 
-    <nav v-if="subNavItems" role="sub navigation" aria-labelledby="sub navigation">
-      <ul>
-        <li v-for="(item, index) in subNavItems" :key="index">
-          <a
-            :href="item.href"
-            :class="item.class"
-            :disabled="item.disabled"
-            :title="item.name"
-            v-html="item.name"
-            @click.prevent
-          ></a>
-        </li>
-      </ul>
-    </nav>
+      <nav v-if="subNavItems" role="sub navigation" aria-labelledby="sub navigation">
+        <ul>
+          <li v-for="(item, index) in subNavItems" :key="index">
+            <a
+              :href="item.href"
+              :class="item.class"
+              :disabled="item.disabled"
+              :title="item.name"
+              v-html="item.name"
+              @click.prevent
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </component>
 </template>
 
@@ -109,6 +111,13 @@ export default {
       type: Object,
       default: null,
     },
+    /**
+     * Determines if the header should fully expand or be contained.
+     */
+    contained: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
@@ -122,6 +131,26 @@ header {
   background: white;
   border-top: 4px solid $color-blue;
   padding: 15px 20px 0 20px;
+
+  div {
+    &:first-of-type {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0 auto;
+
+      &.contained {
+        margin: 0 auto;
+        width: 1080px;
+
+        nav {
+          &[role="sub navigation"] {
+            margin: 15px 0 0 0;
+          }
+        }
+      }
+    }
+  }
 
   a {
     display: flex;
@@ -225,6 +254,7 @@ header {
 
     &[role="sub navigation"] {
       display: block;
+
       background: tint($color-blue, 10%);
       width: calc(100% + 40px);
       margin: 15px -20px 0 -20px;
@@ -246,6 +276,8 @@ header {
 <docs>
   ```jsx
     <fn1-header
+
+
       :logo="{
         url:      'http://google.com',
         image:    './icons/city-of-bloomington-logo.svg',
@@ -253,8 +285,8 @@ header {
       }"
 
       :logoHeadings="{
-        heading:      'Bloomington.in.gov',
-        subheading:   'John Hamilton, Mayor',
+        topHeading:   'Bloomington.in.gov',
+        subHeading:   'John Hamilton, Mayor',
       }"
 
       :application="{

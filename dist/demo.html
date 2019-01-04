@@ -9,23 +9,67 @@
   <script src="./system/system.js"></script>
   <link href="./system/system.css" rel="stylesheet" />
   <style>
-    * {
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
       margin: 0;
       padding: 0;
+      border: 0;
+      vertical-align: baseline;
+      box-sizing: border-box;
     }
+
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    ol, ul {
+      list-style: none;
+    }
+
+    blockquote, q {
+      quotes: none;
+    }
+
+    blockquote:before,blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
     html,
     body {
       height: 100%;
     }
 
-    #app {
+    #wrapper {
       height: 100%;
       width: 50%;
       margin: 0 auto;
       padding: 20px 0 150px 0;
     }
 
-    #app > div {
+    #wrapper > div {
       margin-bottom: 20px;
       padding-bottom: 20px;
       border-bottom: 1px solid #ccc;
@@ -36,311 +80,379 @@
 </head>
 <body>
   <div id="app">
-    <h1>Elements</h1>
-
     <div>
-      <h2>Badges</h2>
-      <fn1-badge>5,431</fn1-badge>
-      <fn1-badge variant="success">Success</fn1-badge>
-      <fn1-badge variant="danger">Danger</fn1-badge>
-      <fn1-badge variant="warning">Warning</fn1-badge>
-    </div>
+      <fn1-header
+        contained="true"
+        :logo="{
+          url:      'http://google.com',
+          image:    './system/icons/city-of-bloomington-logo.svg',
+          imageAlt: 'City of Bloomington, IN'
+        }"
 
-    <div>
-      <h2>Blockquote</h2>
-      <fn1-blockquote cite="Babe Ruth">
-        <p>Never let the fear of striking out keep you from playing the game.</p>
-      </fn1-blockquote>
-    </div>
+        :logo-headings="{
+          topHeading:   'Bloomington.in.gov',
+          subHeading:   'John Hamilton, Mayor',
+        }"
 
-    <div>
-      <h2>Buttons</h2>
-      <fn1-button type="a" href="#">
-        a href button
-      </fn1-button>
-      <fn1-button disabled>Disabled</fn1-button>
-    </div>
+        :application="{
+          name: 'Time Track',
+          url:  'https://bloomington.in.gov/'
+        }"
 
-    <div>
-      <h2>Input - Checkbox</h2>
-      <div>
-        <fn1-checkbox
-          legend="Choose your favorites:"
-          name="checkbox"
-          :options="[
-            { text: 'Toggle this custom checkbox', value: 'checkbox-1' },
-            { text: 'Or toggle this one',          value: 'checkbox-2' },
-            { text: 'This one is Disabled',        value: 'checkbox-3', disabled: true },
-            { text: 'This is the 4th checkbox',    value: 'checkbox-4' }
-          ]" />
-      </div>
-
-      <div>
-        <fn1-checkbox
-          inline
-          legend="Choose your favorite inline checkboxes:"
-          name="inline-checkbox"
-          :options="[
-            { text: 'Toggle this custom checkbox', value: 'inline-checkbox-1' },
-            { text: 'Or toggle this one',          value: 'inline-checkbox-2' },
-            { text: 'This one is Disabled',        value: 'inline-checkbox-3', disabled: true },
-            { text: 'This is the 4th checkbox',    value: 'inline-checkbox-4' },
-            { text: 'This is the 5th checkbox',    value: 'inline-checkbox-5' },
-            { text: 'This is the 6th checkbox',    value: 'inline-checkbox-6' },
-            { text: 'This is the 7th checkbox',    value: 'inline-checkbox-7' },
-            { text: 'This is the 8th checkbox',    value: 'inline-checkbox-8' },
-            { text: 'This is the 9th checkbox',    value: 'inline-checkbox-9' },
-            { text: 'This is the 10th checkbox',    value: 'inline-checkbox-10' }
-          ]" />
-      </div>
-    </div>
-
-    <div>
-      <h2>Input - Datalist</h2>
-      <fn1-datalist
-        label="Choose a flavor:"
-        name="datalist-name"
-        list="datalist-options"
-        :options="[
-          { value: 'Chocolate' },
-          { value: 'Coconut' },
-          { value: 'Mint' },
-          { value: 'Strawberry' }
-        ]" />
-    </div>
-
-    <div>
-      <h2>Input - Date</h2>
-      <fn1-date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
-    </div>
-
-    <div>
-      <h2>Input - Email</h2>
-      <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com"disabled />
-    </div>
-
-    <div>
-      <h2>Input - File</h2>
-      <fn1-file label="Input [file]" type="file" placeholder="Choose file to upload" name="file" id="file" accept="image/*" multiple/>
-    </div>
-
-    <div>
-      <h2>Icon</h2>
-      <div>
-        <fn1-icon name="ready" aria-label="Component is ready" fill="#7cb518" />
-      </div>
-
-      <div>
-        <fn1-icon name="review" fill="rgb(255,186,10)" />
-      </div>
-    </div>
-
-    <div>
-      <h2>Input - Text</h2>
-      <div>
-        <fn1-input label="Input [text]" placeholder="Write your text" name="input-1" id="input-1"/>
-      </div>
-
-      <div>
-        <fn1-input label="[disabled]" placeholder="Write your text" name="input-4" id="input-4" disabled />
-      </div>
-    </div>
-
-    <div>
-      <h2>Input - Number</h2>
-      <div>
-        <fn1-number label="Input [number]" min="1" max="10" step="2" name="number" id="number" />
-      </div>
-    </div>
-
-    <div>
-      <h2>Input - Password</h2>
-      <div>
-        <fn1-password label="Input [password]" name="input-1" id="input-1" required/>
-      </div>
-    </div>
-
-    <div>
-      <h2>Progress</h2>
-      <fn1-progress
-        label="File progress:"
-        id="file-progress"
-        max="100"
-        value="70"
-      />
-    </div>
-
-    <div>
-      <h2>Input - Radio</h2>
-      <div>
-        <fn1-radio
-          legend="Choose your favorite radio:"
-          name="radios"
-          :options="[
-            { text: 'Toggle this custom radio', value: 'radio-1' },
-            { text: 'Or toggle this one',       value: 'radio-2' },
-            { text: 'This one is Disabled',     value: 'radio-3', disabled: true },
-            { text: 'This is the 4th radio',    value: 'radio-4' }
-          ]" />
-      </div>
-
-      <div>
-        <fn1-radio
-          inline
-          legend="Choose your favorite inline radio:"
-          name="inline-radios"
-          :options="[
-            { text: 'Toggle this custom radio', value: 'inline-radio-1' },
-            { text: 'Or toggle this one',       value: 'inline-radio-2' },
-            { text: 'This one is Disabled',     value: 'inline-radio-3', disabled: true },
-            { text: 'This is the 4th radio',    value: 'inline-radio-4' },
-            { text: 'This is the 5th radio',    value: 'inline-radio-5' },
-            { text: 'This is the 6th radio',    value: 'inline-radio-6' }
-          ]" />
-      </div>
-    </div>
-
-    <div>
-      <h2>Input - Select</h2>
-      <fn1-select
-        label="Select an option"
-        :options="[
-          { value: null, text: 'Please select an item' },
-          { value: 'a',  text: 'This is First option' },
-          { value: 'b',  text: 'Default Selected Option' },
-          { value: 'c',  text: 'This is another option' },
-          { value: 'd',  text: 'This one is disabled', disabled: true }
-        ]">
-      </fn1-select>
-    </div>
-
-    <div>
-      <h2>Input - Textarea</h2>
-      <fn1-textarea label="Default textarea" placeholder="Write your text" id="textarea-1" />
-    </div>
-
-    <div>
-      <h2>Input - Time</h2>
-      <fn1-time label="Time" name="time" id="time" type="time" placeholder="hh:mm am" />
-    </div>
-
-    <div>
-      <h2>Input - Url</h2>
-      <div>
-        <fn1-url label="Input [url]" placeholder="http://example.com" name="input-1" id="input-1"/>
-      </div>
-    </div>
-
-    <h1>Patterns</h1>
-
-    <div>
-      <h2>Alert</h2>
-      <fn1-alert>
-        <p><strong>Primary Variant --</strong> Holy Guacamole! Better make some more.</p>
-      </fn1-alert>
-
-      <fn1-alert variant="success">
-        <p><strong>Success Variant --</strong> This one has a button to dismiss.</p>
-      </fn1-alert>
-
-      <fn1-alert variant="danger">
-        <p><strong>Danger Variant --</strong> This one has a button to dismiss.</p>
-      </fn1-alert>
-
-      <fn1-alert dismissible variant="warning">
-        <p><strong>Warning Variant --</strong> This one has a button to dismiss.</p>
-        <hr>
-        <p>This is an example of a <a href="https://bloomington.in.gov/">link</a>.</p>
-      </fn1-alert>
-    </div>
-
-    <div>
-      <h2>Breadcrumbs</h2>
-      <fn1-breadcrumbs
-        active="Settings"
         :nav-items="[
-          {name: 'Dashboard', component: 'Dashboard', href: '/example/'},
-          {name: 'Posts',     component: 'Posts',     href: '/example/'},
-          {name: 'Users',     component: 'Users',     href: '/example/'},
-          {name: 'Settings',  component: 'Settings',  href: '/example/'}
-      ]"/>
+          {name: 'Cases',     href: 'https://google.com/', disabled: true},
+          {name: 'Locations', href: '#'},
+          {name: 'Datasets',  href: '#'},
+          {name: 'About',     href: '#'},
+          {name: 'Misc.',     href: '#'}
+        ]"
+
+        :sub-nav-items="[
+          {name: 'Sub-Cases',     href: 'https://google.com/', disabled: true},
+          {name: 'Sub-Locations', href: '#'},
+          {name: 'Sub-Datasets',  href: '#'},
+          {name: 'Sub-About',     href: '#'},
+          {name: 'Sub-Misc.',     href: '#'}
+        ]">
+
+        <fn1-dropdown
+          slot="dropdown"
+          text="Dropdown"
+          nav-align="right"
+          :nav-items="[
+            {name: 'Case',     href: 'https://google.com/', target: '_blank'},
+            {name: 'Location', href: '#'},
+            {name: 'Datasets', href: '#'},
+            {name: 'About',    href: '#'},
+            {name: 'Misc.',    href: '#'}
+          ]"/>
+      </fn1-header>
     </div>
 
-    <div>
-      <h2>Button Group</h2>
-      <fn1-button-group>
-        <fn1-button>button</fn1-button>
-        <fn1-button type="a" href="#">a href</fn1-button>
-        <fn1-button>button</fn1-button>
-        <fn1-button>button</fn1-button>
-        <fn1-button type="a" href="#">a href</fn1-button>
-      </fn1-button-group>
-    </div>
+    <div id="wrapper">
+      <h1>Elements</h1>
 
-    <div>
-      <h2>Collapse</h2>
       <div>
-        <fn1-collapse summary="Click here">
-          <p><strong>Holy Guacamole!</strong> Better make some more.</p>
-        </fn1-collapse>
+        <h2>Badges</h2>
+        <fn1-badge>5,431</fn1-badge>
+        <fn1-badge variant="success">Success</fn1-badge>
+        <fn1-badge variant="danger">Danger</fn1-badge>
+        <fn1-badge variant="warning">Warning</fn1-badge>
       </div>
-    </div>
 
-    <div>
-      <h2>Pagination</h2>
-      <fn1-pagination :nav-items="[
-        {name: 'First',     href: '#',   class: 'first',    aria: 'first'},
-        {name: 'Previous',  href: '#',   class: 'previous', aria: 'previous', disabled: 'disabled'},
-        {name: '1',         href: '/1',  class: 'current',  aria: 'current'},
-        {name: '2',         href: '/2'},
-        {name: '3',         href: '/3'},
-        {name: 'Next',      href: '#',   class: 'next',     aria: 'next'},
-        {name: 'Last',      href: '#',   class: 'last',     aria: 'last'}
-      ]"/>
-    </div>
+      <div>
+        <h2>Blockquote</h2>
+        <fn1-blockquote cite="Babe Ruth">
+          <p>Never let the fear of striking out keep you from playing the game.</p>
+        </fn1-blockquote>
+      </div>
 
-    <div>
-      <h2>Input - Search</h2>
-      <fn1-search button-value="Go" placeholder="Search for it" name="search" id="search"/>
-    </div>
+      <div>
+        <h2>Buttons</h2>
+        <fn1-button type="a" href="#">
+          a href button
+        </fn1-button>
+        <fn1-button disabled>Disabled</fn1-button>
+      </div>
 
-    <div>
-      <h2>Table</h2>
-      <fn1-table
-        :header="['First Name', 'Last Name', 'Tools']"
-        :rows="[
-          { firstName: 'Adam',    lastName: 'Butcher', tools: 'Macbook Pro, Sublime Text' },
-          { firstName: 'Cliff',   lastName: 'Ingham',  tools: 'Dell, Linux' },
-          { firstName: 'Charles', lastName: 'Brandt',  tools: 'Macbook Pro, VSCode' },
-          { firstName: 'Seth',    lastName: 'Tierney', tools: 'Every tool' }
-        ]" />
-    </div>
+      <div>
+        <h2>Input - Checkbox</h2>
+        <div>
+          <fn1-checkbox
+            legend="Choose your favorites:"
+            name="checkbox"
+            :options="[
+              { text: 'Toggle this custom checkbox', value: 'checkbox-1' },
+              { text: 'Or toggle this one',          value: 'checkbox-2' },
+              { text: 'This one is Disabled',        value: 'checkbox-3', disabled: true },
+              { text: 'This is the 4th checkbox',    value: 'checkbox-4' }
+            ]" />
+        </div>
 
-    <div>
-      <h2>Tabs</h2>
-      <fn1-tabs>
-        <fn1-tab name="Tab One" :selected="true">
-          <h1>1</h1>
-        </fn1-tab>
+        <div>
+          <fn1-checkbox
+            inline
+            legend="Choose your favorite inline checkboxes:"
+            name="inline-checkbox"
+            :options="[
+              { text: 'Toggle this custom checkbox', value: 'inline-checkbox-1' },
+              { text: 'Or toggle this one',          value: 'inline-checkbox-2' },
+              { text: 'This one is Disabled',        value: 'inline-checkbox-3', disabled: true },
+              { text: 'This is the 4th checkbox',    value: 'inline-checkbox-4' },
+              { text: 'This is the 5th checkbox',    value: 'inline-checkbox-5' },
+              { text: 'This is the 6th checkbox',    value: 'inline-checkbox-6' },
+              { text: 'This is the 7th checkbox',    value: 'inline-checkbox-7' },
+              { text: 'This is the 8th checkbox',    value: 'inline-checkbox-8' },
+              { text: 'This is the 9th checkbox',    value: 'inline-checkbox-9' },
+              { text: 'This is the 10th checkbox',    value: 'inline-checkbox-10' }
+            ]" />
+        </div>
+      </div>
 
-        <fn1-tab name="Tab Two">
-          <h1>2</h1>
-        </fn1-tab>
+      <div>
+        <h2>Input - Datalist</h2>
+        <fn1-datalist
+          label="Choose a flavor:"
+          name="datalist-name"
+          list="datalist-options"
+          :options="[
+            { value: 'Chocolate' },
+            { value: 'Coconut' },
+            { value: 'Mint' },
+            { value: 'Strawberry' }
+          ]" />
+      </div>
 
-        <fn1-tab name="Tab Three">
-          <h1>3</h1>
-        </fn1-tab>
-      </fn1-tabs>
-    </div>
+      <div>
+        <h2>Input - Date</h2>
+        <fn1-date label="Date" name="date" id="date" type="date" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+      </div>
 
-    <div>
-      <h2>Modal</h2>
-      <fn1-modal title="Modal Title Here">
-        <p slot="body">This is where the Modal content lives.</p>
-        <p slot="body">If this is an emergency, please dial 911.</p>
-      </fn1-modal>
+      <div>
+        <h2>Input - Email</h2>
+        <fn1-email label="Email Address" name="email" id="email" type="email" placeholder="you@example.com"disabled />
+      </div>
+
+      <div>
+        <h2>Input - File</h2>
+        <fn1-file label="Input [file]" type="file" placeholder="Choose file to upload" name="file" id="file" accept="image/*" multiple/>
+      </div>
+
+      <div>
+        <h2>Icon</h2>
+        <div>
+          <fn1-icon name="ready" aria-label="Component is ready" fill="#7cb518" />
+        </div>
+
+        <div>
+          <fn1-icon name="review" fill="rgb(255,186,10)" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Input - Text</h2>
+        <div>
+          <fn1-input label="Input [text]" placeholder="Write your text" name="input-1" id="input-1"/>
+        </div>
+
+        <div>
+          <fn1-input label="[disabled]" placeholder="Write your text" name="input-4" id="input-4" disabled />
+        </div>
+      </div>
+
+      <div>
+        <h2>Input - Number</h2>
+        <div>
+          <fn1-number label="Input [number]" min="1" max="10" step="2" name="number" id="number" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Input - Password</h2>
+        <div>
+          <fn1-password label="Input [password]" name="input-1" id="input-1" required/>
+        </div>
+      </div>
+
+      <div>
+        <h2>Progress</h2>
+        <fn1-progress
+          label="File progress:"
+          id="file-progress"
+          max="100"
+          value="70"
+        />
+      </div>
+
+      <div>
+        <h2>Input - Radio</h2>
+        <div>
+          <fn1-radio
+            legend="Choose your favorite radio:"
+            name="radios"
+            :options="[
+              { text: 'Toggle this custom radio', value: 'radio-1' },
+              { text: 'Or toggle this one',       value: 'radio-2' },
+              { text: 'This one is Disabled',     value: 'radio-3', disabled: true },
+              { text: 'This is the 4th radio',    value: 'radio-4' }
+            ]" />
+        </div>
+
+        <div>
+          <fn1-radio
+            inline
+            legend="Choose your favorite inline radio:"
+            name="inline-radios"
+            :options="[
+              { text: 'Toggle this custom radio', value: 'inline-radio-1' },
+              { text: 'Or toggle this one',       value: 'inline-radio-2' },
+              { text: 'This one is Disabled',     value: 'inline-radio-3', disabled: true },
+              { text: 'This is the 4th radio',    value: 'inline-radio-4' },
+              { text: 'This is the 5th radio',    value: 'inline-radio-5' },
+              { text: 'This is the 6th radio',    value: 'inline-radio-6' }
+            ]" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Input - Select</h2>
+        <fn1-select
+          label="Select an option"
+          :options="[
+            { value: null, text: 'Please select an item' },
+            { value: 'a',  text: 'This is First option' },
+            { value: 'b',  text: 'Default Selected Option' },
+            { value: 'c',  text: 'This is another option' },
+            { value: 'd',  text: 'This one is disabled', disabled: true }
+          ]">
+        </fn1-select>
+      </div>
+
+      <div>
+        <h2>Input - Textarea</h2>
+        <fn1-textarea label="Default textarea" placeholder="Write your text" id="textarea-1" />
+      </div>
+
+      <div>
+        <h2>Input - Time</h2>
+        <fn1-time label="Time" name="time" id="time" type="time" placeholder="hh:mm am" />
+      </div>
+
+      <div>
+        <h2>Input - Url</h2>
+        <div>
+          <fn1-url label="Input [url]" placeholder="http://example.com" name="input-1" id="input-1"/>
+        </div>
+      </div>
+
+      <h1>Patterns</h1>
+
+      <div>
+        <h2>Alert</h2>
+        <fn1-alert>
+          <p><strong>Primary Variant --</strong> Holy Guacamole! Better make some more.</p>
+        </fn1-alert>
+
+        <fn1-alert variant="success">
+          <p><strong>Success Variant --</strong> This one has a button to dismiss.</p>
+        </fn1-alert>
+
+        <fn1-alert variant="danger">
+          <p><strong>Danger Variant --</strong> This one has a button to dismiss.</p>
+        </fn1-alert>
+
+        <fn1-alert dismissible variant="warning">
+          <p><strong>Warning Variant --</strong> This one has a button to dismiss.</p>
+          <hr>
+          <p>This is an example of a <a href="https://bloomington.in.gov/">link</a>.</p>
+        </fn1-alert>
+      </div>
+
+      <div>
+        <h2>Breadcrumbs</h2>
+        <fn1-breadcrumbs
+          active="Settings"
+          :nav-items="[
+            {name: 'Dashboard', component: 'Dashboard', href: '/example/'},
+            {name: 'Posts',     component: 'Posts',     href: '/example/'},
+            {name: 'Users',     component: 'Users',     href: '/example/'},
+            {name: 'Settings',  component: 'Settings',  href: '/example/'}
+        ]"/>
+      </div>
+
+      <div>
+        <h2>Button Group</h2>
+        <fn1-button-group>
+          <fn1-button>button</fn1-button>
+          <fn1-button type="a" href="#">a href</fn1-button>
+          <fn1-button>button</fn1-button>
+          <fn1-button>button</fn1-button>
+          <fn1-button type="a" href="#">a href</fn1-button>
+        </fn1-button-group>
+      </div>
+
+      <div>
+        <h2>Collapse</h2>
+        <div>
+          <fn1-collapse summary="Click here">
+            <p><strong>Holy Guacamole!</strong> Better make some more.</p>
+          </fn1-collapse>
+        </div>
+      </div>
+
+      <div>
+        <h2>Pagination</h2>
+        <fn1-pagination :nav-items="[
+          {name: 'First',     href: '#',   class: 'first',    aria: 'first'},
+          {name: 'Previous',  href: '#',   class: 'previous', aria: 'previous', disabled: 'disabled'},
+          {name: '1',         href: '/1',  class: 'current',  aria: 'current'},
+          {name: '2',         href: '/2'},
+          {name: '3',         href: '/3'},
+          {name: 'Next',      href: '#',   class: 'next',     aria: 'next'},
+          {name: 'Last',      href: '#',   class: 'last',     aria: 'last'}
+        ]"/>
+      </div>
+
+      <div>
+        <h2>Input - Search</h2>
+        <fn1-search button-value="Go" placeholder="Search for it" name="search" id="search"/>
+      </div>
+
+      <div>
+        <h2>Table</h2>
+        <fn1-table
+          :header="['First Name', 'Last Name', 'Tools']"
+          :rows="[
+            { firstName: 'Adam',    lastName: 'Butcher', tools: 'Macbook Pro, Sublime Text' },
+            { firstName: 'Cliff',   lastName: 'Ingham',  tools: 'Dell, Linux' },
+            { firstName: 'Charles', lastName: 'Brandt',  tools: 'Macbook Pro, VSCode' },
+            { firstName: 'Seth',    lastName: 'Tierney', tools: 'Every tool' }
+          ]" />
+      </div>
+
+      <div>
+        <h2>Tabs</h2>
+        <fn1-tabs>
+          <fn1-tab name="Tab One" :selected="true">
+            <h1>1</h1>
+          </fn1-tab>
+
+          <fn1-tab name="Tab Two">
+            <h1>2</h1>
+          </fn1-tab>
+
+          <fn1-tab name="Tab Three">
+            <h1>3</h1>
+          </fn1-tab>
+        </fn1-tabs>
+      </div>
+
+      <div>
+        <h2>Modal</h2>
+        <fn1-modal title="Modal Title Here">
+          <p slot="body">This is where the Modal content lives.</p>
+          <p slot="body">If this is an emergency, please dial 911.</p>
+        </fn1-modal>
+      </div>
+
+      <div>
+        <h2>Dropdown Menu</h2>
+        <fn1-dropdown
+          text="Dropdown Menu"
+          nav-align="right"
+          :nav-items="[
+            {name: 'Case',     href: 'https://google.com/', target: '_blank'},
+            {name: 'Location', href: '#'},
+            {name: 'Datasets', href: '#'},
+            {name: 'About',    href: '#'},
+            {name: 'Misc.',    href: '#'}
+          ]"
+        />
+      </div>
     </div>
   </div>
+
+
 
   <script>
     // import DesignSystem from './system/vue-design-system';

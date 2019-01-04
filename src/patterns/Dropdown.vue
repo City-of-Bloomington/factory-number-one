@@ -97,6 +97,8 @@ export default {
 <style lang="scss">
 .navigation-dropdown {
   position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
 
   summary {
     @include reset;
