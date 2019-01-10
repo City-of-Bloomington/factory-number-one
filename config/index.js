@@ -56,7 +56,7 @@ module.exports = {
     // Toggle `libraryTarget` to toggle build modes
     // commonjs vs umd
     // libraryTarget: "commonjs2",
-    libraryTarget: "umd",
+    libraryTarget: "commonjs2",
 
     // Enable or disable performance hints on build
     performanceHints: false,
