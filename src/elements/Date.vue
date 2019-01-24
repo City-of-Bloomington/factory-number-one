@@ -5,6 +5,7 @@
       :id="id"
       :name="name"
       :type="type"
+      :value="value"
       :placeholder="placeholder"
       :pattern="pattern"
       :disabled="disabled"
@@ -101,7 +102,7 @@ export default {
   },
   methods: {
     onInput(value) {
-      this.$emit("change", value)
+      this.$emit("input", value)
     },
     onFocus(value) {
       this.$emit("focus", value)
