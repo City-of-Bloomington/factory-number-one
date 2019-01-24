@@ -1,7 +1,7 @@
 <template>
   <component :is="wrapper" :class="['field-group']">
     <label :for="id" v-if="label">{{ label }}</label>
-    <select :name="name" :id="id" :type="type">
+    <select :value="value" :name="name" :id="id" :type="type">
       <option
         v-for="(item, index) in options"
         :key="index"
