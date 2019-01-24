@@ -103,10 +103,10 @@ export default {
   },
   methods: {
     onInput(value) {
-      this.$parent.$emit("input", value)
+      this.$emit("input", value)
     },
     onFocus(value) {
-      this.$parent.$emit("focus", value)
+      this.$emit("focus", value)
     },
   },
 }
