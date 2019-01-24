@@ -53,6 +53,7 @@ export default {
     },
     /**
      * Value of the radio input.
+     * @model
      */
     value: {
       type: String,

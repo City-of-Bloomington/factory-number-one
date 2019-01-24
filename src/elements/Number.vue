@@ -39,6 +39,7 @@ export default {
     },
     /**
      * Text value of the number input.
+     * @model
      */
     value: {
       type: String,

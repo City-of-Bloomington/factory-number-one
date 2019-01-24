@@ -28,6 +28,14 @@ export default {
       },
     },
     /**
+     * Text value of the text input.
+     * @model
+     */
+    value: {
+      type: String,
+      default: null,
+    },
+    /**
      * The label of the file input.
      */
     label: {

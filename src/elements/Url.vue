@@ -38,6 +38,7 @@ export default {
     },
     /**
      * Text value of the url input.
+     * @model
      */
     value: {
       type: String,

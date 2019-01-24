@@ -37,6 +37,7 @@ export default {
     },
     /**
      * Text value of the password input.
+     * @model
      */
     value: {
       type: String,

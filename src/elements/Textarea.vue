@@ -38,6 +38,7 @@ export default {
     },
     /**
      * Text value of the form textarea.
+     * @model
      */
     value: {
       type: String,

@@ -52,6 +52,7 @@ export default {
     },
     /**
      * Value of the checkbox input.
+     * @model
      */
     value: {
       type: String,

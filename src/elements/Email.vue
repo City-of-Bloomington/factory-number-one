@@ -43,6 +43,14 @@ export default {
       default: null,
     },
     /**
+     * Text value of the text input.
+     * @model
+     */
+    value: {
+      type: String,
+      default: null,
+    },
+    /**
      * The label of the email input.
      */
     label: {

@@ -35,6 +35,7 @@ export default {
   props: {
     /**
      * Value of the datalist input.
+     * @model
      */
     value: {
       type: String,
