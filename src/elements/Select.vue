@@ -37,6 +37,7 @@ export default {
     },
     /**
      * Text value of the select input.
+     * @model
      */
     value: {
       type: String,
