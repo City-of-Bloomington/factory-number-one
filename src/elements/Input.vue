@@ -2,6 +2,7 @@
   <component :is="wrapper" :class="['field-group']">
     <label :for="id" v-if="label">{{ label }}</label>
     <input
+      v-model="inputValue"
       :id="id"
       :disabled="disabled"
       :type="type"
@@ -100,6 +101,11 @@ export default {
         return value.match(/(hover|active|focus)/)
       },
     },
+  },
+  data() {
+    return {
+      inputValue: "",
+    }
   },
   methods: {
     onInput(value) {
