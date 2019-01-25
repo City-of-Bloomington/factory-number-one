@@ -1,13 +1,7 @@
 <template>
   <component :is="wrapper" :class="['field-group']">
     <label :for="id" v-if="label">{{ label }}</label>
-    <select
-      v-model="value"
-      :name="name"
-      :id="id"
-      :type="type"
-      @input="onInput($event.target.value)"
-    >
+    <select :name="name" :id="id" :type="type" @input="onInput($event.target.value)">
       <option
         v-for="(item, index) in options"
         :key="index"
