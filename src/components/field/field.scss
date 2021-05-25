@@ -33,7 +33,7 @@ dl {
 form dl {
     border-top: none;
 
-    input:not([type="checkbox"][type="radio"]) {
+    input:not([type="checkbox"]):not([type="radio"]) {
         box-sizing: border-box;
         border: 1px solid $color-border-input;
         font-family: $font-family-default;
@@ -83,7 +83,7 @@ form dl {
             margin-left: 8em;
 
         }
-        input:not([type="checkbox"][type="radio"]) {
+        input:not([type="checkbox"]):not([type="radio"]) {
             font-size: (14em/16);
             width: 20em;
 
